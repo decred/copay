@@ -1,32 +1,69 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('disclaimerController',
-  function($scope, $timeout, storageService, applicationService, gettextCatalog, isCordova, uxLanguage) {
+  function($scope, $timeout, $log, $ionicSideMenuDelegate, profileService, applicationService, gettextCatalog, uxLanguage, go, storageService, gettext, platformInfo, ongoingProcess) {
+    var self = this;
+    self.tries = 0;
+    var isCordova = platformInfo.isCordova;
 
-    $scope.agree = function() {
-      if (isCordova) {
-        window.plugins.spinnerDialog.show(null, gettextCatalog.getString('Loading...'), true);
-      }
-      $scope.loading = true;
-      $timeout(function() {
-        storageService.setCopayDisclaimerFlag(function(err) {
-          $timeout(function() {
-            if (isCordova) {
-              window.plugins.spinnerDialog.hide();
+    ongoingProcess.set('creatingWallet', true);
+
+    var create = function(opts) {
+      opts = opts || {};
+      $log.debug('Creating profile');
+      profileService.create(opts, function(err) {
+        if (err) {
+          $log.warn(err);
+          $scope.error = err;
+          $scope.$apply();
+
+          return $timeout(function() {
+            $log.warn('Retrying to create profile......');
+            if (self.tries == 3) {
+              self.tries == 0;
+              return create({
+                noWallet: true
+              });
+            } else {
+              self.tries += 1;
+              return create();
             }
-            applicationService.restart();
-          }, 1000);
-        });
-      }, 100);
+          }, 3000);
+        };
+
+        $scope.error = "";
+        ongoingProcess.set('creatingWallet', false);
+      });
     };
-    
-    $scope.init = function() {
-      storageService.getCopayDisclaimerFlag(function(err, val) {
-        $scope.lang = uxLanguage.currentLanguage;
-        $scope.agreed = val;
-        $timeout(function() {
-          $scope.$digest();
-        }, 1);
+
+    this.init = function(opts) {
+      $ionicSideMenuDelegate.canDragContent(false);
+      self.lang = uxLanguage.currentLanguage;
+
+      storageService.getProfile(function(err, profile) {
+        if (!profile) {
+          create(opts);
+        } else {
+          $log.info('There is already a profile');
+          ongoingProcess.set('creatingWallet', false);
+          profileService.bindProfile(profile, function(err) {
+            if (!err || !err.message || !err.message.match('NONAGREEDDISCLAIMER')) {
+              $log.debug('Disclaimer already accepted at #disclaimer. Redirect to Wallet Home.');
+              $ionicSideMenuDelegate.canDragContent(true);
+              go.walletHome();
+            }
+          });
+        }
+      });
+    };
+
+    this.accept = function() {
+      profileService.setDisclaimerAccepted(function(err) {
+        if (err) $log.error(err);
+        else {
+          $ionicSideMenuDelegate.canDragContent(true);
+          go.walletHome();
+        }
       });
     };
   });

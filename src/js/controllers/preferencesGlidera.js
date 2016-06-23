@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('preferencesGlideraController', 
-  function($scope, $modal, $timeout, profileService, applicationService, glideraService, storageService, isChromeApp) {
+angular.module('copayApp.controllers').controller('preferencesGlideraController',
+  function($scope, $timeout, $ionicModal, profileService, applicationService, glideraService, storageService) {
 
     this.getEmail = function(token) {
       var self = this;
@@ -31,44 +31,16 @@ angular.module('copayApp.controllers').controller('preferencesGlideraController'
       });
     };
 
-    // DISABLE ANIMATION ON CHROMEAPP
-    if (isChromeApp) {
-      var animatedSlideRight = 'full';
-    }
-    else {
-      var animatedSlideRight = 'full animated slideInRight';
-    }
-
     this.revokeToken = function(testnet) {
-      var network = dcrdtestnet ? 'dcrdtestnet' : 'dcrdlivenet';
-      var ModalInstanceCtrl = function($scope, $modalInstance) {
-        $scope.ok = function() {
-          $modalInstance.close(true);
-        };
-        $scope.cancel = function() {
-          $modalInstance.dismiss();
-        };
-      };
+      $scope.network = testnet ? 'dcrdtestnet' : 'dcrdlivenet';
+      $scope.loading = false;
 
-      var modalInstance = $modal.open({
-        templateUrl: 'views/modals/glidera-confirmation.html',
-        windowClass: animatedSlideRight,
-        controller: ModalInstanceCtrl
-      });
-
-      modalInstance.result.then(function(ok) {
-        if (ok) {
-          storageService.removeGlideraToken(network, function() {
-            $timeout(function() {
-              applicationService.restart();
-            }, 100);
-          });
-        }
-      });
-
-      modalInstance.result.finally(function() {
-        var m = angular.element(document.getElementsByClassName('reveal-modal'));
-        m.addClass('slideOutRight');
+      $ionicModal.fromTemplateUrl('views/modals/glidera-confirmation.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function(modal) {
+        $scope.glideraConfirmationModal = modal;
+        $scope.glideraConfirmationModal.show();
       });
     };
 

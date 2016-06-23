@@ -41,8 +41,33 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     // Not sure what we should do with this long-term, but for now,
     // just point to something local.  No way to get rates for dcr at
     // the moment anyway.
+    coinbase: {
+      enabled: true,
+      testnet: false
+    },
     rates: {
       url: '',
+    },
+
+    release: {
+      url: 'https://api.github.com/repos/bitpay/copay/releases/latest'
+    },
+
+    pushNotifications: {
+      enabled: true,
+      config: {
+        android: {
+          senderID: '1036948132229',
+          icon: 'push',
+          iconColor: '#2F4053'
+        },
+        ios: {
+          alert: 'true',
+          badge: 'true',
+          sound: 'true',
+        },
+        windows: {},
+      }
     },
   };
 
@@ -75,18 +100,35 @@ angular.module('copayApp.services').factory('configService', function(storageSer
         if (!configCache.glidera) {
           configCache.glidera = defaultConfig.glidera;
         }
+        if (!configCache.coinbase) {
+          configCache.coinbase = defaultConfig.coinbase;
+        }
+        if (!configCache.pushNotifications) {
+          configCache.pushNotifications = defaultConfig.pushNotifications;
+        }
 
       } else {
         configCache = lodash.clone(defaultConfig);
       };
+
+      // Glidera
+      // Disabled for testnet
+      configCache.glidera.testnet = false;
+
+      // Coinbase
+      // Disabled for testnet
+      configCache.coinbase.testnet = false;
+
       $log.debug('Preferences read:', configCache)
       return cb(err, configCache);
     });
   };
 
   root.set = function(newOpts, cb) {
-    var config = defaultConfig;
+    var config = lodash.cloneDeep(defaultConfig);
     storageService.getConfig(function(err, oldOpts) {
+      oldOpts = oldOpts || {};
+
       if (lodash.isString(oldOpts)) {
         oldOpts = JSON.parse(oldOpts);
       }
@@ -96,6 +138,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       if (lodash.isString(newOpts)) {
         newOpts = JSON.parse(newOpts);
       }
+
       lodash.merge(config, oldOpts, newOpts);
       configCache = config;
 

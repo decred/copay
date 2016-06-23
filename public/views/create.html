@@ -4,75 +4,41 @@
   ng-init="titleSection='Create new wallet';  goBackToState = 'add'; noColor = true">
 </div>
 
-
-
-<div class="content p20v" ng-controller="createController as create" ng-init="create.setTotalCopayers(1)">
-
-  <div class="onGoingProcess" ng-show="create.loading && !create.ledger">
-    <div class="onGoingProcess-content" ng-style="{'background-color':'#222'}">
-    <div class="spinner">
-      <div class="rect1"></div>
-      <div class="rect2"></div>
-      <div class="rect3"></div>
-      <div class="rect4"></div>
-      <div class="rect5"></div>
-    </div>
-    <span translate>Creating Wallet...</span>
-    </div>
-  </div>
-
-  <div class="onGoingProcess" ng-show="create.ledger">
-    <div class="onGoingProcess-content" ng-style="{'background-color':'#222'}">
-    <div class="spinner">
-      <div class="rect1"></div>
-      <div class="rect2"></div>
-      <div class="rect3"></div>
-      <div class="rect4"></div>
-      <div class="rect5"></div>
-    </div>
-    <span translate>Connecting to Ledger Wallet...</span>
-    </div>
-  </div>
+<div class="content p20b" ng-controller="createController as create" ng-init="create.setTotalCopayers(1)">
 
   <div class="create-tab small-only-text-center" ng-hide="create.hideTabs">
     <div class="row">
-    <div class="tab-container small-6 medium-3 large-2">
-    <a href
-      ng-class="{'selected': totalCopayers == 1}"
-      ng-click="create.setTotalCopayers(1)" translate>Personal Wallet</a>
-    </div>
-    <div class="tab-container small-6 medium-3 large-2">
-    <a href
-      ng-class="{'selected': totalCopayers != 1}"
-      ng-click="create.setTotalCopayers(3)" translate>Shared Wallet</a>
-    </div>
+      <div class="tab-container small-6 medium-3 large-2" ng-class="{'selected': totalCopayers == 1}">
+        <a href ng-click="create.setTotalCopayers(1)" translate>Personal Wallet</a>
+      </div>
+      <div class="tab-container small-6 medium-3 large-2" ng-class="{'selected': totalCopayers != 1}">
+        <a href ng-click="create.setTotalCopayers(3)" translate>Shared Wallet</a>
+      </div>
     </div>
   </div>
 
   <form name="setupForm" ng-submit="create.create(setupForm)" novalidate>
+    <div class="box-notification m20b" id="notification" ng-show="create.error">
+      <span class="text-warning">
+        {{create.error|translate}}
+      </span>
+    </div>
     <div class="row">
       <div class="large-12 columns">
-        <div class="box-notification" ng-show="create.error">
-          <span class="text-warning size-14">
-            {{create.error|translate}}
-          </span>
-        </div>
 
-        <div class="row">
-          <div class="large-12 columns" ng-hide="create.hideWalletName">
-            <label><span translate>Wallet name</span>
-              <div class="input">
-                <input type="text" placeholder="{{'Family vacation funds'|translate}}" class="form-control" name="walletName" ng-model="walletName" ng-required="true" ng-focus="create.formFocus('wallet-name')" ng-blur="create.formFocus(false)">
-              </div>
-            </label>
-          </div>
-          <div class="large-12 columns" ng-show="totalCopayers != 1">
-            <label><span translate>Your nickname</span>
-              <div class="input">
-                <input type="text" placeholder="{{'John'|translate}}" class="form-control" name="myName" ng-model="myName" ng-required="totalCopayers != 1" ng-disabled="totalCopayers == 1" ng-focus="create.formFocus('my-name')" ng-blur="create.formFocus(false)">
-              </div>
-            </label>
-          </div>
+        <div ng-hide="create.hideWalletName">
+          <label><span translate>Wallet name</span>
+            <div class="input">
+              <input type="text" placeholder="{{'Family vacation funds'|translate}}" class="form-control" name="walletName" ng-model="walletName" ng-required="true" ng-focus="create.formFocus('wallet-name')" ng-blur="create.formFocus(false)">
+            </div>
+          </label>
+        </div>
+        <div ng-show="totalCopayers != 1">
+          <label><span translate>Your nickname</span>
+            <div class="input">
+              <input type="text" placeholder="{{'John'|translate}}" class="form-control" name="myName" ng-model="myName" ng-required="totalCopayers != 1" ng-disabled="totalCopayers == 1" ng-focus="create.formFocus('my-name')" ng-blur="create.formFocus(false)">
+            </div>
+          </label>
         </div>
         <div class="row" ng-show="totalCopayers != 1">
           <div class="large-6 medium-6 columns">
@@ -100,75 +66,103 @@
             <i ng-if="!hideAdv" class="icon-arrow-up4"></i>
           </a>
         </div>
-        <div ng-hide="hideAdv" class="row">
-          <div class="large-12 columns">
-            <label ng-show="create.isChromeApp() && totalCopayers > 1 " for="hw-ledger" class="oh">
-              <span translate>Use Ledger hardware wallet</span>
-              <switch id="hw-ledger" name="hwLedger" ng-model="hwLedger" ng-change="isTestnet=false" class="green right m5t m10b"></switch>
-            </label>
-<!-- TODO account
-            <div ng-show="hwLedger">
-              <label class="oh"><span translate>Ledger Slot</span>
-                <select class="m10t" ng-model="externalIndex" ng-options="externalIndex as externalIndex for externalIndex in create.externalIndexValues">
-                </select>
-              </label>
-              <div class="oh text-gray line-b  size-12   p10b m20b"><span translate>Ledger supports up to 20 Copay wallets simultaneously. Select which slot should be used to host this wallet</div>
-            </div> 
--->        
-            <label for="network-name" class="oh" ng-show="!hwLedger">
-              <span translate>Testnet</span>
-              <switch id="network-name" name="isTestnet" ng-model="isTestnet" class="green right m5t m10b"></switch>
-            </label>
 
-            <label  ng-show="!hwLedger" for="seed" class="oh">
-              <span translate>Specify your wallet seed.</span>
+        <div ng-hide="hideAdv" class="row">
+          <div class="large-12 columns m20b">
+            <div>
+              <label for="bws" class="oh">
+                <span>Wallet Service URL</span>
+                <input type="text" id="bwsurl" name="bwsurl" ng-model="bwsurl">
+              </label>
+            </div>
+
+            <div>
+              <label><span translate>Wallet Recovery Phrase</span>
 	      <span class="text-alert">NOTE: You should only use ONE wallet at a time
 	      with a given seed, the webwallet or dcrwallet, not both!</span>
-              <switch id="seed" name="setSeed" ng-model="setSeed" class="green right m5t m10b"></switch>
-            </label>
+              <select class="m10t" ng-model="seedSource"
+                ng-options="seed as seed.label for seed in create.seedOptions"
+                ng-change="create.setSeedSource()">
+              </select>
+              </label>
+            </div>
 
-            <label for="createPassphrase" class="line-b oh" ng-show="!setSeed && !hwLedger" ><span translate>Seed Passphrase</span>  <small translate>Add an optional passphrase to secure the seed</small>
-              <div class="input">
-                <input type="text" class="form-control" 
-                name="createPassphrase" ng-model="createPassphrase">
-              </div>
-            </label>
- 
-            <label for="ext-master" class="m10t" ng-show="setSeed && !hwLedger">
-              <span translate>Wallet Seed</span>
-              <small translate>Enter the seed words (PGP word list)</small>
-              <input id="ext-master"
-              type="text"
-              name="privateKey" ng-model="privateKey">
-            </label>
-            <label for="passphrase" class="line-b oh" ng-show="setSeed && !hwLedger"><span translate>Seed Passphrase</span>  <small translate>The seed could require a passphrase to be imported</small>
-              <div class="input">
-                <input type="text" class="form-control" name="passphrase" ng-model="passphrase">
-              </div>
-            </label>
-          </div>
-        </div>
+            <div ng-show="create.seedSourceId == 'trezor' || create.seedSourceId == 'ledger'">
+              <label class="oh"><span translate>Account Number</span>
+                <input type="number" id="account" ng-model="account">
+              </label>
+            </div>
 
-        <div class="box-notification" ng-show="!setSeed && createPassphrase">
-          <span class="text-warning size-14">
-            <i class="fi-alert"></i>
-            <span translate>
-            WARNING: Passphrase cannot be recovered. <b>Be sure to write it down</b>. The wallet can not be restored without the passphrase.
-            </span>
-          </span>
-        </div>
+            <div class="box-notification" ng-show="create.seedSourceId=='new' && createPassphrase">
+              <span class="text-warning size-14">
+                <i class="fi-alert"></i>
+                <span translate>
+                WARNING: The password cannot be recovered. <b>Be sure to write it down</b>. The wallet can not be restored without the password.
+                </span>
+              </span>
+            </div>
 
+            <div ng-show="create.seedSourceId=='new' ">
+              <label for="createPassphrase"  ><span translate>Add a Password</span>  <small translate>Add an optional password to secure the recovery phrase</small>
+                <div class="input">
+                  <input type="text" class="form-control" autocapitalize="off"
+                  name="createPassphrase" ng-model="createPassphrase">
+                </div>
+              </label>
+            </div>
 
+            <div ng-show="create.seedSourceId=='set'">
+              <label for="ext-master">
+                <span translate>Wallet Recovery Phrase</span>
+                <small translate>Enter the recovery phrase (BIP39)</small>
+                <input id="ext-master"
+                autocapitalize="off"
+                type="text"
+                name="privateKey" ng-model="privateKey">
+              </label>
+            </div>
 
-        <button type="submit" class="button round black expand m0" ng-show="totalCopayers != 1" ng-disabled="setupForm.$invalid || create.loading || create.ledger">
+            <div ng-show="create.seedSourceId=='set'">
+              <label for="passphrase"> <span translate>Password</span>  <small translate>The recovery phrase could require a password to be imported</small>
+                <div class="input">
+                  <input type="text" autocapitalize="off" class="form-control" name="passphrase" ng-model="passphrase">
+                </div>
+              </label>
+            </div>
+
+            <div ng-show="create.seedSourceId == 'set'">
+              <label class="oh"><span translate>Derivation Path</span> <small translate>BIP32 path for address derivation</small>
+                <input type="text" class="form-control" name="derivationPath" ng-model="derivationPath">
+              </label>
+            </div>
+            <div class="oh" ng-show="create.seedSourceId == 'new'">
+              <label for="network-name" class="dbi">
+                <span>Testnet</span>
+                <ion-toggle ng-model="testnetEnabled" toggle-class="toggle-balanced" class="bct">
+                </ion-toggle>
+              </label>
+            </div>
+            <div class="oh" ng-show="create.seedSourceId == 'new'">
+              <label for="single-address" class="dbi">
+                <span class="db" translate>Single Address Wallet</span>
+                <small translate>For audit purposes</small>
+                <ion-toggle ng-model="singleAddressEnabled" toggle-class="toggle-balanced" class="bct">
+                </ion-toggle>
+              </label>
+            </div>
+          </div> <!-- columns -->
+        </div> <!-- advanced -->
+
+        <button type="submit" class="button round black expand" ng-show="totalCopayers != 1" ng-disabled="setupForm.$invalid">
           <span translate>Create {{requiredCopayers}}-of-{{totalCopayers}} wallet</span>
         </button>
-        
-	<button type="submit" class="button round black expand m0" ng-show="totalCopayers == 1" ng-disabled="setupForm.$invalid || create.loading || create.ledger">
+
+        <button type="submit" class="button round black expand" ng-show="totalCopayers == 1" ng-disabled="setupForm.$invalid">
           <span translate>Create new wallet</span>
         </button>
-      </div>
-    </div>
+
+      </div> <!-- large-12 columns -->
+    </div> <!-- row -->
   </form>
 </div>
 <div class="extra-margin-bottom"></div>

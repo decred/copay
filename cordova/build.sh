@@ -58,12 +58,10 @@ if [ ! -d $PROJECT ]; then
   echo "${OpenColor}${Green}* Creating project... ${CloseColor}"
   cordova create project com.bitpay.copay Copay
   checkOK
-
   cd $PROJECT
-
   if [ $CURRENT_OS == "ANDROID" ]; then
     echo "${OpenColor}${Green}* Adding Android platform... ${CloseColor}"
-    cordova platforms add android
+    cordova platforms add android@5.1.1
     checkOK
   fi
 
@@ -81,52 +79,83 @@ if [ ! -d $PROJECT ]; then
 
   echo "${OpenColor}${Green}* Installing plugins... ${CloseColor}"
 
-  cordova plugin add https://github.com/florentvaldelievre/virtualartifacts-webIntent.git
+  if [ $CURRENT_OS == "IOS" ]
+  then
+    cordova plugin add https://github.com/tjwoon/csZBar.git
+    checkOK
+  else
+    cordova plugin add https://github.com/jrontend/phonegap-plugin-barcodescanner
+    checkOK
+  fi
+
+  if [ $CURRENT_OS == "IOS" ]; then
+    cordova plugin add phonegap-plugin-push@1.5.3
+    checkOK
+  fi
+
+  if [ $CURRENT_OS == "ANDROID" ]; then
+    cordova plugin add phonegap-plugin-push@1.2.3
+    checkOK
+  fi
+
+  cordova plugin add cordova-plugin-globalization
   checkOK
 
-  cordova plugin add https://github.com/phonegap/phonegap-plugin-barcodescanner.git
+  cordova plugin add cordova.plugins.diagnostic
   checkOK
 
-  cordova plugin add org.apache.cordova.splashscreen
+  cordova plugin add cordova-plugin-splashscreen
   checkOK
 
-  cordova plugin add org.apache.cordova.statusbar
+  cordova plugin add cordova-plugin-statusbar
   checkOK
 
-  cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=bitcoin
+  cordova plugin add https://github.com/cmgustavo/Custom-URL-scheme.git --variable URL_SCHEME=bitcoin --variable SECOND_URL_SCHEME=copay
   checkOK
 
-  cordova plugin add org.apache.cordova.inappbrowser
+  cordova plugin add cordova-plugin-inappbrowser
   checkOK
 
-  cordova plugin add nl.x-services.plugins.toast && cordova prepare
+  cordova plugin add cordova-plugin-x-toast && cordova prepare
   checkOK
 
   cordova plugin add https://github.com/VersoSolutions/CordovaClipboard
   checkOK
 
-  cordova plugin add https://github.com/katzer/cordova-plugin-email-composer.git
-  checkOK
-
   cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git && cordova prepare
   checkOK
 
-  cordova plugin add hu.dpal.phonegap.plugins.spinnerdialog
+  cordova plugin add cordova-plugin-spinner-dialog
   checkOK
 
-  cordova plugin add org.apache.cordova.dialogs
+  cordova plugin add cordova-plugin-dialogs
   checkOK
 
-  cordova plugin add org.apache.cordova.network-information
+  cordova plugin add cordova-plugin-network-information
   checkOK
 
-  cordova plugin add org.apache.cordova.console
+  cordova plugin add cordova-plugin-console
   checkOK
 
-  cordova plugin add hu.dpal.phonegap.plugins.uniquedeviceid
+  cordova plugin add cordova-plugin-uniquedeviceid
   checkOK
 
-  cordova plugin add org.apache.cordova.file
+  cordova plugin add cordova-plugin-file
+  checkOK
+
+  cordova plugin add cordova-plugin-touch-id && cordova prepare
+  checkOK
+
+  cordova plugin add cordova-plugin-transport-security
+  checkOK
+
+  cordova plugin add cordova-ios-requires-fullscreen
+  checkOK
+
+  cordova plugin add cordova-plugin-disable-bitcode
+  checkOK
+
+  cordova plugin add cordova-plugin-android-fingerprint-auth
   checkOK
 
 fi
@@ -166,6 +195,9 @@ if [ $CURRENT_OS == "ANDROID" ]; then
 #  cp android/AndroidManifest.xml $PROJECT/platforms/android/AndroidManifest.xml
 #  checkOK
 
+  cp android/build-extras.gradle $PROJECT/platforms/android/build-extras.gradle
+  checkOK
+
   cp android/project.properties $PROJECT/platforms/android/project.properties
   checkOK
 
@@ -173,42 +205,22 @@ if [ $CURRENT_OS == "ANDROID" ]; then
   checkOK
 fi
 
-if [ $CURRENT_OS == "IOS" ]; then
-
-  echo "IOS project!!!"
-
-  mkdir -p $PROJECT/platforms/ios
-  checkOK
-
-  cp ios/Copay-Info.plist $PROJECT/platforms/ios/Copay-Info.plist
-  checkOK
-
-  mkdir -p $PROJECT/platforms/ios/Copay/Resources/icons
-  checkOK
-
-  mkdir -p $PROJECT/platforms/ios/Copay/Resources/splash
-  checkOK
-
-  cp -R ios/icons/* $PROJECT/platforms/ios/Copay/Resources/icons
-  checkOK
-
-  cp -R ios/splash/* $PROJECT/platforms/ios/Copay/Resources/splash
-  checkOK
-fi
-
 if [ $CURRENT_OS == "WP8" ]; then
   echo "Wp8 project!!!"
   cp -R $PROJECT/www/* $PROJECT/platforms/wp8/www
   checkOK
-  cp -vf wp/Properties/* $PROJECT/platforms/wp8/Properties/
-  cp -vf wp/Package.appxmanifest $PROJECT/platforms/wp8/
-  cp -vf wp/MainPage.xaml $PROJECT/platforms/wp8/
-  checkOK
-  cp -vf wp/Assets/* $PROJECT/platforms/wp8/Assets/
-  cp -vf wp/SplashScreenImage.jpg $PROJECT/platforms/wp8/
-  cp -vf wp/ApplicationIcon.png $PROJECT/platforms/wp8/
-  cp -vf wp/Background.png $PROJECT/platforms/wp8/
-  checkOK
+  if ! $CLEAR
+  then
+    cp -vf wp/Properties/* $PROJECT/platforms/wp8/Properties/
+    checkOK
+    cp -vf wp/MainPage.xaml $PROJECT/platforms/wp8/
+    checkOK
+    cp -vf wp/Package.appxmanifest $PROJECT/platforms/wp8/
+    checkOK
+    cp -vf wp/Assets/* $PROJECT/platforms/wp8/Assets/
+    cp -vf wp/SplashScreenImage.jpg $PROJECT/platforms/wp8/
+    cp -vf wp/ApplicationIcon.png $PROJECT/platforms/wp8/
+    cp -vf wp/Background.png $PROJECT/platforms/wp8/
+    checkOK
+  fi
 fi
-
-

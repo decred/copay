@@ -1,23 +1,24 @@
 'use strict';
 angular.module('copayApp.controllers').controller('glideraUriController',
-  function($scope, $stateParams, $timeout, profileService, glideraService, storageService, go) { 
+  function($scope, $log, $stateParams, $timeout, profileService, configService, glideraService, storageService, go, ongoingProcess) {
 
     this.submitOauthCode = function(code) {
-      var fc = profileService.focusedClient;
+      $log.debug('Glidera Oauth Code:' + code);
       var self = this;
-      this.loading = true;
+      var glideraTestnet = configService.getSync().glidera.testnet;
+      var network = glideraTestnet ? 'testnet' : 'livenet';
+      ongoingProcess.set('connectingGlidera', true);
       this.error = null;
       $timeout(function() {
         glideraService.getToken(code, function(err, data) {
-          self.loading = null;
+          ongoingProcess.set('connectingGlidera', false);
           if (err) {
             self.error = err;
             $timeout(function() {
-                $scope.$apply();
-              }, 100);
-          }
-          else if (data && data.access_token) {
-            storageService.setGlideraToken(fc.credentials.network, data.access_token, function() {
+              $scope.$apply();
+            }, 100);
+          } else if (data && data.access_token) {
+            storageService.setGlideraToken(network, data.access_token, function() {
               $scope.$emit('Local/GlideraUpdated', data.access_token);
               $timeout(function() {
                 go.path('glidera');
@@ -30,8 +31,13 @@ angular.module('copayApp.controllers').controller('glideraUriController',
     };
 
     this.checkCode = function() {
-      this.code = $stateParams.code;
-      this.submitOauthCode(this.code);
-    };
-
+      if ($stateParams.url) {
+        var match = $stateParams.url.match(/code=(.+)/);
+        if (match && match[1]) {
+          this.code = match[1];
+          return this.submitOauthCode(this.code);
+        }
+      }
+      $log.error('Bad state: ' + JSON.stringify($stateParams));
+    }
   });

@@ -1,6 +1,4 @@
-* Prise en charge des phrases de sauvegarde (BIP39)
-* Prise en charge de BIP44
-* Prise en charge des adresses non-multisig pour les portefeuilles personnels (1-sur-1)
-* Détails avancés du portefeuille
-* Prise en charge de Ledger pour les portefeuilles multisig
-* Corrections de bugs mineurs
+* Amélioration de certaines icônes
+* Amélioration minime de l'interface graphique sur "Recevoir"
+* Mise à jour des traductions
+* Corrections de bugs

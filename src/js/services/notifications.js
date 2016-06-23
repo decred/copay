@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('copayApp.services').
-factory('notification', ['$timeout',
-  function($timeout) {
+factory('notification', function($timeout, platformInfo) {
 
+    var isCordova = platformInfo.isCordova;
     var notifications = [];
 
     /*
@@ -225,7 +225,7 @@ factory('notification', ['$timeout',
           window.navigator.vibrate([200, 100, 200]);
         };
 
-        if (document.hidden && (type == 'info' || type == 'funds')) {
+        if (document.hidden && (type == 'info' || type == 'funds') && !isCordova) {
           new window.Notification(title, {
             body: content,
             icon: 'img/notification.png'
@@ -257,7 +257,7 @@ factory('notification', ['$timeout',
 
     };
   }
-]).directive('notifications', function(notification, $compile) {
+).directive('notifications', function(notification, $compile) {
   /**
    *
    * It should also parse the arguments passed to it that specify

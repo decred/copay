@@ -1,65 +1,79 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('walletHomeController', function($scope, $rootScope, $timeout, $filter, $modal, $log, notification, txStatus, isCordova, profileService, lodash, configService, rateService, storageService, bitcore, isChromeApp, gettext, gettextCatalog, nodeWebkit, addressService, ledger, feeService, bwsError, confirmDialog, txFormatService) {
+angular.module('copayApp.controllers').controller('walletHomeController', function($scope, $rootScope, $interval, $timeout, $filter, $log, $ionicModal, notification, txStatus, profileService, lodash, configService, rateService, storageService, bitcore, gettext, gettextCatalog, platformInfo, addressService, ledger, bwsError, confirmDialog, txFormatService, addressbookService, go, feeService, walletService, fingerprintService, nodeWebkit, ongoingProcess) {
+
+  var isCordova = platformInfo.isCordova;
+  var isWP = platformInfo.isWP;
+  var isAndroid = platformInfo.isAndroid;
+  var isChromeApp = platformInfo.isChromeApp;
 
   var self = this;
-  $rootScope.hideMenuBar = false;
+  $rootScope.shouldHideMenuBar = false;
   $rootScope.wpInputFocused = false;
-  $scope.currentSpendUnconfirmed = configService.getSync().wallet.spendUnconfirmed;
+  var config = configService.getSync();
+  var configWallet = config.wallet;
+  var walletSettings = configWallet.settings;
+  var ret = {};
 
-  // INIT
-  var config = configService.getSync().wallet.settings;
-  this.unitToSatoshi = config.unitToSatoshi;
-  this.satToUnit = 1 / this.unitToSatoshi;
-  this.unitName = config.unitName;
-  this.alternativeIsoCode = config.alternativeIsoCode;
-  this.alternativeName = config.alternativeName;
-  this.alternativeAmount = 0;
-  this.unitDecimals = config.unitDecimals;
-  this.isCordova = isCordova;
-  this.addresses = [];
-  this.isMobile = isMobile.any();
-  this.isWindowsPhoneApp = isMobile.Windows() && isCordova;
-  this.blockUx = false;
-  this.isRateAvailable = false;
-  this.showScanner = false;
-  this.isMobile = isMobile.any();
-  this.addr = {};
-
-  // DISABLE ANIMATION ON CHROMEAPP
-  if (isChromeApp) {
-    var animatedSlideUp = 'full';
-    var animatedSlideRight = 'full';
-  } else {
-    var animatedSlideUp = 'full animated slideInUp';
-    var animatedSlideRight = 'full animated slideInRight';
-  }
+  // INIT. Global value
+  ret.unitToSatoshi = walletSettings.unitToSatoshi;
+  ret.satToUnit = 1 / ret.unitToSatoshi;
+  ret.unitName = walletSettings.unitName;
+  ret.alternativeIsoCode = walletSettings.alternativeIsoCode;
+  ret.alternativeName = walletSettings.alternativeName;
+  ret.alternativeAmount = 0;
+  ret.unitDecimals = walletSettings.unitDecimals;
+  ret.isCordova = isCordova;
+  ret.addresses = [];
+  ret.isMobile = platformInfo.isMobile;
+  ret.isWindowsPhoneApp = platformInfo.isWP;
+  ret.countDown = null;
+  ret.sendMaxInfo = {};
+  var vanillaScope = ret;
 
   var disableScannerListener = $rootScope.$on('dataScanned', function(event, data) {
     self.setForm(data);
     $rootScope.$emit('Local/SetTab', 'send');
 
     var form = $scope.sendForm;
-    if (form.address.$invalid && !self.blockUx) {
+    if (form.address.$invalid && !ongoingProcess.get('fetchingPayPro')) {
       self.resetForm();
       self.error = gettext('Could not recognize a valid Decred QR Code');
     }
   });
 
   var disablePaymentUriListener = $rootScope.$on('paymentUri', function(event, uri) {
+    $rootScope.$emit('Local/SetTab', 'send');
     $timeout(function() {
-      $rootScope.$emit('Local/SetTab', 'send');
       self.setForm(uri);
     }, 100);
   });
 
-  var disableAddrListener = $rootScope.$on('Local/NeedNewAddress', function() {
+  var disableAddrListener = $rootScope.$on('Local/AddressIsUsed', function() {
     self.setAddress(true);
   });
 
-  var disableFocusListener = $rootScope.$on('Local/NewFocusedWallet', function() {
-    self.addr = {};
+  var disableFocusListener = $rootScope.$on('Local/NewFocusedWalletReady', function() {
+    self.addr = null;
     self.resetForm();
+    $scope.search = '';
+
+    if (profileService.focusedClient && profileService.focusedClient.isComplete()) {
+      self.setAddress();
+      self.setSendFormInputs();
+    }
+
+    $log.debug('Cleaning WalletHome Instance');
+    lodash.each(self, function(v, k) {
+      if (lodash.isFunction(v)) return;
+      if (!lodash.isUndefined(vanillaScope[k])) {
+        self[k] = vanillaScope[k];
+        return;
+      }
+      if (k == 'isRateAvailable') return;
+
+      delete self[k];
+    });
   });
 
   var disableResumeListener = $rootScope.$on('Local/Resume', function() {
@@ -79,10 +93,6 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     };
   });
 
-  var disableOngoingProcessListener = $rootScope.$on('Addon/OngoingProcess', function(e, name) {
-    self.setOngoingProcess(name);
-  });
-
   $scope.$on('$destroy', function() {
     disableAddrListener();
     disableScannerListener();
@@ -90,314 +100,76 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     disableTabListener();
     disableFocusListener();
     disableResumeListener();
-    disableOngoingProcessListener();
-    $rootScope.hideMenuBar = false;
+    $rootScope.shouldHideMenuBar = false;
   });
+
+  this.onQrCodeScanned = function(data) {
+    if (data) go.send();
+    $rootScope.$emit('dataScanned', data);
+  };
 
   rateService.whenAvailable(function() {
     self.isRateAvailable = true;
     $rootScope.$digest();
   });
 
+  var getClipboard = function(cb) {
+    if (!isCordova || platformInfo.isWP) return cb();
+
+    window.cordova.plugins.clipboard.paste(function(value) {
+      var fc = profileService.focusedClient;
+      var Address = bitcore.Address;
+      var networkName = fc.credentials.network;
+      if (Address.isValid(value, networkName) && !$scope.newAddress) {
+        return cb(value);
+      }
+    });
+  };
+
+  var handleEncryptedWallet = function(client, cb) {
+    if (!walletService.isEncrypted(client)) return cb();
+    $rootScope.$emit('Local/NeedsPassword', false, function(err, password) {
+      if (err) return cb(err);
+      return cb(walletService.unlock(client, password));
+    });
+  };
+
   var accept_msg = gettextCatalog.getString('Accept');
   var cancel_msg = gettextCatalog.getString('Cancel');
   var confirm_msg = gettextCatalog.getString('Confirm');
 
-  $scope.openCopayersModal = function(copayers, copayerId) {
-    var fc = profileService.focusedClient;
+  this.openAddressbookModal = function(wallets, address) {
+    $scope.wallets = wallets;
+    $scope.address = address;
+    $scope.self = self;
 
-    var ModalInstanceCtrl = function($scope, $modalInstance) {
-      $scope.copayers = copayers;
-      $scope.copayerId = copayerId;
-      $scope.color = fc.backgroundColor;
-      $scope.cancel = function() {
-        $modalInstance.dismiss('cancel');
-      };
-    };
-    var modalInstance = $modal.open({
-      templateUrl: 'views/modals/copayers.html',
-      windowClass: animatedSlideUp,
-      controller: ModalInstanceCtrl,
-    });
-
-    modalInstance.result.finally(function() {
-      var m = angular.element(document.getElementsByClassName('reveal-modal'));
-      m.addClass('slideOutDown');
-    });
-  };
-
-
-  $scope.openWalletsModal = function(wallets) {
-
-    var ModalInstanceCtrl = function($scope, $modalInstance) {
-      $scope.wallets = wallets;
-      $scope.cancel = function() {
-        $modalInstance.dismiss('cancel');
-      };
-
-      $scope.selectWallet = function(walletId, walletName) {
-        $scope.gettingAddress = true;
-        $scope.selectedWalletName = walletName;
-        $timeout(function() {
-          $scope.$apply();
-        });
-        addressService.getAddress(walletId, false, function(err, addr) {
-          $scope.gettingAddress = false;
-
-          if (err) {
-            self.error = err;
-            $modalInstance.dismiss('cancel');
-            return;
-          }
-
-          $modalInstance.close(addr);
-        });
-      };
-    };
-
-    var modalInstance = $modal.open({
-      templateUrl: 'views/modals/wallets.html',
-      windowClass: animatedSlideUp,
-      controller: ModalInstanceCtrl,
-    });
-
-    modalInstance.result.finally(function() {
-      var m = angular.element(document.getElementsByClassName('reveal-modal'));
-      m.addClass('slideOutDown');
-    });
-
-    modalInstance.result.then(function(addr) {
-      if (addr) {
-        self.setForm(addr);
-      }
+    $ionicModal.fromTemplateUrl('views/modals/addressbook.html', {
+      scope: $scope
+    }).then(function(modal) {
+      $scope.addressbookModal = modal;
+      $scope.addressbookModal.show();
     });
   };
 
   var GLIDERA_LOCK_TIME = 6 * 60 * 60;
-  // isGlidera flag is a security mesure so glidera status is not
+  // isGlidera flag is a security measure so glidera status is not
   // only determined by the tx.message
   this.openTxpModal = function(tx, copayers, isGlidera) {
-    var fc = profileService.focusedClient;
-    var refreshUntilItChanges = false;
-    var currentSpendUnconfirmed = $scope.currentSpendUnconfirmed;
-    var ModalInstanceCtrl = function($scope, $modalInstance) {
-      $scope.error = null;
-      $scope.copayers = copayers
-      $scope.copayerId = fc.credentials.copayerId;
-      $scope.canSign = fc.canSign() || fc.isPrivKeyExternal();
-      $scope.loading = null;
-      $scope.color = fc.backgroundColor;
+    $scope.self = self;
+    $scope.tx = tx;
+    $scope.copayers = copayers;
+    $scope.isGlidera = isGlidera;
+    $scope.error = null;
+    $scope.loading = null;
+    $scope.paymentExpired = null;
+    $scope.currentSpendUnconfirmed = configWallet.spendUnconfirmed;
 
-      // ToDo: use tx.customData instead of tx.message
-      if (tx.message === 'Glidera transaction' && isGlidera) {
-        tx.isGlidera = true;
-        if (tx.canBeRemoved) {
-          tx.canBeRemoved = (Date.now() / 1000 - (tx.ts || tx.createdOn)) > GLIDERA_LOCK_TIME;
-        }
-      }
-      $scope.tx = tx;
-
-      refreshUntilItChanges = false;
-      $scope.currentSpendUnconfirmed = currentSpendUnconfirmed;
-
-      $scope.getShortNetworkName = function() {
-        return fc.credentials.networkName.substring(4, fc.credentials.networkName.length);
-      };
-      lodash.each(['TxProposalRejectedBy', 'TxProposalAcceptedBy', 'transactionProposalRemoved', 'TxProposalRemoved', 'NewOutgoingTx', 'UpdateTx'], function(eventName) {
-        $rootScope.$on(eventName, function() {
-          fc.getTx($scope.tx.id, function(err, tx) {
-            if (err) {
-
-              if (err.code && err.code == 'TX_NOT_FOUND' &&
-                (eventName == 'transactionProposalRemoved' || eventName == 'TxProposalRemoved')) {
-                $scope.tx.removed = true;
-                $scope.tx.canBeRemoved = false;
-                $scope.tx.pendingForUs = false;
-                $scope.$apply();
-                return;
-              }
-              return;
-            }
-
-            var action = lodash.find(tx.actions, {
-              copayerId: fc.credentials.copayerId
-            });
-            $scope.tx = txFormatService.processTx(tx);
-            if (!action && tx.status == 'pending')
-              $scope.tx.pendingForUs = true;
-            $scope.updateCopayerList();
-            $scope.$apply();
-          });
-        });
-      });
-
-      $scope.updateCopayerList = function() {
-        lodash.map($scope.copayers, function(cp) {
-          lodash.each($scope.tx.actions, function(ac) {
-            if (cp.id == ac.copayerId) {
-              cp.action = ac.type;
-            }
-          });
-        });
-      };
-
-      $scope.sign = function(txp) {
-        var fc = profileService.focusedClient;
-
-        if (!fc.canSign() && !fc.isPrivKeyExternal())
-          return;
-
-        if (fc.isPrivKeyEncrypted()) {
-          profileService.unlockFC(function(err) {
-            if (err) {
-              $scope.error = bwsError.msg(err);
-              return;
-            }
-            return $scope.sign(txp);
-          });
-          return;
-        };
-        self._setOngoingForSigning();
-
-        $scope.loading = true;
-        $scope.error = null;
-        $timeout(function() {
-          profileService.signTxProposal(txp, function(err, txpsi) {
-            self.setOngoingProcess();
-            if (err) {
-              $scope.$emit('UpdateTx');
-              $scope.loading = false;
-              $scope.error = bwsError.msg(err, gettextCatalog.getString('Could not accept payment'));
-              $scope.$digest();
-            } else {
-              //if txp has required signatures then broadcast it
-              var txpHasRequiredSignatures = txpsi.status == 'accepted';
-              if (txpHasRequiredSignatures) {
-                self.setOngoingProcess(gettext('Broadcasting transaction'));
-                $scope.loading = true;
-                fc.broadcastTxProposal(txpsi, function(err, txpsb, memo) {
-                  self.setOngoingProcess();
-                  $scope.loading = false;
-                  if (err) {
-                    $scope.$emit('UpdateTx');
-                    $scope.error = bwsError.msg(err, gettextCatalog.getString('Could not broadcast payment'));
-                    $scope.$digest();
-                  } else {
-                    $log.debug('Transaction signed and broadcasted')
-                    if (memo)
-                      $log.info(memo);
-
-                    refreshUntilItChanges = true;
-                    $modalInstance.close(txpsb);
-                  }
-                });
-              } else {
-                $scope.loading = false;
-                $modalInstance.close(txpsi);
-              }
-            }
-          });
-        }, 100);
-      };
-
-      $scope.reject = function(txp) {
-        self.setOngoingProcess(gettext('Rejecting payment'));
-        $scope.loading = true;
-        $scope.error = null;
-        $timeout(function() {
-          fc.rejectTxProposal(txp, null, function(err, txpr) {
-            self.setOngoingProcess();
-            $scope.loading = false;
-            if (err) {
-              $scope.$emit('UpdateTx');
-              $scope.error = bwsError.msg(err, gettextCatalog.getString('Could not reject payment'));
-              $scope.$digest();
-            } else {
-              $modalInstance.close(txpr);
-            }
-          });
-        }, 100);
-      };
-
-
-      $scope.remove = function(txp) {
-        self.setOngoingProcess(gettext('Deleting payment'));
-        $scope.loading = true;
-        $scope.error = null;
-        $timeout(function() {
-          fc.removeTxProposal(txp, function(err, txpb) {
-            self.setOngoingProcess();
-            $scope.loading = false;
-
-            // Hacky: request tries to parse an empty response
-            if (err && !(err.message && err.message.match(/Unexpected/))) {
-              $scope.$emit('UpdateTx');
-              $scope.error = bwsError.msg(err, gettextCatalog.getString('Could not delete payment proposal'));
-              $scope.$digest();
-              return;
-            }
-            $modalInstance.close();
-          });
-        }, 100);
-      };
-
-      $scope.broadcast = function(txp) {
-        self.setOngoingProcess(gettext('Broadcasting Payment'));
-        $scope.loading = true;
-        $scope.error = null;
-        $timeout(function() {
-          fc.broadcastTxProposal(txp, function(err, txpb, memo) {
-            self.setOngoingProcess();
-            $scope.loading = false;
-            if (err) {
-              $scope.error = bwsError.msg(err, gettextCatalog.getString('Could not broadcast payment'));
-              $scope.$digest();
-            } else {
-
-              if (memo)
-                $log.info(memo);
-
-              refreshUntilItChanges = true;
-              $modalInstance.close(txpb);
-            }
-          });
-        }, 100);
-      };
-
-      $scope.copyAddress = function(addr) {
-        if (!addr) return;
-        self.copyAddress(addr);
-      };
-
-      $scope.cancel = function() {
-        $modalInstance.dismiss('cancel');
-      };
-    };
-
-    var modalInstance = $modal.open({
-      templateUrl: 'views/modals/txp-details.html',
-      windowClass: animatedSlideRight,
-      controller: ModalInstanceCtrl,
+    $ionicModal.fromTemplateUrl('views/modals/txp-details.html', {
+      scope: $scope
+    }).then(function(modal) {
+      $scope.txpDetailsModal = modal;
+      $scope.txpDetailsModal.show();
     });
-
-    modalInstance.result.finally(function() {
-      var m = angular.element(document.getElementsByClassName('reveal-modal'));
-      m.addClass('slideOutRight');
-    });
-
-    modalInstance.result.then(function(txp) {
-      self.setOngoingProcess();
-      if (txp) {
-        txStatus.notify(txp, function() {
-          $scope.$emit('Local/TxProposalAction', refreshUntilItChanges);
-        });
-      } else {
-        $timeout(function() {
-          $scope.$emit('Local/TxProposalAction', refreshUntilItChanges);
-        }, 100);
-      }
-    });
-
   };
 
   this.setAddress = function(forceNew) {
@@ -407,7 +179,7 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
       return;
 
     // Address already set?
-    if (!forceNew && self.addr[fc.credentials.walletId]) {
+    if (!forceNew && self.addr) {
       return;
     }
 
@@ -420,7 +192,7 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
           self.addrError = err;
         } else {
           if (addr)
-            self.addr[fc.credentials.walletId] = addr;
+            self.addr = addr;
         }
 
         $scope.$digest();
@@ -428,131 +200,37 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     });
   };
 
-  this.copyAddress = function(addr) {
+  this.copyToClipboard = function(addr) {
     if (isCordova) {
       window.cordova.plugins.clipboard.copy(addr);
       window.plugins.toast.showShortCenter(gettextCatalog.getString('Copied to clipboard'));
-    } else if (nodeWebkit.isDefined()) {
+    } else if (platformInfo.isNW) {
       nodeWebkit.writeToClipboard(addr);
     }
   };
 
   this.shareAddress = function(addr) {
     if (isCordova) {
-      if (isMobile.Android() || isMobile.Windows()) {
-        window.ignoreMobilePause = true;
-      }
       window.plugins.socialsharing.share('decred:' + addr, null, null, null);
     }
   };
 
   this.openCustomizedAmountModal = function(addr) {
-    var self = this;
     var fc = profileService.focusedClient;
-    var ModalInstanceCtrl = function($scope, $modalInstance) {
-      $scope.addr = addr;
-      $scope.color = fc.backgroundColor;
-      $scope.unitName = self.unitName;
-      $scope.alternativeAmount = self.alternativeAmount;
-      $scope.alternativeName = self.alternativeName;
-      $scope.alternativeIsoCode = self.alternativeIsoCode;
-      $scope.isRateAvailable = self.isRateAvailable;
-      $scope.unitToSatoshi = self.unitToSatoshi;
-      $scope.unitDecimals = self.unitDecimals;
-      var satToUnit = 1 / self.unitToSatoshi;
-      $scope.showAlternative = false;
-      $scope.isCordova = isCordova;
 
-      Object.defineProperty($scope,
-        "_customAlternative", {
-          get: function() {
-            return $scope.customAlternative;
-          },
-          set: function(newValue) {
-            $scope.customAlternative = newValue;
-            if (typeof(newValue) === 'number' && $scope.isRateAvailable) {
-              $scope.customAmount = parseFloat((rateService.fromFiat(newValue, $scope.alternativeIsoCode) * satToUnit).toFixed($scope.unitDecimals), 10);
-            } else {
-              $scope.customAmount = null;
-            }
-          },
-          enumerable: true,
-          configurable: true
-        });
+    $scope.color = fc.backgroundColor;
+    $scope.self = self;
+    $scope.addr = addr;
 
-      Object.defineProperty($scope,
-        "_customAmount", {
-          get: function() {
-            return $scope.customAmount;
-          },
-          set: function(newValue) {
-            $scope.customAmount = newValue;
-            if (typeof(newValue) === 'number' && $scope.isRateAvailable) {
-              $scope.customAlternative = parseFloat((rateService.toFiat(newValue * $scope.unitToSatoshi, $scope.alternativeIsoCode)).toFixed(2), 10);
-            } else {
-              $scope.customAlternative = null;
-            }
-            $scope.alternativeAmount = $scope.customAlternative;
-          },
-          enumerable: true,
-          configurable: true
-        });
-
-      $scope.submitForm = function(form) {
-        var satToBtc = 1 / 100000000;
-        var amount = form.amount.$modelValue;
-        var amountSat = parseInt((amount * $scope.unitToSatoshi).toFixed(0));
-        $timeout(function() {
-          $scope.customizedAmountUnit = amount + ' ' + $scope.unitName;
-	  // Until we support alternative currenties (i.e., USD), this line is an issue.
-          //$scope.customizedAlternativeUnit = $filter('noFractionNumber')(form.alternative.$modelValue, 2) + ' ' + $scope.alternativeIsoCode;
-          if ($scope.unitName == 'atoms') {
-            amount = (amountSat * satToBtc).toFixed(8);
-          }
-          $scope.customizedAmountBtc = amount;
-        }, 1);
-      };
-
-      $scope.toggleAlternative = function() {
-        $scope.showAlternative = !$scope.showAlternative;
-      };
-
-      $scope.shareAddress = function(uri) {
-        if (isCordova) {
-          if (isMobile.Android() || isMobile.Windows()) {
-            window.ignoreMobilePause = true;
-          }
-          window.plugins.socialsharing.share(uri, null, null, null);
-        }
-      };
-
-      $scope.cancel = function() {
-        $modalInstance.dismiss('cancel');
-      };
-    };
-
-    var modalInstance = $modal.open({
-      templateUrl: 'views/modals/customized-amount.html',
-      windowClass: animatedSlideUp,
-      controller: ModalInstanceCtrl,
-    });
-
-    modalInstance.result.finally(function() {
-      var m = angular.element(document.getElementsByClassName('reveal-modal'));
-      m.addClass('slideOutDown');
+    $ionicModal.fromTemplateUrl('views/modals/customized-amount.html', {
+      scope: $scope
+    }).then(function(modal) {
+      $scope.customAmountModal = modal;
+      $scope.customAmountModal.show();
     });
   };
 
-  // Send 
-
-  var unwatchSpendUnconfirmed = $scope.$watch('currentSpendUnconfirmed', function(newVal, oldVal) {
-    if (newVal == oldVal) return;
-    $scope.currentSpendUnconfirmed = newVal;
-  });
-
-  $scope.$on('$destroy', function() {
-    unwatchSpendUnconfirmed();
-  });
+  // Send
 
   this.canShowAlternative = function() {
     return $scope.showAlternative;
@@ -581,7 +259,7 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
 
     // on touchdown elements
     $log.debug('Binding touchstart elements...');
-    ['hamburger', 'menu-walletHome', 'menu-send', 'menu-receive', 'menu-history'].forEach(function(id) {
+    ['hamburger', 'menu-walletHome', 'menu-send', 'menu-receive'].forEach(function(id) {
       var e = document.getElementById(id);
       if (e) e.addEventListener('touchstart', function() {
         try {
@@ -594,10 +272,10 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
 
   this.hideMenuBar = lodash.debounce(function(hide) {
     if (hide) {
-      $rootScope.hideMenuBar = true;
+      $rootScope.shouldHideMenuBar = true;
       this.bindTouchDown();
     } else {
-      $rootScope.hideMenuBar = false;
+      $rootScope.shouldHideMenuBar = false;
     }
     $rootScope.$digest();
   }, 100);
@@ -607,6 +285,20 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     if (isCordova && !this.isWindowsPhoneApp) {
       this.hideMenuBar(what);
     }
+
+    var self = this;
+    if (isCordova && !this.isWindowsPhoneApp && what == 'address') {
+      getClipboard(function(value) {
+        if (value) {
+          document.getElementById("amount").focus();
+          $timeout(function() {
+            window.plugins.toast.showShortCenter(gettextCatalog.getString('Pasted from clipboard'));
+            self.setForm(value);
+          }, 100);
+        }
+      });
+    }
+
     if (!this.isWindowsPhoneApp) return
 
     if (!what) {
@@ -676,6 +368,9 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
         },
         set: function(newValue) {
           $scope.__address = self.onAddressChange(newValue);
+          if ($scope.sendForm && $scope.sendForm.address.$valid) {
+            self.lockAddress = true;
+          }
         },
         enumerable: true,
         configurable: true
@@ -698,33 +393,15 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     }, 1);
   };
 
-
-  this.setOngoingProcess = function(name) {
-    var self = this;
-    self.blockUx = !!name;
-
-    if (isCordova) {
-      if (name) {
-        window.plugins.spinnerDialog.hide();
-        window.plugins.spinnerDialog.show(null, name + '...', true);
-      } else {
-        window.plugins.spinnerDialog.hide();
-      }
-    } else {
-      self.onGoingProcess = name;
-      $timeout(function() {
-        $rootScope.$apply();
-      });
-    };
-  };
-
-  this.setFee = function(level) {
-    this.currentSendFeeLevel = level;
-  };
-
   this.submitForm = function() {
-    var fc = profileService.focusedClient;
+    if (!$scope._amount || !$scope._address) return;
+    var client = profileService.focusedClient;
     var unitToSat = this.unitToSatoshi;
+    var currentSpendUnconfirmed = configWallet.spendUnconfirmed;
+
+    var outputs = [];
+
+    this.resetError();
 
     if (isCordova && this.isWindowsPhoneApp) {
       this.hideAddress = false;
@@ -732,29 +409,21 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     }
 
     var form = $scope.sendForm;
-    if (form.$invalid) {
-      this.error = gettext('Unable to send transaction proposal');
-      return;
-    }
-
-    if (fc.isPrivKeyEncrypted()) {
-      profileService.unlockFC(function(err) {
-        if (err) return self.setSendError(err);
-        return self.submitForm();
-      });
-      return;
-    };
-
     var comment = form.comment.$modelValue;
 
     // ToDo: use a credential's (or fc's) function for this
-    if (comment && !fc.credentials.sharedEncryptingKey) {
+    if (comment && !client.credentials.sharedEncryptingKey) {
       var msg = 'Could not add message to imported wallet without shared encrypting key';
       $log.warn(msg);
       return self.setSendError(gettext(msg));
     }
 
-    self.setOngoingProcess(gettext('Creating transaction'));
+    if (form.amount.$modelValue * unitToSat >  Number.MAX_SAFE_INTEGER) {
+      var msg = 'Amount too big';
+      $log.warn(msg);
+      return self.setSendError(gettext(msg));
+    };
+
     $timeout(function() {
       var paypro = self._paypro;
       var address, amount;
@@ -762,104 +431,146 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
       address = form.address.$modelValue;
       amount = parseInt((form.amount.$modelValue * unitToSat).toFixed(0));
 
-      var getFee = function(cb) {
-        if (form.feePerKb) {
-          cb(null, form.feePerKb);
-        } else {
-          feeService.getCurrentFeeValue(self.currentSendFeeLevel, cb);
-        }
-      };
+      outputs.push({
+        'toAddress': address,
+        'amount': amount,
+        'message': comment
+      });
 
-      getFee(function(err, feePerKb) {
-        if (err) $log.debug(err);
-        fc.sendTxProposal({
-          toAddress: address,
-          amount: amount,
-          message: comment,
-          payProUrl: paypro ? paypro.url : null,
-          feePerKb: feePerKb,
-          excludeUnconfirmedUtxos: $scope.currentSpendUnconfirmed ? false : true
-        }, function(err, txp) {
+      var txp = {};
+
+      if (!lodash.isEmpty(self.sendMaxInfo)) {
+        txp.sendMax = true;
+        txp.inputs = self.sendMaxInfo.inputs;
+        txp.fee = self.sendMaxInfo.fee;
+      } else {
+        txp.amount = amount;
+      }
+
+      txp.toAddress = address;
+      txp.outputs = outputs;
+      txp.message = comment;
+      txp.payProUrl = paypro ? paypro.url : null;
+      txp.excludeUnconfirmedUtxos = configWallet.spendUnconfirmed ? false : true;
+      txp.feeLevel = walletSettings.feeLevel || 'normal';
+
+      ongoingProcess.set('creatingTx', true);
+      walletService.createTx(client, txp, function(err, createdTxp) {
+        ongoingProcess.set('creatingTx', false);
+        if (err) {
+          return self.setSendError(err);
+        }
+
+        if (!client.canSign() && !client.isPrivKeyExternal()) {
+          $log.info('No signing proposal: No private key');
+          self.resetForm();
+          var type = txStatus.notify(createdTxp);
+          $scope.openStatusModal(type, createdTxp, function() {
+            return $scope.$emit('Local/TxProposalAction');
+          });
+        } else {
+          $rootScope.$emit('Local/NeedsConfirmation', createdTxp, function(accept) {
+            if (accept) self.confirmTx(createdTxp);
+            else self.resetForm();
+          });
+        }
+      });
+
+    }, 100);
+  };
+
+  this.confirmTx = function(txp) {
+    var client = profileService.focusedClient;
+    var self = this;
+
+    fingerprintService.check(client, function(err) {
+      if (err) {
+        return self.setSendError(err);
+      }
+
+      handleEncryptedWallet(client, function(err) {
+        if (err) {
+          return self.setSendError(err);
+        }
+
+        ongoingProcess.set('sendingTx', true);
+        walletService.publishTx(client, txp, function(err, publishedTxp) {
+          ongoingProcess.set('sendingTx', false);
           if (err) {
-            self.setOngoingProcess();
-            profileService.lockFC();
             return self.setSendError(err);
           }
 
-          if (!fc.canSign() && !fc.isPrivKeyExternal()) {
-            $log.info('No signing proposal: No private key')
-            self.setOngoingProcess();
-            self.resetForm();
-            txStatus.notify(txp, function() {
-              return $scope.$emit('Local/TxProposalAction');
-            });
-            return;
-          }
-
-          self.signAndBroadcast(txp, function(err) {
-            self.setOngoingProcess();
-            self.resetForm();
+          ongoingProcess.set('signingTx', true);
+          walletService.signTx(client, publishedTxp, function(err, signedTxp) {
+            ongoingProcess.set('signingTx', false);
+            walletService.lock(client);
             if (err) {
-              self.error = err.message ? err.message : gettext('The payment was created but could not be completed. Please try again from home screen');
               $scope.$emit('Local/TxProposalAction');
-              $timeout(function() {
-                $scope.$digest();
-              }, 1);
+              return self.setSendError(
+                err.message ?
+                err.message :
+                gettext('The payment was created but could not be completed. Please try again from home screen'));
+            }
+
+            if (signedTxp.status == 'accepted') {
+              ongoingProcess.set('broadcastingTx', true);
+              walletService.broadcastTx(client, signedTxp, function(err, broadcastedTxp) {
+                ongoingProcess.set('broadcastingTx', false);
+                if (err) {
+                  return self.setSendError(err);
+                }
+                self.resetForm();
+                go.walletHome();
+                var type = txStatus.notify(broadcastedTxp);
+                $scope.openStatusModal(type, broadcastedTxp, function() {
+                  $scope.$emit('Local/TxProposalAction', broadcastedTxp.status == 'broadcasted');
+                });
+              });
+            } else {
+              self.resetForm();
+              go.walletHome();
+              var type = txStatus.notify(signedTxp);
+              $scope.openStatusModal(type, signedTxp, function() {
+                $scope.$emit('Local/TxProposalAction');
+              });
             }
           });
         });
       });
-    }, 100);
-  };
-
-  this._setOngoingForSigning = function() {
-    var fc = profileService.focusedClient;
-
-    if (fc.isPrivKeyExternal() && fc.getPrivKeyExternalSourceName() == 'ledger') {
-      self.setOngoingProcess(gettext('Requesting Ledger Wallet to sign'));
-    } else {
-      self.setOngoingProcess(gettext('Signing payment'));
-    }
-  };
-
-  this.signAndBroadcast = function(txp, cb) {
-    var fc = profileService.focusedClient;
-
-    this._setOngoingForSigning();
-    profileService.signTxProposal(txp, function(err, signedTx) {
-      self.setOngoingProcess();
-      if (err) {
-        err.message = bwsError.msg(err, gettextCatalog.getString('The payment was created but could not be signed. Please try again from home screen'));
-        return cb(err);
-      }
-
-      if (signedTx.status == 'accepted') {
-        self.setOngoingProcess(gettext('Broadcasting transaction'));
-        fc.broadcastTxProposal(signedTx, function(err, btx, memo) {
-          self.setOngoingProcess();
-          if (err) {
-            err.message = bwsError.msg(err, gettextCatalog.getString('The payment was signed but could not be broadcasted. Please try again from home screen'));
-            return cb(err);
-          }
-          if (memo)
-            $log.info(memo);
-
-          txStatus.notify(btx, function() {
-            $scope.$emit('Local/TxProposalAction', true);
-            return cb();
-          });
-        });
-      } else {
-        self.setOngoingProcess();
-        txStatus.notify(signedTx, function() {
-          $scope.$emit('Local/TxProposalAction');
-          return cb();
-        });
-      }
     });
   };
 
-  this.setForm = function(to, amount, comment, feeRate) {
+  $scope.openStatusModal = function(type, txp, cb) {
+    var fc = profileService.focusedClient;
+    $scope.type = type;
+    $scope.tx = txFormatService.processTx(txp);
+    $scope.color = fc.backgroundColor;
+    $scope.cb = cb;
+
+    $ionicModal.fromTemplateUrl('views/modals/tx-status.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.txStatusModal = modal;
+      $scope.txStatusModal.show();
+    });
+  };
+
+  $scope.openSearchModal = function() {
+    var fc = profileService.focusedClient;
+    $scope.color = fc.backgroundColor;
+    $scope.self = self;
+
+    $ionicModal.fromTemplateUrl('views/modals/search.html', {
+      scope: $scope,
+      focusFirstInput: true
+    }).then(function(modal) {
+      $scope.searchModal = modal;
+      $scope.searchModal.show();
+    });
+  };
+
+  this.setForm = function(to, amount, comment) {
     var form = $scope.sendForm;
     if (to) {
       form.address.$setViewValue(to);
@@ -880,31 +591,20 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
       form.comment.$isValid = true;
       form.comment.$render();
     }
-
-    if (feeRate) {
-      form.feeRate = feeRate;
-    }
   };
-
-
 
   this.resetForm = function() {
     this.resetError();
+    this.sendMaxInfo = {};
+    if (this.countDown) $interval.cancel(this.countDown);
     this._paypro = null;
 
     this.lockAddress = false;
     this.lockAmount = false;
-    this.currentSendFeeLevel = null;
-    this.hideAdvSend = true;
-    $scope.currentSpendUnconfirmed = configService.getSync().wallet.spendUnconfirmed;
 
     this._amount = this._address = null;
 
     var form = $scope.sendForm;
-
-    if (form && form.feeRate) {
-      form.feeRate = null;
-    }
 
     if (form && form.amount) {
       form.amount.$pristine = true;
@@ -927,30 +627,16 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
   };
 
   this.openPPModal = function(paypro) {
-    var ModalInstanceCtrl = function($scope, $modalInstance) {
-      var fc = profileService.focusedClient;
-      var satToUnit = 1 / self.unitToSatoshi;
-      $scope.paypro = paypro;
-      $scope.alternative = self.alternativeAmount;
-      $scope.alternativeIsoCode = self.alternativeIsoCode;
-      $scope.isRateAvailable = self.isRateAvailable;
-      $scope.unitTotal = (paypro.amount * satToUnit).toFixed(self.unitDecimals);
-      $scope.unitName = self.unitName;
-      $scope.color = fc.backgroundColor;
+    var fc = profileService.focusedClient;
+    $scope.color = fc.backgroundColor;
+    $scope.self = self;
+    $scope.paypro = paypro;
 
-      $scope.cancel = function() {
-        $modalInstance.dismiss('cancel');
-      };
-    };
-    var modalInstance = $modal.open({
-      templateUrl: 'views/modals/paypro.html',
-      windowClass: animatedSlideUp,
-      controller: ModalInstanceCtrl,
-    });
-
-    modalInstance.result.finally(function() {
-      var m = angular.element(document.getElementsByClassName('reveal-modal'));
-      m.addClass('slideOutDown');
+    $ionicModal.fromTemplateUrl('views/modals/paypro.html', {
+      scope: $scope
+    }).then(function(modal) {
+      $scope.payproModal = modal;
+      $scope.payproModal.show();
     });
   };
 
@@ -966,14 +652,14 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     var satToUnit = 1 / this.unitToSatoshi;
     var self = this;
     /// Get information of payment if using Payment Protocol
-    self.setOngoingProcess(gettext('Fetching Payment Information'));
+    ongoingProcess.set('fetchingPayPro', true);
 
     $log.debug('Fetch PayPro Request...', uri);
     $timeout(function() {
       fc.fetchPayPro({
         payProUrl: uri,
       }, function(err, paypro) {
-        self.setOngoingProcess();
+        ongoingProcess.set('fetchingPayPro', false);
 
         if (err) {
           $log.warn('Could not fetch payment request:', err);
@@ -991,7 +677,7 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
 
         if (!paypro.verified) {
           self.resetForm();
-          $log.warn('Failed to verified payment protocol signatured');
+          $log.warn('Failed to verify payment protocol signatures');
           self.error = gettext('Payment Protocol Invalid');
           $timeout(function() {
             $rootScope.$digest();
@@ -1001,13 +687,45 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
 
         self._paypro = paypro;
         self.setForm(paypro.toAddress, (paypro.amount * satToUnit).toFixed(self.unitDecimals), paypro.memo);
+        _paymentTimeControl(paypro.expires);
         return cb();
       });
     }, 1);
   };
 
+  function _paymentTimeControl(expirationTime) {
+    self.paymentExpired = false;
+    setExpirationTime();
+
+    self.countDown = $interval(function() {
+      setExpirationTime();
+    }, 1000);
+
+    function setExpirationTime() {
+      var now = Math.floor(Date.now() / 1000);
+      if (now > expirationTime) {
+        setExpiredValues();
+        return;
+      }
+
+      var totalSecs = expirationTime - now;
+      var m = Math.floor(totalSecs / 60);
+      var s = totalSecs % 60;
+      self.remainingTimeStr = ('0' + m).slice(-2) + ":" + ('0' + s).slice(-2);
+    };
+
+    function setExpiredValues() {
+      self.paymentExpired = true;
+      self.remainingTimeStr = null;
+      self._paypro = null;
+      self.error = gettext('Cannot sign: The payment request has expired');
+      if (self.countDown) $interval.cancel(self.countDown);
+    };
+  };
+
   this.setFromUri = function(uri) {
     var self = this;
+
     function sanitizeUri(uri) {
       // Fixes when a region uses comma to separate decimals
       var regex = /[\?\&]amount=(\d+([\,\.]\d+)?)/i;
@@ -1022,30 +740,40 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
 
     var satToUnit = 1 / this.unitToSatoshi;
 
-    uri = sanitizeUri(uri);
-
-    if (!bitcore.URI.isValid(uri)) {
-      return uri;
-    }
-    var parsed = new bitcore.URI(uri);
-
-    var addr = parsed.address ? parsed.address.toString() : '';
-    var message = parsed.message;
-
-    var amount = parsed.amount ?
-      (parsed.amount.toFixed(0) * satToUnit).toFixed(this.unitDecimals) : 0;
-
-
-    if (parsed.r) {
-      this.setFromPayPro(parsed.r, function(err) {
-        if (err && addr && amount) {
-          self.setForm(addr, amount, message);
-          return addr;
+    // URI extensions for Payment Protocol with non-backwards-compatible request
+    if ((/^bitcoin:\?r=[\w+]/).exec(uri)) {
+      uri = decodeURIComponent(uri.replace('bitcoin:?r=', ''));
+      this.setFromPayPro(uri, function(err) {
+        if (err) {
+          return err;
         }
       });
     } else {
-      this.setForm(addr, amount, message);
-      return addr;
+      uri = sanitizeUri(uri);
+
+      if (!bitcore.URI.isValid(uri)) {
+        return uri;
+      }
+      var parsed = new bitcore.URI(uri);
+
+      var addr = parsed.address ? parsed.address.toString() : '';
+      var message = parsed.message;
+
+      var amount = parsed.amount ?
+        (parsed.amount.toFixed(0) * satToUnit).toFixed(this.unitDecimals) : 0;
+
+
+      if (parsed.r) {
+        this.setFromPayPro(parsed.r, function(err) {
+          if (err && addr && amount) {
+            self.setForm(addr, amount, message);
+            return addr;
+          }
+        });
+      } else {
+        this.setForm(addr, amount, message);
+        return addr;
+      }
     }
 
   };
@@ -1066,7 +794,7 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     }
   };
 
-  // History 
+  // History
 
   function strip(number) {
     return (parseFloat(number.toPrecision(12)));
@@ -1082,47 +810,16 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
 
   this.openTxModal = function(btx) {
     var self = this;
-    var fc = profileService.focusedClient;
-    var ModalInstanceCtrl = function($scope, $modalInstance) {
-      $scope.btx = btx;
-      $scope.settings = config;
-      $scope.color = fc.backgroundColor;
-      $scope.copayerId = fc.credentials.copayerId;
-      $scope.isShared = fc.credentials.n > 1;
 
-      $scope.getAmount = function(amount) {
-        return self.getAmount(amount);
-      };
+    $scope.btx = btx;
+    $scope.self = self;
 
-      $scope.getUnitName = function() {
-        return self.getUnitName();
-      };
-
-      $scope.getShortNetworkName = function() {
-        var n = fc.credentials.network;
-        return n.substring(4, n.length);
-      };
-
-      $scope.copyAddress = function(addr) {
-        if (!addr) return;
-        self.copyAddress(addr);
-      };
-
-      $scope.cancel = function() {
-        $modalInstance.dismiss('cancel');
-      };
-
-    };
-
-    var modalInstance = $modal.open({
-      templateUrl: 'views/modals/tx-details.html',
-      windowClass: animatedSlideRight,
-      controller: ModalInstanceCtrl,
-    });
-
-    modalInstance.result.finally(function() {
-      var m = angular.element(document.getElementsByClassName('reveal-modal'));
-      m.addClass('slideOutRight');
+    $ionicModal.fromTemplateUrl('views/modals/tx-details.html', {
+      scope: $scope,
+      hideDelay: 500
+    }).then(function(modal) {
+      $scope.txDetailsModal = modal;
+      $scope.txDetailsModal.show();
     });
   };
 
@@ -1130,51 +827,90 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
     return actions.hasOwnProperty('create');
   };
 
-  this._doSendAll = function(amount, feeRate) {
-    this.setForm(null, amount, null, feeRate);
-  };
-
-  // TODO: showPopup alike
-  this.confirmDialog = function(msg, cb) {
-    if (isCordova) {
-      navigator.notification.confirm(
-        msg,
-        function(buttonIndex) {
-          if (buttonIndex == 1) {
-            $timeout(function() {
-              return cb(true);
-            }, 1);
-          } else {
-            return cb(false);
-          }
-        },
-        confirm_msg, [accept_msg, cancel_msg]
-      );
-    } else if (isChromeApp) {
-      // No feedback, alert/confirm not supported.
-      return cb(true);
-    } else {
-      return cb(confirm(msg));
+  this.sendMax = function(availableBalanceSat) {
+    if (availableBalanceSat == 0) {
+      this.error = gettext("Cannot create transaction. Insufficient funds");
+      return;
     }
-  };
 
-  this.sendAll = function(amount, feeStr, feeRate) {
     var self = this;
-    var msg = gettextCatalog.getString("{{fee}} will be deducted for decred networking fees", {
-      fee: feeStr
-    });
+    var fc = profileService.focusedClient;
+    this.error = null;
+    ongoingProcess.set('calculatingFee', true);
 
-    this.confirmDialog(msg, function(confirmed) {
-      if (confirmed)
-        self._doSendAll(amount, feeRate);
+    feeService.getCurrentFeeValue(function(err, feePerKb) {
+      ongoingProcess.set('calculatingFee', false);
+      if (err || !lodash.isNumber(feePerKb)) {
+        self.error = gettext('Could not get fee value');
+        return;
+      }
+
+      var opts = {};
+      opts.feePerKb = feePerKb;
+      opts.returnInputs = true;
+      var config = configService.getSync();
+      opts.excludeUnconfirmedUtxos = !config.wallet.spendUnconfirmed;
+      ongoingProcess.set('retrivingInputs', true);
+
+      fc.getSendMaxInfo(opts, function(err, resp) {
+        ongoingProcess.set('retrivingInputs', false);
+
+        if (err) {
+          self.error = err;
+          $scope.$apply();
+          return;
+        }
+
+        if (resp.amount == 0) {
+          self.error = gettext("Not enough funds for fee");
+          $scope.$apply();
+          return;
+        }
+
+        var msg = gettextCatalog.getString("{{fee}} will be deducted for decred networking fees", {
+          fee: profileService.formatAmount(resp.fee) + ' ' + self.unitName
+        });
+
+        var warningMsg = verifyExcludedUtxos();
+
+        if (!lodash.isEmpty(warningMsg))
+          msg += '. \n' + warningMsg;
+
+        confirmDialog.show(msg, function(confirmed) {
+          if (confirmed) {
+            self.sendMaxInfo = resp;
+            var amount = parseFloat((resp.amount * self.satToUnit).toFixed(self.unitDecimals));
+            self.setForm(null, amount, null);
+          } else {
+            self.resetForm();
+          }
+        });
+
+        function verifyExcludedUtxos() {
+          var warningMsg = [];
+          if (resp.utxosBelowFee > 0) {
+            warningMsg.push(gettextCatalog.getString("Note: a total of {{amountBelowFeeStr}} were excluded. These funds come from UTXOs smaller than the network fee provided.", {
+              amountBelowFeeStr: profileService.formatAmount(resp.amountBelowFee) + ' ' + self.unitName
+            }));
+          }
+          if (resp.utxosAboveMaxSize > 0) {
+            warningMsg.push(gettextCatalog.getString("Note: a total of {{amountAboveMaxSizeStr}} were excluded. The maximum size allowed for a transaction was exceeded", {
+              amountAboveMaxSizeStr: profileService.formatAmount(resp.amountAboveMaxSize) + ' ' + self.unitName
+            }));
+          }
+          return warningMsg.join('\n');
+        }
+      });
     });
   };
 
   /* Start setup */
+  lodash.assign(self, vanillaScope);
 
   this.bindTouchDown();
   if (profileService.focusedClient) {
     this.setAddress();
     this.setSendFormInputs();
   }
+
 });

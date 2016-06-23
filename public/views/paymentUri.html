@@ -5,7 +5,7 @@
 </div>
 
 <div class="content p20v row payment-uri" ng-controller="paymentUriController as payment">
-  <div class="large-12 columns" ng-init="payment.checkBitcoinUri()">
+  <div class="large-12 columns" ng-init="payment.init()">
     <div class="panel text-center" ng-if="!payment.uri">
       <h1 translate>Bitcoin URI is NOT valid!</h1>
     </div>
@@ -32,7 +32,9 @@
           <li class="panel" ng-repeat="w in wallets">
           <a ng-click="payment.selectWallet(w.id)">
             <div class="avatar-wallet" 
-              ng-style="{'background-color':w.color}">{{(w.name || w.id) | limitTo: 1}}</div>
+              ng-style="{'background-color':w.color}">
+              <i class="icon-wallet size-21"></i>
+            </div>
             <div class="ellipsis">{{w.name || w.id}}</div>
             <div class="size-12">{{w.m}} of {{w.n}} 
               <span ng-show="w.network=='testnet'">[Testnet]</span>

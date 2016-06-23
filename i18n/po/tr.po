@@ -12,15 +12,32 @@ msgstr ""
 "Last-Translator: cmgustavo83\n"
 "Language-Team: Turkish\n"
 "Language: tr\n"
-"PO-Revision-Date: 2015-09-18 13:52-0400\n"
-
-#: public/views/modals/paypro.html
-msgid "(Trusted)"
-msgstr "(Trusted)"
+"PO-Revision-Date: 2015-11-11 14:51-0500\n"
 
 #: public/views/walletHome.html
 msgid "(possible double spend)"
 msgstr "(olası çift harcama)"
+
+#: public/views/modals/paypro.html
+msgid "(Trusted)"
+msgstr "(Güvenilir)"
+
+#: src/js/controllers/walletHome.js
+msgid "{{fee}} will be deducted for bitcoin networking fees"
+msgstr "{{fee}} bitcoin ağ ücreti olarak düşülecektir"
+
+#: public/views/copayers.html
+#: public/views/includes/walletInfo.html
+msgid "{{index.m}}-of-{{index.n}}"
+msgstr "{{index.m}} te {{index.n}}"
+
+#: public/views/includes/sidebar.html
+msgid "{{item.m}}-of-{{item.n}}"
+msgstr "{{item.n}} te {{item.m}}"
+
+#: src/js/controllers/importLegacy.js
+msgid "{{len}} wallets imported. Funds scanning in progress. Hold on to see updated balance"
+msgstr "{{len}} cüzdanı içe aktarıldı. Fonlar taranırken ve güncellenirken bekleyiniz"
 
 #: public/views/modals/txp-details.html
 msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 24 hours have passed since the proposal was created."
@@ -28,7 +45,7 @@ msgstr "* Ödeme isteği; 1) kaynağı sizseniz, başka bir kullanıcı tarafın
 
 #: public/views/disclaimer.html
 msgid "<b>IF YOU LOSE ACCESS TO YOUR COPAY WALLET OR YOUR ENCRYPTED PRIVATE KEYS AND YOU HAVE NOT SEPARATELY STORED A BACKUP OF YOUR WALLET AND CORRESPONDING PASSWORD, YOU ACKNOWLEDGE AND AGREE THAT ANY BITCOIN YOU HAVE ASSOCIATED WITH THAT COPAY WALLET WILL BECOME INACCESSIBLE.</b>"
-msgstr "<b>IF YOU LOSE ACCESS TO YOUR COPAY WALLET OR YOUR ENCRYPTED PRIVATE KEYS AND YOU HAVE NOT SEPARATELY STORED A BACKUP OF YOUR WALLET AND CORRESPONDING PASSWORD, YOU ACKNOWLEDGE AND AGREE THAT ANY BITCOIN YOU HAVE ASSOCIATED WITH THAT COPAY WALLET WILL BECOME INACCESSIBLE.</b>"
+msgstr "<b>COPAY CÜZDANINIZA ERİŞİMİNİZİ KAYBEDER VEYA GEREKLİ ŞİFRESİ İLE BİRLİKTE CÜZDANINIZI ÖZEL ANAHTARLA BİRLİKTE YEDEKLEMEZSENİZ, COPAY CÜZDANINIZDAKİ BİTCOİN'LERE ERİŞİMİNİZİN KALMAYACAĞINI KABUL EDER VE ONAYLIYORSUNUZ DEMEKTİR.</b>"
 
 #: public/views/disclaimer.html
 msgid "<b>IF YOU LOSE ACCESS TO YOUR COPAY WALLET OR YOUR ENCRYPTED PRIVATE KEYS AND YOU HAVE NOT SEPARATELY STORED A BACKUP OF YOUR WALLET AND CORRESPONDING PASSWORD, YOU ACKNOWLEDGE AND AGREE THAT ANY DECRED YOU HAVE ASSOCIATED WITH THAT COPAY WALLET WILL BECOME INACCESSIBLE.</b>"
@@ -36,15 +53,15 @@ msgstr "<b>IF YOU LOSE ACCESS TO YOUR COPAY WALLET OR YOUR ENCRYPTED PRIVATE KEY
 
 #: public/views/backup.html
 msgid "<b>OR</b> 1 wallet export file and the remaining quorum of wallet seeds (e.g. in a 3-5 wallet: 1 wallet export file + 2 wallet seeds of any of the other copayers)."
-msgstr "<b>OR</b> 1 wallet export file and the remaining quorum of wallet seeds (e.g. in a 3-5 wallet: 1 wallet export file + 2 wallet seeds of any of the other copayers)."
+msgstr ""
 
 #: public/views/backup.html
 msgid "<b>OR</b> the wallet seed of <b>all</b> copayers in the wallet"
-msgstr "<b>OR</b> the wallet seed of <b>all</b> copayers in the wallet"
+msgstr ""
 
 #: public/views/backup.html
 msgid "<b>OR</b> the wallet seeds of <b>all</b> copayers in the wallet"
-msgstr "<b>OR</b> the wallet seeds of <b>all</b> copayers in the wallet"
+msgstr ""
 
 #: public/views/splash.html
 msgid "A multisignature bitcoin wallet"
@@ -70,6 +87,25 @@ msgstr "Decred Web Wallet Hakkında"
 msgid "Accept"
 msgstr "Onay"
 
+#: public/views/join.html
+#: public/views/preferencesInformation.html
+msgid "Account"
+msgstr ""
+
+#: public/views/create.html
+#: public/views/import.html
+msgid "Account Number"
+msgstr ""
+
+#: public/views/modals/destination-address.html
+msgid "Add a new entry"
+msgstr ""
+
+#: public/views/create.html
+#: public/views/join.html
+msgid "Add a Seed Passphrase"
+msgstr ""
+
 #: public/views/create.html
 #: public/views/join.html
 msgid "Add an optional passphrase to secure the seed"
@@ -81,6 +117,7 @@ msgstr "Cüzdan ekle"
 
 #: public/views/paymentUri.html
 #: public/views/modals/customized-amount.html
+#: public/views/modals/destination-address.html
 #: public/views/modals/paypro.html
 msgid "Address"
 msgstr "Adres"
@@ -88,6 +125,10 @@ msgstr "Adres"
 #: public/views/preferencesInformation.html
 msgid "Address Type"
 msgstr "Adres Türü"
+
+#: public/views/modals/destination-address.html
+msgid "Addressbook"
+msgstr ""
 
 #: public/views/preferences.html
 msgid "Advanced"
@@ -111,7 +152,7 @@ msgstr "Copay'nın çevirisi için tüm katkılarınızı bekliyoruz. Crowdin.co
 
 #: public/views/disclaimer.html
 msgid "All transaction requests are irreversible."
-msgstr "All transaction requests are irreversible."
+msgstr "Işlem isteklerinin hiç biri geri alınamaz."
 
 #: public/views/splash.html
 msgid "Already have a wallet?"
@@ -137,10 +178,6 @@ msgstr "Kabul edilenden düşük miktar"
 #: public/views/modals/customized-amount.html
 msgid "Amount in"
 msgstr "Tutar"
-
-#: public/views/preferencesLanguage.html
-msgid "Applying changes"
-msgstr "Değişiklikleri uygula"
 
 #: src/js/controllers/backup.js
 msgid "Are you sure you want to delete the backup words?"
@@ -174,10 +211,6 @@ msgstr "Yedekleme"
 msgid "Backup now"
 msgstr "Şimdi yedekle"
 
-#: public/views/export.html
-msgid "Backup options"
-msgstr "Yedekleme seçenekleri"
-
 #: src/js/controllers/backup.js
 msgid "Backup words deleted"
 msgstr "Yedekleme kelimeleri silindi"
@@ -194,6 +227,7 @@ msgstr "Adrese göre Bakiye"
 msgid "Before receiving funds, it is highly recommended you backup your wallet keys."
 msgstr "Para almadan önce cüzdanınızı mutlaka yedeklemeniz önerilir."
 
+<<<<<<< HEAD
 #: public/views/preferences.html
 msgid "Bitcoin Network Fee Policy"
 msgstr "Bitcoin ağ ücret politikası"
@@ -205,22 +239,41 @@ msgstr "Decred ağ ücret politikası"
 #: public/views/paymentUri.html
 msgid "Bitcoin URI is NOT valid!"
 msgstr "Bitcoin URI geçerli değil!"
+=======
+#: public/views/create.html
+#: public/views/import.html
+#: public/views/join.html
+msgid "BIP32 path for address derivation"
+msgstr ""
+>>>>>>> upstream/master
 
 #: public/views/walletHome.html
 msgid "Bitcoin address"
 msgstr "Bitcoin adresi"
 
+<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Decred adresi"
+=======
+#: public/views/preferences.html
+msgid "Bitcoin Network Fee Policy"
+msgstr "Bitcoin ağ ücret politikası"
+>>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
 msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Bitcoin işlemlerine ağda madenciler tarafından toplanan ücret dahildir. Daha yüksek ücret, madenciler için işleminizi bloklarına eklemek için daha teşvik edicidir. Gerçek ücretler ağ yüküne ve seçili ilkeye göre belirlenir."
 
+<<<<<<< HEAD
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Decred işlemlerine ağda madenciler tarafından toplanan ücret dahildir. Daha yüksek ücret, madenciler için işleminizi bloklarına eklemek için daha teşvik edicidir. Gerçek ücretler ağ yüküne ve seçili ilkeye göre belirlenir."
+=======
+#: public/views/paymentUri.html
+msgid "Bitcoin URI is NOT valid!"
+msgstr "Bitcoin URI geçerli değil!"
+>>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
@@ -238,19 +291,20 @@ msgstr "İşlem yayınlanıyor"
 msgid "Browser unsupported"
 msgstr "Desteklenmeyen tarayıcı"
 
-#: public/views/includes/password.html
-msgid "CANCEL"
-msgstr "İPTAL"
-
 #: public/views/copayers.html
 #: public/views/walletHome.html
 #: public/views/modals/confirmation.html
+#: public/views/modals/destination-address.html
 #: src/js/services/confirmDialog.js
 #: src/js/controllers/copayers.js
 #: src/js/controllers/preferencesDelete.js
 #: src/js/controllers/walletHome.js
 msgid "Cancel"
 msgstr "İptal"
+
+#: public/views/includes/password.html
+msgid "CANCEL"
+msgstr "İPTAL"
 
 #: src/js/services/profileService.js
 msgid "Cannot join the same wallet more that once"
@@ -268,17 +322,16 @@ msgstr "Cüzdan takma adı değişikliği sadece yerel cüzdan adını etkiler."
 msgid "Choose a backup file from your computer"
 msgstr "Bilgisayarınızdan bir yedek dosyası seçin"
 
-#: public/views/modals/wallets.html
-msgid "Choose a wallet to send funds"
-msgstr "Para göndermek için bir cüzdan seçin"
+#: public/views/preferencesInformation.html
+msgid "Clear history"
+msgstr ""
 
 #: public/views/includes/topbar.html
 #: public/views/modals/advancedSend.html
-#: public/views/modals/copayers.html
 #: public/views/modals/customized-amount.html
+#: public/views/modals/destination-address.html
 #: public/views/modals/paypro.html
 #: public/views/modals/scanner.html
-#: public/views/modals/wallets.html
 msgid "Close"
 msgstr "Kapat"
 
@@ -302,10 +355,16 @@ msgid "Confirmations"
 msgstr "Onaylı"
 
 #: public/views/create.html
+msgid "Connecting to {{create.hwWallet}} Wallet..."
+msgstr ""
+
 #: public/views/import.html
+msgid "Connecting to {{import.hwWallet}} Wallet..."
+msgstr ""
+
 #: public/views/join.html
-msgid "Connecting to Ledger Wallet..."
-msgstr "Cüzdan Donanımına Bağlanıyor..."
+msgid "Connecting to {{join.hwWallet}} Wallet..."
+msgstr ""
 
 #: src/js/services/bwsError.js
 msgid "Copayer already in this wallet"
@@ -319,7 +378,7 @@ msgstr "Copayer bu teklifi oylamış"
 msgid "Copayer data mismatch"
 msgstr "Copayer veri uyuşmazlığı"
 
-#: public/views/modals/copayers.html
+#: public/views/preferencesInformation.html
 msgid "Copayers"
 msgstr "Copayers"
 
@@ -328,10 +387,6 @@ msgstr "Copayers"
 #: src/js/controllers/walletHome.js
 msgid "Copied to clipboard"
 msgstr "Panoya kopyalandı"
-
-#: public/views/export.html
-msgid "Copy backup to a safe place"
-msgstr "Yedeği güvenli bir yere kopyala"
 
 #: public/views/export.html
 msgid "Copy this text as it is to a safe place (notepad or email)"
@@ -372,6 +427,10 @@ msgstr "Belirtilen genişletilmiş genel anahtar kullanılarak oluşturulamadı"
 #: src/js/services/profileService.js
 msgid "Could not create: Invalid wallet seed"
 msgstr "Oluşturulamadı: geçersiz cüzdan kelimeleri"
+
+#: src/js/controllers/backup.js
+msgid "Could not decrypt"
+msgstr ""
 
 #: src/js/controllers/import.js
 msgid "Could not decrypt file, check your password"
@@ -421,14 +480,14 @@ msgstr "Cüzdan güncellenemedi"
 msgid "Create"
 msgstr "Oluştur"
 
+#: public/views/create.html
+msgid "Create {{requiredCopayers}}-of-{{totalCopayers}} wallet"
+msgstr "{{totalCopayers}} {{requiredCopayers}} için cüzdan oluştur"
+
 #: public/views/add.html
 #: public/views/create.html
 msgid "Create new wallet"
 msgstr "Yeni cüzdan oluştur"
-
-#: public/views/create.html
-msgid "Create {{requiredCopayers}}-of-{{totalCopayers}} wallet"
-msgstr "{{totalCopayers}} {{requiredCopayers}} için cüzdan oluştur"
 
 #: public/views/includes/sidebar.html
 msgid "Create, join or import"
@@ -442,46 +501,56 @@ msgstr "Oluşturan Kişi"
 msgid "Creating Profile..."
 msgstr "Profil oluşturuluyor..."
 
-#: public/views/create.html
-msgid "Creating Wallet..."
-msgstr "Cüzdan oluşturuluyor..."
-
 #: src/js/controllers/walletHome.js
 msgid "Creating transaction"
 msgstr "İşlem oluşturuluyor"
+
+#: public/views/create.html
+msgid "Creating Wallet..."
+msgstr "Cüzdan oluşturuluyor..."
 
 #: public/views/preferencesFee.html
 #: public/views/modals/advancedSend.html
 msgid "Current fee rate for this policy: {{fee.feePerKBUnit}}/kiB"
 msgstr "Bu ilke için geçerli ücret oranı: {{fee.feePerKBUnit}}/kiB"
 
-#: public/views/backup.html
-msgid "DELETE WORDS"
-msgstr "KELİMELERİ SİL"
-
 #: public/views/modals/tx-details.html
 msgid "Date"
 msgstr "Tarih"
 
-#: public/views/modals/txp-details.html
-msgid "Delete Payment Proposal"
-msgstr "Ödeme teklifini sil"
-
-#: public/views/preferencesAdvanced.html
-msgid "Delete Wallet"
-msgstr "Cüzdanı Sil"
+#: public/views/paperWallet.html
+msgid "Decrypting a paper wallet could take around 5 minutes on this device. please be patient and keep the app open."
+msgstr ""
 
 #: public/views/copayers.html
 msgid "Delete it and create a new one"
 msgstr "Sil ve yeni bir tane oluştur"
 
+#: public/views/modals/txp-details.html
+msgid "Delete Payment Proposal"
+msgstr "Ödeme teklifini sil"
+
 #: public/views/preferencesDeleteWallet.html
 msgid "Delete wallet"
 msgstr "Cüzdanı sil"
 
+#: public/views/preferencesAdvanced.html
+msgid "Delete Wallet"
+msgstr "Cüzdanı Sil"
+
+#: public/views/backup.html
+msgid "DELETE WORDS"
+msgstr "KELİMELERİ SİL"
+
 #: src/js/controllers/walletHome.js
 msgid "Deleting payment"
 msgstr "Ödeme siliniyor"
+
+#: public/views/create.html
+#: public/views/import.html
+#: public/views/join.html
+msgid "Derivation Path"
+msgstr ""
 
 #: public/views/preferencesInformation.html
 msgid "Derivation Strategy"
@@ -506,29 +575,41 @@ msgstr "Özel anahtarı dahil etme"
 msgid "Don't see your language on Crowdin? Contact the Owner on Crowdin! We'd love to support your language."
 msgstr "Kendi dilinizi görmüyor musunuz? Crowdin kurucusu ile irtibata geçin! Dilinizi desteklemekten mutluluk duyarız."
 
+#: public/views/modals/destination-address.html
+msgid "Done"
+msgstr ""
+
+#: public/views/export.html
+msgid "Download"
+msgstr "İndir"
+
 #: public/views/walletHome.html
 msgid "Download CSV file"
 msgstr "CSV dosyasını indir"
-
-#: public/views/export.html
-msgid "Download backup"
-msgstr "Yedek indir"
 
 #: src/js/services/feeService.js
 msgid "Economy"
 msgstr "Ekonomik"
 
+#: public/views/modals/destination-address.html
+msgid "Edit"
+msgstr ""
+
 #: public/views/importLegacy.html
 msgid "Email"
 msgstr "E-posta"
+
+#: public/views/preferencesEmail.html
+msgid "Email for wallet notifications"
+msgstr "E-posta ile cüzdan bildirimleri"
 
 #: public/views/preferences.html
 msgid "Email Notifications"
 msgstr "E-posta Bildirimleri"
 
-#: public/views/preferencesEmail.html
-msgid "Email for wallet notifications"
-msgstr "E-posta ile cüzdan bildirimleri"
+#: src/js/services/bwsError.js
+msgid "Empty addresses limit reached. New addresses cannot be generated."
+msgstr ""
 
 #: src/js/controllers/export.js
 msgid "Encrypted export file saved"
@@ -560,17 +641,17 @@ msgstr "Cüzdan içe alma hatası:"
 msgid "Expires"
 msgstr "Sona Erme"
 
+#: public/views/export.html
+msgid "Export options"
+msgstr "Dışa aktarma seçenekleri"
+
 #: public/views/preferencesAdvanced.html
-msgid "Export"
-msgstr "Dışa aktar"
+msgid "Export Wallet"
+msgstr ""
 
 #: public/views/preferencesInformation.html
 msgid "Extended Public Keys"
 msgstr "Genişletilmiş Genel Anahtarlar"
-
-#: public/views/includes/walletInfo.html
-msgid "External Private Key:"
-msgstr "Dış Özel Anahtar:"
 
 #: public/views/export.html
 msgid "Failed to export"
@@ -614,21 +695,25 @@ msgstr "Fransızca"
 msgid "Funds are locked by pending spend proposals"
 msgstr "Fonlar bekleyen işlem teklifleri tarafından kilitlendi"
 
+#: public/views/paperWallet.html
+msgid "Funds found"
+msgstr ""
+
 #: src/js/services/notificationsService.js
 msgid "Funds received"
 msgstr "Ödeme alındı"
 
-#: public/views/splash.html
-msgid "GET STARTED"
-msgstr "Başlarken"
-
-#: public/views/modals/customized-amount.html
-msgid "Generate QR Code"
-msgstr "QR kodu oluştur"
+#: public/views/paperWallet.html
+msgid "Funds will be transfered to"
+msgstr ""
 
 #: public/views/walletHome.html
 msgid "Generate new address"
 msgstr "Yeni adres oluştur"
+
+#: public/views/modals/customized-amount.html
+msgid "Generate QR Code"
+msgstr "QR kodu oluştur"
 
 #: public/views/walletHome.html
 msgid "Generating .csv file..."
@@ -638,7 +723,11 @@ msgstr "Csv dosyası oluşturuluyor..."
 msgid "German"
 msgstr "Almanca"
 
-#: public/views/modals/wallets.html
+#: public/views/splash.html
+msgid "GET STARTED"
+msgstr "Başlarken"
+
+#: public/views/modals/destination-address.html
 msgid "Getting address for wallet {{selectedWalletName}} ..."
 msgstr "{{selectedWalletName}} için cüzdan adresi alınıyor..."
 
@@ -662,16 +751,16 @@ msgstr "Donanım cüzdanı"
 msgid "Have a Backup from Copay v0.9?"
 msgstr "Copay v0.9 sürümünden bir yedeğiniz mi var?"
 
-#: public/views/backup.html
-msgid "Hide Wallet Seed"
-msgstr "Cüzdan Sözcüklerini Gizle"
-
 #: public/views/create.html
 #: public/views/import.html
 #: public/views/join.html
 #: public/views/walletHome.html
 msgid "Hide advanced options"
 msgstr "Gelişmiş seçenekleri gizle"
+
+#: public/views/backup.html
+msgid "Hide Wallet Seed"
+msgstr "Cüzdan Sözcüklerini Gizle"
 
 #: src/js/controllers/index.js
 msgid "History"
@@ -717,7 +806,7 @@ msgstr "İçe aktarılıyor..."
 
 #: public/views/disclaimer.html
 msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
+msgstr ""
 
 #: public/views/disclaimer.html
 msgid "In no event shall the authors of the software, employees and affiliates of Company 0, LLC, or copyright holders be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
@@ -726,6 +815,11 @@ msgstr "In no event shall the authors of the software, employees and affiliates 
 #: src/js/services/bwsError.js
 msgid "Incorrect address network"
 msgstr "Yanlış adres ağı"
+
+#: public/views/walletHome.html
+msgid "Initial transaction history synchronization can take some minutes for wallets with many transactions.<br>\n"
+"          Please stand by."
+msgstr ""
 
 #: src/js/services/bwsError.js
 msgid "Insufficient funds"
@@ -739,9 +833,25 @@ msgstr "Ücret için yetersiz bakiye"
 msgid "Invalid"
 msgstr "Geçersiz"
 
+#: src/js/controllers/create.js
+#: src/js/controllers/import.js
+#: src/js/controllers/join.js
+msgid "Invalid account number"
+msgstr ""
+
 #: src/js/services/bwsError.js
 msgid "Invalid address"
 msgstr "Geçersiz adres"
+
+#: src/js/controllers/create.js
+#: src/js/controllers/import.js
+#: src/js/controllers/join.js
+msgid "Invalid derivation path"
+msgstr ""
+
+#: src/js/controllers/index.js
+msgid "Invalid Touch ID"
+msgstr ""
 
 #: src/js/controllers/copayers.js
 msgid "Invitation to share a Copay Wallet"
@@ -776,6 +886,14 @@ msgstr "Paylaşılan cüzdana katıl"
 msgid "Joining Wallet..."
 msgstr "Cüzdana katılınılıyor..."
 
+#: src/js/services/bwsError.js
+msgid "Key already associated with an existing wallet"
+msgstr ""
+
+#: public/views/modals/destination-address.html
+msgid "Label"
+msgstr ""
+
 #: public/views/preferences.html
 msgid "Language"
 msgstr "Dil"
@@ -792,13 +910,13 @@ msgstr "Copay yedeklemeleri hakkında daha fazla bilgi edinin"
 msgid "Learn more about Wallet Migration"
 msgstr "Cüzdan birleştirme hakkında daha fazla bilgi"
 
-#: public/views/import.html
-msgid "Ledger"
-msgstr "Ana Defter"
-
 #: src/js/controllers/disclaimer.js
 msgid "Loading..."
 msgstr "Yükleneniyor..."
+
+#: public/views/includes/available-balance.html
+msgid "locked by pending payments"
+msgstr "bekleyen ödemeler yüzünden kilitlendi"
 
 #: src/js/services/bwsError.js
 msgid "Locktime in effect. Please wait to create a new spend proposal"
@@ -812,8 +930,12 @@ msgstr "Harcama teklifini kaldırmak için lütfen biraz bekleyin"
 msgid "Make a payment to"
 msgstr "Ödeme yapılacak kişi"
 
+#: src/js/services/profileService.js
+msgid "me"
+msgstr "ben"
+
+#: public/views/preferencesInformation.html
 #: public/views/includes/copayers.html
-#: public/views/modals/copayers.html
 #: public/views/modals/tx-details.html
 #: public/views/modals/txp-details.html
 msgid "Me"
@@ -832,16 +954,12 @@ msgid "Message"
 msgstr "Mesajınız"
 
 #: public/views/walletHome.html
-msgid "More"
-msgstr "Daha fazlası"
-
-#: public/views/walletHome.html
 msgid "Moved"
 msgstr "Taşındı"
 
-#: public/views/walletHome.html
-msgid "Multisignature wallet"
-msgstr "Çoklu imzalı cüzdan"
+#: public/views/join.html
+msgid "Multiple wallets accounts are supported on the device simultaneously. Select which account should be used for this wallet"
+msgstr ""
 
 #: public/views/walletHome.html
 msgid "My Bitcoin address"
@@ -863,9 +981,14 @@ msgstr "Ağ bağlantı hatası"
 msgid "New Payment Proposal"
 msgstr "Yeni ödeme teklifi"
 
-#: public/views/includes/walletInfo.html
-msgid "No Private key"
-msgstr "Özel anahtar yok"
+#: src/js/controllers/create.js
+#: src/js/controllers/join.js
+msgid "New Random Seed"
+msgstr ""
+
+#: public/views/import.html
+msgid "No hardware wallets supported on this device"
+msgstr ""
 
 #: public/views/walletHome.html
 msgid "No transactions yet"
@@ -881,6 +1004,7 @@ msgstr "Yetkili değil"
 
 #: public/views/walletHome.html
 #: public/views/modals/customized-amount.html
+#: public/views/modals/destination-address.html
 msgid "Not valid"
 msgstr "Geçerli değil"
 
@@ -893,15 +1017,23 @@ msgstr "Not"
 
 #: public/views/disclaimer.html
 msgid "Official English Disclaimer"
-msgstr "Official English Disclaimer"
+msgstr "Resmi İngilizce Yasal Uyarı"
 
 #: public/views/backup.html
-msgid "Once you have copy your wallet seed, it is recommended to delete it from this device."
-msgstr "Kurtarma sözcüklerini kopyaladıktan sonra cihazınızdan silmeniz önerilir."
+msgid "Once you have copied your wallet seed down, it is recommended to delete it from this device."
+msgstr ""
 
 #: public/views/preferencesInformation.html
 msgid "Only Main (not change) addresses are shown. The addresses on this list were not verified locally at this time."
 msgstr "Yalnızca ana (değişmemiş) adresler gösteriliyor. Bu listedeki adresler yerel olarak şu anda doğrulanmadı."
+
+#: public/views/walletHome.html
+msgid "optional"
+msgstr "isteğe bağlı"
+
+#: public/views/paperWallet.html
+msgid "Paper Wallet Private Key"
+msgstr ""
 
 #: public/views/modals/tx-details.html
 #: public/views/modals/txp-details.html
@@ -909,6 +1041,7 @@ msgid "Participants"
 msgstr "Katılımcılar"
 
 #: public/views/import.html
+#: public/views/paperWallet.html
 msgid "Passphrase"
 msgstr "Parola"
 
@@ -933,6 +1066,10 @@ msgstr "Daveti buraya yapıştır"
 msgid "Paste the backup plain text code"
 msgstr "Yedek düz metin kodu yapıştırın"
 
+#: public/views/paperWallet.html
+msgid "Paste your paper wallet private key here"
+msgstr ""
+
 #: public/views/modals/paypro.html
 msgid "Pay To"
 msgstr "Ödenecek Kişi"
@@ -940,6 +1077,18 @@ msgstr "Ödenecek Kişi"
 #: public/views/modals/tx-status.html
 msgid "Payment Accepted"
 msgstr "Ödeme Kabul Edildi"
+
+#: public/views/modals/txp-details.html
+msgid "Payment accepted, but not yet broadcasted"
+msgstr "Ödeme kabul edildi ama henüz yayınlanmadı"
+
+#: public/views/modals/txp-details.html
+msgid "Payment accepted. It will be broadcasted by Glidera. In case there is a problem, it can be deleted 6 hours after it was created."
+msgstr "Ödeme kabul edildi ve Glidera tarafından yayınlanacak. Bir sorun oluşması durumunda, yaratıldıktan 6 saat sonra silinebilir."
+
+#: public/views/modals/txp-details.html
+msgid "Payment details"
+msgstr "Ödeme detayları"
 
 #: public/views/modals/txp-details.html
 msgid "Payment Proposal"
@@ -967,36 +1116,19 @@ msgstr "Ödeme Teklifleri"
 
 #: src/js/controllers/walletHome.js
 msgid "Payment Protocol Invalid"
-msgstr "Payment Protocol Invalid"
+msgstr "Ödeme Protokolü Geçersiz"
 
 #: src/js/controllers/walletHome.js
 msgid "Payment Protocol not supported on Chrome App"
 msgstr "Ödeme Protokolü Chrome uygulaması üzerinde desteklenmiyor"
 
-#: public/views/modals/tx-status.html
-msgid "Payment Rejected"
-msgstr "Ödeme Reddedildi"
-
-#: public/views/modals/tx-status.html
-#: src/js/services/notificationsService.js
-msgid "Payment Sent"
-msgstr "Ödeme Gönderildi"
-
-#: public/views/modals/txp-details.html
-msgid "Payment accepted, but not yet broadcasted"
-msgstr "Ödeme kabul edildi ama henüz yayınlanmadı"
-
-#: public/views/modals/txp-details.html
-msgid "Payment accepted. It will be broadcasted by Glidera. In case there is a problem, it can be deleted 6 hours after it was created."
-msgstr "Ödeme kabul edildi ve Glidera tarafından yayınlanacak. Bir sorun oluşması durumunda, yaratıldıktan 6 saat sonra silinebilir."
-
-#: public/views/modals/txp-details.html
-msgid "Payment details"
-msgstr "Ödeme detayları"
-
 #: public/views/modals/txp-details.html
 msgid "Payment rejected"
 msgstr "Ödeme reddedildi"
+
+#: public/views/modals/tx-status.html
+msgid "Payment Rejected"
+msgstr "Ödeme Reddedildi"
 
 #: public/views/modals/paypro.html
 msgid "Payment request"
@@ -1005,6 +1137,11 @@ msgstr "Ödeme talebi"
 #: public/views/modals/txp-details.html
 msgid "Payment sent"
 msgstr "Ödeme gönderildi"
+
+#: public/views/modals/tx-status.html
+#: src/js/services/notificationsService.js
+msgid "Payment Sent"
+msgstr "Ödeme Gönderildi"
 
 #: public/views/walletHome.html
 msgid "Payment to"
@@ -1107,19 +1244,23 @@ msgstr "Ödeme reddediliyor"
 msgid "Release Information"
 msgstr "Sürüm Bilgileri"
 
+#: public/views/modals/destination-address.html
+msgid "Remove"
+msgstr ""
+
 #: public/views/export.html
 #: public/views/includes/password.html
 msgid "Repeat password"
 msgstr "Şifreyi tekrarla"
 
-#: public/views/preferences.html
-msgid "Request Password for Spending Funds"
-msgstr "Harcanan tutarlar için parola iste"
-
 #: public/views/walletHome.html
 #: public/views/modals/customized-amount.html
 msgid "Request a specific amount"
 msgstr "Belirli bir miktar iste"
+
+#: public/views/preferences.html
+msgid "Request Password"
+msgstr ""
 
 #: src/js/controllers/walletHome.js
 msgid "Requesting Ledger Wallet to sign"
@@ -1141,17 +1282,10 @@ msgstr "Yeniden deneniyor..."
 msgid "Russian"
 msgstr "Rusça"
 
-#: public/views/includes/password.html
-msgid "SET"
-msgstr "AYARLA"
-
-#: public/views/walletHome.html
-msgid "SKIP BACKUP"
-msgstr "YEDEKLEMEYİ GEÇ"
-
 #: public/views/preferencesAlias.html
 #: public/views/preferencesBwsUrl.html
 #: public/views/preferencesEmail.html
+#: public/views/modals/destination-address.html
 msgid "Save"
 msgstr "Kaydet"
 
@@ -1159,17 +1293,33 @@ msgstr "Kaydet"
 msgid "Saving preferences..."
 msgstr "Tercihler kaydediliyor..."
 
+#: public/views/preferencesInformation.html
+msgid "Scan addresses for funds"
+msgstr "Fonlar için adresleri tara"
+
+#: public/views/preferences.html
+msgid "Scan Fingerprint"
+msgstr ""
+
 #: src/js/services/notificationsService.js
 msgid "Scan Finished"
 msgstr "Tarama tamamlandı"
 
-#: public/views/preferencesAdvanced.html
-msgid "Scan addresses for funds"
-msgstr "Fonlar için adresleri tara"
-
 #: public/views/walletHome.html
 msgid "Scan status finished with error"
 msgstr "Tarama işlemi hatalı bitti"
+
+#: public/views/paperWallet.html
+msgid "Scan Wallet Funds"
+msgstr ""
+
+#: src/js/controllers/index.js
+msgid "Scan your fingerprint please"
+msgstr ""
+
+#: public/views/paperWallet.html
+msgid "Scanning wallet funds..."
+msgstr ""
 
 #: public/views/walletHome.html
 msgid "Scanning Wallet funds..."
@@ -1179,14 +1329,14 @@ msgstr "Cüzdan para miktarı taranıyor..."
 msgid "See it on the blockchain"
 msgstr "Blockchain üzerinde gör"
 
+#: public/views/import.html
+msgid "Seed passphrase"
+msgstr "Kurtarma sözcükleri parolası"
+
 #: public/views/create.html
 #: public/views/join.html
 msgid "Seed Passphrase"
 msgstr "Kurtarma Sözcükleri Parolası"
-
-#: public/views/import.html
-msgid "Seed passphrase"
-msgstr "Kurtarma sözcükleri parolası"
 
 #: public/views/import.html
 msgid "Select a backup file"
@@ -1198,7 +1348,7 @@ msgstr "Bir cüzdan seçin"
 
 #: public/views/modals/paypro.html
 msgid "Self-signed Certificate"
-msgstr "Self-signed Certificate"
+msgstr "Kendinden imzalı Sertifika"
 
 #: public/views/walletHome.html
 #: public/views/includes/transaction.html
@@ -1206,18 +1356,22 @@ msgstr "Self-signed Certificate"
 msgid "Send"
 msgstr "Gönder"
 
+#: public/views/preferencesInformation.html
+msgid "Send addresses by email"
+msgstr ""
+
 #: public/views/walletHome.html
 msgid "Send All"
 msgstr "Tümünü Gönder"
-
-#: public/views/preferencesInformation.html
-msgid "Send all by email"
-msgstr "Tümünü e-posta ile gönder"
 
 #: public/views/export.html
 #: public/views/preferencesLogs.html
 msgid "Send by email"
 msgstr "E-posta ile gönder"
+
+#: public/views/paperWallet.html
+msgid "Sending funds..."
+msgstr ""
 
 #: public/views/walletHome.html
 msgid "Sent"
@@ -1234,6 +1388,14 @@ msgstr "Sunucu yanıtı doğrulanamadı"
 #: public/views/preferencesAbout.html
 msgid "Session log"
 msgstr "Oturum günlüğü"
+
+#: public/views/includes/password.html
+msgid "SET"
+msgstr "AYARLA"
+
+#: public/views/preferencesBwsUrl.html
+msgid "Set default url"
+msgstr ""
 
 #: public/views/export.html
 msgid "Set up a Export Password"
@@ -1265,12 +1427,9 @@ msgid "Share this wallet address to receive payments. To protect your privacy, n
 msgstr "Ödemeler için bu cüzdan adresinizi paylaşın. Gizliliğinizi korumak için, her kullandığınızda yeni bir adres otomatik olarak üretilir."
 
 #: public/views/create.html
+#: public/views/import.html
 msgid "Shared Wallet"
 msgstr "Paylaşımlı Cüzdan"
-
-#: public/views/backup.html
-msgid "Show Wallet Seed"
-msgstr "Cüzdan Kurtarma Sözcüklerini Göster"
 
 #: public/views/create.html
 #: public/views/import.html
@@ -1278,6 +1437,14 @@ msgstr "Cüzdan Kurtarma Sözcüklerini Göster"
 #: public/views/walletHome.html
 msgid "Show advanced options"
 msgstr "Gelişmiş seçenekleri göster"
+
+#: public/views/walletHome.html
+msgid "Show all"
+msgstr ""
+
+#: public/views/backup.html
+msgid "Show Wallet Seed"
+msgstr "Cüzdan Kurtarma Sözcüklerini Göster"
 
 #: src/js/services/bwsError.js
 msgid "Signatures rejected by server"
@@ -1287,14 +1454,18 @@ msgstr "İmzalar sunucu tarafından reddedildi"
 msgid "Signing payment"
 msgstr "Ödeme imzalanıyor"
 
+#: public/views/walletHome.html
+msgid "SKIP BACKUP"
+msgstr "YEDEKLEMEYİ GEÇ"
+
 #: public/views/translators.html
 msgid "Spanish"
 msgstr "İspanyolca"
 
-#: public/views/create.html
-#: public/views/join.html
-msgid "Specify your wallet seed"
-msgstr "Cüzdan kurtarma sözcüklerini belirtin"
+#: src/js/controllers/create.js
+#: src/js/controllers/join.js
+msgid "Specify Seed..."
+msgstr ""
 
 #: src/js/services/bwsError.js
 msgid "Spend proposal is not accepted"
@@ -1303,6 +1474,10 @@ msgstr "Harcama teklifi kabul edilmedi"
 #: src/js/services/bwsError.js
 msgid "Spend proposal not found"
 msgstr "Harcama teklifi bulunamadı"
+
+#: public/views/preferences.html
+msgid "Spending Restrictions"
+msgstr ""
 
 #: public/views/preferences.html
 msgid "Still not done"
@@ -1315,6 +1490,14 @@ msgstr "Halen tamamlanmadı"
 msgid "Success"
 msgstr "Başarılı"
 
+#: public/views/preferencesAdvanced.html
+msgid "Sweep paper wallet"
+msgstr ""
+
+#: public/views/paperWallet.html
+msgid "Sweep Wallet"
+msgstr ""
+
 #: public/views/walletHome.html
 msgid "Tap to retry"
 msgstr "Yeniden denemek için dokunun"
@@ -1325,14 +1508,18 @@ msgid "Terms of Use"
 msgstr "Kullanım Şartları"
 
 #: public/views/create.html
-#: public/views/import.html
 msgid "Testnet"
 msgstr "TestNet"
+
+#: public/views/disclaimer.html
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
+msgstr ""
 
 #: src/js/services/ledger.js
 msgid "The Ledger Chrome application is not installed"
 msgstr "Ledger Chrome uygulaması kurulu değil"
 
+<<<<<<< HEAD
 #: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
 msgstr "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
@@ -1341,6 +1528,8 @@ msgstr "The authors of the software, employees and affiliates of Bitpay, copyrig
 msgid "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 
+=======
+>>>>>>> upstream/master
 #: src/js/controllers/walletHome.js
 msgid "The payment was created but could not be completed. Please try again from home screen"
 msgstr "Ödeme oluşturuldu ancak tamamlanamadı. Lütfen ana ekrandan yeniden deneyin"
@@ -1368,7 +1557,7 @@ msgstr "Kurtarma sözcükleri içe alım için parola gerektirebilir"
 
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
-msgstr "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
+msgstr ""
 
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."
@@ -1376,7 +1565,7 @@ msgstr "The software does not constitute an account where Company 0, LLC or othe
 
 #: public/views/disclaimer.html
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."
-msgstr "The software you are about to use functions as a free, open source, and multi-signature digital wallet."
+msgstr ""
 
 #: src/js/services/bwsError.js
 msgid "The spend proposal is not pending"
@@ -1419,13 +1608,13 @@ msgstr "Alıcı"
 msgid "To restore this {{index.m}}-{{index.n}} <b>shared</b> wallet you will need"
 msgstr "{{index.m}}-{{index.n}} kurtarma için <b>paylaşılan</b> bir cüzdana ihtiyacınız var"
 
-#: public/views/backup.html
-msgid "To restore this {{index.m}}-{{index.n}} shared wallet you will need"
-msgstr "{{index.m}}-{{index.n}} kurtarma için paylaşılan bir cüzdana ihtiyacınız var"
-
 #: public/views/disclaimer.html
 msgid "To the fullest extent permitted by law, this software is provided “as is” and no representations or warranties can be made of any kind, express or implied, including but not limited to the warranties of merchantability, fitness or a particular purpose and noninfringement."
-msgstr "To the fullest extent permitted by law, this software is provided “as is” and no representations or warranties can be made of any kind, express or implied, including but not limited to the warranties of merchantability, fitness or a particular purpose and noninfringement."
+msgstr ""
+
+#: public/views/walletHome.html
+msgid "too long!"
+msgstr "çok uzun!"
 
 #: public/views/modals/txp-details.html
 msgid "Total"
@@ -1446,6 +1635,14 @@ msgstr "İşlem"
 #: src/js/services/bwsError.js
 msgid "Transaction already broadcasted"
 msgstr "İşlem zaten yayınlanmış"
+
+#: public/views/preferencesInformation.html
+msgid "Transaction history"
+msgstr ""
+
+#: public/views/walletHome.html
+msgid "Transactions<br> Downloaded"
+msgstr ""
 
 #: public/views/translators.html
 msgid "Translation Credits"
@@ -1484,11 +1681,6 @@ msgstr "Gönderilmemiş işlemler"
 msgid "Updating Wallet..."
 msgstr "Cüzdan güncelleniyor..."
 
-#: public/views/create.html
-#: public/views/join.html
-msgid "Use Ledger hardware wallet"
-msgstr "Donanım cüzdanı kullan"
-
 #: public/views/preferences.html
 #: public/views/walletHome.html
 msgid "Use Unconfirmed Funds"
@@ -1503,8 +1695,123 @@ msgid "Version"
 msgstr "Sürüm"
 
 #: public/views/export.html
-msgid "View backup"
-msgstr "Yedeği gör"
+msgid "View"
+msgstr ""
+
+#: public/views/splash.html
+msgid "WELCOME TO DECRED WEB WALLET"
+msgstr "DECRED WEB WALLET'E HOŞGELDİNİZ"
+
+#: public/views/copayers.html
+msgid "Waiting for copayers"
+msgstr "Copayers bekleniyor"
+
+#: public/views/copayers.html
+msgid "Waiting..."
+msgstr "Bekliyor..."
+
+#: public/views/preferencesDeleteWallet.html
+msgid "Wallet"
+msgstr "Cüzdan"
+
+#: public/views/preferences.html
+msgid "Wallet Alias"
+msgstr "Cüzdan takma adı"
+
+#: src/js/services/bwsError.js
+msgid "Wallet already exists"
+msgstr "Cüzdan zaten var"
+
+#: src/js/services/profileService.js
+msgid "Wallet Already Imported:"
+msgstr "Cüzdan zaten içe alındı:"
+
+#: src/js/services/profileService.js
+msgid "Wallet already in Copay:"
+msgstr "Copay'de kayıtlı olan cüzdan:"
+
+#: public/views/preferencesInformation.html
+msgid "Wallet Configuration (m-n)"
+msgstr "Cüzdan Yapılandırma (m-n)"
+
+#: public/views/export.html
+msgid "Wallet Export"
+msgstr ""
+
+#: public/views/preferencesInformation.html
+msgid "Wallet Id"
+msgstr "Cüzdan Id"
+
+#: public/views/copayers.html
+msgid "Wallet incomplete and broken"
+msgstr "Cüzdan eksik ve arızalı"
+
+#: public/views/preferencesAdvanced.html
+#: public/views/preferencesInformation.html
+msgid "Wallet Information"
+msgstr "Cüzdan Bilgisi"
+
+#: public/views/join.html
+msgid "Wallet Invitation"
+msgstr "Cüzdan daveti"
+
+#: public/views/join.html
+msgid "Wallet Invitation is not valid!"
+msgstr "Cüzdan daveti geçerli değil!"
+
+#: src/js/services/bwsError.js
+msgid "Wallet is full"
+msgstr "Cüzdan dolu"
+
+#: src/js/services/bwsError.js
+msgid "Wallet is not complete"
+msgstr "Cüzdan tamamlanmadı"
+
+#: public/views/create.html
+msgid "Wallet name"
+msgstr "Cüzdan ismi"
+
+#: public/views/preferencesInformation.html
+msgid "Wallet Name (at creation)"
+msgstr "Cüzdan ismi (oluşturmadaki)"
+
+#: public/views/preferencesInformation.html
+msgid "Wallet Network"
+msgstr "Cüzdan Ağı"
+
+#: src/js/services/bwsError.js
+msgid "Wallet not found"
+msgstr "Cüzdan bulunamadı"
+
+#: src/js/services/bwsError.js
+msgid "Wallet not registed at the Wallet Service. Recreate it from \"Create Wallet\" using \"Advanced Options\" to set your seed"
+msgstr "Cüzdan kayıtlı değil. Kurtarma sözcükleri belirlemek için Cüzdan Servisinden kaydedebilirsiniz"
+
+#: public/views/create.html
+#: public/views/import.html
+#: public/views/join.html
+msgid "Wallet Seed"
+msgstr "Cüzdan Kurtarma Sözcükleri"
+
+#: public/views/import.html
+msgid "Wallet Seed could require a passphrase to be imported"
+msgstr "Cüzdan kurtarma sözcükleri içe alım için parola gerektirebilir"
+
+#: src/js/services/bwsError.js
+msgid "Wallet seed is invalid"
+msgstr "Cüzdan kurtarma sözcükleri geçersiz"
+
+#: public/views/backup.html
+msgid "Wallet seed not available. You can still export it from Advanced &gt; Export."
+msgstr "Cüzdan kurtarma sözcükleri kullanılabilir değil. Yine de Gelişmiş &gt; Dışa Alım adımından dışa alabilirsiniz."
+
+#: src/js/services/bwsError.js
+msgid "Wallet service not found"
+msgstr "Cüzdan hizmeti bulunamadı"
+
+#: public/views/modals/destination-address.html
+msgid "Wallets"
+msgstr ""
 
 #: public/views/walletHome.html
 msgid "WARNING: Backup needed"
@@ -1527,144 +1834,33 @@ msgstr "UYARI: Bu cüzdan için için özel anahtar kullanılabilir değil. Öze
 msgid "WARNING: This seed was created with a passphrase. To recover this wallet both the mnemonic and passphrase are needed."
 msgstr "Kurtarma sözcükleri bir parola ile desteklendi. Bu cüzdanı kurtarmak için, kurtarma sözcüklerine ve parolaya ihtiyaç olacaktır."
 
+#: public/views/modals/txp-details.html
+msgid "Warning: this transaction has unconfirmed inputs"
+msgstr "Uyarı: Bu işlem doğrulanmamış girişler içeriyor"
+
 #: public/views/modals/paypro.html
 msgid "WARNING: UNTRUSTED CERTIFICATE"
-msgstr "WARNING: UNTRUSTED CERTIFICATE"
+msgstr "UYARI: GÜVENİLİR OLMAYAN SERTİFİKA"
 
 #: public/views/walletHome.html
 msgid "WARNING: Wallet not registered"
 msgstr "UYARI: Cüzdan kayıtlı değil"
 
-#: public/views/splash.html
-msgid "WELCOME TO COPAY"
-msgstr "COPAY'E HOŞGELDİNİZ"
-
-#: public/views/splash.html
-msgid "WELCOME TO DECRED WEB WALLET"
-msgstr "DECRED WEB WALLET'E HOŞGELDİNİZ"
-
-#: public/views/copayers.html
-msgid "Waiting for copayers"
-msgstr "Copayers bekleniyor"
-
-#: public/views/copayers.html
-msgid "Waiting..."
-msgstr "Bekliyor..."
-
-#: public/views/preferencesDeleteWallet.html
-msgid "Wallet"
-msgstr "Cüzdan"
-
-#: public/views/preferences.html
-msgid "Wallet Alias"
-msgstr "Cüzdan takma adı"
-
-#: src/js/services/profileService.js
-msgid "Wallet Already Imported:"
-msgstr "Cüzdan zaten içe alındı:"
-
-#: public/views/preferencesInformation.html
-msgid "Wallet Configuration (m-n)"
-msgstr "Cüzdan Yapılandırma (m-n)"
-
-#: public/views/preferencesInformation.html
-msgid "Wallet Id"
-msgstr "Cüzdan Id"
-
-#: public/views/preferencesAdvanced.html
-#: public/views/preferencesInformation.html
-msgid "Wallet Information"
-msgstr "Cüzdan Bilgisi"
-
-#: public/views/join.html
-msgid "Wallet Invitation"
-msgstr "Cüzdan daveti"
-
-#: public/views/join.html
-msgid "Wallet Invitation is not valid!"
-msgstr "Cüzdan daveti geçerli değil!"
-
-#: public/views/preferencesInformation.html
-msgid "Wallet Name (at creation)"
-msgstr "Cüzdan ismi (oluşturmadaki)"
-
-#: public/views/preferencesInformation.html
-msgid "Wallet Network"
-msgstr "Cüzdan Ağı"
-
-#: public/views/create.html
-#: public/views/import.html
-#: public/views/join.html
-msgid "Wallet Seed"
-msgstr "Cüzdan Kurtarma Sözcükleri"
-
-#: public/views/import.html
-msgid "Wallet Seed could require a passphrase to be imported"
-msgstr "Cüzdan kurtarma sözcükleri içe alım için parola gerektirebilir"
-
-#: src/js/services/bwsError.js
-msgid "Wallet already exists"
-msgstr "Cüzdan zaten var"
-
-#: src/js/services/profileService.js
-msgid "Wallet already in Copay:"
-msgstr "Copay'de kayıtlı olan cüzdan:"
-
-#: src/js/services/bwsError.js
-msgid "Wallet already registered"
-msgstr "Cüzdan zaten kayıtlı"
-
-#: public/views/copayers.html
-msgid "Wallet incomplete and broken"
-msgstr "Cüzdan eksik ve arızalı"
-
-#: src/js/services/bwsError.js
-msgid "Wallet is full"
-msgstr "Cüzdan dolu"
-
-#: src/js/services/bwsError.js
-msgid "Wallet is not complete"
-msgstr "Cüzdan tamamlanmadı"
-
-#: public/views/create.html
-msgid "Wallet name"
-msgstr "Cüzdan ismi"
-
-#: src/js/services/bwsError.js
-msgid "Wallet not found"
-msgstr "Cüzdan bulunamadı"
-
-#: src/js/services/bwsError.js
-msgid "Wallet not registed at the Wallet Service. Recreate it from \"Create Wallet\" using \"Advanced Options\" to set your seed"
-msgstr "Cüzdan kayıtlı değil. Kurtarma sözcükleri belirlemek için Cüzdan Servisinden kaydedebilirsiniz"
-
-#: src/js/services/bwsError.js
-msgid "Wallet seed is invalid"
-msgstr "Cüzdan kurtarma sözcükleri geçersiz"
-
-#: public/views/backup.html
-msgid "Wallet seed not available. You can still export it from Advanced &gt; Export."
-msgstr "Cüzdan kurtarma sözcükleri kullanılabilir değil. Yine de Gelişmiş &gt; Dışa Alım adımından dışa alabilirsiniz."
-
-#: src/js/services/bwsError.js
-msgid "Wallet service not found"
-msgstr "Cüzdan hizmeti bulunamadı"
-
 #: public/views/preferencesDeleteWallet.html
 msgid "Warning!"
 msgstr "Uyarı!"
 
-#: public/views/modals/txp-details.html
-msgid "Warning: this transaction has unconfirmed inputs"
-msgstr "Uyarı: Bu işlem doğrulanmamış girişler içeriyor"
-
 #: public/views/disclaimer.html
 msgid "We reserve the right to modify this disclaimer from time to time."
-msgstr "We reserve the right to modify this disclaimer from time to time."
+msgstr "Zaman zaman bu reddi değiştirme hakkımızı saklı tutarız."
+
+#: public/views/splash.html
+msgid "WELCOME TO COPAY"
+msgstr "COPAY'E HOŞGELDİNİZ"
 
 #: public/views/disclaimer.html
 msgid "While the software has undergone beta testing and continues to be improved by feedback from the open-source user and developer community, we cannot guarantee that there will be no bugs in the software."
-msgstr "While the software has undergone beta testing and continues to be improved by feedback from the open-source user and developer community, we cannot guarantee that there will be no bugs in the software."
+msgstr ""
 
 #: public/views/backup.html
 msgid "Write it down and keep them somewhere safe."
@@ -1684,15 +1880,15 @@ msgstr "Evet"
 
 #: public/views/disclaimer.html
 msgid "You acknowledge that your use of this software is at your own discretion and in compliance with all applicable laws."
-msgstr "You acknowledge that your use of this software is at your own discretion and in compliance with all applicable laws."
+msgstr ""
 
 #: public/views/disclaimer.html
 msgid "You are responsible for safekeeping your passwords, private key pairs, PINs and any other codes you use to access the software."
-msgstr "You are responsible for safekeeping your passwords, private key pairs, PINs and any other codes you use to access the software."
+msgstr ""
 
 #: public/views/disclaimer.html
 msgid "You assume any and all risks associated with the use of the software."
-msgstr "You assume any and all risks associated with the use of the software."
+msgstr ""
 
 #: public/views/backup.html
 msgid "You can safely install your wallet on another device and use it from multiple devices at the same time."
@@ -1705,10 +1901,6 @@ msgstr "Cüzdanınız yok"
 #: public/views/backup.html
 msgid "You need the wallet seed to restore this personal wallet."
 msgstr "Bu cüzdanı yüklemek için kurtarma sözcüklerine ihtiyacınız var."
-
-#: public/views/backup.html
-msgid "Your Wallet Seed"
-msgstr "Cüzdan Kurtama Sözcükleriniz"
 
 #: public/views/import.html
 msgid "Your backup password"
@@ -1740,47 +1932,10 @@ msgid "Your wallet key will be encrypted. Password cannot be recovered. Be sure 
 msgstr "Cüzdan anahtarınız şifrelenecek ve parolanız için bir kurtarma seçeneği olmayacak. Parolanızı bir yere yazdığınızdan emin olun"
 
 #: public/views/backup.html
-msgid "Your wallet seed and access to the wallet service where wallet is registered"
-msgstr "Cüzdan kurtarma sözcükleriniz ve cüzdanınızın kayıtlı olduğu servis"
+msgid "Your Wallet Seed"
+msgstr "Cüzdan Kurtama Sözcükleriniz"
 
 #: public/views/backup.html
-msgid "Your wallet seed and access to the wallet service where your wallet is registered"
-msgstr "Cüzdan kurtarma sözcükleriniz ve cüzdanınızın kayıtlı olduğu servis"
-
-#: public/views/includes/available-balance.html
-msgid "locked by pending payments"
-msgstr "bekleyen ödemeler yüzünden kilitlendi"
-
-#: src/js/services/profileService.js
-msgid "me"
-msgstr "ben"
-
-#: public/views/walletHome.html
-msgid "optional"
-msgstr "isteğe bağlı"
-
-#: public/views/preferences.html
-msgid "settings"
-msgstr "ayarlar"
-
-#: public/views/walletHome.html
-msgid "too long!"
-msgstr "çok uzun!"
-
-#: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
-msgstr "{{fee}} bitcoin ağ ücreti olarak düşülecektir"
-
-#: public/views/copayers.html
-#: public/views/walletHome.html
-msgid "{{index.m}}-of-{{index.n}}"
-msgstr "{{index.m}} te {{index.n}}"
-
-#: public/views/includes/sidebar.html
-msgid "{{item.m}}-of-{{item.n}}"
-msgstr "{{item.n}} te {{item.m}}"
-
-#: src/js/controllers/importLegacy.js
-msgid "{{len}} wallets imported. Funds scanning in progress. Hold on to see updated balance"
-msgstr "{{len}} cüzdanı içe aktarıldı. Fonlar taranırken ve güncellenirken bekleyiniz"
+msgid "Your wallet seed and access to the server that coordinated the initial wallet creation. You still need {{index.m}} keys to spend."
+msgstr ""
 

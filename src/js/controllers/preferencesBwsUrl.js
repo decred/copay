@@ -1,20 +1,25 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('preferencesBwsUrlController',
-  function($scope,$log, configService, isMobile, isCordova, go,  applicationService ) {
-    this.isSafari = isMobile.Safari();
-    this.isCordova = isCordova;
-    this.error = null;
-    this.success = null;
+  function($scope, $log, configService, applicationService, profileService, storageService) {
+    $scope.error = null;
+    $scope.success = null;
 
+    var fc = profileService.focusedClient;
+    var walletId = fc.credentials.walletId;
+    var defaults = configService.getDefaults();
     var config = configService.getSync();
 
-    this.bwsurl = config.bws.url;
+    $scope.bwsurl = (config.bwsFor && config.bwsFor[walletId]) || defaults.bws.url;
 
-    this.save = function() {
+    $scope.resetDefaultUrl = function() {
+      $scope.bwsurl = defaults.bws.url;
+    };
+
+    $scope.save = function() {
 
       var bws;
-      switch (this.bwsurl) {
+      switch ($scope.bwsurl) {
         case 'prod':
         case 'production':
           bws = 'https://bws.decred.org/bws/api'
@@ -30,21 +35,19 @@ angular.module('copayApp.controllers').controller('preferencesBwsUrlController',
       };
       if (bws) {
         $log.info('Using BWS URL Alias to ' + bws);
-        this.bwsurl = bws;
+        $scope.bwsurl = bws;
       }
 
       var opts = {
-        bws: {
-          url: this.bwsurl,
-        }
+        bwsFor: {}
       };
+      opts.bwsFor[walletId] = $scope.bwsurl;
 
       configService.set(opts, function(err) {
-        if (err) console.log(err);
-        $scope.$emit('Local/BWSUpdated');
-        applicationService.restart();
+        if (err) $log.debug(err);
+        storageService.setCleanAndScanAddresses(walletId, function() {
+          applicationService.restart();
+        });
       });
     };
-
-
   });

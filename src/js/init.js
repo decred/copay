@@ -7,74 +7,32 @@ angular.element(document).ready(function() {
     angular.bootstrap(document, ['copayApp']);
   };
 
-  var handleBitcoinURI = function(url) {
-    if (!url) return;
-    if (url.indexOf('glidera') != -1) {
-      url = '#/uri-glidera' + url.replace('bitcoin://glidera', '');
+
+  function handleOpenURL(url) {
+    if ('cordova' in window) {
+      console.log('DEEP LINK:' + url);
+      cordova.fireDocumentEvent('handleopenurl', {
+        url: url
+      });
+    } else {
+      console.log("ERROR: Cannont handle open URL in non-cordova apps")
     }
-    else {
-      url = '#/uri-payment/' + url;
-    }
-    setTimeout(function() {
-      window.location = url;
-    }, 1000);
   };
 
-
   /* Cordova specific Init */
-  if (window.cordova !== undefined) {
+  if ('cordova' in window) {
+
+    window.handleOpenURL = handleOpenURL;
+
 
     document.addEventListener('deviceready', function() {
 
-      document.addEventListener('pause', function() {
-        if (!window.ignoreMobilePause) {
-          window.location = '#/';
-        }
-      }, false);
-
-      document.addEventListener('resume', function() {
-        if (!window.ignoreMobilePause) {
-          window.location = '#/cordova/resume';
-        }
-        setTimeout(function() {
-          window.ignoreMobilePause = false;
-        }, 100);
-      }, false);
-
-      // Back button event
-      document.addEventListener('backbutton', function() {
-        var loc = window.location;
-        if (loc.toString().match(/index\.html#\/$/)) {
-          navigator.app.exitApp();
-        } else {
-          window.location = '#/cordova/walletHome';
-        }
-      }, false);
-
-      document.addEventListener('menubutton', function() {
-        window.location = '#/preferences';
-      }, false);
-
-
-
-      setTimeout(function() {
-        navigator.splashscreen.hide();
-      }, 2000);
-
-      window.plugins.webintent.getUri(handleBitcoinURI);
-      window.plugins.webintent.onNewIntent(handleBitcoinURI);
-      window.handleOpenURL = handleBitcoinURI;
-
+      // Create a sticky event for handling the app being opened via a custom URL
+      cordova.addStickyDocumentEventHandler('handleopenurl');
       startAngular();
     }, false);
+
   } else {
-
-    try {
-      window.handleOpenURL = handleBitcoinURI;
-      window.plugins.webintent.getUri(handleBitcoinURI);
-      window.plugins.webintent.onNewIntent(handleBitcoinURI);
-    } catch (e) {}
-
     startAngular();
   }
 

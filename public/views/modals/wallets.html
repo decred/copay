@@ -1,44 +1,56 @@
-<nav class="tab-bar">
-  <section class="left-small">
-    <a ng-click="cancel()" class="p10">
-      <span class="text-close" translate>Close</span>
-    </a>
-  </section>
-
-  <section class="middle tab-bar-section">
-    <h1 class="title ellipsis" ng-style="{'color':color}" translate>
-      Choose a wallet to send funds
-    </h1>
-  </section>
-</nav>
-
-<div class="modal-content">
-  <div class="onGoingProcess" ng-if="gettingAddress">
-    <div class="onGoingProcess-content" ng-style="{'background-color':'#222'}">
-      <div class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-      </div>
-      <span translate> Getting address for wallet {{selectedWalletName}} ...</span>
-    </div>
-  </div>
-  <div ng-if="!gettingAddress">
-    <ul class="no-bullet">
-      <li class="line-b" ng-repeat="w in wallets">
-      <a ng-click="selectWallet(w.id, w.name)" class="db oh">
-        <div class="avatar-wallet"
-          ng-style="{'background-color':w.color}">{{(w.name || w.id) | limitTo: 1}}</div>
-        <div class="ellipsis name-wallet text-bold">{{w.name || w.id}}</div>
-        <div class="size-12">{{w.m}} of {{w.n}}
-          <span ng-show="w.network=='testnet'">[Testnet]</span>
-        </div>
+<ion-modal-view ng-controller="walletsController">
+  <ion-header-bar align-title="center" class="tab-bar">
+    <div class="left-small">
+      <a ng-click="cancel()" class="p10">
+        <span class="text-close">Close</span>
       </a>
-      </li>
-    </ul>
-  </div>
+    </div>
+    <h1 class="title ellipsis">
+      <span ng-show="type == 'BUY' || type == 'RECEIVE'">Choose your destination wallet</span>
+      <span ng-show="type == 'SELL' || type == 'SEND'">Choose your source wallet</span>
+    </h1>
+  </ion-header-bar>
 
-  <div class="extra-margin-bottom"></div>
-</div>
+  <ion-content overflow-scroll="true">
+    <div class="modal-content">
+      <div class="box-notification text-center size-12 text-warning m10t" ng-show="error">
+        <i class="fi-error"></i> {{error}}
+      </div>
+      <div ng-show="type == 'SELL'">
+        <h4 class="title m0 oh">
+          <div class="left">
+            <i class="fi-info size-18 m10r"></i>
+          </div>
+          <div class="size-10 m5t">
+            Notice: only 1-1 (single signature) wallets can be used for sell bitcoin
+          </div>
+        </h4>
+      </div>
+      <div ng-show="type != 'SELL'">
+        <h4 class="title m0 oh">
+        </h4>
+      </div>
+      <ul class="no-bullet">
+        <li class="line-b" ng-repeat="w in wallets">
+        <a ng-click="selectWallet(w.id)" class="db oh">
+          <div class="avatar-wallet"
+            ng-style="{'background-color':w.color}">
+            <i class="icon-wallet size-21"></i>
+          </div>
+          <div class="ellipsis name-wallet text-bold">
+            {{w.name || w.id}}
+            <span class="has-error right text-light size-12" ng-show="errorSelectedWallet[w.id]">
+              <i class="icon-close-circle size-14"></i>
+              <span class="vm">{{errorSelectedWallet[w.id]}}</span>
+            </span>
+          </div>
+          <div class="size-12">{{w.m}} of {{w.n}}
+            <span ng-show="w.network=='testnet'">[Testnet]</span>
+          </div>
+        </a>
+        </li>
+      </ul>
+      <div class="extra-margin-bottom"></div>
+    </div>
+  </ion-content>
+</ion-modal-view>

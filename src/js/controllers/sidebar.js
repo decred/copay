@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('sidebarController',
-  function($rootScope, $timeout, lodash, profileService, configService, go, isMobile, isCordova) {
+  function($rootScope, $timeout, $ionicScrollDelegate, lodash, profileService, configService, go, platformInfo) {
     var self = this;
-    self.isWindowsPhoneApp = isMobile.Windows() && isCordova;
+    self.isWindowsPhoneApp = platformInfo.isWP && platformInfo.isCordova;
     self.walletSelection = false;
 
     // wallet list change
@@ -20,7 +20,6 @@ angular.module('copayApp.controllers').controller('sidebarController',
       self.setWallets();
     });
 
-
     self.signout = function() {
       profileService.signout();
     };
@@ -28,8 +27,8 @@ angular.module('copayApp.controllers').controller('sidebarController',
     self.switchWallet = function(selectedWalletId, currentWalletId) {
       if (selectedWalletId == currentWalletId) return;
       self.walletSelection = false;
-      profileService.setAndStoreFocus(selectedWalletId, function() {
-      });
+      profileService.setAndStoreFocus(selectedWalletId, function() {});
+      $ionicScrollDelegate.scrollTop();
     };
 
     self.toggleWalletSelection = function() {
@@ -40,10 +39,14 @@ angular.module('copayApp.controllers').controller('sidebarController',
 
     self.setWallets = function() {
       if (!profileService.profile) return;
+
       var config = configService.getSync();
       config.colorFor = config.colorFor || {};
       config.aliasFor = config.aliasFor || {};
-      var ret = lodash.map(profileService.profile.credentials, function(c) {
+
+      // Sanitize empty wallets (fixed in BWC 1.8.1, and auto fixed when wallets completes)
+      var credentials = lodash.filter(profileService.profile.credentials, 'walletName');
+      var ret = lodash.map(credentials, function(c) {
         return {
           m: c.m,
           n: c.n,
@@ -52,9 +55,9 @@ angular.module('copayApp.controllers').controller('sidebarController',
           color: config.colorFor[c.walletId] || '#1D617D;',
         };
       });
+
       self.wallets = lodash.sortBy(ret, 'name');
     };
 
     self.setWallets();
-
   });

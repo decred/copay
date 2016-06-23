@@ -1,23 +1,23 @@
-Secure bitcoin on your own terms with an open source, multisignature wallet from BitPay. 
-Copay users can hold funds individually or share finances securely with other users with multisignature wallets, which prevent unauthorized payments by requiring multiple approvals. Here are some ways Copay can be used with others:
+采用 BitPay 开放源码的多重签名钱包，根据自己的条件保管比特币。 
+Copay 户可以单独保管资金或与通过使用多重签名钱包与其他用户一起安全共同保管财政，由于需要多个用户批准，因此可防止未经授权的付款。 以下是 Copay 可与其他人共同使用的方法：
 
-To save for vacations or joint purchases with friends 
-To track family spending and allowances
+与好友为假期旅游而储蓄或一起购物 
+跟踪家庭开支和津贴
 可用来管理商务，团体，或集团的收支
 
-We built the following features into this version of Copay for a bitcoin wallet that doesn't compromise on security or accessibility:
+我们在此版本的 Copay 建立以下功能，使 Copay 钱包从不妥协于安全性和可访问性：
 
-Multiple wallet creation and management in-app 
-Intuitive multisignature security for personal or shared wallets
-Easy spending proposal flow for shared wallets and group payments
-Hierarchical deterministic (HD) address generation and wallet backups 
-Device-based security: all private keys are stored locally, not in the cloud
-Support for Bitcoin testnet wallets
-Synchronous access across all major mobile and desktop platforms
-Payment protocol (BIP70-BIP73) support: easily-identifiable payment requests and verifiably secure bitcoin payments
-Support for 150+ currency pricing options and unit denomination in BTC or bits
-Email notifications for payments and transfers
-Customizable wallet naming and background colors
-10 supported languages (EN, JP, FR, ES, IT, DE, PT, RU, EL, TR)
+应用程序的多个钱包创建和管理 
+个人或共享钱包的直观多重签名安全
+共享钱包和团体支付简单易用
+分层确定性（HD）地址生成和钱包备份 
+基于设备的安全：所有私钥都存储在本地，而不是在云中
+支持 testnet 比特币钱包
+支持所有主要移动端和桌面平台的同步访问
+支持支付协议（BIP70-BIP73）：容易辨认的付款请求和可验证的安全比特币支付
+支持 150 + 货币定价及比特币的面值单位
+电子邮件通知比特币的支付和转移
+可自定义的钱包名和背景颜色
+支持 9 种语言 (EN, CS, FR, DE, IT, ES, JA, PL, RU)
 
-Copay is free and open source software run on non-proprietary servers, so there's no need to rely on any company for continuous support. Anyone can review or contribute to Copay's source code on GitHub (https://github.com/bitpay/copay). 
+Copay 是自由和开放源码软件，在非专有服务器上运行，因此无需依靠任何公司以提供永续支持。 任何人都可以查看或对位于 GitHub (https://github.com/bitpay/copay) 的 Copay 源代码作出贡献。 

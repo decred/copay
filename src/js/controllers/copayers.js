@@ -1,14 +1,22 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('copayersController',
-  function($scope, $rootScope, $timeout, $log, $modal, profileService, go, notification, isCordova, gettext, gettextCatalog) {
+  function($scope, $rootScope, $timeout, $log, $ionicModal, profileService, go, notification, platformInfo, gettext, gettextCatalog) {
     var self = this;
+    var isCordova = platformInfo.isCordova;
+    var isWP = platformInfo.isWP;
+    var isAndroid = platformInfo.isAndroid;
 
     var delete_msg = gettextCatalog.getString('Are you sure you want to delete this wallet?');
     var accept_msg = gettextCatalog.getString('Accept');
     var cancel_msg = gettextCatalog.getString('Cancel');
     var confirm_msg = gettextCatalog.getString('Confirm');
 
+    // Note that this is ONLY triggered when the page is opened
+    // IF a wallet is incomplete and copay is at /#copayers
+    // and the user switch to an other complete wallet
+    // THIS IS NOT TRIGGERED.
+    //
     self.init = function() {
       var fc = profileService.focusedClient;
       if (fc.isComplete()) {
@@ -16,58 +24,46 @@ angular.module('copayApp.controllers').controller('copayersController',
         go.walletHome();
         return;
       }
-      self.loading = false;
-      self.isCordova = isCordova;
     };
 
     var _modalDeleteWallet = function() {
-      var ModalInstanceCtrl = function($scope, $modalInstance, gettext) {
-        $scope.title = delete_msg;
-        $scope.loading = false;
+      $scope.title = delete_msg;
+      $scope.accept_msg = accept_msg;
+      $scope.cancel_msg = cancel_msg;
+      $scope.confirm_msg = confirm_msg;
+      $scope.okAction = doDeleteWallet;
+      $scope.loading = false;
 
-        $scope.ok = function() {
-          $scope.loading = true;
-          $modalInstance.close(accept_msg);
-
-        };
-        $scope.cancel = function() {
-          $modalInstance.dismiss(cancel_msg);
-        };
-      };
-
-      var modalInstance = $modal.open({
-        templateUrl: 'views/modals/confirmation.html',
-        windowClass: 'full',
-        controller: ModalInstanceCtrl
-      });
-      modalInstance.result.then(function(ok) {
-        if (ok) {
-          _deleteWallet();
-        }
+      $ionicModal.fromTemplateUrl('views/modals/confirmation.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function(modal) {
+        $scope.confirmationModal = modal;
+        $scope.confirmationModal.show();
       });
     };
 
-    var _deleteWallet = function() {
+    var doDeleteWallet = function() {
       var fc = profileService.focusedClient;
-      $timeout(function() {
-        var fc = profileService.focusedClient;
-        var walletName = fc.credentials.walletName;
-
-        profileService.deleteWalletFC({}, function(err) {
-          if (err) {
-            this.error = err.message || err;
-            console.log(err);
-            $timeout(function() {
-              $scope.$digest();
-            });
-          } else {
-            go.walletHome();
-            $timeout(function() {
-              notification.success(gettextCatalog.getString('Success'), gettextCatalog.getString('The wallet "{{walletName}}" was deleted', {walletName: walletName}));
-            });
-          }
-        });
-      }, 100);
+      var walletName = fc.credentials.walletName;
+      profileService.deleteWalletClient(fc, function(err) {
+        if (err) {
+          self.error = err.message || err;
+          $timeout(function() {
+            $scope.$digest();
+          });
+        } else {
+          go.walletHome();
+          $timeout(function() {
+            notification.success(
+              gettextCatalog.getString('Success'),
+              gettextCatalog.getString('The wallet "{{walletName}}" was deleted', {
+                walletName: walletName
+              })
+            );
+          });
+        }
+      });
     };
 
     self.deleteWallet = function() {
@@ -77,7 +73,7 @@ angular.module('copayApp.controllers').controller('copayersController',
           delete_msg,
           function(buttonIndex) {
             if (buttonIndex == 1) {
-              _deleteWallet();
+              doDeleteWallet();
             }
           },
           confirm_msg, [accept_msg, cancel_msg]
@@ -96,10 +92,9 @@ angular.module('copayApp.controllers').controller('copayersController',
 
     self.shareSecret = function(secret) {
       if (isCordova) {
-        if (isMobile.Android() || isMobile.Windows()) {
-          window.ignoreMobilePause = true;
-        }
-        var message = gettextCatalog.getString('Join my Copay wallet. Here is the invitation code: {{secret}} You can download Copay for your phone or desktop at https://copay.io', {secret: secret});
+        var message = gettextCatalog.getString('Join my Copay wallet. Here is the invitation code: {{secret}} You can download Copay for your phone or desktop at https://copay.io', {
+          secret: secret
+        });
         window.plugins.socialsharing.share(message, gettextCatalog.getString('Invitation to share a Copay Wallet'), null, null);
       }
     };

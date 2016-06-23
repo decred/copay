@@ -1,20 +1,47 @@
+'use strict';
+
 module.exports = function(grunt) {
+
+  require('load-grunt-tasks')(grunt);
 
   // Project Configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    'string-replace': {
+      dist: {
+        files: {
+          'cordova/config.xml': ['config-templates/config.xml'],
+          'cordova/wp/Package.appxmanifest': ['config-templates/Package.appxmanifest'],
+          'cordova/wp/Properties/WMAppManifest.xml': ['config-templates/WMAppManifest.xml'],
+          'webkitbuilds/.desktop': ['config-templates/.desktop'],
+          'webkitbuilds/setup-win.iss': ['config-templates/setup-win.iss']
+        },
+        options: {
+          replacements: [{
+            pattern: /%APP-VERSION%/g,
+            replacement: '<%= pkg.version %>'
+            }, {
+            pattern: /%ANDROID-VERSION-CODE%/g,
+            replacement: '<%= pkg.androidVersionCode %>'
+          }]
+        }
+      }
+    },
     exec: {
       version: {
         command: 'node ./util/version.js'
       },
+      coinbase: {
+        command: 'node ./util/coinbase.js'
+      },
       clear: {
         command: 'rm -Rf bower_components node_modules'
       },
-      osx64: {
-        command: 'hdiutil create  -megabytes 150 -volname Copay -srcfolder webkitbuilds/copay/osx64/copay.app/ -ov -format UDZO webkitbuilds/copay-osx64.dmg'
+      osx: {
+        command: 'webkitbuilds/build-osx.sh sign'
       },
-      osx32: {
-        command: 'hdiutil create  -megabytes 150 -volname Copay -srcfolder webkitbuilds/copay/osx32/copay.app/ -ov -format UDZO webkitbuilds/copay-osx32.dmg'
+      coveralls: {
+        command: 'cat  coverage/report-lcov/lcov.info |./node_modules/coveralls/bin/coveralls.js'
       }
     },
     watch: {
@@ -37,9 +64,23 @@ module.exports = function(grunt) {
           'src/js/routes.js',
           'src/js/services/*.js',
           'src/js/models/*.js',
-          'src/js/controllers/*.js'
+          'src/js/controllers/**/*.js'
         ],
         tasks: ['concat:js']
+      }
+    },
+    sass: {
+      dist: {
+        options: {
+          style: 'compact',
+          sourcemap: 'none'
+        },
+        files: [{
+          expand: true,
+          src: ['src/sass/*.scss'],
+          dest: './',
+          ext: '.css'
+        }]
       }
     },
     concat: {
@@ -49,20 +90,18 @@ module.exports = function(grunt) {
       },
       angular: {
         src: [
-          'bower_components/fastclick/lib/fastclick.js',
           'bower_components/qrcode-generator/js/qrcode.js',
           'bower_components/qrcode-decoder-js/lib/qrcode-decoder.js',
           'bower_components/moment/min/moment-with-locales.js',
-          'bower_components/angular/angular.js',
           'bower_components/angular-ui-router/release/angular-ui-router.js',
-          'bower_components/angular-foundation/mm-foundation-tpls.js',
           'bower_components/angular-moment/angular-moment.js',
           'bower_components/ng-lodash/build/ng-lodash.js',
-          'bower_components/angular-qrcode/qrcode.js',
+          'bower_components/angular-qrcode/angular-qrcode.js',
           'bower_components/angular-gettext/dist/angular-gettext.js',
-          'bower_components/angular-touch/angular-touch.js',
-          'bower_components/angular-bitcore-wallet-client/angular-bitcore-wallet-client.js',
-          'bower_components/angular-ui-switch/angular-ui-switch.js'
+          'bower_components/angular-sanitize/angular-sanitize.js',
+          'bower_components/ng-csv/build/ng-csv.js',
+          'bower_components/angular-mocks/angular-mocks.js',
+          'angular-bitcore-wallet-client/angular-bitcore-wallet-client.js'
         ],
         dest: 'public/lib/angular.js'
       },
@@ -74,26 +113,56 @@ module.exports = function(grunt) {
           'src/js/filters/*.js',
           'src/js/models/*.js',
           'src/js/services/*.js',
-          'src/js/controllers/*.js',
+          'src/js/controllers/**/*.js',
           'src/js/translations.js',
           'src/js/version.js',
-          'src/js/init.js'
+          'src/js/coinbase.js',
+          'src/js/init.js',
+          'src/js/trezor-url.js',
+          'bower_components/trezor-connect/login.js'
         ],
         dest: 'public/js/copay.js'
       },
       css: {
-        src: ['src/css/*.css'],
+        src: ['src/sass/*.css', 'src/css/*.css'],
         dest: 'public/css/copay.css'
       },
       foundation: {
         src: [
           'bower_components/angular/angular-csp.css',
           'bower_components/foundation/css/foundation.css',
-          'bower_components/animate.css/animate.css',
-          'bower_components/angular-ui-switch/angular-ui-switch.css'
+          'bower_components/animate.css/animate.css'
         ],
         dest: 'public/css/foundation.css',
-      }
+      },
+      ionic_js: {
+        src: [
+          'bower_components/ionic/release/js/ionic.bundle.min.js'
+        ],
+        dest: 'public/lib/ionic.bundle.js'
+      },
+      ionic_css: {
+        src: [
+          'bower_components/ionic/release/css/ionic.min.css'
+        ],
+        dest: 'public/css/ionic.css',
+      },
+      ui_components_js: {
+        src: [
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/roundSlider/dist/roundslider.min.js',
+          'bower_components/angular-gridster/dist/angular-gridster.min.js',
+          'bower_components/javascript-detect-element-resize/detect-element-resize.js'
+        ],
+        dest: 'public/lib/ui-components.js'
+      },
+      ui_components_css: {
+        src: [
+          'bower_components/roundSlider/dist/roundslider.min.css',
+          'bower_components/angular-gridster/dist/angular-gridster.min.css'
+        ],
+        dest: 'public/css/ui-components.css',
+      },
     },
     uglify: {
       options: {
@@ -110,12 +179,11 @@ module.exports = function(grunt) {
       pot: {
         files: {
           'i18n/po/template.pot': [
-            'public/index.html', 
-            'public/views/*.html', 
+            'public/index.html',
             'public/views/**/*.html',
             'src/js/routes.js',
             'src/js/services/*.js',
-            'src/js/controllers/*.js'
+            'src/js/controllers/**/*.js'
           ]
         }
       },
@@ -137,11 +205,21 @@ module.exports = function(grunt) {
         src: 'bower_components/foundation-icon-fonts/foundation-icons.*',
         dest: 'public/icons/'
       },
+      ionic_fonts: {
+        expand: true,
+        flatten: true,
+        src: 'bower_components/ionic/release/fonts/ionicons.*',
+        dest: 'public/fonts/'
+      },
       linux: {
-        files: [
-          {expand: true, cwd: 'webkitbuilds/',src: ['.desktop', '../public/img/icons/favicon.ico', '../public/img/icons/icon-256.png'],dest: 'webkitbuilds/copay/linux32/', flatten: true, filter: 'isFile' },
-          {expand: true, cwd: 'webkitbuilds/',src: ['.desktop', '../public/img/icons/favicon.ico', '../public/img/icons/icon-256.png'],dest: 'webkitbuilds/copay/linux64/', flatten: true, filter: 'isFile' },
-        ],
+        files: [{
+          expand: true,
+          cwd: 'webkitbuilds/',
+          src: ['.desktop', '../public/img/icons/favicon.ico', '../public/img/icons/icon-256.png'],
+          dest: 'webkitbuilds/Copay/linux64/',
+          flatten: true,
+          filter: 'isFile'
+        }],
       }
     },
     karma: {
@@ -153,62 +231,43 @@ module.exports = function(grunt) {
         singleRun: true
       }
     },
-    coveralls: {
-      options: {
-        debug: false,
-        coverageDir: 'coverage/report-lcov',
-        dryRun: true,
-        force: true,
-        recursive: false
-      }
-    },
     nodewebkit: {
       options: {
-          platforms: ['win','osx','linux'],
-          buildDir: './webkitbuilds',
-          version: '0.12.2',
-          macIcns: './public/img/icons/icon.icns',
-          exeIco: './public/img/icons/icon.ico'
+        appName: 'Copay',
+        platforms: ['win64', 'osx64', 'linux64'],
+        buildDir: './webkitbuilds',
+        version: '0.12.2',
+        macIcns: './public/img/icons/icon.icns',
+        exeIco: './public/img/icons/icon.ico'
       },
       src: ['./package.json', './public/**/*']
     },
     compress: {
-      linux32: {
+      linux: {
         options: {
-          archive: './webkitbuilds/copay-linux32.zip'
+          archive: './webkitbuilds/Copay-linux.zip'
         },
         expand: true,
-        cwd: './webkitbuilds/copay/linux32/',
+        cwd: './webkitbuilds/Copay/linux64/',
         src: ['**/*'],
-        dest: 'copay-linux32/'
-      },
-      linux64: {
-        options: {
-          archive: './webkitbuilds/copay-linux64.zip'
+        dest: 'copay-linux/'
+      }
+    },
+    browserify: {
+      dist: {
+        files: {
+          'angular-bitcore-wallet-client/angular-bitcore-wallet-client.js': ['angular-bitcore-wallet-client/index.js']
         },
-        expand: true,
-        cwd: './webkitbuilds/copay/linux64/',
-        src: ['**/*'],
-        dest: 'copay-linux64/'
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-angular-gettext');
-  grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-karma');
-  grunt.loadNpmTasks('grunt-karma-coveralls');
-  grunt.loadNpmTasks('grunt-node-webkit-builder');
-  grunt.loadNpmTasks('grunt-contrib-compress');
-
-  grunt.registerTask('default', ['nggettext_compile', 'exec:version', 'concat', 'copy:icons']);
+  grunt.registerTask('default', ['nggettext_compile', 'exec:version', 'exec:coinbase', 'browserify', 'sass', 'concat', 'copy:icons', 'copy:ionic_fonts']);
   grunt.registerTask('prod', ['default', 'uglify']);
   grunt.registerTask('translate', ['nggettext_extract']);
   grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('test-coveralls', ['karma:prod', 'coveralls']);
-  grunt.registerTask('desktop', ['prod', 'nodewebkit', 'copy:linux', 'compress:linux32', 'compress:linux64', 'exec:osx32', 'exec:osx64']);
+  grunt.registerTask('test-coveralls', ['browserify', 'karma:prod', 'exec:coveralls']);
+  grunt.registerTask('desktop', ['prod', 'nodewebkit', 'copy:linux', 'compress:linux']);
+  grunt.registerTask('osx', ['prod', 'nodewebkit', 'exec:osx']);
+  grunt.registerTask('release', ['string-replace:dist']);
 };

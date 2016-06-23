@@ -16,7 +16,7 @@ function selectText(element) {
   }
 }
 angular.module('copayApp.directives')
-.directive('validAddress', ['$rootScope', 'bitcore', 'profileService',
+  .directive('validAddress', ['$rootScope', 'bitcore', 'profileService',
     function($rootScope, bitcore, profileService) {
       return {
         require: 'ngModel',
@@ -37,7 +37,7 @@ angular.module('copayApp.directives')
             if (/^bitcoin:/.test(value)) {
               var uri, isAddressValid;
               var isUriValid = URI.isValid(value);
-              if (isUriValid) { 
+              if (isUriValid) {
                 uri = new URI(value);
                 isAddressValid = Address.isValid(uri.address.toString(), networkName)
               }
@@ -94,19 +94,25 @@ angular.module('copayApp.directives')
           var val = function(value) {
             var settings = configService.getSync().wallet.settings;
             var vNum = Number((value * settings.unitToSatoshi).toFixed(0));
-
             if (typeof value == 'undefined' || value == 0) {
               ctrl.$pristine = true;
             }
 
+
+
             if (typeof vNum == "number" && vNum > 0) {
-              var decimals = Number(settings.unitDecimals);
-              var sep_index = ('' + value).indexOf('.');
-              var str_value = ('' + value).substring(sep_index + 1);
-              if (sep_index > 0 && str_value.length > decimals) {
+              if (vNum > Number.MAX_SAFE_INTEGER) {
                 ctrl.$setValidity('validAmount', false);
               } else {
-                ctrl.$setValidity('validAmount', true);
+                var decimals = Number(settings.unitDecimals);
+                var sep_index = ('' + value).indexOf('.');
+                var str_value = ('' + value).substring(sep_index + 1);
+                if (sep_index >= 0 && str_value.length > decimals) {
+                  ctrl.$setValidity('validAmount', false);
+                  return;
+                } else {
+                  ctrl.$setValidity('validAmount', true);
+                }
               }
             } else {
               ctrl.$setValidity('validAmount', false);
@@ -162,27 +168,23 @@ angular.module('copayApp.directives')
       }
     }
   })
-  .directive('contact', function() {
-    return {
-      restrict: 'E',
-      link: function(scope, element, attrs) {
-        if (!scope.wallet) return;
-
-        var address = attrs.address;
-        var contact = scope.wallet.addressBook[address];
-        if (contact && !contact.hidden) {
-          element.append(contact.label);
-          element.attr('tooltip', attrs.address);
-        } else {
-          element.append(address);
+  .directive('contact', ['addressbookService',
+    function(addressbookService) {
+      return {
+        restrict: 'E',
+        link: function(scope, element, attrs) {
+          var addr = attrs.address;
+          addressbookService.getLabel(addr, function(label) {
+            if (label) {
+              element.append(label);
+            } else {
+              element.append(addr);
+            }
+          });
         }
-
-        element.bind('click', function() {
-          selectText(element[0]);
-        });
-      }
-    };
-  })
+      };
+    }
+  ])
   .directive('highlightOnChange', function() {
     return {
       restrict: 'A',

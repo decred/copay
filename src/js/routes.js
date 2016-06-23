@@ -12,27 +12,25 @@ if (window && window.navigator) {
   }
 }
 
-
 //Setting up route
-angular
-  .module('copayApp')
-  .config(function(historicLogProvider, $provide, $logProvider, $stateProvider, $urlRouterProvider, $compileProvider) {
+angular.module('copayApp').config(function(historicLogProvider, $provide, $logProvider, $stateProvider, $urlRouterProvider, $compileProvider) {
     $urlRouterProvider.otherwise('/');
 
     $logProvider.debugEnabled(true);
-    $provide.decorator('$log', ['$delegate',
-      function($delegate) {
+    $provide.decorator('$log', ['$delegate', 'platformInfo',
+      function($delegate, platformInfo) {
         var historicLog = historicLogProvider.$get();
 
         ['debug', 'info', 'warn', 'error', 'log'].forEach(function(level) {
+          if (platformInfo.isDevel && level == 'error') return;
+
           var orig = $delegate[level];
           $delegate[level] = function() {
-
             if (level == 'error')
               console.log(arguments);
 
-            var args = [].slice.call(arguments);
-            if (!Array.isArray(args)) args = [args];
+            var args = Array.prototype.slice.call(arguments);
+
             args = args.map(function(v) {
               try {
                 if (typeof v == 'undefined') v = 'undefined';
@@ -44,10 +42,10 @@ angular
                     v = JSON.stringify(v);
                 }
                 // Trim output in mobile
-                if ( window.cordova ) {
+                if (platformInfo.isCordova) {
                   v = v.toString();
-                  if (v.length > 1000) {
-                    v = v.substr(0, 997) + '...';
+                  if (v.length > 3000) {
+                    v = v.substr(0, 2997) + '...';
                   }
                 }
               } catch (e) {
@@ -56,9 +54,11 @@ angular
               }
               return v;
             });
+
             try {
-              if (window.cordova)
+              if (platformInfo.isCordova)
                 console.log(args.join(' '));
+
               historicLog.add(level, args.join(' '));
               orig.apply(null, args);
             } catch (e) {
@@ -75,20 +75,8 @@ angular
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*((https?|ftp|file|blob|chrome-extension):|data:image\/)/);
 
     $stateProvider
-      .state('splash', {
-        url: '/splash',
-        needProfile: false,
-        views: {
-          'main': {
-            templateUrl: 'views/splash.html',
-          }
-        }
-      });
-
-      $stateProvider
       .state('translators', {
         url: '/translators',
-        walletShouldBeComplete: true,
         needProfile: true,
         views: {
           'main': {
@@ -124,19 +112,23 @@ angular
           }
         }
       })
-      .state('payment', {
-        url: '/uri-payment/:data',
+      .state('uri', {
+        url: '/uri/:url',
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/uri.html'
+          }
+        }
+      })
+      .state('uripayment', {
+        url: '/uri-payment/:url',
         templateUrl: 'views/paymentUri.html',
         views: {
           'main': {
             templateUrl: 'views/paymentUri.html',
           },
         },
-        needProfile: true
-      })
-      .state('selectWalletForPayment', {
-        url: '/selectWalletForPayment',
-        controller: 'walletForPaymentController',
         needProfile: true
       })
       .state('join', {
@@ -156,21 +148,6 @@ angular
             templateUrl: 'views/import.html'
           },
         }
-      })
-      .state('importProfile', {
-        url: '/importProfile',
-        templateUrl: 'views/importProfile.html',
-        needProfile: false
-      })
-      .state('importLegacy', {
-        url: '/importLegacy',
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/importLegacy.html',
-          },
-        }
-
       })
       .state('create', {
         url: '/create',
@@ -204,7 +181,6 @@ angular
       })
       .state('preferencesLanguage', {
         url: '/preferencesLanguage',
-        walletShouldBeComplete: true,
         needProfile: true,
         views: {
           'main': {
@@ -215,7 +191,6 @@ angular
       .state('preferencesUnit', {
         url: '/preferencesUnit',
         templateUrl: 'views/preferencesUnit.html',
-        walletShouldBeComplete: true,
         needProfile: true,
         views: {
           'main': {
@@ -226,7 +201,6 @@ angular
       .state('preferencesFee', {
         url: '/preferencesFee',
         templateUrl: 'views/preferencesFee.html',
-        walletShouldBeComplete: true,
         needProfile: true,
         views: {
           'main': {
@@ -235,7 +209,7 @@ angular
         }
       })
       .state('uriglidera', {
-        url: '/uri-glidera?code',
+        url: '/uri-glidera/:url',
         needProfile: true,
         views: {
           'main': {
@@ -273,8 +247,7 @@ angular
           },
         }
       })
-
-    .state('preferencesGlidera', {
+      .state('preferencesGlidera', {
         url: '/preferencesGlidera',
         walletShouldBeComplete: true,
         needProfile: true,
@@ -284,8 +257,65 @@ angular
           },
         }
       })
-
-    .state('preferencesAdvanced', {
+      .state('coinbase', {
+        url: '/coinbase',
+        walletShouldBeComplete: true,
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/coinbase.html'
+          },
+        }
+      })
+      .state('preferencesCoinbase', {
+        url: '/preferencesCoinbase',
+        walletShouldBeComplete: true,
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/preferencesCoinbase.html'
+          },
+        }
+      })
+      .state('uricoinbase', {
+        url: '/uri-coinbase/:url',
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/coinbaseUri.html'
+          },
+        }
+      })
+      .state('buyCoinbase', {
+        url: '/buycoinbase',
+        walletShouldBeComplete: true,
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/buyCoinbase.html'
+          },
+        }
+      })
+      .state('sellCoinbase', {
+        url: '/sellcoinbase',
+        walletShouldBeComplete: true,
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/sellCoinbase.html'
+          },
+        }
+      })
+      .state('buyandsell', {
+        url: '/buyandsell',
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/buyAndSell.html'
+          },
+        }
+      })
+      .state('preferencesAdvanced', {
         url: '/preferencesAdvanced',
         templateUrl: 'views/preferencesAdvanced.html',
         walletShouldBeComplete: true,
@@ -307,11 +337,9 @@ angular
           },
         }
       })
-
-    .state('preferencesAltCurrency', {
+      .state('preferencesAltCurrency', {
         url: '/preferencesAltCurrency',
         templateUrl: 'views/preferencesAltCurrency.html',
-        walletShouldBeComplete: true,
         needProfile: true,
         views: {
           'main': {
@@ -355,6 +383,29 @@ angular
 
         }
       })
+      .state('preferencesHistory', {
+        url: '/preferencesHistory',
+        templateUrl: 'views/preferencesHistory.html',
+        walletShouldBeComplete: true,
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/preferencesHistory.html'
+          },
+
+        }
+      })
+      .state('deleteWords', {
+        url: '/deleteWords',
+        templateUrl: 'views/preferencesDeleteWords.html',
+        walletShouldBeComplete: true,
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/preferencesDeleteWords.html'
+          },
+        }
+      })
       .state('delete', {
         url: '/delete',
         templateUrl: 'views/preferencesDeleteWallet.html',
@@ -376,11 +427,9 @@ angular
           },
         }
       })
- 
       .state('about', {
         url: '/about',
         templateUrl: 'views/preferencesAbout.html',
-        walletShouldBeComplete: true,
         needProfile: true,
         views: {
           'main': {
@@ -391,7 +440,6 @@ angular
       .state('logs', {
         url: '/logs',
         templateUrl: 'views/preferencesLogs.html',
-        walletShouldBeComplete: true,
         needProfile: true,
         views: {
           'main': {
@@ -410,6 +458,17 @@ angular
           },
         }
       })
+      .state('paperWallet', {
+        url: '/paperWallet',
+        templateUrl: 'views/paperWallet.html',
+        walletShouldBeComplete: true,
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/paperWallet.html'
+          },
+        }
+      })
       .state('backup', {
         url: '/backup',
         templateUrl: 'views/backup.html',
@@ -421,20 +480,25 @@ angular
           },
         }
       })
-      .state('settings', {
-        url: '/settings',
-        controller: 'settingsController',
-        templateUrl: 'views/settings.html',
-        needProfile: false
+      .state('preferencesGlobal', {
+        url: '/preferencesGlobal',
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/preferencesGlobal.html',
+          },
+        }
       })
-      .state('warning', {
-        url: '/warning',
-        controller: 'warningController',
-        templateUrl: 'views/warning.html',
-        needProfile: false
+      .state('termOfUse', {
+        url: '/termOfUse',
+        needProfile: true,
+        views: {
+          'main': {
+            templateUrl: 'views/termOfUse.html',
+          },
+        }
       })
-
-    .state('add', {
+      .state('add', {
         url: '/add',
         needProfile: true,
         views: {
@@ -442,38 +506,71 @@ angular
             templateUrl: 'views/add.html'
           },
         }
-      })
-      .state('cordova', {
-        url: '/cordova/:status',
-        views: {
-          'main': {
-            controller: function($rootScope, $stateParams, $timeout, go) {
-              switch ($stateParams.status) {
-                case 'resume':
-                  $rootScope.$emit('Local/Resume');
-                  break;
-              };
-              $timeout(function() {
-                $rootScope.$emit('Local/SetTab', 'walletHome', true);
-              }, 100);
-              go.walletHome();
-            }
-          }
-        },
-        needProfile: false
       });
   })
-  .run(function($rootScope, $state, $log, uriHandler, isCordova, profileService, $timeout, nodeWebkit, uxLanguage) {
-    FastClick.attach(document.body);
+  .run(function($rootScope, $state, $location, $log, $timeout, $ionicPlatform, platformInfo, profileService, uxLanguage, go, gettextCatalog) {
+
+    $ionicPlatform.ready(function() {
+      if (platformInfo.isCordova) {
+
+        $ionicPlatform.registerBackButtonAction(function(event) {
+          event.preventDefault();
+        }, 100);
+
+        var secondBackButtonPress = false;
+        var intval = setInterval(function() {
+          secondBackButtonPress = false;
+        }, 5000);
+
+        $ionicPlatform.on('pause', function() {
+          // Nothing to do
+        });
+
+        $ionicPlatform.on('resume', function() {
+          $rootScope.$emit('Local/Resume');
+        });
+
+        $ionicPlatform.on('backbutton', function(event) {
+
+          var loc = window.location;
+          var fromDisclaimer = loc.toString().match(/disclaimer/) ? 'true' : '';
+          var fromHome = loc.toString().match(/index\.html#\/$/) ? 'true' : '';
+
+          if (fromDisclaimer == 'true')
+            navigator.app.exitApp();
+
+          if (platformInfo.isMobile && fromHome == 'true') {
+            if (secondBackButtonPress)
+              navigator.app.exitApp();
+            else
+              window.plugins.toast.showShortBottom(gettextCatalog.getString('Press again to exit'));
+          }
+
+          if (secondBackButtonPress)
+            clearInterval(intval);
+          else
+            secondBackButtonPress = true;
+
+          $timeout(function() {
+            $rootScope.$emit('Local/SetTab', 'walletHome', true);
+          }, 100);
+
+          go.walletHome();
+        });
+
+        $ionicPlatform.on('menubutton', function() {
+          window.location = '#/preferences';
+        });
+
+        setTimeout(function() {
+          navigator.splashscreen.hide();
+        }, 1000);
+      }
+    });
 
     uxLanguage.init();
 
-    // Register URI handler, not for mobileApp
-    if (!isCordova) {
-      uriHandler.register();
-    }
-
-    if (nodeWebkit.isDefined()) {
+    if (platformInfo.isNW) {
       var gui = require('nw.gui');
       var win = gui.Window.get();
       var nativeMenuBar = new gui.Menu({
@@ -487,187 +584,38 @@ angular
       win.menu = nativeMenuBar;
     }
 
-    var pageWeight = {
-      walletHome: 0,
-      copayers: -1,
-      cordova: -1,
-      payment: -1,
-      uriglidera: -1,
-
-      preferences: 11,
-      glidera: 11,
-      preferencesColor: 12,
-      backup: 12,
-      preferencesAdvanced: 12,
-      buyGlidera: 12,
-      sellGlidera: 12,
-      preferencesGlidera: 12,
-      about: 12,
-      delete: 13,
-      preferencesLanguage: 12,
-      preferencesUnit: 12,
-      preferencesFee: 12,
-      preferencesAltCurrency: 12,
-      preferencesBwsUrl: 12,
-      preferencesAlias: 12,
-      preferencesEmail: 12,
-      export: 13,
-      logs: 13,
-      information: 13,
-      translators: 13,
-      disclaimer: 13,
-      add: 11,
-      create: 12,
-      join: 12,
-      import: 12,
-      importLegacy: 13
-    };
-
-
-    var cachedTransitionState, cachedBackPanel;
-
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-
+      $log.debug('Route change from:', fromState.name || '-', ' to:', toState.name);
+      $log.debug('            toParams:' + JSON.stringify(toParams || {}));
+      $log.debug('            fromParams:' + JSON.stringify(fromParams || {}));
 
       if (!profileService.profile && toState.needProfile) {
 
         // Give us time to open / create the profile
         event.preventDefault();
-
         // Try to open local profile
         profileService.loadAndBindProfile(function(err) {
           if (err) {
-            if (err.message.match('NOPROFILE')) {
+            if (err.message && err.message.match('NOPROFILE')) {
               $log.debug('No profile... redirecting');
-              $state.transitionTo('splash');
-            } else if (err.message.match('NONAGREEDDISCLAIMER')) {
+              $state.transitionTo('disclaimer');
+            } else if (err.message && err.message.match('NONAGREEDDISCLAIMER')) {
               $log.debug('Display disclaimer... redirecting');
               $state.transitionTo('disclaimer');
             } else {
               throw new Error(err); // TODO
             }
           } else {
+            profileService.storeProfileIfDirty();
             $log.debug('Profile loaded ... Starting UX.');
             $state.transitionTo(toState.name || toState, toParams);
           }
         });
-      }
+      } else {
+        if (profileService.focusedClient && !profileService.focusedClient.isComplete() && toState.walletShouldBeComplete) {
 
-      if (profileService.focusedClient && !profileService.focusedClient.isComplete() && toState.walletShouldBeComplete) {
-
-        $state.transitionTo('copayers');
-        event.preventDefault();
-      }
-
-      /*
-       * --------------------
-       */
-
-      function cleanUpLater(e, e2) {
-        var cleanedUp = false,
-          timeoutID;
-        var cleanUp = function() {
-          if (cleanedUp) return;
-          cleanedUp = true;
-          e2.parentNode.removeChild(e2);
-          e2.innerHTML = "";
-          e.className = '';
-          cachedBackPanel = null;
-          cachedTransitionState = '';
-          if (timeoutID) {
-            timeoutID = null;
-            window.clearTimeout(timeoutID);
-          }
-        };
-        e.addEventListener("animationend", cleanUp, true);
-        e2.addEventListener("animationend", cleanUp, true);
-        e.addEventListener("webkitAnimationEnd", cleanUp, true);
-        e2.addEventListener("webkitAnimationEnd", cleanUp, true);
-        timeoutID = setTimeout(cleanUp, 500);
-      };
-
-      function animateTransition(fromState, toState, event) {
-
-        if (isaosp)
-          return true;
-
-        // Animation in progress?
-        var x = document.getElementById('mainSectionDup');
-        if (x && !cachedTransitionState) {
-          console.log('Anim in progress');
-          return true;
+          $state.transitionTo('copayers');
         }
-
-        var fromName = fromState.name;
-        var toName = toState.name;
-        if (!fromName || !toName)
-          return true;
-
-        var fromWeight = pageWeight[fromName];
-        var toWeight = pageWeight[toName];
-
-
-        var entering = null,
-          leaving = null;
-
-        // Horizontal Slide Animation?
-        if (fromWeight && toWeight) {
-          if (fromWeight > toWeight) {
-            leaving = 'CslideOutRight';
-          } else {
-            entering = 'CslideInRight';
-          }
-
-          // Vertical Slide Animation?
-        } else if (fromName && fromWeight >= 0 && toWeight >= 0) {
-          if (toWeight) {
-            entering = 'CslideInUp';
-          } else {
-            leaving = 'CslideOutDown';
-          }
-
-          // no Animation  ?
-        } else {
-          return true;
-        }
-
-        var e = document.getElementById('mainSection');
-
-
-        var desiredTransitionState = (fromName || '-') + ':' + (toName || '-');
-
-        if (desiredTransitionState == cachedTransitionState) {
-          e.className = entering || '';
-          cachedBackPanel.className = leaving || '';
-          cleanUpLater(e, cachedBackPanel);
-          //console.log('USing animation', cachedTransitionState);
-          return true;
-        } else {
-          var sc;
-          // Keep prefDiv scroll
-          var contentDiv = e.getElementsByClassName('content');
-          if (contentDiv && contentDiv[0])
-            sc = contentDiv[0].scrollTop;
-
-          cachedBackPanel = e.cloneNode(true);
-          cachedBackPanel.id = 'mainSectionDup';
-          var c = document.getElementById('sectionContainer');
-          c.appendChild(cachedBackPanel);
-
-          if (sc)
-            cachedBackPanel.getElementsByClassName('content')[0].scrollTop = sc;
-
-          cachedTransitionState = desiredTransitionState;
-          return false;
-        }
-      }
-
-      if (!animateTransition(fromState, toState)) {
-        event.preventDefault();
-        // Time for the backpane to render
-        setTimeout(function() {
-          $state.transitionTo(toState);
-        }, 50);
       }
     });
   });

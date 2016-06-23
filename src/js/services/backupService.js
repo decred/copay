@@ -31,27 +31,27 @@ angular.module('copayApp.services')
             });
             $log.debug("case 3");
           } else {
-            // We're screwed, blob constructor unsupported entirely   
-            $log.debug("Errore");
+            // We're screwed, blob constructor unsupported entirely
+            $log.debug("Error");
           }
         }
         return out;
       };
 
-      var a = document.createElement("a");
-      document.body.appendChild(a);
-      a.style.display = "none";
-
+      var a = angular.element('<a></a>');
       var blob = new NewBlob(ew, 'text/plain;charset=utf-8');
-      var url = window.URL.createObjectURL(blob);
-      a.href = url;
-      a.download = filename;
-      a.click();
-      $timeout(function() {
-        window.URL.revokeObjectURL(url);
-      }, 250);
+      a.attr('href', window.URL.createObjectURL(blob));
+      a.attr('download', filename);
+      a[0].click();
       return cb();
     };
+
+    root.addMetadata = function(b, opts) {
+
+      b = JSON.parse(b);
+      if (opts.addressBook) b.addressBook = opts.addressBook;
+      return JSON.stringify(b);
+    }
 
     root.walletExport = function(password, opts) {
       if (!password) {
@@ -61,6 +61,8 @@ angular.module('copayApp.services')
       try {
         opts = opts || {};
         var b = fc.export(opts);
+        if (opts.addressBook) b = root.addMetadata(b, opts);
+
         var e = sjcl.encrypt(password, b, {
           iter: 10000
         });

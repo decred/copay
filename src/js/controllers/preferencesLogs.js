@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('preferencesLogs',
-function(historicLog, isCordova) {
+function(historicLog) {
   this.logs = historicLog.get();
-  this.isCordova = isCordova;
 
   this.sendLogs = function() {
     var body = 'Copay Session Logs\n Be careful, this could contain sensitive private data\n\n';
@@ -12,11 +11,15 @@ function(historicLog, isCordova) {
       return v.msg;
     }).join('\n');
 
-    var properties = {
-      subject: 'Copay Logs',
-      body: body,
-      isHtml: false
-    };
-    window.plugin.email.open(properties);
+    window.plugins.socialsharing.shareViaEmail(
+      body,
+      'Copay Logs',
+      null, // TO: must be null or an array
+      null, // CC: must be null or an array
+      null, // BCC: must be null or an array
+      null, // FILES: can be null, a string, or an array
+      function() {},
+      function() {}
+    );
   };
 });

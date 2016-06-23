@@ -3,6 +3,10 @@ i18n/po/*.mo
 i18n/crowdin_api_key.txt
 src/js/translations.js
 
+# Coinbase API ClientID/Secret
+coinbase.json
+src/js/coinbase.js
+
 # version
 src/js/version.js
 
@@ -14,14 +18,19 @@ cordova/*.keystore
 cache
 webkitbuilds/*
 !webkitbuilds/README.md
-!webkitbuilds/setup-win32.iss
-!webkitbuilds/setup-win64.iss
+!webkitbuilds/setup-win.iss
 !webkitbuilds/favicon.ico
 !webkitbuilds/.desktop
+!webkitbuilds/build-osx.sh
+!webkitbuilds/Background.png
+
+#fonts
+public/fonts
 
 # chrome extensions
 browser-extensions/chrome/copay-chrome-extension
 browser-extensions/chrome/copay-chrome-extension.zip
+browser-extensions/chrome/copay-chrome-extension.zip.sig
 
 # Logs
 logs
@@ -49,6 +58,7 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 bower_components
+angular-bitcore-wallet-client/angular-bitcore-wallet-client.js
 
 # Users Environment Variables
 .lock-wscript
@@ -84,6 +94,10 @@ Temporary Items
 Session.vim
 .netrwhist
 *~
+
+# SASS
+src/sass/*.css
+.sass-cache
 
 # copay public
 public/icons/*
