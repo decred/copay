@@ -424,7 +424,6 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
       return self.setSendError(gettext(msg));
     };
 
-    $timeout(function() {
       var paypro = self._paypro;
       var address, amount;
 
@@ -474,7 +473,6 @@ angular.module('copayApp.controllers').controller('walletHomeController', functi
             else self.resetForm();
           });
         }
-      });
 
     }, 100);
   };
