@@ -208,104 +208,6 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
           },
         }
       })
-      .state('uriglidera', {
-        url: '/uri-glidera/:url',
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/glideraUri.html'
-          },
-        }
-      })
-      .state('glidera', {
-        url: '/glidera',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/glidera.html'
-          },
-        }
-      })
-      .state('buyGlidera', {
-        url: '/buy',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/buyGlidera.html'
-          },
-        }
-      })
-      .state('sellGlidera', {
-        url: '/sell',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/sellGlidera.html'
-          },
-        }
-      })
-      .state('preferencesGlidera', {
-        url: '/preferencesGlidera',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/preferencesGlidera.html'
-          },
-        }
-      })
-      .state('coinbase', {
-        url: '/coinbase',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/coinbase.html'
-          },
-        }
-      })
-      .state('preferencesCoinbase', {
-        url: '/preferencesCoinbase',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/preferencesCoinbase.html'
-          },
-        }
-      })
-      .state('uricoinbase', {
-        url: '/uri-coinbase/:url',
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/coinbaseUri.html'
-          },
-        }
-      })
-      .state('buyCoinbase', {
-        url: '/buycoinbase',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/buyCoinbase.html'
-          },
-        }
-      })
-      .state('sellCoinbase', {
-        url: '/sellcoinbase',
-        walletShouldBeComplete: true,
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/sellCoinbase.html'
-          },
-        }
-      })
       .state('buyandsell', {
         url: '/buyandsell',
         needProfile: true,
@@ -334,16 +236,6 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         views: {
           'main': {
             templateUrl: 'views/preferencesColor.html'
-          },
-        }
-      })
-      .state('preferencesAltCurrency', {
-        url: '/preferencesAltCurrency',
-        templateUrl: 'views/preferencesAltCurrency.html',
-        needProfile: true,
-        views: {
-          'main': {
-            templateUrl: 'views/preferencesAltCurrency.html'
           },
         }
       })
