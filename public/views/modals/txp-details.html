@@ -19,7 +19,6 @@
     <div class="modal-content fix-modals-touch" ng-init="updateCopayerList()">
       <div class="payment-proposal-head" ng-style="{'background-color':color}">
         <div class="size-36">{{tx.amountStr}}</div>
-        <div class="size-14 text-light" ng-show="tx.alternativeAmountStr">{{tx.alternativeAmountStr}}</div>
         <i class="db fi-arrow-down size-24 m10v"></i>
         <span class="payment-proposal-to" ng-click="copyToClipboard(tx.toAddress)">
           <i class="fi-bitcoin left"></i>
@@ -62,9 +61,6 @@
               <i class="fi-upload-cloud"></i>
               <span translate>Broadcast Payment</span>
             </button>
-          </div>
-          <div ng-show="tx.status=='accepted' && tx.isGlidera" >
-            <div class="m10h" translate>Payment accepted. It will be broadcasted by Glidera. In case there is a problem, it can be deleted 6 hours after it was created.</div>
           </div>
           <div class="text-success" ng-show="tx.status == 'broadcasted'" translate>Payment Sent</div>
           <div class="text-warning" ng-show="tx.status=='rejected'" translate>Payment Rejected</div>
