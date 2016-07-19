@@ -25,13 +25,6 @@
       <div translate>Unit</div>
     </li>
 
-    <li href ui-sref="preferencesAltCurrency">
-      <div class="right text-gray">
-        {{selectedAlternative.name}}
-        <i class="icon-arrow-right3 size-24"></i>
-      </div>
-      <div translate>Alternative Currency</div>
-    </li>
   </ul>
   <h4></h4>
 
@@ -64,16 +57,6 @@
     </ul>
   </div>
 
-  <h4></h4>
-
-  <ion-toggle ng-show="!index.isWindowsPhoneApp" ng-model="glideraEnabled" toggle-class="toggle-balanced" ng-change="glideraChange()">
-    <span class="toggle-label" translate>Enable Glidera Service</span>
-  </ion-toggle>
-  <h4></h4>
-
-  <ion-toggle ng-show="!index.isWindowsPhoneApp" ng-model="coinbaseEnabled" toggle-class="toggle-balanced" ng-change="coinbaseChange()">
-    <span class="toggle-label" translate>Enable Coinbase Service</span>
-  </ion-toggle>
   <h4></h4>
 
   <ul class="no-bullet m0">
