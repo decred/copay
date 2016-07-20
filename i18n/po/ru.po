@@ -28,7 +28,7 @@ msgid "[Balance Hidden]"
 msgstr "[Баланс скрыт]"
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
+msgid "{{fee}} will be deducted for decred networking fees"
 msgstr "{{fee}} будет использовано для оплаты комиссии"
 
 #: public/views/includes/confirm-tx.html
@@ -81,7 +81,7 @@ msgid "<b>OR</b> the wallet recovery phrases of <b>all</b> copayers in the walle
 msgstr ""
 
 #: public/views/disclaimer.html
-msgid "A multisignature bitcoin wallet"
+msgid "A multisignature decred wallet"
 msgstr "Биткойн-кошелёк с мультиподписью"
 
 <<<<<<< HEAD
@@ -265,8 +265,8 @@ msgid "Decred Network Fee Policy"
 msgstr "Политика комиссии в сети Decred"
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI не действителен!"
+msgid "Decred URI is NOT valid!"
+msgstr "Decred URI не действителен!"
 =======
 #: public/views/create.html
 #: public/views/import.html
@@ -276,11 +276,11 @@ msgstr "Укажите BIP32 для генерации адресов"
 >>>>>>> upstream/master
 
 #: public/views/walletHome.html
-msgid "Bitcoin address"
+msgid "Decred address"
 msgstr "Биткойн-адрес"
 
 #: public/views/preferencesGlobal.html
-msgid "Bitcoin Network Fee Policy"
+msgid "Decred Network Fee Policy"
 msgstr "Политика комиссии в сети Биткойн"
 
 #: public/views/walletHome.html
@@ -288,7 +288,7 @@ msgid "Decred address"
 msgstr "Адрес decred"
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Биткойн-транзакции могут включать комиссию, собираемую майнерами в сети. Чем выше комиссия, тем больше стимул для майнера включить транзакцию в блок. Фактическая комиссия определяется на основе сетевой нагрузки и выбранной политики."
 
 <<<<<<< HEAD
@@ -297,7 +297,7 @@ msgid "Decred transactions may include a fee collected by miners on the network.
 msgstr "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 =======
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
+msgid "Decred URI is NOT valid!"
 msgstr "Биткойн URI недействителен!"
 >>>>>>> upstream/master
 
@@ -532,7 +532,7 @@ msgid "Could not join wallet"
 msgstr "Не удалось присоединиться к кошельку"
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
+msgid "Could not recognize a valid Decred QR Code"
 msgstr "Не удалось распознать адрес в QR-коде"
 
 #: src/js/controllers/modals/txpDetails.js
@@ -1044,7 +1044,7 @@ msgid "Multiple recipients"
 msgstr "Несколько получателей"
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
+msgid "My Decred address"
 msgstr "Мой биткойн-адрес"
 
 #: public/views/modals/addressbook.html
@@ -1494,7 +1494,7 @@ msgid "Send addresses by email"
 msgstr "Отправить адреса по email"
 
 #: public/views/includes/confirm-tx.html
-msgid "Send bitcoin"
+msgid "Send decred"
 msgstr "Отправить"
 
 #: public/views/export.html
@@ -1664,7 +1664,7 @@ msgid "Terms of Use"
 msgstr "Условия использования"
 
 #: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr "Авторы данного программного обеспечения, сотрудники и помощники Bitpay, владельцы авторских прав и BitPay Inc. не могут восстановить закрытые ключи или пароли если вы потеряете или забудете их, и не могут гарантировать подтверждение транзакции, так как они не имеют контроля над сетью Биткойн."
 
 #: public/views/import.html
@@ -1701,7 +1701,7 @@ msgid "The request could not be understood by the server"
 msgstr "Запрос не распознан сервером"
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
 msgstr "Программное обеспечение не представляет собой счет, обслуживаемый BitPay или иными третьим лицами в качестве финансовых посредников или хранителями ваших биткойнов."
 
 <<<<<<< HEAD

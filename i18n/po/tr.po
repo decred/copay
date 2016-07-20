@@ -23,8 +23,8 @@ msgid "(Trusted)"
 msgstr "(Güvenilir)"
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
-msgstr "{{fee}} bitcoin ağ ücreti olarak düşülecektir"
+msgid "{{fee}} will be deducted for decred networking fees"
+msgstr "{{fee}} decred ağ ücreti olarak düşülecektir"
 
 #: public/views/copayers.html
 #: public/views/includes/walletInfo.html
@@ -64,8 +64,8 @@ msgid "<b>OR</b> the wallet seeds of <b>all</b> copayers in the wallet"
 msgstr ""
 
 #: public/views/splash.html
-msgid "A multisignature bitcoin wallet"
-msgstr "Çoklu imzalı bitcoin cüzdanı"
+msgid "A multisignature decred wallet"
+msgstr "Çoklu imzalı decred cüzdanı"
 
 #: public/views/splash.html
 msgid "A multisignature decred wallet"
@@ -229,16 +229,16 @@ msgstr "Para almadan önce cüzdanınızı mutlaka yedeklemeniz önerilir."
 
 <<<<<<< HEAD
 #: public/views/preferences.html
-msgid "Bitcoin Network Fee Policy"
-msgstr "Bitcoin ağ ücret politikası"
+msgid "Decred Network Fee Policy"
+msgstr "Decred ağ ücret politikası"
 
 #: public/views/preferences.html
 msgid "Decred Network Fee Policy"
 msgstr "Decred ağ ücret politikası"
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI geçerli değil!"
+msgid "Decred URI is NOT valid!"
+msgstr "Decred URI geçerli değil!"
 =======
 #: public/views/create.html
 #: public/views/import.html
@@ -248,8 +248,8 @@ msgstr ""
 >>>>>>> upstream/master
 
 #: public/views/walletHome.html
-msgid "Bitcoin address"
-msgstr "Bitcoin adresi"
+msgid "Decred address"
+msgstr "Decred adresi"
 
 <<<<<<< HEAD
 #: public/views/walletHome.html
@@ -257,13 +257,13 @@ msgid "Decred address"
 msgstr "Decred adresi"
 =======
 #: public/views/preferences.html
-msgid "Bitcoin Network Fee Policy"
-msgstr "Bitcoin ağ ücret politikası"
+msgid "Decred Network Fee Policy"
+msgstr "Decred ağ ücret politikası"
 >>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
-msgstr "Bitcoin işlemlerine ağda madenciler tarafından toplanan ücret dahildir. Daha yüksek ücret, madenciler için işleminizi bloklarına eklemek için daha teşvik edicidir. Gerçek ücretler ağ yüküne ve seçili ilkeye göre belirlenir."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgstr "Decred işlemlerine ağda madenciler tarafından toplanan ücret dahildir. Daha yüksek ücret, madenciler için işleminizi bloklarına eklemek için daha teşvik edicidir. Gerçek ücretler ağ yüküne ve seçili ilkeye göre belirlenir."
 
 <<<<<<< HEAD
 #: public/views/preferencesFee.html
@@ -271,8 +271,8 @@ msgid "Decred transactions may include a fee collected by miners on the network.
 msgstr "Decred işlemlerine ağda madenciler tarafından toplanan ücret dahildir. Daha yüksek ücret, madenciler için işleminizi bloklarına eklemek için daha teşvik edicidir. Gerçek ücretler ağ yüküne ve seçili ilkeye göre belirlenir."
 =======
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI geçerli değil!"
+msgid "Decred URI is NOT valid!"
+msgstr "Decred URI geçerli değil!"
 >>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
@@ -461,8 +461,8 @@ msgid "Could not join wallet"
 msgstr "Cüzdana katılma başarısız"
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
-msgstr "Geçerli bir Bitcoin QR kodu tanımıyor"
+msgid "Could not recognize a valid Decred QR Code"
+msgstr "Geçerli bir Decred QR kodu tanımıyor"
 
 #: src/js/controllers/walletHome.js
 msgid "Could not reject payment"
@@ -962,8 +962,8 @@ msgid "Multiple wallets accounts are supported on the device simultaneously. Sel
 msgstr ""
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
-msgstr "Bitcoin adresim"
+msgid "My Decred address"
+msgstr "Decred adresim"
 
 #: public/views/walletHome.html
 msgid "My Decred address"
@@ -1512,7 +1512,7 @@ msgid "Testnet"
 msgstr "TestNet"
 
 #: public/views/disclaimer.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr ""
 
 #: src/js/services/ledger.js
@@ -1521,8 +1521,8 @@ msgstr "Ledger Chrome uygulaması kurulu değil"
 
 <<<<<<< HEAD
 #: public/views/disclaimer.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
-msgstr "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
+msgstr "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 
 #: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
@@ -1556,7 +1556,7 @@ msgid "The seed could require a passphrase to be imported"
 msgstr "Kurtarma sözcükleri içe alım için parola gerektirebilir"
 
 #: public/views/disclaimer.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
 msgstr ""
 
 #: public/views/disclaimer.html

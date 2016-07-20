@@ -23,8 +23,8 @@ msgid "(Trusted)"
 msgstr "(Trusted)"
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
-msgstr "{{fee}}, θα προεξοφληθεί ώς τέλος του δικτύου bitcoin"
+msgid "{{fee}} will be deducted for decred networking fees"
+msgstr "{{fee}}, θα προεξοφληθεί ώς τέλος του δικτύου decred"
 
 #: public/views/copayers.html
 #: public/views/walletHome.html
@@ -64,8 +64,8 @@ msgid "<b>OR</b> the wallet seeds of <b>all</b> copayers in the wallet"
 msgstr "<b>OR</b> the wallet seeds of <b>all</b> copayers in the wallet"
 
 #: public/views/splash.html
-msgid "A multisignature bitcoin wallet"
-msgstr "Ένα πορτοφόλι bitcoin με δυνατότητα πολλαπλών υπογραφών"
+msgid "A multisignature decred wallet"
+msgstr "Ένα πορτοφόλι decred με δυνατότητα πολλαπλών υπογραφών"
 
 #: public/views/splash.html
 msgid "A multisignature decred wallet"
@@ -214,22 +214,22 @@ msgstr "Πρίν λάβετε χρήματα, προτέινεται ισχυρ�
 
 <<<<<<< HEAD
 #: public/views/preferences.html
-msgid "Bitcoin Network Fee Policy"
-msgstr "Πολιτική Χρέωσης Δικτύου Bitcoin"
+msgid "Decred Network Fee Policy"
+msgstr "Πολιτική Χρέωσης Δικτύου Decred"
 
 #: public/views/preferences.html
 msgid "Decred Network Fee Policy"
 msgstr "Πολιτική Χρέωσης Δικτύου Decred"
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Το σύστημα Bitcoin URI δεν είναι έγκυρο!"
+msgid "Decred URI is NOT valid!"
+msgstr "Το σύστημα Decred URI δεν είναι έγκυρο!"
 
 =======
 >>>>>>> upstream/master
 #: public/views/walletHome.html
-msgid "Bitcoin address"
-msgstr "Διεύθυνση Bitcoin"
+msgid "Decred address"
+msgstr "Διεύθυνση Decred"
 
 <<<<<<< HEAD
 #: public/views/walletHome.html
@@ -237,13 +237,13 @@ msgid "Decred address"
 msgstr "Διεύθυνση Decred"
 =======
 #: public/views/preferences.html
-msgid "Bitcoin Network Fee Policy"
-msgstr "Πολιτική Χρέωσης Δικτύου Bitcoin"
+msgid "Decred Network Fee Policy"
+msgstr "Πολιτική Χρέωσης Δικτύου Decred"
 >>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
-msgstr "Οι Bitcoin συναλλαγές μπορεί να περιλαμβάνουν μια αμοιβή που εισπράτουν οι ανθρακωρύχοι στο δίκτυο. Όσο υψηλότερο το τέλος, τόσο μεγαλύτερο το κίνητρο ενός ανθρακωρύχου να συμπεριλάβει αυτή τη συναλλαγή σε ένα μπλοκ. Οι αμοιβές καθορίζονται με βάση το φορτίο του δικτύου και την επιλεγμένη πολιτική."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgstr "Οι Decred συναλλαγές μπορεί να περιλαμβάνουν μια αμοιβή που εισπράτουν οι ανθρακωρύχοι στο δίκτυο. Όσο υψηλότερο το τέλος, τόσο μεγαλύτερο το κίνητρο ενός ανθρακωρύχου να συμπεριλάβει αυτή τη συναλλαγή σε ένα μπλοκ. Οι αμοιβές καθορίζονται με βάση το φορτίο του δικτύου και την επιλεγμένη πολιτική."
 
 <<<<<<< HEAD
 #: public/views/preferencesFee.html
@@ -251,8 +251,8 @@ msgid "Decred transactions may include a fee collected by miners on the network.
 msgstr "Οι Decred συναλλαγές μπορεί να περιλαμβάνουν μια αμοιβή που εισπράτουν οι ανθρακωρύχοι στο δίκτυο. Όσο υψηλότερο το τέλος, τόσο μεγαλύτερο το κίνητρο ενός ανθρακωρύχου να συμπεριλάβει αυτή τη συναλλαγή σε ένα μπλοκ. Οι αμοιβές καθορίζονται με βάση το φορτίο του δικτύου και την επιλεγμένη πολιτική."
 =======
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Το σύστημα Bitcoin URI δεν είναι έγκυρο!"
+msgid "Decred URI is NOT valid!"
+msgstr "Το σύστημα Decred URI δεν είναι έγκυρο!"
 >>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
@@ -441,7 +441,7 @@ msgid "Could not join wallet"
 msgstr "Δεν μπορείτε να συμμετάσχετε στο πορτοφόλι"
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
+msgid "Could not recognize a valid Decred QR Code"
 msgstr "Δεν ήταν δυνατή η αναγνώριση ενός έγκυρου κωδικού QR για Βitcoin"
 
 #: src/js/controllers/walletHome.js
@@ -919,8 +919,8 @@ msgid "Multisignature wallet"
 msgstr "Πορτοφόλι Πολλών Υπογραφών"
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
-msgstr "Η  διεύθυνση Bitcoin μου"
+msgid "My Decred address"
+msgstr "Η  διεύθυνση Decred μου"
 
 #: public/views/walletHome.html
 msgid "My Decred address"
@@ -1446,8 +1446,8 @@ msgid "Testnet"
 msgstr "Δοκιμαστικό Δίκτυο"
 
 #: public/views/disclaimer.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
-msgstr "Οι συγγραφείς του λογισμικού, οι εργαζόμενοι και οι συνεργάτες του Bitpay, οι κατόχοι πνευματικών δικαιωμάτων, και η BitPay α.ε., δεν μπορούν να ανακτήσουν ιδιωτικά κλειδιά ή τους κωδικούς πρόσβασης σας, εάν χάσετε ή ξεχασετε αυτούς και δεν μπορούν να εγγυηθούν την επιβεβαίωση της συναλλαγής, δεδομένου ότι δεν έχουν τον έλεγχο του δικτύου Bitcoin."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
+msgstr "Οι συγγραφείς του λογισμικού, οι εργαζόμενοι και οι συνεργάτες του Bitpay, οι κατόχοι πνευματικών δικαιωμάτων, και η BitPay α.ε., δεν μπορούν να ανακτήσουν ιδιωτικά κλειδιά ή τους κωδικούς πρόσβασης σας, εάν χάσετε ή ξεχασετε αυτούς και δεν μπορούν να εγγυηθούν την επιβεβαίωση της συναλλαγής, δεδομένου ότι δεν έχουν τον έλεγχο του δικτύου Decred."
 
 <<<<<<< HEAD
 #: public/views/disclaimer.html
@@ -1485,8 +1485,8 @@ msgid "The seed could require a passphrase to be imported"
 msgstr "The seed could require a passphrase to be imported"
 
 #: public/views/disclaimer.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
-msgstr "Το λογισμικό δεν αποτελεί ένα λογαριασμό όπου το BitPay ή άλλα τρίτα μέρη χρησιμεύουν ως ενδιάμεσοι χρηματοπιστωτικοί οργανισμοί ή θεματοφύλακες των bitcoin σας."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
+msgstr "Το λογισμικό δεν αποτελεί ένα λογαριασμό όπου το BitPay ή άλλα τρίτα μέρη χρησιμεύουν ως ενδιάμεσοι χρηματοπιστωτικοί οργανισμοί ή θεματοφύλακες των decred σας."
 
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."

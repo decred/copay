@@ -28,7 +28,7 @@ msgid "[Balance Hidden]"
 msgstr "[残高非表示中]"
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
+msgid "{{fee}} will be deducted for decred networking fees"
 msgstr "{{fee}} のビットコインネットワーク手数料が差し引かれます。"
 
 #: public/views/includes/confirm-tx.html
@@ -81,7 +81,7 @@ msgid "<b>OR</b> the wallet recovery phrases of <b>all</b> copayers in the walle
 msgstr "<b>または</b> 参加者 <b>全員</b> のウォレット復元フレーズ"
 
 #: public/views/disclaimer.html
-msgid "A multisignature bitcoin wallet"
+msgid "A multisignature decred wallet"
 msgstr "マルチシグネチャビットコインウォレット"
 
 <<<<<<< HEAD
@@ -266,8 +266,8 @@ msgid "Decred Network Fee Policy"
 msgstr "Decredネットワークの手数料設定"
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI が無効です！"
+msgid "Decred URI is NOT valid!"
+msgstr "Decred URI が無効です！"
 =======
 #: public/views/create.html
 #: public/views/import.html
@@ -277,7 +277,7 @@ msgstr "階級アドレス派生のパス"
 >>>>>>> upstream/master
 
 #: public/views/walletHome.html
-msgid "Bitcoin address"
+msgid "Decred address"
 msgstr "ビットコインアドレス"
 
 <<<<<<< HEAD
@@ -286,12 +286,12 @@ msgid "Decred address"
 msgstr "Decredアドレス"
 =======
 #: public/views/preferencesGlobal.html
-msgid "Bitcoin Network Fee Policy"
+msgid "Decred Network Fee Policy"
 msgstr "ビットコインネットワークの手数料設定"
 >>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "円滑な送金をしていただくために、ビットコインの送金には少量の手数料を付けることが義務付けられております。この手数料はビットコインのネットワークを運用する人たちに寄付され、より高い手数料であればより優先的にブロックに含まれ、承認されます。選択された手数料基準やネットワークの混雑状況により、実際に払われる手数料が変動することがあります。"
 
 <<<<<<< HEAD
@@ -300,8 +300,8 @@ msgid "Decred transactions may include a fee collected by miners on the network.
 msgstr "円滑な送金をしていただくために、Decredの送金には少量の手数料を付けることが義務付けられております。この手数料はビットコインのネットワークを運用する人たちに寄付され、より高い手数料であればより優先的にブロックに含まれ、承認されます。選択された手数料基準やネットワークの混雑状況により、実際に払われる手数料が変動することがあります。"
 =======
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI が無効です！"
+msgid "Decred URI is NOT valid!"
+msgstr "Decred URI が無効です！"
 >>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
@@ -535,7 +535,7 @@ msgid "Could not join wallet"
 msgstr "ウォレットに参加できませんでした。"
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
+msgid "Could not recognize a valid Decred QR Code"
 msgstr "有効なビットコインQRコードが認識できませんでした。"
 
 #: src/js/controllers/modals/txpDetails.js
@@ -1049,7 +1049,7 @@ msgid "Multiple recipients"
 msgstr "複数送金先"
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
+msgid "My Decred address"
 msgstr "私のビットコインアドレス："
 
 <<<<<<< HEAD
@@ -1502,7 +1502,7 @@ msgid "Send addresses by email"
 msgstr "ビットコインアドレスをメールにて共有"
 
 #: public/views/includes/confirm-tx.html
-msgid "Send bitcoin"
+msgid "Send decred"
 msgstr "ビットコインを送金"
 
 #: public/views/export.html
@@ -1674,7 +1674,7 @@ msgid "Terms of Use"
 msgstr "利用規約"
 
 #: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr "このソフトの開発者、BitPayの従業員とその関係者、著作権所有者、BitPay, Inc. 自体もパスワード・秘密鍵・パスワードなどへのアクセスが不可能なため、教えることがだきません、なお、ビットコインのネットワークへの影響が無いので、取引の取り消しや優先的な承認などはできません。"
 
 #: public/views/import.html
@@ -1711,7 +1711,7 @@ msgid "The request could not be understood by the server"
 msgstr "サーバーが要求を処理できませんでした。"
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
 msgstr "BitPay, Inc. 若しくはその他の第三者がアクセス権限を管理する、若しくはデジタル資産の代理保管を行うサービスではありません。"
 
 <<<<<<< HEAD

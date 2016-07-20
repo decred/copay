@@ -18,7 +18,7 @@ msgid "[Balance Hidden]"
 msgstr ""
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
+msgid "{{fee}} will be deducted for decred networking fees"
 msgstr ""
 
 #: public/views/includes/confirm-tx.html
@@ -71,7 +71,7 @@ msgid "<b>OR</b> the wallet recovery phrases of <b>all</b> copayers in the walle
 msgstr ""
 
 #: public/views/disclaimer.html
-msgid "A multisignature bitcoin wallet"
+msgid "A multisignature decred wallet"
 msgstr ""
 
 <<<<<<< HEAD
@@ -255,7 +255,7 @@ msgid "Decred Network Fee Policy"
 msgstr ""
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
+msgid "Decred URI is NOT valid!"
 =======
 #: public/views/create.html
 #: public/views/import.html
@@ -265,7 +265,7 @@ msgid "BIP32 path for address derivation"
 msgstr ""
 
 #: public/views/walletHome.html
-msgid "Bitcoin address"
+msgid "Decred address"
 msgstr ""
 
 <<<<<<< HEAD
@@ -273,12 +273,12 @@ msgstr ""
 msgid "Decred address"
 =======
 #: public/views/preferencesGlobal.html
-msgid "Bitcoin Network Fee Policy"
+msgid "Decred Network Fee Policy"
 >>>>>>> upstream/master
 msgstr ""
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr ""
 
 <<<<<<< HEAD
@@ -290,7 +290,7 @@ msgstr ""
 msgid "Broadcast Payment"
 =======
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
+msgid "Decred URI is NOT valid!"
 >>>>>>> upstream/master
 msgstr ""
 
@@ -525,7 +525,7 @@ msgid "Could not join wallet"
 msgstr ""
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
+msgid "Could not recognize a valid Decred QR Code"
 msgstr ""
 
 #: src/js/controllers/modals/txpDetails.js
@@ -1037,7 +1037,7 @@ msgid "Multiple recipients"
 msgstr ""
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
+msgid "My Decred address"
 msgstr ""
 
 <<<<<<< HEAD
@@ -1488,7 +1488,7 @@ msgid "Send addresses by email"
 msgstr ""
 
 #: public/views/includes/confirm-tx.html
-msgid "Send bitcoin"
+msgid "Send decred"
 msgstr ""
 
 #: public/views/export.html
@@ -1658,7 +1658,7 @@ msgid "Terms of Use"
 msgstr ""
 
 #: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr ""
 
 #: public/views/import.html
@@ -1695,7 +1695,7 @@ msgid "The request could not be understood by the server"
 msgstr ""
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
 msgstr ""
 
 <<<<<<< HEAD

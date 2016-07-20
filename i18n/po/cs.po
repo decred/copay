@@ -28,8 +28,8 @@ msgid "[Balance Hidden]"
 msgstr ""
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
-msgstr "{{fee}} bude odečteno jako poplatek bitcoinové síti"
+msgid "{{fee}} will be deducted for decred networking fees"
+msgstr "{{fee}} bude odečteno jako poplatek decredové síti"
 
 #: public/views/includes/confirm-tx.html
 msgid "{{feeRateStr}} of the transaction"
@@ -77,8 +77,8 @@ msgid "<b>OR</b> the wallet recovery phrases of <b>all</b> copayers in the walle
 msgstr ""
 
 #: public/views/disclaimer.html
-msgid "A multisignature bitcoin wallet"
-msgstr "A vícepodpisová bitcoin peněženka"
+msgid "A multisignature decred wallet"
+msgstr "A vícepodpisová decred peněženka"
 
 #: public/views/export.html
 msgid "A spending password is set for this wallet. Exporting keeps the spending password in the export archive."
@@ -179,7 +179,7 @@ msgstr "Částka"
 
 #: src/js/services/bwsError.js
 msgid "Amount below dust threshold"
-msgstr "Částka pod nejnižší úrovní bitcoin platby"
+msgstr "Částka pod nejnižší úrovní decred platby"
 
 #: public/views/modals/customized-amount.html
 #: public/views/walletHome.html
@@ -250,20 +250,20 @@ msgid "BIP32 path for address derivation"
 msgstr "BIP32 cesta pro derivaci adres"
 
 #: public/views/walletHome.html
-msgid "Bitcoin address"
-msgstr "Bitcoin adresa"
+msgid "Decred address"
+msgstr "Decred adresa"
 
 #: public/views/preferencesGlobal.html
-msgid "Bitcoin Network Fee Policy"
-msgstr "Zásady poplatků bitcoinové sítě"
+msgid "Decred Network Fee Policy"
+msgstr "Zásady poplatků decredové sítě"
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
-msgstr "Bitcoin transakce může obsahovat poplatek pro těžaře sítě. Čím větší poplatek je, tím pravděpodobnější je, že některý z těžařů tuto transakci zařadí do svého bloku. Současný poplatek je odvozen od vytížení sítě."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgstr "Decred transakce může obsahovat poplatek pro těžaře sítě. Čím větší poplatek je, tím pravděpodobnější je, že některý z těžařů tuto transakci zařadí do svého bloku. Současný poplatek je odvozen od vytížení sítě."
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI neni platná!"
+msgid "Decred URI is NOT valid!"
+msgstr "Decred URI neni platná!"
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
@@ -496,8 +496,8 @@ msgid "Could not join wallet"
 msgstr "Chyba spojování peněženek"
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
-msgstr "Bitcoin QR kód nebyl rozpoznán"
+msgid "Could not recognize a valid Decred QR Code"
+msgstr "Decred QR kód nebyl rozpoznán"
 
 #: src/js/controllers/modals/txpDetails.js
 msgid "Could not reject payment"
@@ -1004,8 +1004,8 @@ msgid "Multiple recipients"
 msgstr "Více příjemců"
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
-msgstr "Moje bitcoin adresa"
+msgid "My Decred address"
+msgstr "Moje decred adresa"
 
 #: public/views/modals/addressbook.html
 msgid "My contacts"
@@ -1450,7 +1450,7 @@ msgid "Send addresses by email"
 msgstr "Odeslat adresy emailem"
 
 #: public/views/includes/confirm-tx.html
-msgid "Send bitcoin"
+msgid "Send decred"
 msgstr "Odeslat BTC"
 
 #: public/views/export.html
@@ -1620,8 +1620,8 @@ msgid "Terms of Use"
 msgstr "Podmínky používání"
 
 #: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
-msgstr "Autoři tohoto software, zaměstnanci a ostatní z Bitpay, vlastníci ochranných známek, BitPay, Inc, nemůže obnovit vaše soukromé klíče nebo hesla, pokud dojde ke ztrátě a negarantuje potvrzení transakcí, protože nedrží kontrolu nad Bitcoin sítí."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
+msgstr "Autoři tohoto software, zaměstnanci a ostatní z Bitpay, vlastníci ochranných známek, BitPay, Inc, nemůže obnovit vaše soukromé klíče nebo hesla, pokud dojde ke ztrátě a negarantuje potvrzení transakcí, protože nedrží kontrolu nad Decred sítí."
 
 #: public/views/import.html
 msgid "The derivation path"
@@ -1653,8 +1653,8 @@ msgid "The request could not be understood by the server"
 msgstr "Požadavek nebyl serverem pochopen"
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
-msgstr "Tento software nepředstavuje účet kde BitPay nebo jiné třetí strany slouží jako finanční zprostředkovatelé nebo správci vašeho bitcoin."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
+msgstr "Tento software nepředstavuje účet kde BitPay nebo jiné třetí strany slouží jako finanční zprostředkovatelé nebo správci vašeho decred."
 
 #: public/views/includes/terms.html
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."

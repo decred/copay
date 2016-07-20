@@ -28,7 +28,7 @@ msgid "[Balance Hidden]"
 msgstr "[Fondi Nascosti]"
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
+msgid "{{fee}} will be deducted for decred networking fees"
 msgstr "{{fee}} verranno detratti come commissione del network"
 
 #: public/views/includes/confirm-tx.html
@@ -81,8 +81,8 @@ msgid "<b>OR</b> the wallet recovery phrases of <b>all</b> copayers in the walle
 msgstr "<b>O</b> le frasi di recupero di portafoglio di <b>tutti</b> i copayers nel portafoglio"
 
 #: public/views/disclaimer.html
-msgid "A multisignature bitcoin wallet"
-msgstr "Un portafoglio bitcoin multifirma"
+msgid "A multisignature decred wallet"
+msgstr "Un portafoglio decred multifirma"
 
 <<<<<<< HEAD
 #: public/views/splash.html
@@ -265,8 +265,8 @@ msgid "Decred Network Fee Policy"
 msgstr "Criterio delle Commissioni del Decred Network"
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Il Bitcoin URI NON è valido!"
+msgid "Decred URI is NOT valid!"
+msgstr "Il Decred URI NON è valido!"
 =======
 #: public/views/create.html
 #: public/views/import.html
@@ -276,8 +276,8 @@ msgstr "Percorso BIP32 per generare l'indirizzo"
 >>>>>>> upstream/master
 
 #: public/views/walletHome.html
-msgid "Bitcoin address"
-msgstr "Indirizzo Bitcoin"
+msgid "Decred address"
+msgstr "Indirizzo Decred"
 
 <<<<<<< HEAD
 #: public/views/walletHome.html
@@ -285,13 +285,13 @@ msgid "Decred address"
 msgstr "Indirizzo Decred"
 =======
 #: public/views/preferencesGlobal.html
-msgid "Bitcoin Network Fee Policy"
-msgstr "Criterio delle Commissioni del Bitcoin Network"
+msgid "Decred Network Fee Policy"
+msgstr "Criterio delle Commissioni del Decred Network"
 >>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
-msgstr "Le transazioni bitcoin possono includere una tassa raccolta dai minatori della rete. Più alto è il costo, maggiore sarà la possibilità di includere tale transazione in un blocco. Le tasse effettive sono determinate in base al carico della rete ed ai criteri selezionati."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgstr "Le transazioni decred possono includere una tassa raccolta dai minatori della rete. Più alto è il costo, maggiore sarà la possibilità di includere tale transazione in un blocco. Le tasse effettive sono determinate in base al carico della rete ed ai criteri selezionati."
 
 <<<<<<< HEAD
 #: public/views/preferencesFee.html
@@ -299,8 +299,8 @@ msgid "Decred transactions may include a fee collected by miners on the network.
 msgstr "Le transazioni decred possono includere una tassa raccolta dai minatori della rete. Più alto è il costo, maggiore sarà la possibilità di includere tale transazione in un blocco. Le tasse effettive sono determinate in base al carico della rete ed ai criteri selezionati."
 =======
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Il Bitcoin URI NON è valido!"
+msgid "Decred URI is NOT valid!"
+msgstr "Il Decred URI NON è valido!"
 >>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
@@ -534,8 +534,8 @@ msgid "Could not join wallet"
 msgstr "Impossibile partecipare al portafoglio"
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
-msgstr "Impossibile riconoscere un Codice QR Bitcoin valido"
+msgid "Could not recognize a valid Decred QR Code"
+msgstr "Impossibile riconoscere un Codice QR Decred valido"
 
 #: src/js/controllers/modals/txpDetails.js
 msgid "Could not reject payment"
@@ -1046,8 +1046,8 @@ msgid "Multiple recipients"
 msgstr "Più destinatari"
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
-msgstr "Il mio indirizzo Bitcoin"
+msgid "My Decred address"
+msgstr "Il mio indirizzo Decred"
 
 <<<<<<< HEAD
 #: public/views/walletHome.html
@@ -1498,8 +1498,8 @@ msgid "Send addresses by email"
 msgstr "Invia indirizzi via Email"
 
 #: public/views/includes/confirm-tx.html
-msgid "Send bitcoin"
-msgstr "Invia bitcoin"
+msgid "Send decred"
+msgstr "Invia decred"
 
 #: public/views/export.html
 #: public/views/preferencesLogs.html
@@ -1668,8 +1668,8 @@ msgid "Terms of Use"
 msgstr "Termini di Utilizzo"
 
 #: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
-msgstr "Gli autori del software, dipendenti e affiliati di Bitpay, detentori del copyright e BitPay, Inc non possono recuperare la tua password o chiave privata se si perde o si dimentica e non può garantire la conferma della transazione poiché non hanno controllo della rete Bitcoin."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
+msgstr "Gli autori del software, dipendenti e affiliati di Bitpay, detentori del copyright e BitPay, Inc non possono recuperare la tua password o chiave privata se si perde o si dimentica e non può garantire la conferma della transazione poiché non hanno controllo della rete Decred."
 
 #: public/views/import.html
 msgid "The derivation path"
@@ -1705,8 +1705,8 @@ msgid "The request could not be understood by the server"
 msgstr "La richiesta potrebbe non essere compresa dal server"
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
-msgstr "Il software non costituisce un account dove BitPay o altre terze parti servono come intermediari finanziari o custodi dei tuoi bitcoin."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
+msgstr "Il software non costituisce un account dove BitPay o altre terze parti servono come intermediari finanziari o custodi dei tuoi decred."
 
 <<<<<<< HEAD
 #: public/views/disclaimer.html

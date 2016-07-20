@@ -28,8 +28,8 @@ msgid "[Balance Hidden]"
 msgstr "[Balans Ukryty]"
 
 #: src/js/controllers/walletHome.js
-msgid "{{fee}} will be deducted for bitcoin networking fees"
-msgstr "{{fee}} zostanie potrącone jako prowizja sieci bitcoin"
+msgid "{{fee}} will be deducted for decred networking fees"
+msgstr "{{fee}} zostanie potrącone jako prowizja sieci decred"
 
 #: public/views/includes/confirm-tx.html
 msgid "{{feeRateStr}} of the transaction"
@@ -77,8 +77,8 @@ msgid "<b>OR</b> the wallet recovery phrases of <b>all</b> copayers in the walle
 msgstr "<b>LUB</b> fraz odzyskiwania <b>wszystkich</b> współwłaścicieli portfela"
 
 #: public/views/disclaimer.html
-msgid "A multisignature bitcoin wallet"
-msgstr "Portfel bitcoin z multipodpisami"
+msgid "A multisignature decred wallet"
+msgstr "Portfel decred z multipodpisami"
 
 #: public/views/export.html
 msgid "A spending password is set for this wallet. Exporting keeps the spending password in the export archive."
@@ -250,20 +250,20 @@ msgid "BIP32 path for address derivation"
 msgstr "BIP32 ścieżka dla adresu derywacji"
 
 #: public/views/walletHome.html
-msgid "Bitcoin address"
-msgstr "Adres bitcoin"
+msgid "Decred address"
+msgstr "Adres decred"
 
 #: public/views/preferencesGlobal.html
-msgid "Bitcoin Network Fee Policy"
-msgstr "Polityka prowizji sieci bitcoin"
+msgid "Decred Network Fee Policy"
+msgstr "Polityka prowizji sieci decred"
 
 #: public/views/preferencesFee.html
-msgid "Bitcoin transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
-msgstr "Transakcje bitcoinowe mogą zawierać prowizję pobieraną przez górników. Im wyższa prowizja, tym większa zachęta dla górnika, aby zawarł tę transakcję w bloku. Rzeczywiste opłaty ustala się w oparciu o obciążenie sieci i wybraną politykę."
+msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
+msgstr "Transakcje decredowe mogą zawierać prowizję pobieraną przez górników. Im wyższa prowizja, tym większa zachęta dla górnika, aby zawarł tę transakcję w bloku. Rzeczywiste opłaty ustala się w oparciu o obciążenie sieci i wybraną politykę."
 
 #: public/views/paymentUri.html
-msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI jest nieprawidłowy!"
+msgid "Decred URI is NOT valid!"
+msgstr "Decred URI jest nieprawidłowy!"
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
@@ -496,7 +496,7 @@ msgid "Could not join wallet"
 msgstr "Nie można dołączyć portfela"
 
 #: src/js/controllers/walletHome.js
-msgid "Could not recognize a valid Bitcoin QR Code"
+msgid "Could not recognize a valid Decred QR Code"
 msgstr "Nie udało się rozpoznać poprawnego kodu QR"
 
 #: src/js/controllers/modals/txpDetails.js
@@ -1004,8 +1004,8 @@ msgid "Multiple recipients"
 msgstr "Wielu odbiorców"
 
 #: public/views/walletHome.html
-msgid "My Bitcoin address"
-msgstr "Mój adres Bitcoin"
+msgid "My Decred address"
+msgstr "Mój adres Decred"
 
 #: public/views/modals/addressbook.html
 msgid "My contacts"
@@ -1450,8 +1450,8 @@ msgid "Send addresses by email"
 msgstr "Wyślij adresy przez e-mail"
 
 #: public/views/includes/confirm-tx.html
-msgid "Send bitcoin"
-msgstr "Wyślij bitcoiny"
+msgid "Send decred"
+msgstr "Wyślij decredy"
 
 #: public/views/export.html
 #: public/views/preferencesLogs.html
@@ -1620,8 +1620,8 @@ msgid "Terms of Use"
 msgstr "Warunki użytkowania"
 
 #: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network."
-msgstr "Autorzy oprogramowania, pracownicy i asystenci Bitpay, posiadacze praw autorskich i BitPay Inc. nie mogą odzyskać kluczy prywatnych lub haseł w wypadku ich utraty i nie mogą zagwarantować potwierdzenia transakcji, ponieważ nie mają kontroli nad siecią Bitcoin."
+msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
+msgstr "Autorzy oprogramowania, pracownicy i asystenci Bitpay, posiadacze praw autorskich i BitPay Inc. nie mogą odzyskać kluczy prywatnych lub haseł w wypadku ich utraty i nie mogą zagwarantować potwierdzenia transakcji, ponieważ nie mają kontroli nad siecią Decred."
 
 #: public/views/import.html
 msgid "The derivation path"
@@ -1653,8 +1653,8 @@ msgid "The request could not be understood by the server"
 msgstr "Wniosek nie został zrozumiany przez serwer"
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin."
-msgstr "Oprogramowanie nie jest kontem, gdzie BitPay lub inne osoby trzecie mogą służyć jako pośrednicy finansowi lub opiekunowie twoich bitcoinów."
+msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
+msgstr "Oprogramowanie nie jest kontem, gdzie BitPay lub inne osoby trzecie mogą służyć jako pośrednicy finansowi lub opiekunowie twoich decredów."
 
 #: public/views/includes/terms.html
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."
