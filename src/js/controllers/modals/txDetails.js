@@ -78,7 +78,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
 
   $scope.getShortNetworkName = function() {
     var n = fc.credentials.network;
-    return n.substring(0, 4);
+    return n.substring(4, n.length);
   };
 
   $scope.copyToClipboard = function(addr) {

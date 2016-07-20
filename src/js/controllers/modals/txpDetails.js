@@ -127,7 +127,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
   };
 
   $scope.getShortNetworkName = function() {
-    return fc.credentials.networkName.substring(0, 4);
+    return fc.credentials.networkName.substring(4, fc.credentials.networkName.length);
   };
 
   function checkPaypro() {
