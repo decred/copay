@@ -7,7 +7,7 @@
 <div class="content p20v row payment-uri" ng-controller="paymentUriController as payment">
   <div class="large-12 columns" ng-init="payment.init()">
     <div class="panel text-center" ng-if="!payment.uri">
-      <h1 translate>Bitcoin URI is NOT valid!</h1>
+      <h1 translate>Decred URI is NOT valid!</h1>
     </div>
     <div ng-if="payment.uri"  ng-init="wallets = payment.getWallets(payment.uri.network)">
       <h1 translate>Make a payment to</h1>
