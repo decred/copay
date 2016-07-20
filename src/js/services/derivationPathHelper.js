@@ -21,7 +21,7 @@ angular.module('copayApp.services').factory('derivationPathHelper', function(lod
       case "45'":
         return {
           derivationStrategy: 'BIP45',
-          networkName: 'livenet',
+          networkName: 'dcrdlivenet',
           account: 0,
         }
         break;
@@ -34,10 +34,10 @@ angular.module('copayApp.services').factory('derivationPathHelper', function(lod
 
     switch (arr[2]) {
       case "0'":
-        ret.networkName = 'livenet';
+        ret.networkName = 'dcrdlivenet';
         break;
       case "1'":
-        ret.networkName = 'testnet';
+        ret.networkName = 'dcrdtestnet';
         break;
       default:
         return false;

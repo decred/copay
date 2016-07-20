@@ -27,7 +27,7 @@ angular.module('copayApp.controllers').controller('paperWalletController',
 
       function checkPrivateKey(privateKey) {
         try {
-          new bitcore.PrivateKey(privateKey, 'livenet');
+          new bitcore.PrivateKey(privateKey, 'dcrdlivenet');
         } catch (err) {
           return false;
         }
@@ -78,7 +78,7 @@ angular.module('copayApp.controllers').controller('paperWalletController',
 
           fc.broadcastRawTx({
             rawTx: tx.serialize(),
-            network: 'livenet'
+            network: 'dcrdlivenet'
           }, function(err, txid) {
             if (err) return cb(err);
             return cb(null, destinationAddress, txid);
