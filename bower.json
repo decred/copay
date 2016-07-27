@@ -15,7 +15,7 @@
     "animate.css": "3.5.1",
     "foundation": "5.5.3",
     "foundation-icon-fonts": "*",
-    "ionic": "1.3.1",
+    "ionic": "git://github.com/decred/ionic#select_1.3.1",
     "moment": "2.10.3",
     "ng-lodash": "0.2.3",
     "qrcode-decoder-js": "*",
