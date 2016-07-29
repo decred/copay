@@ -120,7 +120,7 @@ angular.module('copayApp.controllers').controller('backupController',
     };
 
     $scope.shouldContinue = function() {
-      if ($scope.customWords.length == 12)
+      if ($scope.customWords.length == 33)
         $scope.selectComplete = true;
       else
         $scope.selectComplete = false;
