@@ -113,16 +113,6 @@ angular.module('copayApp.controllers').controller('createController',
         }
         opts.passphrase = $scope.passphrase;
 
-        var pathData = derivationPathHelper.parse($scope.derivationPath);
-        if (!pathData) {
-          this.error = gettext('Invalid derivation path');
-          return;
-        }
-
-        opts.account = pathData.account;
-        opts.networkName = pathData.networkName;
-        opts.derivationStrategy = pathData.derivationStrategy;
-
       } else {
         opts.passphrase = $scope.createPassphrase;
       }
@@ -132,34 +122,8 @@ angular.module('copayApp.controllers').controller('createController',
         return;
       }
 
-      if (self.seedSourceId == 'ledger' || self.seedSourceId == 'trezor') {
-        var account = $scope.account;
-        if (!account || account < 1) {
-          this.error = gettext('Invalid account number');
-          return;
-        }
-
-        if (self.seedSourceId == 'trezor')
-          account = account - 1;
-
-        opts.account = account;
-        ongoingProcess.set('connecting' + self.seedSourceId, true);
-
-        var src = self.seedSourceId == 'ledger' ? ledger : trezor;
-
-        src.getInfoForNewWallet(opts.n > 1, account, function(err, lopts) {
-          ongoingProcess.set('connecting' + self.seedSourceId, false);
-          if (err) {
-            self.error = err;
-            $scope.$apply();
-            return;
-          }
-          opts = lodash.assign(lopts, opts);
-          self._create(opts);
-        });
-      } else {
-        self._create(opts);
-      }
+      self._create(opts);
+      
     };
 
     this._create = function(opts) {
