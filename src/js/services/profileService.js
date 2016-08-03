@@ -372,7 +372,7 @@ angular.module('copayApp.services')
 
       opts.m = 1;
       opts.n = 1;
-      opts.network = 'dcrdtestnet';
+      opts.networkName = 'dcrdtestnet';
 
       doCreateWallet(opts, function(err, walletClient) {
         if (err) return cb(err);
