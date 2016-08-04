@@ -4,8 +4,8 @@ angular.module('copayApp.services').factory('openURLService', function($rootScop
   var root = {};
 
   root.registeredUriHandlers = [{
-    name: 'Bitcoin BIP21 URL',
-    startsWith: 'bitcoin:',
+    name: 'Decred BIP21 URL',
+    startsWith: 'decred:',
     transitionTo: 'uripayment',
   }, {
     name: 'Glidera Authentication Callback',
@@ -97,7 +97,7 @@ angular.module('copayApp.services').factory('openURLService', function($rootScop
 
       if (navigator.registerProtocolHandler) {
         $log.debug('Registering Browser handlers base:' + base);
-        navigator.registerProtocolHandler('bitcoin', url, 'Copay Bitcoin Handler');
+        navigator.registerProtocolHandler('decred', url, 'Copay Decred Handler');
         navigator.registerProtocolHandler('web+copay', url, 'Copay Wallet Handler');
       }
     }
