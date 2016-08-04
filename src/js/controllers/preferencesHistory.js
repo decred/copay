@@ -81,7 +81,7 @@ angular.module('copayApp.controllers').controller('preferencesHistory',
             var _fee = (it.fees * satToBtc).toFixed(8)
             $scope.csvContent.push({
               'Date': formatDate(it.time * 1000),
-              'Destination': 'Bitcoin Network Fees',
+              'Destination': 'Decred Network Fees',
               'Description': '',
               'Amount': '-' + _fee,
               'Currency': 'BTC',
