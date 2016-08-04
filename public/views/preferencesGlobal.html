@@ -28,16 +28,6 @@
   </ul>
   <h4></h4>
 
-  <ul class="no-bullet m0">
-    <li href ui-sref="preferencesFee">
-      <div class="right text-gray">
-        {{feeOpts[currentFeeLevel]|translate}}
-        <i class="icon-arrow-right3 size-24"></i>
-      </div>
-      <div translate>Decred Network Fee Policy</div>
-    </li>
-  </ul>
-
   <ion-toggle ng-model="spendUnconfirmed" toggle-class="toggle-balanced" ng-change="spendUnconfirmedChange()">
     <span class="toggle-label" translate>Use Unconfirmed Funds</span>
   </ion-toggle>
