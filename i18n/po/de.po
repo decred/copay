@@ -847,10 +847,6 @@ msgstr "Wallet importieren"
 msgid "Importing Wallet..."
 msgstr "Wallet wird importiert..."
 
-#: public/views/includes/terms.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "Die Autoren der Software, Mitarbeiter und Partner von Bitpay, Inhaber von Urheberrechten oder Bitpay Inc., haften in keinem Fall für Schäden oder Ansprüche, die sich im Rahmen einer Klage zum Vertrag, unerlaubter Handlung, auf andere Weise oder aus bzw. im Zusammenhang mit der Software ergeben."
-
 #: public/views/backup.html
 msgid "In order to verify your wallet backup, please type your password:"
 msgstr "Um die Sicherung der Wallet zu überprüfen, geben Sie bitte Ihr Passwort ein:"
@@ -1633,10 +1629,6 @@ msgstr "Zum Wiederholen antippen"
 msgid "Terms of Use"
 msgstr "Nutzungsbedingungen"
 
-#: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "Die Autoren der Software, Mitarbeiter und Partner von Bitpay, Inhaber von Urheberrechten und BitPay, Inc. können nicht Ihre privaten Schlüssel oder Kennwörter abrufen, wenn diese verloren gehen oder vergessen werden und können die Durchführung von Transaktionen, auch nach Bestätigungen, nicht garantieren, da sie keine Kontrolle über das Decred-Netzwerk haben."
-
 #: public/views/import.html
 msgid "The derivation path"
 msgstr "Die Ableitungsstruktur"
@@ -1649,6 +1641,7 @@ msgstr "Die Chrome-Anwendung für Ledger ist nicht installiert"
 msgid "The password of the recovery phrase (if set)"
 msgstr "Das Passwort der Wiederherstellungsphrase (wenn eingestellt)"
 
+#: public/views/includes/terms.html
 #: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of
 Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
@@ -1670,10 +1663,6 @@ msgstr "Um die Wiederherstellungsphrase zu importieren könnte ein Passwort nöt
 #: src/js/services/bwsError.js
 msgid "The request could not be understood by the server"
 msgstr "Die Anforderung konnte nicht vom Server interpretiert werden"
-
-#: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "Die Software erzeugt kein Benutzerkonto, bei dem Bitpay oder sonstige Dritte als Finanzvermittler oder Verwalter der Decred fungieren."
 
 #: src/js/services/bwsError.js
 msgid "The spend proposal is not pending"

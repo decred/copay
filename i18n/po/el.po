@@ -212,7 +212,6 @@ msgstr "Balance By Address"
 msgid "Before receiving funds, it is highly recommended you backup your wallet keys."
 msgstr "Πρίν λάβετε χρήματα, προτέινεται ισχυρά να πάρετε αντίγραφο ασφαλείας των κλειδιών του πορτοφολιού σας."
 
-<<<<<<< HEAD
 #: public/views/preferences.html
 msgid "Decred Network Fee Policy"
 msgstr "Πολιτική Χρέωσης Δικτύου Decred"
@@ -225,35 +224,21 @@ msgstr "Πολιτική Χρέωσης Δικτύου Decred"
 msgid "Decred URI is NOT valid!"
 msgstr "Το σύστημα Decred URI δεν είναι έγκυρο!"
 
-=======
->>>>>>> upstream/master
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Διεύθυνση Decred"
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Διεύθυνση Decred"
-=======
-#: public/views/preferences.html
-msgid "Decred Network Fee Policy"
-msgstr "Πολιτική Χρέωσης Δικτύου Decred"
->>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Οι Decred συναλλαγές μπορεί να περιλαμβάνουν μια αμοιβή που εισπράτουν οι ανθρακωρύχοι στο δίκτυο. Όσο υψηλότερο το τέλος, τόσο μεγαλύτερο το κίνητρο ενός ανθρακωρύχου να συμπεριλάβει αυτή τη συναλλαγή σε ένα μπλοκ. Οι αμοιβές καθορίζονται με βάση το φορτίο του δικτύου και την επιλεγμένη πολιτική."
 
-<<<<<<< HEAD
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Οι Decred συναλλαγές μπορεί να περιλαμβάνουν μια αμοιβή που εισπράτουν οι ανθρακωρύχοι στο δίκτυο. Όσο υψηλότερο το τέλος, τόσο μεγαλύτερο το κίνητρο ενός ανθρακωρύχου να συμπεριλάβει αυτή τη συναλλαγή σε ένα μπλοκ. Οι αμοιβές καθορίζονται με βάση το φορτίο του δικτύου και την επιλεγμένη πολιτική."
-=======
-#: public/views/paymentUri.html
-msgid "Decred URI is NOT valid!"
-msgstr "Το σύστημα Decred URI δεν είναι έγκυρο!"
->>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
@@ -781,10 +766,6 @@ msgstr "Εισάγεται το πορτοφόλι ..."
 #: public/views/importLegacy.html
 msgid "Importing..."
 msgstr "Εισαγωγή ..."
-
-#: public/views/disclaimer.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "Σε καμία περίπτωση οι συντάκτες του λογισμικού, οι συνεργάτες του Bitpay, οι κατόχοι πνευματικών δικαιωμάτων, ή η BitPay α.ε. ευθύνεται για οποιαδήποτε αξίωση, ζημία ή άλλη ευθύνη, είτε βαση κάποιας σύμβασης, αδικοπραξίας, ή άλλο, που προκύπτει από την σχέση σας με το λογισμικό."
 
 #: public/views/disclaimer.html
 msgid "In no event shall the authors of the software, employees and affiliates of Company 0, LLC, or copyright holders be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
@@ -1446,18 +1427,12 @@ msgid "Testnet"
 msgstr "Δοκιμαστικό Δίκτυο"
 
 #: public/views/disclaimer.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "Οι συγγραφείς του λογισμικού, οι εργαζόμενοι και οι συνεργάτες του Bitpay, οι κατόχοι πνευματικών δικαιωμάτων, και η BitPay α.ε., δεν μπορούν να ανακτήσουν ιδιωτικά κλειδιά ή τους κωδικούς πρόσβασης σας, εάν χάσετε ή ξεχασετε αυτούς και δεν μπορούν να εγγυηθούν την επιβεβαίωση της συναλλαγής, δεδομένου ότι δεν έχουν τον έλεγχο του δικτύου Decred."
-
-<<<<<<< HEAD
-#: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-=======
+
 #: src/js/services/ledger.js
 msgid "The Ledger Chrome application is not installed"
 msgstr "The Ledger Chrome application is not installed"
->>>>>>> upstream/master
 
 #: src/js/controllers/walletHome.js
 msgid "The payment was created but could not be completed. Please try again from home screen"
@@ -1483,10 +1458,6 @@ msgstr "The private key for this wallet is encrypted. Exporting keep the private
 #: public/views/join.html
 msgid "The seed could require a passphrase to be imported"
 msgstr "The seed could require a passphrase to be imported"
-
-#: public/views/disclaimer.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "Το λογισμικό δεν αποτελεί ένα λογαριασμό όπου το BitPay ή άλλα τρίτα μέρη χρησιμεύουν ως ενδιάμεσοι χρηματοπιστωτικοί οργανισμοί ή θεματοφύλακες των decred σας."
 
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."

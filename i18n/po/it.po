@@ -84,19 +84,15 @@ msgstr "<b>O</b> le frasi di recupero di portafoglio di <b>tutti</b> i copayers 
 msgid "A multisignature decred wallet"
 msgstr "Un portafoglio decred multifirma"
 
-<<<<<<< HEAD
 #: public/views/splash.html
 msgid "A multisignature decred wallet"
 msgstr "Un portafoglio decred multifirma"
 
-#: public/views/preferences.html
-=======
 #: public/views/export.html
 msgid "A spending password is set for this wallet. Exporting keeps the spending password in the export archive."
 msgstr "In questo portafoglio è impostata una password di spesa. L'esportazione mantiene la password di spesa nell'archivio esportato."
 
 #: public/views/preferencesGlobal.html
->>>>>>> upstream/master
 msgid "About Copay"
 msgstr "Circa Copay"
 
@@ -259,7 +255,6 @@ msgstr "Prima di ricevere del denaro, è necessario eseguire un salvataggio del 
 msgid "BETA: Android Key Derivation Test:"
 msgstr "BETA: Test di derivazione di chiave Android:"
 
-<<<<<<< HEAD
 #: public/views/preferences.html
 msgid "Decred Network Fee Policy"
 msgstr "Criterio delle Commissioni del Decred Network"
@@ -267,41 +262,36 @@ msgstr "Criterio delle Commissioni del Decred Network"
 #: public/views/paymentUri.html
 msgid "Decred URI is NOT valid!"
 msgstr "Il Decred URI NON è valido!"
-=======
+
 #: public/views/create.html
 #: public/views/import.html
 #: public/views/join.html
 msgid "BIP32 path for address derivation"
 msgstr "Percorso BIP32 per generare l'indirizzo"
->>>>>>> upstream/master
 
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Indirizzo Decred"
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Indirizzo Decred"
-=======
+
 #: public/views/preferencesGlobal.html
 msgid "Decred Network Fee Policy"
 msgstr "Criterio delle Commissioni del Decred Network"
->>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Le transazioni decred possono includere una tassa raccolta dai minatori della rete. Più alto è il costo, maggiore sarà la possibilità di includere tale transazione in un blocco. Le tasse effettive sono determinate in base al carico della rete ed ai criteri selezionati."
 
-<<<<<<< HEAD
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Le transazioni decred possono includere una tassa raccolta dai minatori della rete. Più alto è il costo, maggiore sarà la possibilità di includere tale transazione in un blocco. Le tasse effettive sono determinate in base al carico della rete ed ai criteri selezionati."
-=======
+
 #: public/views/paymentUri.html
 msgid "Decred URI is NOT valid!"
 msgstr "Il Decred URI NON è valido!"
->>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
@@ -877,10 +867,6 @@ msgstr "Importa un portafoglio"
 msgid "Importing Wallet..."
 msgstr "Importazione del Portafoglio..."
 
-#: public/views/includes/terms.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "In nessun caso gli autori del software, dipendenti e affiliati di Bitpay, detentori del copyright o BitPay, Inc potranno essere ritenuti responsabili per qualsiasi danno o altra responsabilità, sia in un'azione di contratto, torto, o altro, derivanti da, su o in relazione al software."
-
 #: public/views/backup.html
 msgid "In order to verify your wallet backup, please type your password:"
 msgstr "Per verificare il backup del tuo portafoglio, inserire la password:"
@@ -1049,11 +1035,10 @@ msgstr "Più destinatari"
 msgid "My Decred address"
 msgstr "Il mio indirizzo Decred"
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "My Decred address"
 msgstr "Il mio indirizzo Decred"
-=======
+
 #: public/views/modals/addressbook.html
 msgid "My contacts"
 msgstr "I miei contatti"
@@ -1065,7 +1050,6 @@ msgstr "I miei portafogli"
 #: public/views/preferencesDeleteWords.html
 msgid "Need to do backup"
 msgstr "Necessario eseguire backup"
->>>>>>> upstream/master
 
 #: public/views/paymentUri.html
 msgid "Network"
@@ -1667,10 +1651,6 @@ msgstr "Tocca per riprovare"
 msgid "Terms of Use"
 msgstr "Termini di Utilizzo"
 
-#: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "Gli autori del software, dipendenti e affiliati di Bitpay, detentori del copyright e BitPay, Inc non possono recuperare la tua password o chiave privata se si perde o si dimentica e non può garantire la conferma della transazione poiché non hanno controllo della rete Decred."
-
 #: public/views/import.html
 msgid "The derivation path"
 msgstr "Il percorso di derivazione"
@@ -1683,6 +1663,7 @@ msgstr "Non è installata l'applicazione di contabilità Chrome"
 msgid "The password of the recovery phrase (if set)"
 msgstr "La password della frase recupero (se impostata)"
 
+#: public/views/includes/terms.html
 #: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
@@ -1704,19 +1685,14 @@ msgstr "La frase di recupero potrebbe richiedere una password per essere importa
 msgid "The request could not be understood by the server"
 msgstr "La richiesta potrebbe non essere compresa dal server"
 
-#: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "Il software non costituisce un account dove BitPay o altre terze parti servono come intermediari finanziari o custodi dei tuoi decred."
 
-<<<<<<< HEAD
+#: public/views/includes/terms.html
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."
 msgstr "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."
 
 #: public/views/disclaimer.html
-=======
 #: public/views/includes/terms.html
->>>>>>> upstream/master
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."
 msgstr "Il software che si sta per utilizzare è un portafoglio libero, open source e con multi-firma digitale."
 
@@ -1821,17 +1797,12 @@ msgid "Try again"
 msgstr "Riprova"
 
 #: public/views/import.html
-<<<<<<< HEAD
 msgid "Type the Seed Word (usually 33 words)"
 msgstr "Type the Seed Word (usually 33 words)"
 
 #: src/js/controllers/walletHome.js
 msgid "Unable to send transaction proposal"
 msgstr "Impossibile inviare la proposta di transazione"
-=======
-msgid "Type the Recovery Phrase (usually 12 words)"
-msgstr "Digitare la Frase di Recupero (tipicamente 12 parole)"
->>>>>>> upstream/master
 
 #: public/views/modals/search.html
 #: public/views/modals/tx-details.html

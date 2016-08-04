@@ -212,7 +212,6 @@ msgstr "Balance By Address"
 msgid "Before receiving funds, it is highly recommended you backup your wallet keys."
 msgstr "Before receiving funds, it is highly recommended you backup your wallet keys."
 
-<<<<<<< HEAD
 #: public/views/preferences.html
 msgid "Decred Network Fee Policy"
 msgstr "Decred Network Fee Policy"
@@ -225,35 +224,25 @@ msgstr "Decred Network Fee Policy"
 msgid "Decred URI is NOT valid!"
 msgstr "Decred URI NUK është valid!"
 
-=======
->>>>>>> upstream/master
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Decred adresa"
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Decred adresa"
-=======
-#: public/views/preferences.html
-msgid "Decred Network Fee Policy"
-msgstr "Decred Network Fee Policy"
->>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 
-<<<<<<< HEAD
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
-=======
+
 #: public/views/paymentUri.html
 msgid "Decred URI is NOT valid!"
 msgstr "Decred URI NUK është valid!"
->>>>>>> upstream/master
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
@@ -781,10 +770,6 @@ msgstr "Importing wallet..."
 #: public/views/importLegacy.html
 msgid "Importing..."
 msgstr "Importing..."
-
-#: public/views/disclaimer.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
 
 #: public/views/disclaimer.html
 msgid "In no event shall the authors of the software, employees and affiliates of Company 0, LLC, or copyright holders be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
@@ -1446,18 +1431,12 @@ msgid "Testnet"
 msgstr "Testnet"
 
 #: public/views/disclaimer.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-
-<<<<<<< HEAD
-#: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-=======
+
 #: src/js/services/ledger.js
 msgid "The Ledger Chrome application is not installed"
 msgstr "The Ledger Chrome application is not installed"
->>>>>>> upstream/master
 
 #: src/js/controllers/walletHome.js
 msgid "The payment was created but could not be completed. Please try again from home screen"
@@ -1483,10 +1462,6 @@ msgstr "The private key for this wallet is encrypted. Exporting keep the private
 #: public/views/join.html
 msgid "The seed could require a passphrase to be imported"
 msgstr "The seed could require a passphrase to be imported"
-
-#: public/views/disclaimer.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
 
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."

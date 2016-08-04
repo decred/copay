@@ -74,19 +74,11 @@ msgstr ""
 msgid "A multisignature decred wallet"
 msgstr ""
 
-<<<<<<< HEAD
 #: public/views/splash.html
 msgid "A multisignature decred wallet"
 msgstr ""
 
 #: public/views/preferences.html
-=======
-#: public/views/export.html
-msgid "A spending password is set for this wallet. Exporting keeps the spending password in the export archive."
-msgstr ""
-
-#: public/views/preferencesGlobal.html
->>>>>>> upstream/master
 msgid "About Copay"
 msgstr ""
 
@@ -249,49 +241,32 @@ msgstr ""
 msgid "BETA: Android Key Derivation Test:"
 msgstr ""
 
-<<<<<<< HEAD
 #: public/views/preferences.html
 msgid "Decred Network Fee Policy"
 msgstr ""
 
 #: public/views/paymentUri.html
 msgid "Decred URI is NOT valid!"
-=======
-#: public/views/create.html
-#: public/views/import.html
-#: public/views/join.html
-msgid "BIP32 path for address derivation"
->>>>>>> upstream/master
 msgstr ""
 
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr ""
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "Decred address"
-=======
-#: public/views/preferencesGlobal.html
-msgid "Decred Network Fee Policy"
->>>>>>> upstream/master
 msgstr ""
 
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr ""
 
-<<<<<<< HEAD
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
 msgstr ""
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
-=======
-#: public/views/paymentUri.html
-msgid "Decred URI is NOT valid!"
->>>>>>> upstream/master
 msgstr ""
 
 #: public/views/modals/txp-details.html
@@ -868,10 +843,6 @@ msgstr ""
 msgid "Importing Wallet..."
 msgstr ""
 
-#: public/views/includes/terms.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr ""
-
 #: public/views/backup.html
 msgid "In order to verify your wallet backup, please type your password:"
 msgstr ""
@@ -880,6 +851,7 @@ msgstr ""
 msgid "Include address book and history cache"
 msgstr ""
 
+#: public/views/includes/terms.html
 #: public/views/disclaimer.html
 msgid "In no event shall the authors of the software, employees and affiliates of Company 0, LLC, or copyright holders be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
 msgstr ""
@@ -1040,12 +1012,8 @@ msgstr ""
 msgid "My Decred address"
 msgstr ""
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "My Decred address"
-=======
-#: public/views/modals/addressbook.html
-msgid "My contacts"
 msgstr ""
 
 #: public/views/modals/addressbook.html
@@ -1054,7 +1022,6 @@ msgstr ""
 
 #: public/views/preferencesDeleteWords.html
 msgid "Need to do backup"
->>>>>>> upstream/master
 msgstr ""
 
 #: public/views/paymentUri.html
@@ -1657,10 +1624,6 @@ msgstr ""
 msgid "Terms of Use"
 msgstr ""
 
-#: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr ""
-
 #: public/views/import.html
 msgid "The derivation path"
 msgstr ""
@@ -1673,6 +1636,7 @@ msgstr ""
 msgid "The password of the recovery phrase (if set)"
 msgstr ""
 
+#: public/views/includes/terms.html
 #: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr ""
@@ -1695,18 +1659,12 @@ msgid "The request could not be understood by the server"
 msgstr ""
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr ""
-
-<<<<<<< HEAD
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."
 msgstr ""
 
 #: public/views/disclaimer.html
-=======
 #: public/views/includes/terms.html
->>>>>>> upstream/master
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."
 msgstr ""
 
@@ -1811,15 +1769,11 @@ msgid "Try again"
 msgstr ""
 
 #: public/views/import.html
-<<<<<<< HEAD
 msgid "Type the Seed Word (usually 33 words)"
 msgstr ""
 
 #: src/js/controllers/walletHome.js
 msgid "Unable to send transaction proposal"
-=======
-msgid "Type the Recovery Phrase (usually 12 words)"
->>>>>>> upstream/master
 msgstr ""
 
 #: public/views/modals/search.html
@@ -1872,17 +1826,12 @@ msgstr ""
 msgid "Waiting for Ledger..."
 msgstr ""
 
-<<<<<<< HEAD
 #: public/views/splash.html
 msgid "WELCOME TO DECRED WEB WALLET"
 msgstr ""
 
 #: public/views/copayers.html
 msgid "Waiting for copayers"
-=======
-#: src/js/services/onGoingProcess.js
-msgid "Waiting for Trezor..."
->>>>>>> upstream/master
 msgstr ""
 
 #: public/views/copayers.html

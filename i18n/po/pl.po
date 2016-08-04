@@ -839,10 +839,6 @@ msgstr "Importuj portfel"
 msgid "Importing Wallet..."
 msgstr ""
 
-#: public/views/includes/terms.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "W żadnym wypadku autorzy oprogramowania, pracownicy i oddziały Bitpay, posiadacze praw autorskich, czy BitPay, Inc. nie ponoszą odpowiedzialności za wszelkie roszczenia, odszkodowania lub inne zobowiązania, zarówno wynikające z umowy, czynu niedozwolonego lub z innego tytułu, związanego z oprogramowaniem."
-
 #: public/views/backup.html
 msgid "In order to verify your wallet backup, please type your password:"
 msgstr "W celu weryfikacji kopii zapasowej portfela wpisz swoje hasło:"
@@ -1619,10 +1615,6 @@ msgstr "Ponów próbę"
 msgid "Terms of Use"
 msgstr "Warunki użytkowania"
 
-#: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "Autorzy oprogramowania, pracownicy i asystenci Bitpay, posiadacze praw autorskich i BitPay Inc. nie mogą odzyskać kluczy prywatnych lub haseł w wypadku ich utraty i nie mogą zagwarantować potwierdzenia transakcji, ponieważ nie mają kontroli nad siecią Decred."
-
 #: public/views/import.html
 msgid "The derivation path"
 msgstr "Ścieżka derywacji"
@@ -1651,10 +1643,6 @@ msgstr "Fraza odzyskiwania może wymagać hasła do zaimportowania"
 #: src/js/services/bwsError.js
 msgid "The request could not be understood by the server"
 msgstr "Wniosek nie został zrozumiany przez serwer"
-
-#: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "Oprogramowanie nie jest kontem, gdzie BitPay lub inne osoby trzecie mogą służyć jako pośrednicy finansowi lub opiekunowie twoich decredów."
 
 #: public/views/includes/terms.html
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."

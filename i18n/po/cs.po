@@ -839,10 +839,6 @@ msgstr "Import peněženky"
 msgid "Importing Wallet..."
 msgstr ""
 
-#: public/views/includes/terms.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "Za žádných okolností autoři softwaru, zaměstnanci a přidružené osoby z Bitpay, vlastníci ochranných známek, BitPay, Inc nejsou odpovědni za škody nebo náhradu nákladů, plynoucí z používání tohoto softwaru."
-
 #: public/views/backup.html
 msgid "In order to verify your wallet backup, please type your password:"
 msgstr ""
@@ -1619,10 +1615,6 @@ msgstr "Klikněte pro zopakování pokusu"
 msgid "Terms of Use"
 msgstr "Podmínky používání"
 
-#: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "Autoři tohoto software, zaměstnanci a ostatní z Bitpay, vlastníci ochranných známek, BitPay, Inc, nemůže obnovit vaše soukromé klíče nebo hesla, pokud dojde ke ztrátě a negarantuje potvrzení transakcí, protože nedrží kontrolu nad Decred sítí."
-
 #: public/views/import.html
 msgid "The derivation path"
 msgstr ""
@@ -1651,10 +1643,6 @@ msgstr ""
 #: src/js/services/bwsError.js
 msgid "The request could not be understood by the server"
 msgstr "Požadavek nebyl serverem pochopen"
-
-#: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "Tento software nepředstavuje účet kde BitPay nebo jiné třetí strany slouží jako finanční zprostředkovatelé nebo správci vašeho decred."
 
 #: public/views/includes/terms.html
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."

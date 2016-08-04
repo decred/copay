@@ -84,19 +84,16 @@ msgstr "<b>OU</b> les phrases de récupération de portefeuille de <b>tous</b> l
 msgid "A multisignature decred wallet"
 msgstr "Un portefeuille decred multi-signatures"
 
-<<<<<<< HEAD
 #: public/views/splash.html
 msgid "A multisignature decred wallet"
 msgstr "Un portefeuille decred multi-signatures"
 
 #: public/views/preferences.html
-=======
 #: public/views/export.html
 msgid "A spending password is set for this wallet. Exporting keeps the spending password in the export archive."
 msgstr "Un code de dépenses est configuré pour ce portefeuille. L'exportation conserve le code de dépenses dans l’archive exportée."
 
 #: public/views/preferencesGlobal.html
->>>>>>> upstream/master
 msgid "About Copay"
 msgstr "À propos de Copay"
 
@@ -259,7 +256,6 @@ msgstr "Avant de recevoir des fonds, il est nécessaire de sauvegarder votre por
 msgid "BETA: Android Key Derivation Test:"
 msgstr "BETA: Android Key Derivation Test:"
 
-<<<<<<< HEAD
 #: public/views/preferences.html
 msgid "Decred Network Fee Policy"
 msgstr "Stratégie des frais de réseau Decred"
@@ -267,27 +263,14 @@ msgstr "Stratégie des frais de réseau Decred"
 #: public/views/paymentUri.html
 msgid "Decred URI is NOT valid!"
 msgstr "L'URI Decred n'est pas valide !"
-=======
-#: public/views/create.html
-#: public/views/import.html
-#: public/views/join.html
-msgid "BIP32 path for address derivation"
-msgstr "Chemin BIP32 pour la dérivation de l'adresse"
->>>>>>> upstream/master
 
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Adresse Decred"
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "Decred address"
 msgstr "Adresse Decred"
-=======
-#: public/views/preferencesGlobal.html
-msgid "Decred Network Fee Policy"
-msgstr "Frais de réseau"
->>>>>>> upstream/master
 
 #: public/views/preferencesFee.html
 msgid "Decred transactions may include a fee collected by miners on the network. The higher the fee, the greater the incentive a miner has to include that transaction in a block. Actual fees are determined based on network load and the selected policy."
@@ -876,14 +859,10 @@ msgid "Importing Wallet..."
 msgstr "Importation du portefeuille..."
 
 #: public/views/includes/terms.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "En aucun cas les auteurs du logiciel, employés et sociétés affiliés de Bitpay, détenteurs de droits d'auteur, ou BitPay, Inc. ne peuvent être tenus responsables de toute réclamation, dommages ou autre responsabilité, que ce soit dans une action contractuelle, délictuelle ou autre, découlant ou en étant en connexion avec le logiciel."
-
-<<<<<<< HEAD
 #: public/views/disclaimer.html
 msgid "In no event shall the authors of the software, employees and affiliates of Company 0, LLC, or copyright holders be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
 msgstr "In no event shall the authors of the software, employees and affiliates of Company 0, LLC, or copyright holders be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-=======
+
 #: public/views/backup.html
 msgid "In order to verify your wallet backup, please type your password:"
 msgstr "Afin de vérifier votre sauvegarde du portefeuille, veuillez saisir votre mot de passe :"
@@ -891,7 +870,6 @@ msgstr "Afin de vérifier votre sauvegarde du portefeuille, veuillez saisir votr
 #: public/views/export.html
 msgid "Include address book and history cache"
 msgstr "Inclure le répertoire et le cache de l'historique"
->>>>>>> upstream/master
 
 #: src/js/services/bwsError.js
 msgid "Incorrect address network"
@@ -1049,11 +1027,10 @@ msgstr "Plusieurs destinataires"
 msgid "My Decred address"
 msgstr "Mon adresse Decred"
 
-<<<<<<< HEAD
 #: public/views/walletHome.html
 msgid "My Decred address"
 msgstr "Mon adresse Decred"
-=======
+
 #: public/views/modals/addressbook.html
 msgid "My contacts"
 msgstr "Mes contacts"
@@ -1065,7 +1042,6 @@ msgstr "Mes portefeuilles"
 #: public/views/preferencesDeleteWords.html
 msgid "Need to do backup"
 msgstr "Vous devez faire une sauvegarde"
->>>>>>> upstream/master
 
 #: public/views/paymentUri.html
 msgid "Network"
@@ -1667,10 +1643,6 @@ msgstr "Tapotez pour réessayer"
 msgid "Terms of Use"
 msgstr "Conditions d'utilisation"
 
-#: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "Les auteurs de ce logiciel, employés et sociétés affiliés à BitPay, détenteurs de droits d'auteur, et BitPay, Inc. ne peuvent pas récupérer vos clés privées ou mots de passe si vous les perdez et ne peuvent pas garantir la confirmation des transactions étant donné qu'ils n'ont pas de contrôle sur le réseau Decred."
-
 #: public/views/import.html
 msgid "The derivation path"
 msgstr "Le chemin de dérivation"
@@ -1683,6 +1655,7 @@ msgstr "L'application Ledger pour Chrome n'est pas installée"
 msgid "The password of the recovery phrase (if set)"
 msgstr "Le mot de passe de la phrase de récupération (si configuré)"
 
+#: public/views/includes/terms.html
 #: public/views/disclaimer.html
 msgid "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
 msgstr "The authors of the software, employees and affiliates of Company 0, LLC, and copyright holders cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
@@ -1705,18 +1678,12 @@ msgid "The request could not be understood by the server"
 msgstr "La demande n'a pas été comprise par le serveur"
 
 #: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "Le logiciel ne constitue pas un compte où BitPay, ou des tiers, agissent comme des intermédiaires financiers ou dépositaires de vos decreds."
-
-<<<<<<< HEAD
 #: public/views/disclaimer.html
 msgid "The software does not constitute an account where Company 0, LLC or other third parties serve as financial intermediaries or custodians of your decred."
 msgstr "Le logiciel ne constitue pas un compte où Company 0, LLC, ou des tiers, agissent comme des intermédiaires financiers ou dépositaires de vos decred."
 
 #: public/views/disclaimer.html
-=======
 #: public/views/includes/terms.html
->>>>>>> upstream/master
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."
 msgstr "Le logiciel que vous êtes sur le point d'utiliser fonctionne comme un portefeuille numérique gratuit, open source et multi-signatures."
 
@@ -1821,17 +1788,12 @@ msgid "Try again"
 msgstr "Réessayer"
 
 #: public/views/import.html
-<<<<<<< HEAD
 msgid "Type the Seed Word (usually 33 words)"
 msgstr "Écrivez les mots de la graine (généralement 33 mots)"
 
 #: src/js/controllers/walletHome.js
 msgid "Unable to send transaction proposal"
 msgstr "Impossible d'envoyer la proposition de transaction"
-=======
-msgid "Type the Recovery Phrase (usually 12 words)"
-msgstr "Saisissez la phrase de récupération (généralement 12 mots)"
->>>>>>> upstream/master
 
 #: public/views/modals/search.html
 #: public/views/modals/tx-details.html

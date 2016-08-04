@@ -839,10 +839,6 @@ msgstr "导入钱包"
 msgid "Importing Wallet..."
 msgstr "正在导入钱包..."
 
-#: public/views/includes/terms.html
-msgid "In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software."
-msgstr "在任何情况下，软件作者、Bitpay 的员工及附属公司、版权持有人或 BitPay，Inc. 均不对由软件引起，与软件有关联或无关联，所任何索赔、损害或其他责任，无论是合同诉讼、侵权行为或其他，产生从本合同或与本软件有关。"
-
 #: public/views/backup.html
 msgid "In order to verify your wallet backup, please type your password:"
 msgstr "为了验证你的钱包备份，请键入你的密码："
@@ -1619,10 +1615,6 @@ msgstr "点击以重试"
 msgid "Terms of Use"
 msgstr "使用条款"
 
-#: public/views/includes/terms.html
-msgid "The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Decred network."
-msgstr "如果你遗失或忘记私钥或密码，软件作者、Bitpay 的员工及附属公司、版权持有人或 BitPay，Inc. 均无法取回你的私钥或密码，由于他们没有比特币网络的管理权，他们并不能保证交易确认。"
-
 #: public/views/import.html
 msgid "The derivation path"
 msgstr "衍生路径"
@@ -1651,10 +1643,6 @@ msgstr "恢复短语需要密码才能导入"
 #: src/js/services/bwsError.js
 msgid "The request could not be understood by the server"
 msgstr "服务器不理解此请求"
-
-#: public/views/includes/terms.html
-msgid "The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your decred."
-msgstr "此软件并不构成一个账户，让 BitPay 或其他第三方作为金融中介机构或保管人以保管你的比特币。"
 
 #: public/views/includes/terms.html
 msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet."
