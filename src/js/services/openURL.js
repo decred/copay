@@ -97,7 +97,7 @@ angular.module('copayApp.services').factory('openURLService', function($rootScop
 
       if (navigator.registerProtocolHandler) {
         $log.debug('Registering Browser handlers base:' + base);
-        navigator.registerProtocolHandler('decred', url, 'Copay Decred Handler');
+        navigator.registerProtocolHandler('web+decred', url, 'Copay Decred Handler');
         navigator.registerProtocolHandler('web+copay', url, 'Copay Wallet Handler');
       }
     }
