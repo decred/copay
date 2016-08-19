@@ -154,7 +154,7 @@
             <div ng-show="index.updatingTxHistory && index.txProgress > 5">
               <div  class="row p20 text-center">
                 <div class="columns large-12 medium-12 small-12 m10b">
-                  <ion-spinner class="spinner-dark" icon="lines"></ion-spinner>
+			<!-- <ion-spinner class="spinner-dark" icon="lines"></ion-spinner> -->
                 </div>
                 <div class="size-12 text-gray m20t">
                   <div translate>{{index.txProgress}} transactions downloaded</div>
@@ -238,7 +238,7 @@
 
             <div class="row m20t text-center" ng-show="index.historyRendering && !index.ching">
               <div class="columns large-12 medium-12 small-12">
-                <ion-spinner class="spinner-stable" icon="lines"></ion-spinner>
+		      <!-- <ion-spinner class="spinner-stable" icon="lines"></ion-spinner> -->
               </div>
             </div>
 
@@ -247,12 +247,13 @@
               &nbsp;
               <i class="icon-arrow-down4"></i>
             </div>
-
+ <!--
             <ion-infinite-scroll
               ng-if="index.historyShowMore"
               on-infinite="index.showMore()"
               distance="1%">
             </ion-infinite-scroll>
+-->
           </div>
         </div>
 
@@ -293,7 +294,7 @@
               <qrcode size="220" data="decred:{{home.addr}}"></qrcode>
               <div ng-show="home.generatingAddress" style="position:relative; top:-226px; height:0px">
                 <div style="height:220px; width:220px; margin:auto; background: white">
-                  <ion-spinner class="spinner-stable" icon="lines" style="margin-top: 85px"></ion-spinner>
+			<!-- <ion-spinner class="spinner-stable" icon="lines" style="margin-top: 85px"></ion-spinner> -->
                 </div>
               </div>
               <div class="m10t" >
