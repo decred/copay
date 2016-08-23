@@ -45,7 +45,6 @@
     "bitcore-wallet-client": "git://github.com/decred/bitcore-wallet-client.git",
     "coveralls": "^2.11.9",
     "express": "^4.11.2",
-    "fs": "0.0.2",
     "grunt": "^0.4.5",
     "grunt-angular-gettext": "^0.2.15",
     "grunt-browserify": "^4.0.1",
