@@ -1,6 +1,6 @@
 {
   "name": "copay",
-  "description": "A multisignature bitcoin wallet",
+  "description": "A multisignature decred wallet",
   "author": "BitPay",
   "version": "2.1.0",
   "androidVersionCode": "109",
@@ -8,17 +8,16 @@
     "wallet",
     "copay",
     "multisignature",
-    "bitcoin",
-    "bitcore"
+    "decred"
   ],
   "main": "public/index.html",
   "window": {
-    "title": "Copay - A multisignature bitcoin wallet",
+    "title": "Copay - A multisignature decred wallet",
     "icon": "./public/img/icons/icon-256.png",
     "toolbar": false,
     "show": true,
     "visible": true,
-    "resizable": false,
+    "resizable": true,
     "frame": true,
     "width": 400,
     "height": 600,
