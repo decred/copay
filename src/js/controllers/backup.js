@@ -34,7 +34,7 @@ angular.module('copayApp.controllers').controller('backupController',
     };
 
     function shuffledWords(words) {
-      var sort = lodash.sortBy(words);
+      var sort = lodash.sortBy(words, function(i){return i.toLowerCase();});
 
       return lodash.map(sort, function(w) {
         return {
