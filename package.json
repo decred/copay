@@ -71,6 +71,7 @@
     "angular-mocks": "1.4.10",
     "bhttp": "^1.2.1",
     "bower": "^1.7.9",
+    "browserify": "^13.1.0",
     "chai": "^3.5.0",
     "cordova": "5.4.1",
     "cordova-android": "5.1.1",
