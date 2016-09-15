@@ -216,7 +216,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'webkitbuilds/',
           src: ['.desktop', '../public/img/icons/favicon.ico', '../public/img/icons/icon-256.png'],
-          dest: 'webkitbuilds/Copay/linux64/',
+          dest: 'webkitbuilds/CopayDecred/linux64/',
           flatten: true,
           filter: 'isFile'
         }],
@@ -233,7 +233,7 @@ module.exports = function(grunt) {
     },
     nodewebkit: {
       options: {
-        appName: 'Copay',
+        appName: 'CopayDecred',
         platforms: ['win64', 'osx64', 'linux64'],
         buildDir: './webkitbuilds',
         version: '0.12.2',
@@ -248,7 +248,7 @@ module.exports = function(grunt) {
           archive: './webkitbuilds/Copay-linux.zip'
         },
         expand: true,
-        cwd: './webkitbuilds/Copay/linux64/',
+        cwd: './webkitbuilds/CopayDecred/linux64/',
         src: ['**/*'],
         dest: 'copay-linux/'
       }

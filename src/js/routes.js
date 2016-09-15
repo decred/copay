@@ -460,7 +460,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         type: "menubar"
       });
       try {
-        nativeMenuBar.createMacBuiltin("Copay");
+        nativeMenuBar.createMacBuiltin("CopayDecred");
       } catch (e) {
         $log.debug('This is not OSX');
       }

@@ -1,7 +1,7 @@
 {
-  "name": "copay",
+  "name": "copaydecred",
   "description": "A multisignature decred wallet",
-  "author": "BitPay",
+  "author": "decred.org",
   "version": "2.1.0",
   "androidVersionCode": "109",
   "keywords": [
