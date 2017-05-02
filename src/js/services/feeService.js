@@ -17,7 +17,7 @@ angular.module('copayApp.services').factory('feeService', function($log, $stateP
   };
 
   root.getCurrentFeeValue = function(network, cb) {
-    network = network || 'livenet';
+    network = network || 'dcrdlivenet';
     var feeLevel = root.getCurrentFeeLevel();
 
     root.getFeeLevels(function(err, levels) {
@@ -46,8 +46,8 @@ angular.module('copayApp.services').factory('feeService', function($log, $stateP
     var walletClient = bwcService.getClient();
     var unitName = configService.getSync().wallet.settings.unitName;
 
-    walletClient.getFeeLevels('livenet', function(errLivenet, levelsLivenet) {
-      walletClient.getFeeLevels('testnet', function(errTestnet, levelsTestnet) {
+    walletClient.getFeeLevels('dcrdlivenet', function(errLivenet, levelsLivenet) {
+      walletClient.getFeeLevels('dcrdtestnet', function(errTestnet, levelsTestnet) {
         if (errLivenet || errTestnet) {
           return cb(gettextCatalog.getString('Could not get dynamic fee'));
         } else {
@@ -57,8 +57,8 @@ angular.module('copayApp.services').factory('feeService', function($log, $stateP
         }
 
         return cb(null, {
-          'livenet': levelsLivenet,
-          'testnet': levelsTestnet
+          'dcrdlivenet': levelsLivenet,
+          'dcrdtestnet': levelsTestnet
         });
       });
     });

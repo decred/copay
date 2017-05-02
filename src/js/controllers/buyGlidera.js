@@ -36,9 +36,9 @@ angular.module('copayApp.controllers').controller('buyGlideraController', functi
   };
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
-    $scope.isFiat = data.stateParams.currency != 'bits' && data.stateParams.currency != 'BTC' ? true : false;
+    $scope.isFiat = data.stateParams.currency != 'atoms' && data.stateParams.currency != 'DCR' ? true : false;
     var parsedAmount = txFormatService.parseAmount(
-      data.stateParams.amount, 
+      data.stateParams.amount,
       data.stateParams.currency);
 
     amount = parsedAmount.amount;
@@ -97,7 +97,7 @@ angular.module('copayApp.controllers').controller('buyGlideraController', functi
       popupService.showPrompt(title, message, null, function(twoFaCode) {
         if (typeof twoFaCode == 'undefined') return cb();
         return cb(twoFaCode);
-      });   
+      });
     } else {
       return cb();
     }
@@ -108,7 +108,7 @@ angular.module('copayApp.controllers').controller('buyGlideraController', functi
     var okText = 'Confirm';
     var cancelText = 'Cancel';
     popupService.showConfirm(null, message, okText, cancelText, function(ok) {
-      if (!ok) return; 
+      if (!ok) return;
       ongoingProcess.set('buyingBitcoin', true, statusChangeHandler);
       glideraService.get2faCode($scope.token, function(err, tfa) {
         if (err) {

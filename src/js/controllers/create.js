@@ -64,7 +64,7 @@ angular.module('copayApp.controllers').controller('createController',
         id: 'new',
         label: gettextCatalog.getString('Random'),
         supportsTestnet: true
-      }, {        
+      }, {
         id: 'set',
         label: gettextCatalog.getString('Specify Recovery Phrase...'),
         supportsTestnet: false
@@ -78,7 +78,7 @@ angular.module('copayApp.controllers').controller('createController',
 
       */
 
-      if (appConfigService.name == 'copay') {
+      if (appConfigService.name == 'copay' || appConfigService.name == 'decred') {
         if (n > 1 && walletService.externalSource.ledger.supported)
           seedOptions.push({
             id: walletService.externalSource.ledger.id,
@@ -123,7 +123,7 @@ angular.module('copayApp.controllers').controller('createController',
         m: $scope.formData.requiredCopayers,
         n: $scope.formData.totalCopayers,
         myName: $scope.formData.totalCopayers > 1 ? $scope.formData.myName : null,
-        networkName: $scope.formData.testnetEnabled ? 'testnet' : 'livenet',
+        networkName: $scope.formData.testnetEnabled ? 'dcrdtestnet' : 'dcrdlivenet',
         bwsurl: $scope.formData.bwsurl,
         singleAddress: $scope.formData.singleAddressEnabled,
         walletPrivKey: $scope.formData._walletPrivKey, // Only for testing

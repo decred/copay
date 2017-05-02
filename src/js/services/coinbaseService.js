@@ -35,10 +35,10 @@ angular.module('copayApp.services').factory('coinbaseService', function($http, $
     var coinbase = $window.externalServices.coinbase;
 
     /*
-     * Development: 'testnet'
-     * Production: 'livenet'
+     * Development: 'dcrdtestnet'
+     * Production: 'dcrdlivenet'
      */
-    credentials.NETWORK = 'livenet';
+    credentials.NETWORK = 'dcrdlivenet';
 
     // Coinbase permissions
     credentials.SCOPE = '' +
@@ -62,7 +62,7 @@ angular.module('copayApp.services').factory('coinbaseService', function($http, $
       credentials.REDIRECT_URI = coinbase.redirect_uri.desktop;
     }
 
-    if (credentials.NETWORK == 'testnet') {
+    if (credentials.NETWORK == 'dcrdtestnet') {
       credentials.HOST = coinbase.sandbox.host;
       credentials.API = coinbase.sandbox.api;
       credentials.CLIENT_ID = coinbase.sandbox.client_id;
@@ -730,7 +730,7 @@ angular.module('copayApp.services').factory('coinbaseService', function($http, $
   register();
 
   $rootScope.$on('bwsEvent', function(e, walletId, type, n) {
-    if (type == 'NewBlock' && n && n.data && n.data.network == 'livenet') {
+    if (type == 'NewBlock' && n && n.data && n.data.network == 'dcrdlivenet') {
       root.isActive(function(err,isActive){
         // Update Coinbase
         if (isActive)

@@ -10,7 +10,7 @@ angular.module('copayApp.controllers').controller('tabReceiveController', functi
   $scope.shareAddress = function(addr) {
     if ($scope.generatingAddress) return;
     if ($scope.isCordova) {
-      window.plugins.socialsharing.share('bitcoin:' + addr, null, null, null);
+      window.plugins.socialsharing.share('decred:' + addr, null, null, null);
     }
   };
 

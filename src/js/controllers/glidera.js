@@ -19,7 +19,7 @@ angular.module('copayApp.controllers').controller('glideraController',
 
         $scope.account['token'] = data.token;
         $scope.account['status'] = data.status;
-        $scope.account['txs'] = data.txs; 
+        $scope.account['txs'] = data.txs;
 
         $timeout(function() {
           $scope.$digest();
@@ -79,7 +79,7 @@ angular.module('copayApp.controllers').controller('glideraController',
     }
 
     $scope.openLoginWindow = function() {
-      var glideraUrl = ($scope.network === 'testnet') ? 'https://sandbox.glidera.io/login' : 'https://glidera.io/login';
+      var glideraUrl = ($scope.network === 'dcrdtestnet') ? 'https://sandbox.glidera.io/login' : 'https://glidera.io/login';
       $scope.openExternalLink(glideraUrl);
     }
 

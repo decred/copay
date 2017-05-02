@@ -4,13 +4,13 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
   var credentials = {};
 
   /*
-   * Development: 'testnet'
-   * Production: 'livenet'
+   * Development: 'dcrdtestnet'
+   * Production: 'dcrdlivenet'
    */
-  credentials.NETWORK = 'livenet';
-  //credentials.NETWORK = 'testnet';
+  credentials.NETWORK = 'dcrdlivenet';
+  //credentials.NETWORK = 'dcrdtestnet';
 
-  if (credentials.NETWORK == 'testnet') {
+  if (credentials.NETWORK == 'dcrdtestnet') {
     credentials.BITPAY_API_URL = "https://test.bitpay.com";
   } else {
     credentials.BITPAY_API_URL = "https://bitpay.com";
