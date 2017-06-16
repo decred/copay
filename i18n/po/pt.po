@@ -15,7 +15,7 @@ msgstr ""
 
 #: www/views/bitpayCard.html:63
 msgid "(Pre-Auth Holds transactions) The merchant has initiated a hold to make those funds unavailable until your transaction to them has fully settled. Funds are released within 30 days at the latest in the event the merchant decides not to complete the transaction."
-msgstr ""
+msgstr "(Transações Pre-Auth Holds) O comerciante iniciou a retenção dos fundos até que a sua transação tenha sido resolvida. Os fundos estaram diisponível  dentro de 30 dias, o mais tardar no caso de o comerciante decidir não completar a transação "
 
 #: www/views/modals/paypro.html:34
 msgid "(Trusted)"
@@ -191,7 +191,7 @@ msgstr "Moeda Alternativa"
 #: www/views/includes/output.html:7
 #: www/views/paymentUri.html:16
 msgid "Amount"
-msgstr "﻿Valor"
+msgstr "Valor"
 
 #: src/js/services/bwcError.js:110
 msgid "Amount below minimum allowed"
@@ -203,11 +203,11 @@ msgstr "Montante muito grande"
 
 #: src/js/controllers/tab-home.js:143
 msgid "An update to this app is available. For your security, please update to the latest version."
-msgstr "Está disponível uma actualização para esta aplicação. Para sua segurança, por favor atualize para a versão mais recente."
+msgstr "Está disponível uma atualização para esta aplicação. Para sua segurança, por favor atualize para a versão mais recente."
 
 #: www/views/backupWarning.html:14
 msgid "Anyone with your backup phrase can access or spend your bitcoin."
-msgstr "Qualquer pessoa com sua frase de segurança pode aceder ou gastar os seus bitcoins."
+msgstr "Qualquer pessoa com sua frase de segurança pode ter acesso ou gastar os seus bitcoins."
 
 #: www/views/backupWarning.html:10
 msgid "Are you being watched?"
@@ -223,7 +223,7 @@ msgstr "Tem certeza que deseja cancelar e eliminar esta carteira?"
 
 #: src/js/controllers/addressbookView.js:24
 msgid "Are you sure you want to delete this contact?"
-msgstr ""
+msgstr "Tem certeza que deseja eliminar este contato?"
 
 #: src/js/controllers/preferencesDelete.js:26
 msgid "Are you sure you want to delete this wallet?"
@@ -243,7 +243,7 @@ msgstr "Tem a certeza que deseja ignorar?"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
 msgid "Are you sure you would like to log out of your BitPay Card account?"
-msgstr ""
+msgstr "Tem certeza que deseja sair de sua conta do BitPay Card?"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
@@ -252,7 +252,7 @@ msgstr "Tem a certeza de que quer remover o seu Cartão BitPay ({{lastFourDigits
 
 #: www/views/includes/walletInfo.html:5
 msgid "Auditable"
-msgstr "Audivel"
+msgstr "Auditável"
 
 #: www/views/modals/wallet-balance.html:42
 msgid "Available"
@@ -265,7 +265,7 @@ msgstr "Saldo Disponível"
 #: www/views/modals/chooseFeeLevel.html:14
 #: www/views/preferencesFee.html:15
 msgid "Average confirmation time"
-msgstr "Tempo de confirmação (em média)"
+msgstr "Tempo médio de confirmação"
 
 #: www/views/join.html:140
 #: www/views/tab-create-personal.html:111
@@ -293,7 +293,7 @@ msgstr "Backup necessário"
 
 #: www/views/includes/backupNeededPopup.html:9
 msgid "Backup now"
-msgstr "Backup agora"
+msgstr "Faça o Backup agora"
 
 #: www/views/onboarding/backupRequest.html:11
 #: www/views/tab-export-file.html:89
@@ -385,7 +385,7 @@ msgstr "A comprar Bitcoin..."
 
 #: src/js/services/onGoingProcess.js:12
 msgid "Calculating fee"
-msgstr "A calcular taxa"
+msgstr "Calculando taxa"
 
 #: src/js/controllers/confirm.js:498
 #: src/js/services/popupService.js:59
@@ -399,7 +399,7 @@ msgstr "Cancelar"
 
 #: www/views/copayers.html:37
 msgid "Cancel invitation"
-msgstr ""
+msgstr "Cancelar convite"
 
 #: src/js/controllers/onboarding/tour.js:52
 msgid "Cannot Create Wallet"
@@ -468,7 +468,7 @@ msgstr "Complete o processo de backup para usar esta opção"
 
 #: www/views/bitpayCard.html:99
 msgid "Completed"
-msgstr ""
+msgstr "Concluído"
 
 #: src/js/controllers/confirm.js:497
 #: src/js/controllers/copayers.js:55
@@ -503,11 +503,11 @@ msgstr "A confirmar"
 
 #: www/views/bitpayCard.html:59
 msgid "Confirming load transactions that are underpaid may require at least six blockchain confirmations to process."
-msgstr ""
+msgstr "Transações com taxas baixas pode requerer seis confirmações na rede blockchain para serem processadas."
 
 #: www/views/bitpayCard.html:55
 msgid "Confirming transactions take up to 1 block confirmation to proccess."
-msgstr ""
+msgstr "As transações em espera requerem uma confirmação no blockchain para serem processadas"
 
 #: www/views/bitpayCardIntro.html:37
 msgid "Connect my BitPay Card"
@@ -527,7 +527,7 @@ msgstr "Ligação redefinida pelo mesmo nível"
 
 #: www/views/tab-send.html:41
 msgid "Contacts"
-msgstr "Contactos"
+msgstr "Contatos"
 
 #: www/views/onboarding/notifications.html:9
 msgid "Continue"
@@ -800,7 +800,7 @@ msgstr "Economia"
 
 #: www/views/onboarding/collectEmail.html:27
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: www/views/addressbook.add.html:29
 #: www/views/addressbook.view.html:22
@@ -856,7 +856,7 @@ msgstr "Digite a frase de recuperação (BIP39)"
 
 #: www/views/onboarding/collectEmail.html:13
 msgid "Enter your email"
-msgstr ""
+msgstr "Coloque seu email"
 
 #: www/views/backup.html:62
 msgid "Enter your password"
@@ -937,7 +937,7 @@ msgstr "Erro na criação da carteira"
 
 #: src/js/controllers/bitpayCardIntro.js:14
 msgid "Error pairing BitPay Account"
-msgstr ""
+msgstr "Erro em sincronizar com a conta BitPay"
 
 #: src/js/controllers/paperWallet.js:41
 msgid "Error scanning funds:"
@@ -964,7 +964,7 @@ msgstr "Expirado"
 #: www/views/modals/paypro.html:54
 #: www/views/modals/txp-details.html:126
 msgid "Expires"
-msgstr "﻿Expira"
+msgstr "Expira"
 
 #: www/views/preferencesAdvanced.html:21
 msgid "Export Wallet"
@@ -1012,7 +1012,7 @@ msgstr "Taxa"
 
 #: www/views/confirm.html:81
 msgid "Fee:"
-msgstr ""
+msgstr "Taxa"
 
 #: src/js/controllers/feedback/send.js:23
 msgid "Feedback could not be submitted. Please try again later."
@@ -1058,7 +1058,7 @@ msgstr "De conta BitPay"
 
 #: www/views/tab-export-qrCode.html:5
 msgid "From the destination device, go to Add wallet &gt; Import wallet and scan this QR code"
-msgstr "Do dispositivo de destino, go em Adicionar Carteira &gt; Importar Carteira e faça a varredura do código QR"
+msgstr "Do dispositivo de destino, vá em Adicionar Carteira &gt; Importar Carteira e faça a varredura do código QR"
 
 #: src/js/services/bwcError.js:74
 msgid "Funds are locked by pending spend proposals"
@@ -1078,7 +1078,7 @@ msgstr "Os saldos serão transferidos para"
 
 #: www/views/tab-receive.html:51
 msgid "Generate new address"
-msgstr ""
+msgstr "Gerar novo endereço"
 
 #: src/js/services/onGoingProcess.js:22
 msgid "Generating .csv file..."
@@ -1401,7 +1401,7 @@ msgstr "Mês anterior"
 #: www/views/bitpayCard.html:60
 #: www/views/bitpayCard.html:64
 msgid "Learn More"
-msgstr ""
+msgstr "Ler mais"
 
 #: www/views/backup.html:36
 msgid "Let's verify your backup phrase."
@@ -1442,7 +1442,7 @@ msgstr "Bloqueio de tempo em ação. Por favor espere para remover esta proposta
 
 #: www/views/modals/bitpay-card-confirmation.html:14
 msgid "Log out"
-msgstr ""
+msgstr "Sair"
 
 #: www/views/includes/walletHistory.html:27
 msgid "Low fees"
@@ -1633,11 +1633,11 @@ msgstr "Notificações"
 
 #: www/views/onboarding/collectEmail.html:9
 msgid "Notifications by email"
-msgstr ""
+msgstr "Notificações por email"
 
 #: www/views/tx-details.html:110
 msgid "Notify me if confirmed"
-msgstr ""
+msgstr "Notifcar assim que confirmar"
 
 #: www/views/includes/backupNeededPopup.html:8
 msgid "Now is a good time to backup your wallet. If this device is lost, it is impossible to access your funds without a backup."
@@ -1746,7 +1746,7 @@ msgstr "Pagar Para"
 
 #: www/views/modals/tx-status.html:33
 msgid "Payment Accepted"
-msgstr "﻿Pagamento Aceito"
+msgstr "Pagamento Aceito"
 
 #: www/views/confirm.html:25
 msgid "Payment Expires:"
@@ -1887,7 +1887,7 @@ msgstr "A Chave privada está criptografada, não é possível acessar"
 
 #: www/views/includes/walletActivity.html:51
 msgid "Proposal Accepted"
-msgstr "Proposta aceite"
+msgstr "Proposta aceita"
 
 #: src/js/controllers/modals/txpDetails.js:51
 #: src/js/controllers/tx-details.js:65
@@ -1943,7 +1943,7 @@ msgstr "Ler mais"
 #: www/views/tab-receive.html:3
 #: www/views/tabs.html:7
 msgid "Receive"
-msgstr "﻿Receber"
+msgstr "Receber"
 
 #: www/views/includes/walletHistory.html:24
 #: www/views/tx-details.html:18
@@ -2010,7 +2010,7 @@ msgstr "Informação de lançamento"
 
 #: www/views/addressbook.view.html:36
 msgid "Remove"
-msgstr ""
+msgstr "Remover"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
 msgid "Remove BitPay Account?"
@@ -2601,7 +2601,7 @@ msgstr "Transação não encontrada"
 
 #: src/js/controllers/paperWallet.js:110
 msgid "Transfer to"
-msgstr ""
+msgstr "Transferir para"
 
 #: www/views/tab-send.html:63
 msgid "Transfer to Wallet"
@@ -2629,7 +2629,7 @@ msgstr "Não confirmado"
 
 #: www/views/preferencesUnit.html:4
 msgid "Unit"
-msgstr "﻿Unidade"
+msgstr "Unidade"
 
 #: www/views/walletDetails.html:177
 msgid "Unsent transactions"
@@ -2674,7 +2674,7 @@ msgstr "Validando a frase de recuperação..."
 #: www/views/preferencesAbout.html:14
 #: www/views/preferencesExternal.html:25
 msgid "Version"
-msgstr "﻿Versão"
+msgstr "Versão"
 
 #: www/views/tab-export-file.html:69
 msgid "View"
