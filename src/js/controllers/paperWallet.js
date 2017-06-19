@@ -13,7 +13,7 @@ angular.module('copayApp.controllers').controller('paperWalletController',
 
       function checkPrivateKey(privateKey) {
         try {
-          new bitcore.PrivateKey(privateKey, 'livenet');
+          new bitcore.PrivateKey(privateKey, 'dcrdlivenet');
         } catch (err) {
           return false;
         }
@@ -60,14 +60,14 @@ angular.module('copayApp.controllers').controller('paperWalletController',
         $scope.wallet.buildTxFromPrivateKey($scope.privateKey, destinationAddress, null, function(err, testTx) {
           if (err) return cb(err);
           var rawTxLength = testTx.serialize().length;
-          feeService.getCurrentFeeValue('livenet', null, function(err, feePerKB) {
+          feeService.getCurrentFeeValue('dcrdlivenet', function(err, feePerKB) {
             var opts = {};
             opts.fee = Math.round((feePerKB * rawTxLength) / 2000);
             $scope.wallet.buildTxFromPrivateKey($scope.privateKey, destinationAddress, opts, function(err, tx) {
               if (err) return cb(err);
               $scope.wallet.broadcastRawTx({
                 rawTx: tx.serialize(),
-                network: 'livenet'
+                network: 'dcrdlivenet'
               }, function(err, txid) {
                 if (err) return cb(err);
                 return cb(null, destinationAddress, txid);
@@ -119,7 +119,7 @@ angular.module('copayApp.controllers').controller('paperWalletController',
 
       $scope.wallets = profileService.getWallets({
         onlyComplete: true,
-        network: 'livenet',
+        network: 'dcrdlivenet',
       });
       $scope.singleWallet = $scope.wallets.length == 1;
 

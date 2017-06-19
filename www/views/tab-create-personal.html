@@ -108,6 +108,8 @@
           <label class="item item-input item-stacked-label" ng-show="formData.seedSource.id == 'set'">
             <span class="input-label" translate>Derivation Path</span>
             <input type="text"
+            disabled="disabled"
+            class="disabled"
             placeholder="{{'BIP32 path for address derivation'|translate}}"
             ng-model="formData.derivationPath">
           </label>

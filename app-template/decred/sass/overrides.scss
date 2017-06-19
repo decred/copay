@@ -1,0 +1,77 @@
+/*
+ * Copay Distribution SCSS overrides
+ */
+
+/* Colors */
+$v-primary-color:                                    #0C1E3E;
+$v-secondary-color:                                  #c4cbd2;
+$v-accent-color:                                     #2971FF;
+
+$v-text-primary-color:                               #0C1E3E;
+$v-text-secondary-color:                             #2971FF;
+$v-text-accent-color:                                #2971FF;
+
+$v-success-color:                                    #41BF53;
+$v-warning-color:                                    #FD714A;
+
+/* Theme */
+$v-default-wallet-color-index:                       6;
+$v-top-tabs-color:                                   $v-accent-color;
+$v-wallet-backup-phrase-color:                       $v-text-primary-color;
+$v-wallet-backup-select-phrase-color:                $v-secondary-color;
+$v-wallet-backup-select-word-bg:                     $v-accent-color;
+$v-wallet-backup-select-word-color:                  $v-text-primary-color;
+$v-wallet-backup-select-word-disabled-color:         $v-accent-color;
+$v-tou-bg:                                           $v-secondary-color;
+$v-tou-color:                                        $v-text-secondary-color;
+$v-icon-border-radius:                               3px;
+$v-bitcoin-icon:                                     url('../img/app/icon-decred.svg');
+
+$v-button-primary-outline-active-color:              $v-text-primary-color;
+
+$v-button-secondary-bg:                              $v-secondary-color;
+$v-button-secondary-color:                           $v-accent-color;
+$v-button-secondary-active-bg:                       darken($v-secondary-color, 10%);
+$v-button-secondary-clear-color:                     $v-accent-color;
+$v-button-secondary-outline-border:                  $v-accent-color;
+$v-button-secondary-outline-color:                   $v-accent-color;
+$v-button-secondary-outline-active-bg:               darken($v-accent-color, 10%);
+$v-button-secondary-outline-active-color:            $v-accent-color;
+
+/* Slide */
+
+$v-slide-bg-color:                                   $v-accent-color;
+$v-slider-bg-color:                                  #69D3F5;
+$v-slide-text-color:                                 #FFFFFF;
+
+
+
+/* Main tabs */
+$v-tab-home-selected-icon:                           url('../img/app/tab-icons/ico-home-selected.svg');
+$v-tab-receive-selected-icon:                        url('../img/app/tab-icons/ico-receive-selected.svg');
+$v-tab-settings-selected-icon:                       url('../img/app/tab-icons/ico-settings-selected.svg');
+$v-tab-scan-selected-icon:                           url('../img/app/tab-icons/ico-scan-selected.svg');
+$v-tab-send-selected-icon:                           url('../img/app/tab-icons/ico-send-selected.svg');
+
+
+@import "vendor/fontawesome/font-awesome.scss";
+
+@import "fonts.scss";
+@import "brand.scss";
+
+@import "variables.scss";
+
+@import "walletBalance.scss";
+@import "tabs.scss";
+@import "wallet-backup-phrase.scss";
+
+@import "ui.scss";
+@import "onboarding.scss";
+@import "buttons.scss";
+
+body .scroll {
+  -webkit-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}

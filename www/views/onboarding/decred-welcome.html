@@ -1,0 +1,12 @@
+<ion-view id="onboard-welcome" class="onboarding">
+  <ion-content ng-controller="decredWelcomeController" ng-init="createProfile()" scroll="false">
+    <div id="logo-tagline">
+        <img src='img/app/logo-negative.svg' id="logo" />
+        <p id="lead" translate>Quick access to your Decred funds</p>
+    </div>
+    <div id="cta-buttons">
+        <button class="button button-standard button-primary" id="get-started" href ui-sref="onboarding.tour" translate>Get started</button>
+        <button class="button button-standard button-secondary button-clear" id="restore" translate href ui-sref="onboarding.import({'fromOnboarding':true})">Restore existing wallet</button>
+    </div>
+  </ion-content>
+</ion-view>

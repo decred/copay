@@ -1,0 +1,33 @@
+{
+  "packageName": "decred",
+  "packageDescription": "Decred Webwallet",
+  "packageNameId": "org.decred.wallet",
+  "userVisibleName": "Decred",
+  "purposeLine": "Decred Webwallet",
+  "bundleName": "decred",
+  "appUri": "decred",
+  "name": "decred",
+  "nameNoSpace": "decred",
+  "nameCase": "Decred",
+  "nameCaseNoSpace": "decred",
+  "gitHubRepoName": "decred",
+  "gitHubRepoUrl": "git://github.com/decred/copay.git",
+  "gitHubRepoBugs": "https://github.com/decred/copay/issues",
+  "disclaimerUrl": "https://www,decred.org/disclaimer",
+  "url": "https://www.decred.org",
+  "appDescription": "Decred Wallet",
+  "winAppName": "decredWallet",
+  "wpPublisherId": "{31cdd08b-457c-413d-b440-f6665eec847d}",
+  "wpProductId": "{5381aa50-9069-11e4-84cc-293caf9cbdc8}",
+  "windowsAppId": "804636ee-b017-4cad-8719-e58ac97ffa5c",
+  "pushSenderId": "31679606073",
+  "description": "Decred Webwallet",
+  "version": "3.4.0",
+  "androidVersion": "306000",
+  "_extraCSS": null,
+  "_enabledExtensions": {
+    "coinbase": false,
+    "glidera": false,
+    "amazon": false
+  }
+}

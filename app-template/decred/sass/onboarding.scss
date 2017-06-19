@@ -1,0 +1,128 @@
+
+/* Onboarding */
+$v-onboarding-welcome-bg:                            none;
+$v-onboarding-color:                                 $v-text-secondary-color;
+$v-onboarding-bar-header-color:                      $v-text-primary-color;
+$v-onboarding-bar-header-button-color:               $v-accent-color;
+
+$v-onboarding-tour-phone-bg:                         url(../img/app/onboarding/tour-sendreceive.svg);
+$v-onboarding-tour-currency-bg:                      url(../img/app/onboarding/tour-local.svg);
+$v-onboarding-tour-control-bg:                       url(../img/app/onboarding/tour-seed.svg);
+$v-onboarding-push-notification-bg:                  url(../img/app/onboarding/push-notifications.svg);
+$v-onboarding-backup-warning-bg:                     url(../img/app/backup-warning.svg);
+
+$v-onboarding-button-back-color:                     $v-accent-color;
+
+$v-onboarding-button-secondary-bg:                   $v-secondary-color;
+$v-onboarding-button-secondary-color:                $v-accent-color;
+$v-onboarding-button-secondary-active-bg:            darken($v-secondary-color, 10%);
+$v-onboarding-button-secondary-clear-color:          $v-accent-color;
+$v-onboarding-button-secondary-outline-border:       $v-accent-color;
+$v-onboarding-button-secondary-outline-color:        $v-accent-color;
+$v-onboarding-button-secondary-outline-active-bg:    darken($v-accent-color, 10%);
+$v-onboarding-button-secondary-outline-active-color: $v-accent-color;
+$v-onboarding-gradient-top-color:                    #2971FF;
+$v-onboarding-gradient-bottom-color:                 #2971ff;
+
+body {
+
+  [name="onboarding"]{
+
+    .has-header {
+      top: 0;
+    }
+    #onboard-welcome {
+      #logo {
+        width: 65%;
+        max-width: 240px;
+        margin: 5rem auto 0;
+      }
+      #lead {
+        color: #ffffff;
+        line-height: 1.25;
+        font-size: 36px;
+        text-align: left;
+        margin: 0  auto;
+      }
+      .pane-inner {
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/app/pattern.png');
+        background-repeat:repeat;
+      }
+    }
+
+    #onboard-tour-secure {
+      background: #2971FF;
+    }
+
+    #onboard-tour-currency {
+      background: #2ED6A1;
+    }
+
+    #onboard-tour-control {
+      background: #69D3F5;
+    }
+
+    #onboarding-backup-request {
+      background: #FD714A;
+
+      #backup-description {
+        box-sizing: border-box;
+        padding: 0 1em !important;
+      }
+    }
+
+    #onboarding-disclaimer {
+      .item {
+        .checkbox {
+          input:before,
+          .checkbox-icon:before {
+            color: #d0d0d0;
+            border-color: #d0d0d0;
+          }
+        }
+      }
+    }
+
+  }
+
+  .onboarding {
+    .onboarding-illustration {
+      max-width: 320px;
+      margin: 5px auto;
+    }
+    .onboarding-topic {
+      color: #ffffff;
+      text-align: left;
+      width: 320px;
+      margin: 0.5em auto 0.5em auto;
+      padding: 0;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .onboarding-description {
+      color: #ffffff;
+      text-align: left;
+      width: 320px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+      a {
+        color: #efefef;
+      }
+    }
+    .cta-area {
+      -webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+      clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+      background: #ffffff;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 0;
+    }
+    #cta-buttons {
+    }
+  }
+
+}

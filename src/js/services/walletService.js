@@ -602,7 +602,7 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
     });
   };
 
- 
+
 
   root.getTxHistory = function(wallet, opts, cb) {
     opts = opts || {};
@@ -686,7 +686,9 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
     } else {
 
       try {
-        wallet.signTxProposal(txp, password, function(err, signedTxp) {
+        // XXX - the upstream code sends a password parameter but signTxProposal() doesn't need it - ??
+        // wallet.signTxProposal(txp, password, function(err, signedTxp) {
+        wallet.signTxProposal(txp, function(err, signedTxp) {
           $log.debug('Transaction signed err:' + err);
           return cb(err, signedTxp);
         });

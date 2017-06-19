@@ -195,7 +195,8 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
   };
 
   $scope.getShortNetworkName = function() {
-    return $scope.wallet.credentials.networkName.substring(0, 4);
+    var networkName = $scope.wallet.credentials.networkName;
+    return networkName.substring(4, networkName.length);
   };
 
   var updateTxInfo = function(eventName) {

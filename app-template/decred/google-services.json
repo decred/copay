@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "31679606073",
+    "firebase_url": "https://decred-wallet.firebaseio.com",
+    "project_id": "decred-wallet",
+    "storage_bucket": "decred-wallet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31679606073:android:e9b92bf3835d78c9",
+        "android_client_info": {
+          "package_name": "org.decred.wallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31679606073-ektbuf7bf392d3ddjnsmf6ddli2fs869.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY78zOyXxoXH_cBaiITGQVj0QJ8uVVKt0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

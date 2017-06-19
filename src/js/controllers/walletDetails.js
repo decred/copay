@@ -67,6 +67,8 @@ angular.module('copayApp.controllers').controller('walletDetailsController', fun
         setPendingTxps(status.pendingTxps);
         $scope.status = status;
       }
+      status.availableBalance = (status.availableBalanceSat / 100000000).toFixed(8);
+
       refreshAmountSection();
       $timeout(function() {
         $scope.$apply();

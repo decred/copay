@@ -17,6 +17,7 @@ angular.module('copayApp.controllers').controller('importController',
       $scope.formData.account = 1;
       $scope.importErr = false;
       $scope.isCopay = appConfigService.name == 'copay';
+      $scope.isDecred = appConfigService.name == 'decred';
 
       if ($stateParams.code)
         $scope.processWalletInfo($stateParams.code);
@@ -67,7 +68,7 @@ angular.module('copayApp.controllers').controller('importController',
         popupService.showAlert(gettextCatalog.getString('Error'), gettextCatalog.getString('Password required. Make sure to enter your password in advanced options'));
 
       $scope.formData.derivationPath = info.derivationPath;
-      $scope.formData.testnetEnabled = info.network == 'testnet' ? true : false;
+      $scope.formData.testnetEnabled = info.network == 'dcrdtestnet' ? true : false;
 
       $timeout(function() {
         $scope.formData.words = info.data;

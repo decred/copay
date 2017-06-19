@@ -15,41 +15,59 @@
   <ion-slides class="slides" options="options" slider="data.slider">
     <ion-slide-page>
       <ion-content id="onboard-tour-secure" scroll="false">
-        <div class="onboarding-topic" translate>Bitcoin is secure,<br/>digital money.</div>
-        <div class="onboarding-description" translate>You can spend bitcoin at millions of websites and stores worldwide.</div>
-        <div class="onboarding-illustration-secure"></div>
+        <div class="onboarding-illustration onboarding-illustration-secure"></div>
+        <div class="onboarding-topic" translate>A couple of things <br>to get you started</div>
+        <div class="onboarding-description" translate>
+          The web based wallet application is a quick way
+          to send and receive Decred.  To participate
+          in stake mining and voting, take a look at our
+          <a href="https://www.decred.org/downloads/" target="_blank">standalone wallets</a>.
+        </div>
         <div class="cta-buttons">
-          <div class="onboarding-tldr" translate>Just scan the code to pay.</div>
+          <div class="cta-area"></div>
           <button class="button button-standard button-secondary" ng-click="slideNext()" translate>
-            Got it
+            Continue &raquo;
           </button>
         </div>
       </ion-content>
     </ion-slide-page>
     <ion-slide-page>
       <ion-content id="onboard-tour-currency" scroll="false">
-        <div class="onboarding-topic" translate>Bitcoin is a currency.</div>
-        <div class="onboarding-description" translate>You can trade it for other currencies like US Dollars, Euros, or Pounds.</div>
-        <div class="onboarding-illustration-currency">
-          <div id="onboarding-illustration-currency-exchange-rate">1 BTC = {{localCurrencySymbol}}{{localCurrencyPerBtc}}</div>
+        <div class="onboarding-illustration onboarding-illustration-currency">
+        </div>
+        <div class="onboarding-topic" translate>Local and secure</div>
+        <div class="onboarding-description" translate>
+          All of your wallet data is kept in the local
+          storage of your browser.  For safest usage,
+          a web wallet should not be created on a
+          publicly accessible device.
+          It's possible  to delete your web wallet, even
+          unintentionally, by clearing the browser cache.
         </div>
         <div class="cta-buttons">
-          <div class="onboarding-tldr" translate>The exchange rate changes with the market.</div>
+          <div class="cta-area"></div>
           <button class="button button-standard button-secondary" ng-click="slideNext()" translate>
-            Makes sense
+            Continue &raquo;
           </button>
         </div>
       </ion-content>
     </ion-slide-page>
     <ion-slide-page>
       <ion-content id="onboard-tour-control" scroll="false">
-        <div class="onboarding-topic" translate>You control your bitcoin.</div>
-        <div class="onboarding-description" translate>This app stores your bitcoin with cutting-edge security.</div>
-        <div class="onboarding-illustration-control"></div>
+        <div class="onboarding-illustration onboarding-illustration-control"></div>
+        <div class="onboarding-topic" translate>The key to your wallet</div>
+        <div class="onboarding-description" translate>
+          Your seed phrase is an encrypted version of
+          your key. It's the only way to access your
+          wallet and funds. Keep it in a safe place to
+          prevent the loss of your funds.  The same key
+          can be used later to recreate your wallet in
+          other Decred clients.
+        </div>
         <div class="cta-buttons">
-          <div class="onboarding-tldr" translate>Not even BitPay can access it.</div>
+          <div class="cta-area"></div>
           <button class="button button-standard button-primary" ng-click="createDefaultWallet()" translate>
-            Create bitcoin wallet
+            Create wallet
           </button>
         </div>
       </ion-content>

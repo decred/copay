@@ -4,12 +4,12 @@ angular.module('copayApp.services').factory('addressbookService', function(bitco
   var root = {};
 
   root.get = function(addr, cb) {
-    storageService.getAddressbook('testnet', function(err, ab) {
+    storageService.getAddressbook('dcrdtestnet', function(err, ab) {
       if (err) return cb(err);
       if (ab) ab = JSON.parse(ab);
       if (ab && ab[addr]) return cb(null, ab[addr]);
 
-      storageService.getAddressbook('livenet', function(err, ab) {
+      storageService.getAddressbook('dcrdlivenet', function(err, ab) {
         if (err) return cb(err);
         if (ab) ab = JSON.parse(ab);
         if (ab && ab[addr]) return cb(null, ab[addr]);
@@ -19,13 +19,13 @@ angular.module('copayApp.services').factory('addressbookService', function(bitco
   };
 
   root.list = function(cb) {
-    storageService.getAddressbook('testnet', function(err, ab) {
+    storageService.getAddressbook('dcrdtestnet', function(err, ab) {
       if (err) return cb('Could not get the Addressbook');
 
       if (ab) ab = JSON.parse(ab);
 
       ab = ab || {};
-      storageService.getAddressbook('livenet', function(err, ab2) {
+      storageService.getAddressbook('dcrdlivenet', function(err, ab2) {
         if (ab2) ab2 = JSON.parse(ab2);
 
         ab2 = ab2 || {};
@@ -71,8 +71,8 @@ angular.module('copayApp.services').factory('addressbookService', function(bitco
   };
 
   root.removeAll = function() {
-    storageService.removeAddressbook('livenet', function(err) {
-      storageService.removeAddressbook('testnet', function(err) {
+    storageService.removeAddressbook('dcrdlivenet', function(err) {
+      storageService.removeAddressbook('dcrdtestnet', function(err) {
         if (err) return cb('Error deleting addressbook');
         return cb();
       });

@@ -62,12 +62,12 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
       var walletsToTransfer = $scope.wallets;
       if (!(networkResult.livenet > 1)) {
         walletsToTransfer = lodash.filter(walletsToTransfer, function(item) {
-          return item.network == 'testnet';
+          return item.network == 'dcrdtestnet';
         });
       }
       if (!(networkResult.testnet > 1)) {
         walletsToTransfer = lodash.filter(walletsToTransfer, function(item) {
-          return item.network == 'livenet';
+          return item.network == 'dcrdlivenet';
         });
       }
       var walletList = [];

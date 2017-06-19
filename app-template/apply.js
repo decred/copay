@@ -111,5 +111,6 @@ fs.copySync(configDir + '/GoogleService-Info.plist', '../GoogleService-Info.plis
 fs.copySync(configDir + '/google-services.json', '../google-services.json');
 
 copyDir(configDir + '/img', '../www/img/app');
+copyDir(configDir + '/fonts', '../www/fonts/app');
 copyDir(configDir + '/sass', '../src/sass/app');
 console.log("apply.js finished. \n\n");
