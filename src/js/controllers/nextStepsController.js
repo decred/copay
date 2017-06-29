@@ -1,6 +1,10 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('nextStepsController', function($scope, nextStepsService, $ionicScrollDelegate, $timeout) {
+angular.module('copayApp.controllers').controller('nextStepsController', function($scope, nextStepsService, $ionicScrollDelegate, $timeout, externalLinkService) {
+
+  $scope.openExternalLink = function(url) {
+    externalLinkService.open(url);
+  };
 
   $scope.hide = false;
   $scope.services = nextStepsService.get();

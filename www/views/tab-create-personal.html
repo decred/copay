@@ -105,9 +105,10 @@
             <span class="toggle-label" translate>I have written it down</span>
           </ion-checkbox>
 
-          <label class="item item-input item-stacked-label" ng-show="formData.seedSource.id == 'set'">
+          <label class="item item-input item-stacked-label" ng-show="formData.seedSource.id == 'set'" style="display:none;">
             <span class="input-label" translate>Derivation Path</span>
-            <input type="text"
+            <input type="hidden"
+            class="disabled"
             placeholder="{{'BIP32 path for address derivation'|translate}}"
             ng-model="formData.derivationPath">
           </label>

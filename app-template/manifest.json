@@ -16,6 +16,8 @@
     }
   },
   "icons": {
-    "128": "img/icon-chrome-128.png"
+    "16":  "img/app/16x16.png",
+    "48":  "img/app/48x48.png",
+    "128": "img/app/128x128.png"
   }
 }

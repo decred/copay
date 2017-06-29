@@ -4,14 +4,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: copay\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: crowdin.com\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Crowdin-Project: copay\n"
 "X-Crowdin-Language: pl\n"
 "X-Crowdin-File: template.pot\n"
 "Last-Translator: cmgustavo83\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
-"PO-Revision-Date: 2017-06-06 10:18-0400\n"
+"PO-Revision-Date: 2017-06-18 00:36+0200\n"
+"POT-Creation-Date: \n"
+"MIME-Version: 1.0\n"
 
 #: www/views/bitpayCard.html:63
 msgid "(Pre-Auth Holds transactions) The merchant has initiated a hold to make those funds unavailable until your transaction to them has fully settled. Funds are released within 30 days at the latest in the event the merchant decides not to complete the transaction."
@@ -21,8 +23,7 @@ msgstr ""
 msgid "(Trusted)"
 msgstr "(Zaufany)"
 
-#: www/views/includes/txp.html:23
-#: www/views/includes/walletHistory.html:59
+#: www/views/includes/txp.html:23 www/views/includes/walletHistory.html:59
 msgid "(possible double spend)"
 msgstr "(możliwa podwójna wypłata)"
 
@@ -38,8 +39,7 @@ msgstr ""
 msgid "5-star ratings help us get {{appName}} into more hands, and more users means more resources can be committed to the app!"
 msgstr "5-gwiazdkowa ocena pozwoli na wzrost popularności {{appName}}, a większa ilość użytkowników da nam do dyspozycji więcej środków na rozwój aplikacji!"
 
-#: src/js/controllers/feedback/send.js:27
-#: www/views/feedback/complete.html:21
+#: src/js/controllers/feedback/send.js:27 www/views/feedback/complete.html:21
 msgid "A member of the team will review your feedback as soon as possible."
 msgstr "Członek zespołu zweryfikuje twoją opinię tak szybko, jak to możliwe."
 
@@ -51,8 +51,7 @@ msgstr "Uwaga: łącznie kwota {{amountAboveMaxSizeStr}} została wyłączona. Z
 msgid "A total of {{amountBelowFeeStr}} were excluded. These funds come from UTXOs smaller than the network fee provided."
 msgstr "Uwaga: łącznie kwota {{amountBelowFeeStr}} została wyłączona. Środki te pochodzą z UTXOs mniejszych niż gwarantowana prowizja sieci."
 
-#: src/js/controllers/preferencesAbout.js:6
-#: www/views/tab-settings.html:156
+#: src/js/controllers/preferencesAbout.js:6 www/views/tab-settings.html:156
 msgid "About"
 msgstr "O programie"
 
@@ -65,10 +64,8 @@ msgstr "Zatwierdzono"
 msgid "Account"
 msgstr "Konto"
 
-#: www/views/join.html:69
-#: www/views/tab-create-personal.html:43
-#: www/views/tab-create-shared.html:72
-#: www/views/tab-import-hardware.html:19
+#: www/views/join.html:69 www/views/tab-create-personal.html:43
+#: www/views/tab-create-shared.html:72 www/views/tab-import-hardware.html:19
 msgid "Account Number"
 msgstr "Numer konta"
 
@@ -86,10 +83,9 @@ msgstr "Dodaj konto"
 
 #: src/js/services/bitpayAccountService.js:68
 msgid "Add BitPay Account?"
-msgstr "Dodać konto BitPay?"
+msgstr "Dodać konto Company0?"
 
-#: www/views/addressbook.add.html:4
-#: www/views/addressbook.html:22
+#: www/views/addressbook.add.html:4 www/views/addressbook.html:22
 msgid "Add Contact"
 msgstr "Dodaj kontakt"
 
@@ -101,8 +97,7 @@ msgstr "Dodaj środki"
 msgid "Add Memo"
 msgstr "Dodaj notatkę"
 
-#: www/views/join.html:84
-#: www/views/tab-create-personal.html:57
+#: www/views/join.html:84 www/views/tab-create-personal.html:57
 #: www/views/tab-create-shared.html:86
 msgid "Add a password"
 msgstr "Dodaj hasło"
@@ -111,8 +106,7 @@ msgstr "Dodaj hasło"
 msgid "Add account"
 msgstr "Dodaj konto"
 
-#: www/views/join.html:87
-#: www/views/tab-create-personal.html:60
+#: www/views/join.html:87 www/views/tab-create-personal.html:60
 #: www/views/tab-create-shared.html:89
 msgid "Add an optional password to secure the recovery phrase"
 msgstr "Dodaj opcjonalnie hasło w celu zabezpieczenia kluczowej frazy"
@@ -125,15 +119,12 @@ msgstr "Dodaj opis"
 msgid "Add wallet"
 msgstr "Dodaj portfel"
 
-#: www/views/addressbook.view.html:26
-#: www/views/customAmount.html:28
-#: www/views/modals/paypro.html:24
-#: www/views/paymentUri.html:15
+#: www/views/addressbook.view.html:26 www/views/customAmount.html:28
+#: www/views/modals/paypro.html:24 www/views/paymentUri.html:15
 msgid "Address"
 msgstr "Adres"
 
-#: www/views/addressbook.html:6
-#: www/views/tab-settings.html:13
+#: www/views/addressbook.html:6 www/views/tab-settings.html:13
 msgid "Address Book"
 msgstr "Książka adresowa"
 
@@ -163,11 +154,11 @@ msgstr "Wszystkie adresy"
 
 #: www/views/modals/wallet-balance.html:18
 msgid "All of your bitcoin wallet balance may not be available for immediate spending."
-msgstr "Wszystkie salda portfela bitcoin mogą nie być dostępne do natychmiastowego wydania."
+msgstr "Wszystkie salda portfela Decred mogą nie być dostępne do natychmiastowego wydania."
 
 #: www/views/tab-receive.html:25
 msgid "All signing devices must be added to this multisig wallet before bitcoin addresses can be created."
-msgstr "Wszystkie podpisane urządzenia muszą zostać dodane do tego portfela przed utworzeniem adresów bitcoin."
+msgstr "Wszystkie podpisane urządzenia muszą zostać dodane do tego portfela przed utworzeniem adresów Decred."
 
 #: www/views/tab-scan.html:21
 msgid "Allow Camera Access"
@@ -181,15 +172,12 @@ msgstr "Pozwól na otrzymywanie powiadomień"
 msgid "Almost done! Let's review."
 msgstr "Prawie gotowe! Dokonajmy przeglądu."
 
-#: www/views/preferencesAltCurrency.html:4
-#: www/views/tab-settings.html:74
+#: www/views/preferencesAltCurrency.html:4 www/views/tab-settings.html:74
 msgid "Alternative Currency"
 msgstr "Alternatywna waluta"
 
-#: www/views/amount.html:44
-#: www/views/customAmount.html:34
-#: www/views/includes/output.html:7
-#: www/views/paymentUri.html:16
+#: www/views/amount.html:44 www/views/customAmount.html:34
+#: www/views/includes/output.html:7 www/views/paymentUri.html:16
 msgid "Amount"
 msgstr "Kwota"
 
@@ -207,7 +195,7 @@ msgstr "Dostępna jest aktualizacja aplikacji. Ze względów bezpieczeństwa nal
 
 #: www/views/backupWarning.html:14
 msgid "Anyone with your backup phrase can access or spend your bitcoin."
-msgstr "Każdy, kto ma Twoją kluczową frazę może uzyskać dostęp lub wydać Twoje bitcoiny."
+msgstr "Każdy, kto ma Twoją kluczową frazę może uzyskać dostęp lub wydać Twoje Decredy."
 
 #: www/views/backupWarning.html:10
 msgid "Are you being watched?"
@@ -215,7 +203,7 @@ msgstr "Czy jesteś obserwowany?"
 
 #: src/js/controllers/preferencesExternal.js:15
 msgid "Are you being watched? Anyone with your recovery phrase can access or spend your bitcoin."
-msgstr "Czy jesteś obserwowany? Każdy, kto zdobędzie twoją kluczową frazę może uzyskać dostęp do portfela i wydać twoje bitcoiny."
+msgstr "Czy jesteś obserwowany? Każdy, kto zdobędzie twoją kluczową frazę może uzyskać dostęp do portfela i wydać twoje Decredy."
 
 #: src/js/controllers/copayers.js:56
 msgid "Are you sure you want to cancel and delete this wallet?"
@@ -248,7 +236,7 @@ msgstr ""
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
 msgid "Are you sure you would like to remove your BitPay Card ({{lastFourDigits}}) from this device?"
-msgstr "Czy na pewno chcesz usunąć kartę BitPay ({{lastFourDigits}}) z tego urządzenia?"
+msgstr "Czy na pewno chcesz usunąć kartę Company0 ({{lastFourDigits}}) z tego urządzenia?"
 
 #: www/views/includes/walletInfo.html:5
 msgid "Auditable"
@@ -262,15 +250,12 @@ msgstr "Dostępne"
 msgid "Available Balance"
 msgstr "Dostępne saldo"
 
-#: www/views/modals/chooseFeeLevel.html:14
-#: www/views/preferencesFee.html:15
+#: www/views/modals/chooseFeeLevel.html:14 www/views/preferencesFee.html:15
 msgid "Average confirmation time"
 msgstr "Spodziewany czas potwierdzania"
 
-#: www/views/join.html:140
-#: www/views/tab-create-personal.html:111
-#: www/views/tab-create-shared.html:140
-#: www/views/tab-import-phrase.html:48
+#: www/views/join.html:140 www/views/tab-create-personal.html:111
+#: www/views/tab-create-shared.html:140 www/views/tab-import-phrase.html:48
 msgid "BIP32 path for address derivation"
 msgstr "BIP32 ścieżka dla adresu derywacji"
 
@@ -286,8 +271,7 @@ msgstr "Potrzebna kopia zapasowa"
 msgid "Backup all livenet wallets before using this function"
 msgstr "Zrób kopię zapasową wszystkich swoich portfeli przed użyciem tej funkcji"
 
-#: www/views/preferences.html:41
-#: www/views/tab-settings.html:120
+#: www/views/preferences.html:41 www/views/tab-settings.html:120
 msgid "Backup needed"
 msgstr "Potrzebna kopia zapasowa"
 
@@ -295,8 +279,7 @@ msgstr "Potrzebna kopia zapasowa"
 msgid "Backup now"
 msgstr "Utwórz kopię zapasową teraz"
 
-#: www/views/onboarding/backupRequest.html:11
-#: www/views/tab-export-file.html:89
+#: www/views/onboarding/backupRequest.html:11 www/views/tab-export-file.html:89
 msgid "Backup wallet"
 msgstr "Kopia zapasowa portfela"
 
@@ -318,41 +301,40 @@ msgstr "Pamiętaj aby przechowywać swoją kluczową frazę w bezpiecznym miejsc
 
 #: www/views/preferencesBitpayServices.html:9
 msgid "BitPay Visa&reg; Cards"
-msgstr "Karty BitPay Visa&reg;"
+msgstr "Karty Company0 Visa&reg;"
 
 #: www/views/addressbook.add.html:38
 msgid "Bitcoin Address"
-msgstr "Adres bitcoin"
+msgstr "Adres Decred"
 
-#: www/views/modals/chooseFeeLevel.html:7
-#: www/views/preferencesFee.html:4
+#: www/views/modals/chooseFeeLevel.html:7 www/views/preferencesFee.html:4
 #: www/views/tab-settings.html:85
 msgid "Bitcoin Network Fee Policy"
-msgstr "Polityka prowizji sieci bitcoin"
+msgstr "Polityka prowizji sieci Decred"
 
 #: www/views/paymentUri.html:10
 msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI jest nieprawidłowy!"
+msgstr "Decred URI jest nieprawidłowy!"
 
 #: www/views/tab-settings.html:63
 msgid "Bitcoin Unit"
-msgstr "Jednostki bitcoina"
+msgstr "Jednostki Decreda"
 
 #: www/views/onboarding/tour.html:31
 msgid "Bitcoin is a currency."
-msgstr "Bitcoin jest walutą."
+msgstr "Decred jest walutą."
 
 #: www/views/onboarding/disclaimer.html:15
 msgid "Bitcoin is different &ndash; it cannot be safely held with a bank or web service."
-msgstr "Bitcoin jest inny &ndash; nie może być bezpiecznie przechowywany w banku lub usłudze internetowej."
+msgstr "Decred jest inny &ndash; nie może być bezpiecznie przechowywany w banku lub usłudze internetowej."
 
 #: www/views/onboarding/tour.html:18
 msgid "Bitcoin is secure,<br>digital money."
-msgstr "Bitcoin jest bezpieczny, <br>cyfrowe pieniądze."
+msgstr "Decred jest bezpieczny, <br>cyfrowe pieniądze."
 
 #: www/views/preferencesFee.html:11
 msgid "Bitcoin transactions include a fee collected by miners on the network."
-msgstr "Transakcje Bitcoin obejmują prowizję pobieraną przez górników w sieci."
+msgstr "Transakcje Decred obejmują prowizję pobieraną przez górników w sieci."
 
 #: www/views/modals/txp-details.html:36
 msgid "Broadcast Payment"
@@ -373,24 +355,22 @@ msgstr "Przeglądarka nieobsługiwana"
 
 #: www/views/includes/buyAndSellCard.html:4
 msgid "Buy &amp; Sell Bitcoin"
-msgstr "Kup &amp; sprzedaj bitcoiny"
+msgstr "Kup &amp; sprzedaj Decredy"
 
 #: www/views/tab-send.html:31
 msgid "Buy Bitcoin"
-msgstr "Kup bitcoiny"
+msgstr "Kup Decredy"
 
 #: src/js/services/onGoingProcess.js:40
 msgid "Buying Bitcoin..."
-msgstr "Zakup bitcoinów..."
+msgstr "Zakup Decredów..."
 
 #: src/js/services/onGoingProcess.js:12
 msgid "Calculating fee"
 msgstr "Obliczanie prowizji"
 
-#: src/js/controllers/confirm.js:498
-#: src/js/services/popupService.js:59
-#: www/views/addressbook.add.html:10
-#: www/views/feedback/send.html:5
+#: src/js/controllers/confirm.js:498 src/js/services/popupService.js:59
+#: www/views/addressbook.add.html:10 www/views/feedback/send.html:5
 #: www/views/includes/note.html:6
 #: www/views/modals/bitpay-card-confirmation.html:8
 #: www/views/modals/confirmation.html:13
@@ -441,15 +421,12 @@ msgstr "Wyczyść"
 msgid "Clear cache"
 msgstr "Wyczyść pamięć podręczną"
 
-#: src/js/controllers/confirm.js:66
-#: src/js/controllers/modals/txpDetails.js:25
+#: src/js/controllers/confirm.js:66 src/js/controllers/modals/txpDetails.js:25
 msgid "Click"
 msgstr "Kliknij"
 
-#: www/views/customAmount.html:4
-#: www/views/modals/paypro.html:4
-#: www/views/modals/search.html:3
-#: www/views/modals/wallet-balance.html:3
+#: www/views/customAmount.html:4 www/views/modals/paypro.html:4
+#: www/views/modals/search.html:3 www/views/modals/wallet-balance.html:3
 #: www/views/modals/wallets.html:5
 msgid "Close"
 msgstr "Zamknij"
@@ -470,17 +447,13 @@ msgstr "Zakończ proces tworzenia kopii zapasowej, aby użyć tej opcji"
 msgid "Completed"
 msgstr ""
 
-#: src/js/controllers/confirm.js:497
-#: src/js/controllers/copayers.js:55
-#: www/views/backup.html:53
-#: www/views/backup.html:72
-#: www/views/confirm.html:4
+#: src/js/controllers/confirm.js:497 src/js/controllers/copayers.js:55
+#: www/views/backup.html:53 www/views/backup.html:72 www/views/confirm.html:4
 #: www/views/onboarding/collectEmail.html:32
 msgid "Confirm"
 msgstr "Potwierdź"
 
-#: www/views/modals/terms.html:26
-#: www/views/onboarding/disclaimer.html:44
+#: www/views/modals/terms.html:26 www/views/onboarding/disclaimer.html:44
 msgid "Confirm &amp; Finish"
 msgstr "Potwierdź &amp; zakończenie"
 
@@ -496,8 +469,7 @@ msgstr "Potwierdź nowe hasło wypłat"
 msgid "Confirmations"
 msgstr "Potwierdzenia"
 
-#: www/views/bitpayCard.html:79
-#: www/views/modals/wallet-balance.html:61
+#: www/views/bitpayCard.html:79 www/views/modals/wallet-balance.html:61
 msgid "Confirming"
 msgstr "Potwierdzający"
 
@@ -511,7 +483,7 @@ msgstr ""
 
 #: www/views/bitpayCardIntro.html:37
 msgid "Connect my BitPay Card"
-msgstr "Podłącz kartę BitPay"
+msgstr "Podłącz kartę Company0"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -557,8 +529,7 @@ msgstr "Współwłaściciel dołączył"
 msgid "Copayer {{$index}}"
 msgstr "Współwłaściciele {{$index}}"
 
-#: src/js/controllers/copayers.js:79
-#: src/js/controllers/export.js:193
+#: src/js/controllers/copayers.js:79 src/js/controllers/export.js:193
 #: www/views/includes/copyToClipboard.html:4
 msgid "Copied to clipboard"
 msgstr "Skopiowano do schowka"
@@ -567,8 +538,7 @@ msgstr "Skopiowano do schowka"
 msgid "Copy this text as it is to a safe place (notepad or email)"
 msgstr "Skopiuj ten tekst w bezpiecznym miejscu (notatnik lub e-mail)"
 
-#: www/views/preferencesLogs.html:10
-#: www/views/tab-export-file.html:78
+#: www/views/preferencesLogs.html:10 www/views/tab-export-file.html:78
 msgid "Copy to clipboard"
 msgstr "Skopiuj do schowka"
 
@@ -628,8 +598,7 @@ msgstr "Nie można uzyskać dynamicznej prowizji dla poziomu: {{feeLevel}}"
 msgid "Could not get transactions"
 msgstr "Nie można pobrać transakcji"
 
-#: src/js/services/profileService.js:595
-#: src/js/services/profileService.js:627
+#: src/js/services/profileService.js:595 src/js/services/profileService.js:627
 #: src/js/services/profileService.js:650
 msgid "Could not import"
 msgstr "Nie można zaimportować"
@@ -667,10 +636,8 @@ msgstr "Wypłata nie może zostać wysłana"
 msgid "Could not update transaction history"
 msgstr "Nie można zaktualizować historii transakcji"
 
-#: src/js/controllers/addresses.js:34
-#: src/js/controllers/addresses.js:42
-#: src/js/controllers/copayers.js:30
-#: src/js/controllers/walletDetails.js:63
+#: src/js/controllers/addresses.js:34 src/js/controllers/addresses.js:42
+#: src/js/controllers/copayers.js:30 src/js/controllers/walletDetails.js:63
 msgid "Could not update wallet"
 msgstr "Nie można zaktualizować portfela"
 
@@ -686,11 +653,10 @@ msgstr "Utwórz osobisty portfel"
 msgid "Create Shared Wallet"
 msgstr "Utwórz współdzielony portfel"
 
-#: www/views/onboarding/tour.html:51
-#: www/views/tab-home.html:76
+#: www/views/onboarding/tour.html:51 www/views/tab-home.html:76
 #: www/views/tab-send.html:32
 msgid "Create bitcoin wallet"
-msgstr "Utwórz portfel bitcoin"
+msgstr "Utwórz portfel Decred"
 
 #: www/views/tab-create-personal.html:129
 msgid "Create new wallet"
@@ -704,8 +670,7 @@ msgstr "Utwórz współdzielony portfel"
 msgid "Create {{formData.requiredCopayers}}-of-{{formData.totalCopayers}} wallet"
 msgstr "Utwórz portfel {{formData.requiredCopayers}} z {{formData.totalCopayers}}"
 
-#: www/views/modals/txp-details.html:83
-#: www/views/tx-details.html:62
+#: www/views/modals/txp-details.html:83 www/views/tx-details.html:62
 msgid "Created by"
 msgstr "Utworzony przez"
 
@@ -717,8 +682,7 @@ msgstr "Tworzenie portfela..."
 msgid "Creating transaction"
 msgstr "Tworzenie transakcji"
 
-#: www/views/modals/chooseFeeLevel.html:19
-#: www/views/preferencesFee.html:20
+#: www/views/modals/chooseFeeLevel.html:19 www/views/preferencesFee.html:20
 msgid "Current fee rate for this policy"
 msgstr "Aktualna stawka prowizji dla tej polityki"
 
@@ -726,8 +690,7 @@ msgstr "Aktualna stawka prowizji dla tej polityki"
 msgid "Custom Amount"
 msgstr "Kwota własna"
 
-#: www/views/modals/txp-details.html:89
-#: www/views/tx-details.html:68
+#: www/views/modals/txp-details.html:89 www/views/tx-details.html:68
 msgid "Date"
 msgstr "Data"
 
@@ -756,10 +719,8 @@ msgstr "Usuwanie portfela..."
 msgid "Deleting payment proposal"
 msgstr "Usuń propozycję płatności"
 
-#: www/views/join.html:138
-#: www/views/tab-create-personal.html:109
-#: www/views/tab-create-shared.html:138
-#: www/views/tab-import-phrase.html:46
+#: www/views/join.html:138 www/views/tab-create-personal.html:109
+#: www/views/tab-create-shared.html:138 www/views/tab-import-phrase.html:46
 msgid "Derivation Path"
 msgstr "Ścieżka derywacji"
 
@@ -767,8 +728,7 @@ msgstr "Ścieżka derywacji"
 msgid "Derivation Strategy"
 msgstr "Strategia derywacji"
 
-#: src/js/controllers/lockSetup.js:9
-#: src/js/controllers/tab-settings.js:59
+#: src/js/controllers/lockSetup.js:9 src/js/controllers/tab-settings.js:59
 msgid "Disabled"
 msgstr "Wyłącz"
 
@@ -785,14 +745,13 @@ msgstr "Nie uwzględniaj klucza prywatnego"
 msgid "Don't see your language on Crowdin? Contact the Owner on Crowdin! We'd love to support your language."
 msgstr "Nie widzisz swojego języka na Crowdin? Skontaktuj się z właścicielem projektu, ponieważ bardzo chcielibyśmy, wspierać twój język."
 
-#: www/views/tab-export-file.html:59
-#: www/views/tab-home.html:21
+#: www/views/tab-export-file.html:59 www/views/tab-home.html:21
 msgid "Download"
 msgstr "Pobierz"
 
 #: www/views/addresses.html:19
 msgid "Each bitcoin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
-msgstr "Każdy portfel bitcoin może wygenerować miliardy adresów z twojej 12-wyrazowej kopii zapasowej. Nowy adres jest automatycznie generowany i pokazany za każdym razem, kiedy otrzymasz płatność."
+msgstr "Każdy portfel Decred może wygenerować miliardy adresów z twojej 12-wyrazowej kopii zapasowej. Nowy adres jest automatycznie generowany i pokazany za każdym razem, kiedy otrzymasz płatność."
 
 #: src/js/services/feeService.js:11
 msgid "Economy"
@@ -802,8 +761,7 @@ msgstr "Ekonomiczna"
 msgid "Edit"
 msgstr ""
 
-#: www/views/addressbook.add.html:29
-#: www/views/addressbook.view.html:22
+#: www/views/addressbook.add.html:29 www/views/addressbook.view.html:22
 msgid "Email"
 msgstr "E-mail"
 
@@ -835,21 +793,19 @@ msgstr "Włącz kamerę aby rozpocząć."
 msgid "Enter Amount"
 msgstr "Podaj ilość"
 
-#: src/js/services/walletService.js:954
-#: src/js/services/walletService.js:969
+#: src/js/services/walletService.js:954 src/js/services/walletService.js:969
 msgid "Enter Spending Password"
 msgstr "Wprowadź hasło wypłaty"
 
 #: src/js/services/bitpayAccountService.js:104
 msgid "Enter Two Factor for your BitPay account"
-msgstr "Wprowadź podwójne uwierzytelnienie swojego konta BitPay"
+msgstr "Wprowadź podwójne uwierzytelnienie swojego konta Company0"
 
 #: src/js/services/walletService.js:936
 msgid "Enter new spending password"
 msgstr "Wprowadź nowe hasło wypłaty"
 
-#: www/views/join.html:76
-#: www/views/tab-create-personal.html:49
+#: www/views/join.html:76 www/views/tab-create-personal.html:49
 #: www/views/tab-create-shared.html:78
 msgid "Enter the recovery phrase (BIP39)"
 msgstr "Wprowadź kluczową frazę (BIP39)"
@@ -863,67 +819,40 @@ msgid "Enter your password"
 msgstr "Wprowadź hasło"
 
 #. Trying to import a malformed wallet export QR code
-#: src/js/controllers/activity.js:45
-#: src/js/controllers/addressbookAdd.js:30
-#: src/js/controllers/addressbookView.js:29
-#: src/js/controllers/addresses.js:105
-#: src/js/controllers/addresses.js:106
-#: src/js/controllers/bitpayCard.js:69
+#: src/js/controllers/activity.js:45 src/js/controllers/addressbookAdd.js:30
+#: src/js/controllers/addressbookView.js:29 src/js/controllers/addresses.js:105
+#: src/js/controllers/addresses.js:106 src/js/controllers/bitpayCard.js:69
 #: src/js/controllers/bitpayCardIntro.js:40
-#: src/js/controllers/bitpayCardIntro.js:81
-#: src/js/controllers/confirm.js:191
-#: src/js/controllers/confirm.js:197
-#: src/js/controllers/copayers.js:67
-#: src/js/controllers/create.js:155
-#: src/js/controllers/create.js:168
-#: src/js/controllers/create.js:175
-#: src/js/controllers/create.js:197
-#: src/js/controllers/create.js:204
-#: src/js/controllers/create.js:222
-#: src/js/controllers/export.js:109
-#: src/js/controllers/export.js:115
-#: src/js/controllers/export.js:126
-#: src/js/controllers/export.js:154
-#: src/js/controllers/export.js:160
-#: src/js/controllers/export.js:171
-#: src/js/controllers/export.js:47
-#: src/js/controllers/export.js:53
-#: src/js/controllers/feedback/send.js:23
-#: src/js/controllers/import.js:100
-#: src/js/controllers/import.js:118
-#: src/js/controllers/import.js:168
-#: src/js/controllers/import.js:196
-#: src/js/controllers/import.js:205
-#: src/js/controllers/import.js:220
-#: src/js/controllers/import.js:232
-#: src/js/controllers/import.js:243
-#: src/js/controllers/import.js:253
-#: src/js/controllers/import.js:266
-#: src/js/controllers/import.js:278
-#: src/js/controllers/import.js:288
-#: src/js/controllers/import.js:298
-#: src/js/controllers/import.js:322
-#: src/js/controllers/import.js:334
-#: src/js/controllers/import.js:54
-#: src/js/controllers/import.js:67
-#: src/js/controllers/import.js:88
-#: src/js/controllers/join.js:120
-#: src/js/controllers/join.js:134
-#: src/js/controllers/join.js:141
-#: src/js/controllers/join.js:164
-#: src/js/controllers/join.js:172
-#: src/js/controllers/join.js:190
-#: src/js/controllers/modals/txpDetails.js:130
+#: src/js/controllers/bitpayCardIntro.js:81 src/js/controllers/confirm.js:191
+#: src/js/controllers/confirm.js:197 src/js/controllers/copayers.js:67
+#: src/js/controllers/create.js:155 src/js/controllers/create.js:168
+#: src/js/controllers/create.js:175 src/js/controllers/create.js:197
+#: src/js/controllers/create.js:204 src/js/controllers/create.js:222
+#: src/js/controllers/export.js:109 src/js/controllers/export.js:115
+#: src/js/controllers/export.js:126 src/js/controllers/export.js:154
+#: src/js/controllers/export.js:160 src/js/controllers/export.js:171
+#: src/js/controllers/export.js:47 src/js/controllers/export.js:53
+#: src/js/controllers/feedback/send.js:23 src/js/controllers/import.js:100
+#: src/js/controllers/import.js:118 src/js/controllers/import.js:168
+#: src/js/controllers/import.js:196 src/js/controllers/import.js:205
+#: src/js/controllers/import.js:220 src/js/controllers/import.js:232
+#: src/js/controllers/import.js:243 src/js/controllers/import.js:253
+#: src/js/controllers/import.js:266 src/js/controllers/import.js:278
+#: src/js/controllers/import.js:288 src/js/controllers/import.js:298
+#: src/js/controllers/import.js:322 src/js/controllers/import.js:334
+#: src/js/controllers/import.js:54 src/js/controllers/import.js:67
+#: src/js/controllers/import.js:88 src/js/controllers/join.js:120
+#: src/js/controllers/join.js:134 src/js/controllers/join.js:141
+#: src/js/controllers/join.js:164 src/js/controllers/join.js:172
+#: src/js/controllers/join.js:190 src/js/controllers/modals/txpDetails.js:130
 #: src/js/controllers/paperWallet.js:47
 #: src/js/controllers/preferencesBitpayCard.js:20
 #: src/js/controllers/preferencesBitpayServices.js:33
 #: src/js/controllers/preferencesBitpayServices.js:50
 #: src/js/controllers/preferencesDelete.js:37
 #: src/js/controllers/preferencesExternal.js:20
-#: src/js/controllers/tab-home.js:170
-#: src/js/controllers/tabsController.js:7
-#: src/js/controllers/tx-details.js:106
-#: src/js/services/incomingData.js:98
+#: src/js/controllers/tab-home.js:170 src/js/controllers/tabsController.js:7
+#: src/js/controllers/tx-details.js:106 src/js/services/incomingData.js:98
 msgid "Error"
 msgstr "Błąd"
 
@@ -955,14 +884,12 @@ msgstr "Błąd aktualizacji kart debetowych"
 msgid "Exceeded daily limit of $500 per user"
 msgstr "Dzienny limit 500$ na użytkownika został przekroczony"
 
-#: src/js/controllers/confirm.js:342
-#: www/views/confirm.html:27
+#: src/js/controllers/confirm.js:342 www/views/confirm.html:27
 #: www/views/modals/txp-details.html:120
 msgid "Expired"
 msgstr "Wygasł"
 
-#: www/views/modals/paypro.html:54
-#: www/views/modals/txp-details.html:126
+#: www/views/modals/paypro.html:54 www/views/modals/txp-details.html:126
 msgid "Expires"
 msgstr "Wygasa"
 
@@ -970,8 +897,7 @@ msgstr "Wygasa"
 msgid "Export Wallet"
 msgstr "Eksport portfela"
 
-#: www/views/preferencesHistory.html:11
-#: www/views/preferencesHistory.html:14
+#: www/views/preferencesHistory.html:11 www/views/preferencesHistory.html:14
 msgid "Export to file"
 msgstr "Eksportuj do pliku"
 
@@ -979,8 +905,7 @@ msgstr "Eksportuj do pliku"
 msgid "Export wallet"
 msgstr "Eksportuj portfel"
 
-#: src/js/services/walletService.js:1081
-#: www/views/tab-export-qrCode.html:9
+#: src/js/services/walletService.js:1081 www/views/tab-export-qrCode.html:9
 msgid "Exporting via QR not supported for this wallet"
 msgstr "Dla tego portfela nie jest obsługiwany eksport za pomocą kodu QR"
 
@@ -992,21 +917,17 @@ msgstr "Rozszerzone klucze publiczne"
 msgid "Extracting Wallet Information..."
 msgstr "Wyodrębnianie danych z portfela..."
 
-#: src/js/controllers/export.js:115
-#: src/js/controllers/export.js:126
-#: src/js/controllers/export.js:160
-#: src/js/controllers/export.js:171
+#: src/js/controllers/export.js:115 src/js/controllers/export.js:126
+#: src/js/controllers/export.js:160 src/js/controllers/export.js:171
 #: www/views/tab-export-file.html:4
 msgid "Failed to export"
 msgstr "Nie udało się wyeksportować"
 
-#: www/views/tab-create-personal.html:14
-#: www/views/tab-create-shared.html:14
+#: www/views/tab-create-personal.html:14 www/views/tab-create-shared.html:14
 msgid "Family vacation funds"
 msgstr "Środki na rodzinne wakacje"
 
-#: www/views/modals/txp-details.html:101
-#: www/views/tx-details.html:81
+#: www/views/modals/txp-details.html:101 www/views/tx-details.html:81
 msgid "Fee"
 msgstr "Prowizja"
 
@@ -1020,14 +941,13 @@ msgstr "Twój komentarz nie może zostać wysłany. Spróbuj ponownie później.
 
 #: src/js/services/onGoingProcess.js:42
 msgid "Fetching BitPay Account..."
-msgstr "Odzyskiwanie konta BitPay..."
+msgstr "Odzyskiwanie konta Company0..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching Payment Information"
 msgstr "Pobieranie informacji o płatności"
 
-#: www/views/export.html:14
-#: www/views/import.html:16
+#: www/views/export.html:14 www/views/import.html:16
 msgid "File/Text"
 msgstr "Plik/Tekst"
 
@@ -1036,25 +956,22 @@ msgstr "Plik/Tekst"
 msgid "Finger Scan Failed"
 msgstr "Skanowanie odcisku nie powiodło się"
 
-#: src/js/controllers/feedback/send.js:34
-#: www/views/feedback/complete.html:7
+#: src/js/controllers/feedback/send.js:34 www/views/feedback/complete.html:7
 msgid "Finish"
 msgstr "Zakończ"
 
-#: www/views/tab-create-personal.html:121
-#: www/views/tab-create-shared.html:150
+#: www/views/tab-create-personal.html:121 www/views/tab-create-shared.html:150
 msgid "For audit purposes"
 msgstr "Do celów audytu"
 
-#: www/views/confirm.html:65
-#: www/views/modals/txp-details.html:74
+#: www/views/confirm.html:65 www/views/modals/txp-details.html:74
 #: www/views/tx-details.html:52
 msgid "From"
 msgstr "Z"
 
 #: src/js/controllers/bitpayCardIntro.js:71
 msgid "From BitPay account"
-msgstr "Z konta BitPay"
+msgstr "Z konta Company0"
 
 #: www/views/tab-export-qrCode.html:5
 msgid "From the destination device, go to Add wallet &gt; Import wallet and scan this QR code"
@@ -1094,10 +1011,9 @@ msgstr "Wypłać pieniądze gdziekolwiek jesteś, z dowolnego bankomatu honoruj�
 
 #: www/views/onboarding/collectEmail.html:15
 msgid "Get news and updates from BitPay"
-msgstr "Otrzymywanie wiadomości i aktualizacji z BitPay"
+msgstr "Otrzymywanie wiadomości i aktualizacji z Company0"
 
-#: www/views/bitpayCard.html:49
-#: www/views/onboarding/welcome.html:8
+#: www/views/bitpayCard.html:49 www/views/onboarding/welcome.html:8
 msgid "Get started"
 msgstr "Zacznij"
 
@@ -1109,13 +1025,11 @@ msgstr "Zacznij dodając swój pierwszy kontakt."
 msgid "Getting fee levels..."
 msgstr "Uzyskiwanie informacji o prowizji..."
 
-#: src/js/controllers/bitpayCard.js:171
-#: src/js/controllers/bitpayCard.js:181
+#: src/js/controllers/bitpayCard.js:171 src/js/controllers/bitpayCard.js:181
 #: src/js/controllers/onboarding/terms.js:23
 #: src/js/controllers/preferencesAbout.js:16
 #: src/js/controllers/preferencesLanguage.js:14
-#: src/js/controllers/tab-home.js:145
-#: src/js/controllers/tab-settings.js:48
+#: src/js/controllers/tab-home.js:145 src/js/controllers/tab-settings.js:48
 #: src/js/controllers/tx-details.js:169
 msgid "Go Back"
 msgstr "Powrót"
@@ -1126,8 +1040,7 @@ msgstr "Powrót"
 msgid "Go back"
 msgstr "Powrót"
 
-#: www/views/backupWarning.html:15
-#: www/views/includes/confirmBackupPopup.html:8
+#: www/views/backupWarning.html:15 www/views/includes/confirmBackupPopup.html:8
 #: www/views/onboarding/tour.html:23
 msgid "Got it"
 msgstr "Rozumiem"
@@ -1149,8 +1062,7 @@ msgstr "Portfel sprzętowy"
 msgid "Help & Support"
 msgstr "Centrum pomocy"
 
-#: src/js/controllers/bitpayCard.js:169
-#: src/js/controllers/tab-settings.js:46
+#: src/js/controllers/bitpayCard.js:169 src/js/controllers/tab-settings.js:46
 msgid "Help and support information is available at the website."
 msgstr "Informacja o pomocy i wsparciu technicznym jest dostępna na stronie internetowej."
 
@@ -1166,12 +1078,9 @@ msgstr "Ukryj środki"
 msgid "Hide Next Steps Card"
 msgstr "Ukryj następne kroki karty"
 
-#: www/views/join.html:46
-#: www/views/tab-create-personal.html:26
-#: www/views/tab-create-shared.html:55
-#: www/views/tab-export-file.html:25
-#: www/views/tab-import-file.html:28
-#: www/views/tab-import-hardware.html:31
+#: www/views/join.html:46 www/views/tab-create-personal.html:26
+#: www/views/tab-create-shared.html:55 www/views/tab-export-file.html:25
+#: www/views/tab-import-file.html:28 www/views/tab-import-hardware.html:31
 #: www/views/tab-import-phrase.html:33
 msgid "Hide advanced options"
 msgstr "Ukryj opcje zaawansowane"
@@ -1202,8 +1111,7 @@ msgstr "Przeczytałem, zrozumiałem i wyrażam zgodę na <a ng-click=\"openTerms
 msgid "I have read, understood, and agree with the Terms of use."
 msgstr "Przeczytałem, zrozumiałem i zgadzam się z Warunkami użytkowania."
 
-#: www/views/join.html:134
-#: www/views/tab-create-personal.html:105
+#: www/views/join.html:134 www/views/tab-create-personal.html:105
 #: www/views/tab-create-shared.html:134
 msgid "I have written it down"
 msgstr "Zapisałem to"
@@ -1223,7 +1131,7 @@ msgstr "Rozumiem"
 
 #: www/views/onboarding/disclaimer.html:21
 msgid "I understand that if this app is moved to another device or deleted, my bitcoin can only be recovered with the backup phrase."
-msgstr "Rozumiem, że jeśli aplikacja zostanie przeniesiona na inne urządzenie, lub usunięta moje bitcoiny mogą zostać odzyskane tylko przy użyciu kluczowej frazy."
+msgstr "Rozumiem, że jeśli aplikacja zostanie przeniesiona na inne urządzenie, lub usunięta moje Decredy mogą zostać odzyskane tylko przy użyciu kluczowej frazy."
 
 #: www/views/onboarding/disclaimer.html:18
 msgid "I understand that my funds are held securely on this device, not by a company."
@@ -1247,7 +1155,7 @@ msgstr "Jeśli opcja jest włączona, portfele będą również starać się wyd
 
 #: src/js/controllers/onboarding/backupRequest.js:18
 msgid "If this device is replaced or this app is deleted, neither you nor BitPay can recover your funds without a backup."
-msgstr "Jeśli to urządzenie zostanie wymienione lub jeśli aplikacja zostanie usunięta, ani ty, ani BitPay nie będzie mógł odzyskać środków bez kopii zapasowej."
+msgstr "Jeśli to urządzenie zostanie wymienione lub jeśli aplikacja zostanie usunięta, ani ty, ani Company0 nie będzie mógł odzyskać środków bez kopii zapasowej."
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1257,8 +1165,7 @@ msgstr "Jeśli masz dodatkowe uwagi, prosimy o poinformowanie nas poprzez naciś
 msgid "If you take a screenshot, your backup may be viewed by other apps. You can make a safe backup with physical paper and a pen."
 msgstr "Jeśli zrobisz zrzut ekranu, twoja kopia zapasowa może być widziana przez inne aplikacje. Najbezpieczniejsza metoda utworzenia kopii zapasowej to długopis i papier."
 
-#: www/views/tab-import-hardware.html:42
-#: www/views/tab-import-phrase.html:63
+#: www/views/tab-import-hardware.html:42 www/views/tab-import-phrase.html:63
 msgid "Import"
 msgstr "Importuj"
 
@@ -1283,8 +1190,7 @@ msgid "In order to verify your wallet backup, please type your password."
 msgstr "W celu weryfikacji kopii zapasowej portfela wpisz swoje hasło."
 
 #: www/views/includes/walletItem.html:11
-#: www/views/includes/walletSelector.html:18
-#: www/views/tab-home.html:89
+#: www/views/includes/walletSelector.html:18 www/views/tab-home.html:89
 #: www/views/tab-settings.html:117
 msgid "Incomplete"
 msgstr "Nie wszyscy współwłaściciele dołączyli"
@@ -1306,8 +1212,7 @@ msgstr "Nieprawidłowy adres sieciowy"
 msgid "Incorrect code format"
 msgstr "Niepoprawny format kodu"
 
-#: src/js/services/bwcError.js:44
-#: www/views/confirm.html:99
+#: src/js/services/bwcError.js:44 www/views/confirm.html:99
 msgid "Insufficient funds"
 msgstr "Nie ma wystarczającej ilości środków"
 
@@ -1319,8 +1224,7 @@ msgstr "Niewystarczające środki na prowizję"
 msgid "Invalid"
 msgstr "Nieprawidłowy"
 
-#: src/js/controllers/create.js:175
-#: src/js/controllers/import.js:298
+#: src/js/controllers/create.js:175 src/js/controllers/import.js:298
 #: src/js/controllers/join.js:141
 msgid "Invalid account number"
 msgstr "Nieprawidłowy numer konta"
@@ -1333,8 +1237,7 @@ msgstr "Nieprawidłowy adres"
 msgid "Invalid data"
 msgstr "Nieprawidłowe dane"
 
-#: src/js/controllers/create.js:155
-#: src/js/controllers/import.js:232
+#: src/js/controllers/create.js:155 src/js/controllers/import.js:232
 #: src/js/controllers/join.js:120
 msgid "Invalid derivation path"
 msgstr "Nieprawidłowa ścieżka derywacji"
@@ -1357,7 +1260,7 @@ msgstr "Czy ten adres e-mail jest poprawny?"
 
 #: www/views/addresses.html:25
 msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your bitcoins secure against hypothetical attacks by quantum computers."
-msgstr "To dobry pomysł, aby uniknąć ponownego wykorzystywania adresów - to chroni Twoją prywatność i zabezpiecza Twoje bitcoiny przed hipotetycznymi atakami przez komputery kwantowe."
+msgstr "To dobry pomysł, aby uniknąć ponownego wykorzystywania adresów - to chroni Twoją prywatność i zabezpiecza Twoje Decredy przed hipotetycznymi atakami przez komputery kwantowe."
 
 #: src/js/controllers/backup.js:76
 msgid "It's important that you write your backup phrase down correctly. If something happens to your wallet, you'll need this backup to recover your money. Please review your backup and try again."
@@ -1371,8 +1274,7 @@ msgstr "Dołącz"
 msgid "Join my {{appName}} Wallet. Here is the invitation code: {{secret}} You can download {{appName}} for your phone or desktop at {{appUrl}}"
 msgstr "Dołącz do mojego portfela {{appName}}. Kod zaproszenia: {{secret}}. Wersję desktopową lub aplikację na telefon można pobrać z {{appUrl}}"
 
-#: www/views/add.html:30
-#: www/views/join.html:5
+#: www/views/add.html:30 www/views/join.html:5
 msgid "Join shared wallet"
 msgstr "Dołącz do portfela"
 
@@ -1388,8 +1290,7 @@ msgstr "Zeskanuj kod, aby zapłacić."
 msgid "Key already associated with an existing wallet"
 msgstr "Klucz jest już powiązany z istniejącym portfelem"
 
-#: www/views/preferencesLanguage.html:4
-#: www/views/tab-settings.html:53
+#: www/views/preferencesLanguage.html:4 www/views/tab-settings.html:53
 msgid "Language"
 msgstr "Język"
 
@@ -1397,8 +1298,7 @@ msgstr "Język"
 msgid "Last Month"
 msgstr "Zeszły miesiąc"
 
-#: www/views/bitpayCard.html:56
-#: www/views/bitpayCard.html:60
+#: www/views/bitpayCard.html:56 www/views/bitpayCard.html:60
 #: www/views/bitpayCard.html:64
 msgid "Learn More"
 msgstr ""
@@ -1407,8 +1307,7 @@ msgstr ""
 msgid "Let's verify your backup phrase."
 msgstr "Sprawdź swoją kluczową frazę."
 
-#: www/views/addresses.html:45
-#: www/views/allAddresses.html:14
+#: www/views/addresses.html:45 www/views/allAddresses.html:14
 msgid "Loading addresses..."
 msgstr "Ładowanie adresów..."
 
@@ -1460,8 +1359,7 @@ msgstr "Brzmi sensownie"
 msgid "Matches:"
 msgstr "Dopasowania:"
 
-#: www/views/includes/copayers.html:4
-#: www/views/preferencesInformation.html:79
+#: www/views/includes/copayers.html:4 www/views/preferencesInformation.html:79
 msgid "Me"
 msgstr "Ja"
 
@@ -1469,10 +1367,8 @@ msgstr "Ja"
 msgid "Meh - it's alright"
 msgstr "Spoko - może być"
 
-#: src/js/controllers/tx-details.js:141
-#: www/views/modals/paypro.html:48
-#: www/views/modals/txp-details.html:95
-#: www/views/tx-details.html:74
+#: src/js/controllers/tx-details.js:141 www/views/modals/paypro.html:48
+#: www/views/modals/txp-details.html:95 www/views/tx-details.html:74
 msgid "Memo"
 msgstr "Notatka"
 
@@ -1492,13 +1388,11 @@ msgstr "Brak parametru"
 msgid "Missing private keys to sign"
 msgstr "Brak kluczy prywatnych do podpisania"
 
-#: www/views/preferences.html:65
-#: www/views/preferencesAdvanced.html:3
+#: www/views/preferences.html:65 www/views/preferencesAdvanced.html:3
 msgid "More Options"
 msgstr "Więcej opcji"
 
-#: www/views/includes/walletHistory.html:42
-#: www/views/tx-details.html:19
+#: www/views/includes/walletHistory.html:42 www/views/tx-details.html:19
 msgid "Moved"
 msgstr "Przeniesiony"
 
@@ -1514,10 +1408,8 @@ msgstr "Wielu odbiorców"
 msgid "NOTE: To import a wallet from a 3rd party software, please go to Add Wallet &gt; Create Wallet, and specify the Recovery Phrase there."
 msgstr "Uwaga: Aby zaimportować portfel z oprogramowania innego niż Copay, przejdź do \"Dodaj portfel\" &gt; \"Utwórz portfel\", i podaj tam kluczową frazę."
 
-#: www/views/addressbook.add.html:21
-#: www/views/addressbook.view.html:18
-#: www/views/preferences.html:15
-#: www/views/preferencesAlias.html:17
+#: www/views/addressbook.add.html:21 www/views/addressbook.view.html:18
+#: www/views/preferences.html:15 www/views/preferencesAlias.html:17
 msgid "Name"
 msgstr "Nazwa"
 
@@ -1551,7 +1443,7 @@ msgstr "Brak portfela"
 
 #: www/views/onboarding/backupRequest.html:5
 msgid "No backup, no bitcoin."
-msgstr "Nie ma kopii zapasowej - nie ma bitcoinów."
+msgstr "Nie ma kopii zapasowej - nie ma Decredów."
 
 #: www/views/addressbook.html:19
 msgid "No contacts yet"
@@ -1607,14 +1499,13 @@ msgstr "Brak środków na opłacenie prowizji"
 
 #: www/views/onboarding/tour.html:50
 msgid "Not even BitPay can access it."
-msgstr "Nawet BitPay nie ma do niego dostępu."
+msgstr "Nawet Company0 nie ma do niego dostępu."
 
 #: src/js/controllers/paperWallet.js:47
 msgid "Not funds found"
 msgstr "Nie znaleziono środków"
 
-#: www/views/feedback/rateApp.html:3
-#: www/views/onboarding/notifications.html:8
+#: www/views/feedback/rateApp.html:3 www/views/onboarding/notifications.html:8
 msgid "Not now"
 msgstr "Nie teraz"
 
@@ -1624,10 +1515,9 @@ msgstr "Notatka"
 
 #: www/views/modals/wallets.html:25
 msgid "Notice: only 1-1 (single signature) wallets can be used for sell bitcoin"
-msgstr "Uwaga: tylko 1-1 portfela (pojedynczy podpis) może być wykorzystywany do sprzedaży bitcoinów"
+msgstr "Uwaga: tylko 1-1 portfela (pojedynczy podpis) może być wykorzystywany do sprzedaży Decredów"
 
-#: www/views/preferencesNotifications.html:3
-#: www/views/tab-settings.html:46
+#: www/views/preferencesNotifications.html:3 www/views/tab-settings.html:46
 msgid "Notifications"
 msgstr "Powiadomienia"
 
@@ -1647,15 +1537,12 @@ msgstr "Najwyższy czas na wykonanie kopii zapasowej portfela. Jeśli utracisz t
 msgid "Now is a perfect time to assess your surroundings. Nearby windows? Hidden cameras? Shoulder-spies?"
 msgstr "Nadszedł czas, aby sprawdzić swoje otoczenie. Czy jesteś w pobliżu okna? Czy są gdzieś ukryte kamery? Osoby zerkające przez ramię?"
 
-#: src/js/services/popupService.js:15
-#: src/js/services/popupService.js:58
+#: src/js/services/popupService.js:15 src/js/services/popupService.js:58
 msgid "OK"
 msgstr "OK"
 
-#: www/views/modals/tx-status.html:12
-#: www/views/modals/tx-status.html:24
-#: www/views/modals/tx-status.html:36
-#: www/views/modals/tx-status.html:46
+#: www/views/modals/tx-status.html:12 www/views/modals/tx-status.html:24
+#: www/views/modals/tx-status.html:36 www/views/modals/tx-status.html:46
 msgid "OKAY"
 msgstr "W PORZĄDKU"
 
@@ -1671,8 +1558,7 @@ msgstr "O nie!"
 msgid "On this screen you can see all your wallets, accounts, and assets."
 msgstr "Na tym ekranie można zobaczyć wszystkie swoje portfele, konta i środki."
 
-#: src/js/controllers/bitpayCard.js:170
-#: src/js/controllers/tab-settings.js:47
+#: src/js/controllers/bitpayCard.js:170 src/js/controllers/tab-settings.js:47
 msgid "Open"
 msgstr "Otwórz"
 
@@ -1688,8 +1574,7 @@ msgstr "Otwórz GitHub"
 msgid "Open GitHub Project"
 msgstr "Otwórz projekt GitHub"
 
-#: src/js/controllers/bitpayCard.js:180
-#: src/js/controllers/tx-details.js:168
+#: src/js/controllers/bitpayCard.js:180 src/js/controllers/tx-details.js:168
 msgid "Open Insight"
 msgstr "Otwórz Insight"
 
@@ -1711,16 +1596,12 @@ msgstr "Otwórz portfel"
 
 #: www/views/bitpayCardIntro.html:34
 msgid "Order the BitPay Card"
-msgstr "Zamów kartę BitPay"
+msgstr "Zamów kartę Company0"
 
-#: www/views/join.html:102
-#: www/views/join.html:93
-#: www/views/tab-create-personal.html:67
-#: www/views/tab-create-personal.html:75
-#: www/views/tab-create-shared.html:104
-#: www/views/tab-create-shared.html:96
-#: www/views/tab-import-file.html:18
-#: www/views/tab-import-phrase.html:38
+#: www/views/join.html:102 www/views/join.html:93
+#: www/views/tab-create-personal.html:67 www/views/tab-create-personal.html:75
+#: www/views/tab-create-shared.html:104 www/views/tab-create-shared.html:96
+#: www/views/tab-import-file.html:18 www/views/tab-import-phrase.html:38
 msgid "Password"
 msgstr "Hasło"
 
@@ -1738,7 +1619,7 @@ msgstr "Wklej tekst kodu kopii zapasowej"
 
 #: www/views/bitpayCardIntro.html:28
 msgid "Pay 0% fees to turn bitcoin into dollars."
-msgstr "Zapłać 0% prowizji za wymianę bitcoinów na dolary."
+msgstr "Zapłać 0% prowizji za wymianę Decredów na dolary."
 
 #: www/views/modals/paypro.html:18
 msgid "Pay To"
@@ -1776,15 +1657,12 @@ msgstr "Protokół wypłaty nieobsługiwany przez Chrome"
 msgid "Payment Received"
 msgstr "Płatność otrzymana"
 
-#: www/views/modals/tx-status.html:43
-#: www/views/modals/txp-details.html:43
+#: www/views/modals/tx-status.html:43 www/views/modals/txp-details.html:43
 msgid "Payment Rejected"
 msgstr "Wypłata odrzucona"
 
-#: www/views/confirm.html:126
-#: www/views/includes/walletActivity.html:11
-#: www/views/modals/txp-details.html:187
-#: www/views/modals/txp-details.html:42
+#: www/views/confirm.html:126 www/views/includes/walletActivity.html:11
+#: www/views/modals/txp-details.html:187 www/views/modals/txp-details.html:42
 msgid "Payment Sent"
 msgstr "Płatność wysłana"
 
@@ -1832,8 +1710,7 @@ msgstr "Proszę podłączyć kamerę, aby zacząć."
 msgid "Please enter the recovery phrase"
 msgstr "Wpisz kluczową frazę"
 
-#: src/js/controllers/create.js:168
-#: src/js/controllers/join.js:134
+#: src/js/controllers/create.js:168 src/js/controllers/join.js:134
 msgid "Please enter the wallet recovery phrase"
 msgstr "Wpisz kluczową frazę portfela"
 
@@ -1890,8 +1767,7 @@ msgid "Proposal Accepted"
 msgstr "Płatność przyjęta"
 
 #: src/js/controllers/modals/txpDetails.js:51
-#: src/js/controllers/tx-details.js:65
-#: www/views/confirm.html:127
+#: src/js/controllers/tx-details.js:65 www/views/confirm.html:127
 msgid "Proposal Created"
 msgstr "Płatność utworzona"
 
@@ -1923,8 +1799,7 @@ msgstr "Kod QR"
 msgid "Quick review!"
 msgstr "Szybki przegląd!"
 
-#: src/js/controllers/create.js:79
-#: src/js/controllers/join.js:64
+#: src/js/controllers/create.js:79 src/js/controllers/join.js:64
 msgid "Random"
 msgstr "Losowo"
 
@@ -1940,13 +1815,11 @@ msgstr "Zobacz mniej"
 msgid "Read more"
 msgstr "Zobacz więcej"
 
-#: www/views/tab-receive.html:3
-#: www/views/tabs.html:7
+#: www/views/tab-receive.html:3 www/views/tabs.html:7
 msgid "Receive"
 msgstr "Otrzymaj"
 
-#: www/views/includes/walletHistory.html:24
-#: www/views/tx-details.html:18
+#: www/views/includes/walletHistory.html:24 www/views/tx-details.html:18
 msgid "Received"
 msgstr "Otrzymane"
 
@@ -1954,13 +1827,11 @@ msgstr "Otrzymane"
 msgid "Received Funds"
 msgstr "Otrzymane środki"
 
-#: www/views/includes/walletHistory.html:52
-#: www/views/tx-details.html:24
+#: www/views/includes/walletHistory.html:52 www/views/tx-details.html:24
 msgid "Receiving"
 msgstr "Otrzymywanie"
 
-#: www/views/bitpayCard.html:72
-#: www/views/includes/walletHistory.html:3
+#: www/views/bitpayCard.html:72 www/views/includes/walletHistory.html:3
 msgid "Recent"
 msgstr "Ostatnie"
 
@@ -1968,13 +1839,11 @@ msgstr "Ostatnie"
 msgid "Recent Transaction Card"
 msgstr "Ostatnia transakcja kartą"
 
-#: www/views/activity.html:4
-#: www/views/tab-home.html:57
+#: www/views/activity.html:4 www/views/tab-home.html:57
 msgid "Recent Transactions"
 msgstr "Ostatnie transakcje"
 
-#: www/views/amount.html:18
-#: www/views/tab-send.html:8
+#: www/views/amount.html:18 www/views/tab-send.html:8
 msgid "Recipient"
 msgstr "Odbiorca"
 
@@ -1986,8 +1855,7 @@ msgstr "Odbiorcy"
 msgid "Recovery phrase"
 msgstr "Kluczowa fraza"
 
-#: www/views/walletDetails.html:117
-#: www/views/walletDetails.html:36
+#: www/views/walletDetails.html:117 www/views/walletDetails.html:36
 msgid "Recreate"
 msgstr "Przywróć"
 
@@ -2014,22 +1882,19 @@ msgstr ""
 
 #: src/js/controllers/preferencesBitpayServices.js:7
 msgid "Remove BitPay Account?"
-msgstr "Usunąć konto BitPay?"
+msgstr "Usunąć konto Company0?"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
 msgid "Remove BitPay Card?"
-msgstr "Usunąć kartę BitPay?"
+msgstr "Usunąć kartę Company0?"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
 msgid "Removing your BitPay account will remove all associated BitPay account data from this device. Are you sure you would like to remove your BitPay Account ({{email}}) from this device?"
-msgstr "Usunięcie konta BitPay spowoduje usunięcie z tego urządzenia wszystkich skojarzonych z tym kontem danych. Czy na pewno chcesz usunąć konto BitPay ({{email}}) z tego urządzenia?"
+msgstr "Usunięcie konta Company0 spowoduje usunięcie z tego urządzenia wszystkich skojarzonych z tym kontem danych. Czy na pewno chcesz usunąć konto Company0 ({{email}}) z tego urządzenia?"
 
-#: www/views/join.html:113
-#: www/views/join.html:121
-#: www/views/tab-create-personal.html:84
-#: www/views/tab-create-personal.html:92
-#: www/views/tab-create-shared.html:113
-#: www/views/tab-create-shared.html:121
+#: www/views/join.html:113 www/views/join.html:121
+#: www/views/tab-create-personal.html:84 www/views/tab-create-personal.html:92
+#: www/views/tab-create-shared.html:113 www/views/tab-create-shared.html:121
 #: www/views/tab-export-file.html:17
 msgid "Repeat password"
 msgstr "Powtórz hasło"
@@ -2070,17 +1935,14 @@ msgstr "Spróbuj ponownie"
 msgid "Retry Camera"
 msgstr "Spróbuj ponownie z aparatem"
 
-#: www/views/addressbook.add.html:56
-#: www/views/includes/note.html:9
-#: www/views/modals/chooseFeeLevel.html:31
-#: www/views/preferencesAlias.html:21
+#: www/views/addressbook.add.html:56 www/views/includes/note.html:9
+#: www/views/modals/chooseFeeLevel.html:31 www/views/preferencesAlias.html:21
 #: www/views/preferencesBwsUrl.html:25
 #: www/views/preferencesNotifications.html:40
 msgid "Save"
 msgstr "Zapisz"
 
-#: www/views/tab-scan.html:3
-#: www/views/tabs.html:11
+#: www/views/tab-scan.html:3 www/views/tabs.html:11
 msgid "Scan"
 msgstr "Zeskanuj"
 
@@ -2110,7 +1972,7 @@ msgstr "Szukaj transakcji"
 
 #: www/views/tab-send.html:11
 msgid "Search or enter bitcoin address"
-msgstr "Wyszukaj lub wpisz adres bitcoin"
+msgstr "Wyszukaj lub wpisz adres Decred"
 
 #: www/views/modals/search.html:16
 msgid "Search transactions"
@@ -2128,8 +1990,7 @@ msgstr "Bezpieczeństwo"
 msgid "Select a backup file"
 msgstr "Wybierz plik kopii zapasowej"
 
-#: src/js/controllers/tab-receive.js:133
-#: www/views/paymentUri.html:30
+#: src/js/controllers/tab-receive.js:133 www/views/paymentUri.html:30
 msgid "Select a wallet"
 msgstr "Wybierz portfel"
 
@@ -2139,17 +2000,14 @@ msgstr "Certyfikat z podpisem własnym"
 
 #: src/js/services/onGoingProcess.js:41
 msgid "Selling Bitcoin..."
-msgstr "Sprzedawanie bitcoinów..."
+msgstr "Sprzedawanie Decredów..."
 
-#: www/views/feedback/send.html:13
-#: www/views/feedback/send.html:43
-#: www/views/tab-send.html:3
-#: www/views/tabs.html:15
+#: www/views/feedback/send.html:13 www/views/feedback/send.html:43
+#: www/views/tab-send.html:3 www/views/tabs.html:15
 msgid "Send"
 msgstr "Wyślij"
 
-#: www/views/feedback/send.html:3
-#: www/views/tab-settings.html:29
+#: www/views/feedback/send.html:3 www/views/tab-settings.html:29
 msgid "Send Feedback"
 msgstr "Wyślij opinię"
 
@@ -2161,8 +2019,7 @@ msgstr "Wyślij pieniądze"
 msgid "Send addresses by email"
 msgstr "Wyślij adresy przez e-mail"
 
-#: www/views/preferencesLogs.html:13
-#: www/views/tab-export-file.html:82
+#: www/views/preferencesLogs.html:13 www/views/tab-export-file.html:82
 msgid "Send by email"
 msgstr "Wyślij przez e-mail"
 
@@ -2178,10 +2035,8 @@ msgstr "Wyślij całą kwotę"
 msgid "Send us feedback instead"
 msgstr "Zamiast tego wyślij nam swoją opinię"
 
-#: www/views/confirm.html:15
-#: www/views/includes/txp.html:12
-#: www/views/modals/txp-details.html:19
-#: www/views/tx-details.html:23
+#: www/views/confirm.html:15 www/views/includes/txp.html:12
+#: www/views/modals/txp-details.html:19 www/views/tx-details.html:23
 msgid "Sending"
 msgstr "Wysyłanie"
 
@@ -2205,8 +2060,7 @@ msgstr "Wysyłanie transakcji"
 msgid "Sending {{amountStr}} from your {{name}} wallet"
 msgstr "Wysyłanie {{amountStr}} z twojego portfela {{name}}"
 
-#: www/views/includes/walletHistory.html:37
-#: www/views/modals/tx-status.html:9
+#: www/views/includes/walletHistory.html:37 www/views/modals/tx-status.html:9
 #: www/views/tx-details.html:17
 msgid "Sent"
 msgstr "Wysłane"
@@ -2235,13 +2089,11 @@ msgstr "Dziennik sesji"
 msgid "Set up a password"
 msgstr "Ustal hasło"
 
-#: www/views/tab-settings.html:3
-#: www/views/tabs.html:19
+#: www/views/tab-settings.html:3 www/views/tabs.html:19
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: www/views/feedback/complete.html:17
-#: www/views/feedback/complete.html:26
+#: www/views/feedback/complete.html:17 www/views/feedback/complete.html:26
 msgid "Share the love by inviting your friends."
 msgstr "Podziel się miłością, zapraszając swoich przyjaciół."
 
@@ -2249,8 +2101,7 @@ msgstr "Podziel się miłością, zapraszając swoich przyjaciół."
 msgid "Share this invitation with your copayers"
 msgstr "Wyślij zaproszenie współwłaścicielom portfela"
 
-#: src/js/controllers/feedback/complete.js:5
-#: www/views/tab-settings.html:36
+#: src/js/controllers/feedback/complete.js:5 www/views/tab-settings.html:36
 msgid "Share {{appName}}"
 msgstr "Podziel się {{appName}}"
 
@@ -2266,19 +2117,16 @@ msgstr "Pokaż kluczową frazę"
 msgid "Show address"
 msgstr "Pokaż adres"
 
-#: www/views/join.html:45
-#: www/views/tab-create-personal.html:25
-#: www/views/tab-create-shared.html:54
-#: www/views/tab-export-file.html:24
-#: www/views/tab-import-file.html:27
-#: www/views/tab-import-hardware.html:30
+#: www/views/join.html:45 www/views/tab-create-personal.html:25
+#: www/views/tab-create-shared.html:54 www/views/tab-export-file.html:24
+#: www/views/tab-import-file.html:27 www/views/tab-import-hardware.html:30
 #: www/views/tab-import-phrase.html:32
 msgid "Show advanced options"
 msgstr "Pokaż opcje zaawansowane"
 
 #: www/views/tab-send.html:33
 msgid "Show bitcoin address"
-msgstr "Pokaż adres bitcoin"
+msgstr "Pokaż adres Decred"
 
 #: www/views/tab-send.html:55
 msgid "Show more"
@@ -2296,23 +2144,19 @@ msgstr "Podpisywanie transakcji"
 msgid "Since only you control your money, you’ll need to save your backup phrase in case this app is deleted."
 msgstr "Ponieważ jedynie Ty kontrolujesz swoje pieniądze, musisz zapisać kluczową frazę na wypadek skasowania aplikacji {{appName}}."
 
-#: www/views/tab-create-personal.html:120
-#: www/views/tab-create-shared.html:149
+#: www/views/tab-create-personal.html:120 www/views/tab-create-shared.html:149
 msgid "Single Address Wallet"
 msgstr "Pojedynczy adres portfela"
 
-#: www/views/onboarding/collectEmail.html:40
-#: www/views/onboarding/tour.html:11
+#: www/views/onboarding/collectEmail.html:40 www/views/onboarding/tour.html:11
 msgid "Skip"
 msgstr "Pomiń"
 
-#: src/js/controllers/confirm.js:66
-#: src/js/controllers/modals/txpDetails.js:25
+#: src/js/controllers/confirm.js:66 src/js/controllers/modals/txpDetails.js:25
 msgid "Slide"
 msgstr "Przesuń"
 
-#: src/js/controllers/create.js:83
-#: src/js/controllers/join.js:67
+#: src/js/controllers/create.js:83 src/js/controllers/join.js:67
 msgid "Specify Recovery Phrase..."
 msgstr "Podaj kluczową frazę..."
 
@@ -2330,7 +2174,7 @@ msgstr "Wymagane hasło wypłat"
 
 #: www/views/tab-send.html:24
 msgid "Start sending bitcoin"
-msgstr "Zacznij wysyłać bitcoiny"
+msgstr "Zacznij wysyłać Decredy"
 
 #: src/js/routes.js:118
 msgid "Starting..."
@@ -2362,15 +2206,13 @@ msgstr "TEJ CZYNNOŚCI NIE MOŻNA COFNĄĆ"
 
 #: www/views/onboarding/welcome.html:5
 msgid "Take control of your money,<br>get started with bitcoin."
-msgstr "Przejmij kontrolę nad swoimi pieniędzmi,<br>zacznij korzystać z bitcoinów."
+msgstr "Przejmij kontrolę nad swoimi pieniędzmi,<br>zacznij korzystać z Decredów."
 
-#: www/views/walletDetails.html:140
-#: www/views/walletDetails.html:60
+#: www/views/walletDetails.html:140 www/views/walletDetails.html:60
 msgid "Tap and hold to show"
 msgstr "Dotknij i przytrzymaj, aby pokazać"
 
-#: www/views/walletDetails.html:112
-#: www/views/walletDetails.html:31
+#: www/views/walletDetails.html:112 www/views/walletDetails.html:31
 msgid "Tap to retry"
 msgstr "Ponów próbę"
 
@@ -2378,21 +2220,17 @@ msgstr "Ponów próbę"
 msgid "Terms Of Use"
 msgstr "Warunki użytkowania"
 
-#: www/views/modals/terms.html:3
-#: www/views/onboarding/disclaimer.html:29
-#: www/views/onboarding/disclaimer.html:43
-#: www/views/preferencesAbout.html:30
+#: www/views/modals/terms.html:3 www/views/onboarding/disclaimer.html:29
+#: www/views/onboarding/disclaimer.html:43 www/views/preferencesAbout.html:30
 msgid "Terms of Use"
 msgstr "Warunki użytkowania"
 
-#: www/views/tab-create-personal.html:116
-#: www/views/tab-import-phrase.html:58
+#: www/views/tab-create-personal.html:116 www/views/tab-import-phrase.html:58
 msgid "Testnet"
 msgstr "Testnet"
 
 #: src/js/controllers/feedback/send.js:27
-#: src/js/controllers/feedback/send.js:76
-#: www/views/feedback/complete.html:20
+#: src/js/controllers/feedback/send.js:76 www/views/feedback/complete.html:20
 #: www/views/feedback/rateApp.html:4
 msgid "Thank you!"
 msgstr "Dziękujemy!"
@@ -2415,11 +2253,11 @@ msgstr "Możliwa jest natychmiastowa wypłata wszystkich środków z tego portfe
 
 #: www/views/modals/wallet-balance.html:93
 msgid "The amount of bitcoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
-msgstr "Kwota bitcoinów przechowywana w tym portfelu, przydzielona jako wejście dla oczekujących wniosków wypłat. Kwota ta jest ustalana za pomocą niewykorzystanych wyjść transakcji związanych z tym portfelem i może przekroczyć kwoty związane z proponowanymi wnioskami wypłat."
+msgstr "Kwota Decredów przechowywana w tym portfelu, przydzielona jako wejście dla oczekujących wniosków wypłat. Kwota ta jest ustalana za pomocą niewykorzystanych wyjść transakcji związanych z tym portfelem i może przekroczyć kwoty związane z proponowanymi wnioskami wypłat."
 
 #: www/views/modals/wallet-balance.html:74
 msgid "The amount of bitcoin stored in this wallet with less than 1 blockchain confirmation."
-msgstr "Ilość bitcoinów przechowywana w tym portfel z mniej niż jednym potwierdzeniem w blockchainie."
+msgstr "Ilość Decredów przechowywana w tym portfel z mniej niż jednym potwierdzeniem w blockchainie."
 
 #: www/views/tab-import-phrase.html:5
 msgid "The derivation path"
@@ -2439,7 +2277,7 @@ msgstr "Maksymalna liczba kolejnych niewykorzystanych adresów (20) została osi
 
 #: src/js/controllers/onboarding/terms.js:21
 msgid "The official English Terms of Service are available on the BitPay website."
-msgstr "Oficjalne Warunki użytkowania w języku angielskim dostępne są na stronie internetowej BitPay."
+msgstr "Oficjalne Warunki użytkowania w języku angielskim dostępne są na stronie internetowej Company0."
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -2453,10 +2291,8 @@ msgstr "Wypłata została utworzona, ale nie może być zakończona. Spróbuj po
 msgid "The payment was removed by creator"
 msgstr "Wypłata została usunięta przez jej twórcę"
 
-#: www/views/join.html:88
-#: www/views/tab-create-personal.html:61
-#: www/views/tab-create-shared.html:90
-#: www/views/tab-import-phrase.html:40
+#: www/views/join.html:88 www/views/tab-create-personal.html:61
+#: www/views/tab-create-shared.html:90 www/views/tab-import-phrase.html:40
 msgid "The recovery phrase could require a password to be imported"
 msgstr "Kluczowa fraza może wymagać hasła do zaimportowania"
 
@@ -2474,7 +2310,7 @@ msgstr "Wniosek o wypłatę nie jest w oczekujących"
 
 #: www/views/modals/wallet-balance.html:36
 msgid "The total amount of bitcoin stored in this wallet."
-msgstr "Łączna ilość bitcoinów przechowywana w tym portfelu."
+msgstr "Łączna ilość Decredów przechowywana w tym portfelu."
 
 #: www/views/preferencesHistory.html:27
 msgid "The transaction history and every new incoming transaction are cached in the app. This feature clean this up and synchronizes again from the server"
@@ -2492,8 +2328,7 @@ msgstr "Brak portfela, aby dokonać tej wypłaty"
 msgid "There is a new version of {{appName}} available"
 msgstr "Dostępna jest nowa wersja {{appName}}"
 
-#: src/js/controllers/import.js:196
-#: src/js/controllers/import.js:220
+#: src/js/controllers/import.js:196 src/js/controllers/import.js:220
 #: src/js/controllers/import.js:288
 msgid "There is an error in the form"
 msgstr "Wystąpił błąd w postaci"
@@ -2509,14 +2344,13 @@ msgstr "Ta aplikacja jest fantastyczna!"
 
 #: www/views/onboarding/tour.html:47
 msgid "This app stores your bitcoin with cutting-edge security."
-msgstr "Ta aplikacja przechowuje Twoje bitcoiny z zaawansowanymi zabezpieczeniami."
+msgstr "Ta aplikacja przechowuje Twoje Decredy z zaawansowanymi zabezpieczeniami."
 
 #: src/js/controllers/confirm.js:475
 msgid "This bitcoin payment request has expired."
 msgstr "Ten wniosek płatności wygasł."
 
-#: www/views/join.html:130
-#: www/views/tab-create-personal.html:101
+#: www/views/join.html:130 www/views/tab-create-personal.html:101
 #: www/views/tab-create-shared.html:130
 msgid "This password cannot be recovered. If the password is lost, there is no way you could recover your funds."
 msgstr "To hasło nie może zostać odzyskane. Jeśli je utracisz, nie będziesz mógł odzyskać swoich środków."
@@ -2529,32 +2363,27 @@ msgstr "Ta kluczowa fraza został utworzona przy użyciu hasła. Aby odzyskać p
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender"
 msgstr "Potwierdzenie transakcja może trwać długo lub zostać przerwane z powodu niskiej prowizji ustalonej przez nadawcę"
 
-#: www/views/walletDetails.html:116
-#: www/views/walletDetails.html:35
+#: www/views/walletDetails.html:116 www/views/walletDetails.html:35
 msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
 msgstr "Ten portfel nie jest zarejestrowany na Bitcore Wallet Service (BWS). Możesz go odtworzyć z lokalnego nośnika."
 
-#: www/views/modals/txp-details.html:137
-#: www/views/tx-details.html:113
+#: www/views/modals/txp-details.html:137 www/views/tx-details.html:113
 msgid "Timeline"
 msgstr "Historia"
 
-#: www/views/confirm.html:31
-#: www/views/includes/output.html:2
-#: www/views/modals/txp-details.html:110
-#: www/views/modals/txp-details.html:53
-#: www/views/tx-details.html:41
-#: www/views/tx-details.html:53
+#: www/views/confirm.html:31 www/views/includes/output.html:2
+#: www/views/modals/txp-details.html:110 www/views/modals/txp-details.html:53
+#: www/views/tx-details.html:41 www/views/tx-details.html:53
 msgid "To"
 msgstr "Do"
 
 #: www/views/tab-send.html:28
 msgid "To get started, buy bitcoin or share your address. You can receive bitcoin from any wallet or service."
-msgstr "Aby zacząć, kup bitcoiny lub udostępnij swój adres. Możesz otrzymać bitcoiny z dowolnego portfela lub usługi."
+msgstr "Aby zacząć, kup Decredy lub udostępnij swój adres. Możesz otrzymać Decredy z dowolnego portfela lub usługi."
 
 #: www/views/tab-send.html:29
 msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
-msgstr "Aby rozpocząć należy utworzyć portfel i dostać trochę bitcoinów."
+msgstr "Aby rozpocząć należy utworzyć portfel i dostać trochę Decredów."
 
 #: www/views/modals/wallet-balance.html:23
 msgid "Total"
@@ -2577,8 +2406,7 @@ msgstr "Odczyt Touch ID nie powiódł się"
 msgid "Transaction"
 msgstr "Transakcja"
 
-#: www/views/preferencesAdvanced.html:29
-#: www/views/preferencesHistory.html:3
+#: www/views/preferencesAdvanced.html:29 www/views/preferencesHistory.html:3
 msgid "Transaction History"
 msgstr "Historia transakcji"
 
@@ -2594,8 +2422,7 @@ msgstr "Transakcja utworzona"
 msgid "Transaction not available at this time"
 msgstr "Transakcja w tej chwili niedostępna"
 
-#: src/js/controllers/activity.js:45
-#: src/js/controllers/tab-home.js:170
+#: src/js/controllers/activity.js:45 src/js/controllers/tab-home.js:170
 msgid "Transaction not found"
 msgstr "Nie znaleziono transakcji"
 
@@ -2613,11 +2440,11 @@ msgstr "Spróbuj ponownie w {{expires}}"
 
 #: www/views/bitpayCardIntro.html:18
 msgid "Turn bitcoin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
-msgstr "Zamień bitcoiny na dolary - płać wszędzie gdzie akceptowane są karty Visa <sup>&reg;</sup>."
+msgstr "Zamień Decredy na dolary - płać wszędzie gdzie akceptowane są karty Visa <sup>&reg;</sup>."
 
 #: www/views/tab-import-phrase.html:17
 msgid "Type the Recovery Phrase (usually 12 words)"
-msgstr "Wpisz kluczową frazę (zwyczajowo 12 słów)"
+msgstr "Wpisz kluczową frazę (zwyczajowo 33 słów)"
 
 #: src/js/controllers/backup.js:75
 msgid "Uh oh..."
@@ -2671,8 +2498,7 @@ msgstr "Użyj niepotwierdzonych środków"
 msgid "Validating recovery phrase..."
 msgstr "Sprawdzanie poprawności kluczowej frazy..."
 
-#: www/views/preferencesAbout.html:14
-#: www/views/preferencesExternal.html:25
+#: www/views/preferencesAbout.html:14 www/views/preferencesExternal.html:25
 msgid "Version"
 msgstr "Wersja"
 
@@ -2688,8 +2514,7 @@ msgstr "Zobacz wszystkie adresy"
 msgid "View Terms of Service"
 msgstr "Zobacz zasady użytkowania"
 
-#: src/js/controllers/bitpayCard.js:179
-#: src/js/controllers/tx-details.js:167
+#: src/js/controllers/bitpayCard.js:179 src/js/controllers/tx-details.js:167
 msgid "View Transaction on Insight"
 msgstr "Zobacz transakcje na Insight"
 
@@ -2733,8 +2558,7 @@ msgstr "Oczekiwanie na współwłaścicieli portfela"
 msgid "Waiting..."
 msgstr "Oczekiwanie..."
 
-#: www/views/addresses.html:3
-#: www/views/preferencesAdvanced.html:17
+#: www/views/addresses.html:3 www/views/preferencesAdvanced.html:17
 msgid "Wallet Addresses"
 msgstr "Adresy portfela"
 
@@ -2763,8 +2587,7 @@ msgstr "Informacje o portfelu"
 msgid "Wallet Invitation"
 msgstr "Zaproszenie do portfela"
 
-#: www/views/join.html:57
-#: www/views/tab-create-personal.html:36
+#: www/views/join.html:57 www/views/tab-create-personal.html:36
 #: www/views/tab-create-shared.html:65
 msgid "Wallet Key"
 msgstr "Kluczowa fraza"
@@ -2781,8 +2604,7 @@ msgstr "Nazwa portfela (oryginalna)"
 msgid "Wallet Network"
 msgstr "Sieć portfela"
 
-#: www/views/join.html:74
-#: www/views/tab-create-personal.html:48
+#: www/views/join.html:74 www/views/tab-create-personal.html:48
 #: www/views/tab-create-shared.html:77
 msgid "Wallet Recovery Phrase"
 msgstr "Kluczowa fraza portfela"
@@ -2791,8 +2613,7 @@ msgstr "Kluczowa fraza portfela"
 msgid "Wallet Recovery Phrase is invalid"
 msgstr "Kluczowa fraza jest nieprawidłowa"
 
-#: www/views/preferencesAdvanced.html:25
-#: www/views/tab-import-phrase.html:53
+#: www/views/preferencesAdvanced.html:25 www/views/tab-import-phrase.html:53
 msgid "Wallet Service URL"
 msgstr "Adres usług portfela"
 
@@ -2832,8 +2653,7 @@ msgstr "Portfel jest zablokowany"
 msgid "Wallet is not complete"
 msgstr "Portfel jest niekompletny"
 
-#: www/views/tab-create-personal.html:12
-#: www/views/tab-create-shared.html:12
+#: www/views/tab-create-personal.html:12 www/views/tab-create-shared.html:12
 msgid "Wallet name"
 msgstr "Nazwa portfela"
 
@@ -2841,8 +2661,7 @@ msgstr "Nazwa portfela"
 msgid "Wallet needs backup"
 msgstr "Portfel wymaga kopii zapasowej"
 
-#: www/views/tab-receive.html:59
-#: www/views/walletDetails.html:157
+#: www/views/tab-receive.html:59 www/views/walletDetails.html:157
 msgid "Wallet not backed up"
 msgstr "Portfel nie ma kopii zapasowej"
 
@@ -2961,7 +2780,7 @@ msgstr "Możesz przyczynić się do rozwoju aplikacji rejestrując się na Crowd
 
 #: www/views/tab-scan.html:16
 msgid "You can scan bitcoin addresses, payment requests, paper wallets, and more."
-msgstr "Możesz zeskanować adresy bitcoin, wnioski płatności, portfele papierowe i wiele innych."
+msgstr "Możesz zeskanować adresy Decred, wnioski płatności, portfele papierowe i wiele innych."
 
 #: src/js/controllers/preferencesAbout.js:14
 msgid "You can see the latest developments and contribute to this open source app by visiting our project on GitHub."
@@ -2969,7 +2788,7 @@ msgstr "Możesz zobaczyć postępy prac i przyczynić się do rozwoju tej aplika
 
 #: www/views/onboarding/tour.html:19
 msgid "You can spend bitcoin at millions of websites and stores worldwide."
-msgstr "Bitcoiny możesz wydać w milionach sklepów i stron internetowych na całym świecie."
+msgstr "Decredy możesz wydać w milionach sklepów i stron internetowych na całym świecie."
 
 #: www/views/backup.html:12
 msgid "You can still export it from Advanced &gt; Export."
@@ -2981,7 +2800,7 @@ msgstr "Możesz je wymienić na inne waluty, takie jak dolary amerykańskie, eur
 
 #: www/views/onboarding/tour.html:46
 msgid "You control your bitcoin."
-msgstr "Ty kontrolujesz swoje bitcoiny."
+msgstr "Ty kontrolujesz swoje Decredy."
 
 #: www/views/modals/bitpay-card-confirmation.html:5
 msgid "You will need to log back for fill in your BitPay Card."
@@ -3015,8 +2834,7 @@ msgstr "Twój nick"
 msgid "Your nickname"
 msgstr "Twój nick"
 
-#: www/views/tab-export-file.html:11
-#: www/views/tab-import-file.html:20
+#: www/views/tab-export-file.html:11 www/views/tab-import-file.html:20
 msgid "Your password"
 msgstr "Twoje hasło"
 
@@ -3028,18 +2846,15 @@ msgstr "Twój portfel nigdy nie jest przechowywany w chmurze lub na urządzeniac
 msgid "Your wallet key will be encrypted. The Spending Password cannot be recovered. Be sure to write it down."
 msgstr "Twój portfel będzie zaszyfrowany. Hasło wypłat nie będzie mogło być odzyskane. Pamiętaj, aby je zapisać."
 
-#: www/views/includes/walletSelector.html:23
-#: www/views/paperWallet.html:35
-#: www/views/tab-home.html:95
-#: www/views/tab-receive.html:74
-#: www/views/walletDetails.html:139
-#: www/views/walletDetails.html:59
+#: www/views/includes/walletSelector.html:23 www/views/paperWallet.html:35
+#: www/views/tab-home.html:95 www/views/tab-receive.html:74
+#: www/views/walletDetails.html:139 www/views/walletDetails.html:59
 msgid "[Balance Hidden]"
 msgstr "[Balans ukryty]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
 msgid "add your BitPay Visa card(s)"
-msgstr "dodaj swoje karty BitPay Visa"
+msgstr "dodaj swoje karty Company0 Visa"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3057,8 +2872,7 @@ msgstr "nazwa@przyklad.com"
 msgid "preparing..."
 msgstr "Przygotowywanie..."
 
-#: src/js/controllers/confirm.js:71
-#: src/js/controllers/modals/txpDetails.js:34
+#: src/js/controllers/confirm.js:71 src/js/controllers/modals/txpDetails.js:34
 msgid "to accept"
 msgstr "do akceptacji"
 
@@ -3066,25 +2880,22 @@ msgstr "do akceptacji"
 msgid "to pay"
 msgstr "do zapłaty"
 
-#: src/js/controllers/confirm.js:73
-#: src/js/controllers/modals/txpDetails.js:32
+#: src/js/controllers/confirm.js:73 src/js/controllers/modals/txpDetails.js:32
 msgid "to send"
 msgstr "do wysłania"
 
 #: www/views/preferencesBwsUrl.html:21
 msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
-msgstr "{{appName}} jest zależny od Bitcore Wallet Service (BWS) jeśli chodzi o informacje dotyczące blokcheina, sieci i synchronizacji współwłaścicieli portfela. Domyślnie jest to https://bws.bitpay.com (BitPay's public BWS instance)."
+msgstr "{{appName}} jest zależny od Bitcore Wallet Service (BWS) jeśli chodzi o informacje dotyczące blokcheina, sieci i synchronizacji współwłaścicieli portfela. Domyślnie jest to https://bws.bitpay.com (Company0's public BWS instance)."
 
 #: src/js/controllers/confirm.js:211
 msgid "{{fee}} will be deducted for bitcoin networking fees."
-msgstr "{{fee}} zostanie potrącone jako prowizja sieci bitcoin."
+msgstr "{{fee}} zostanie potrącone jako prowizja sieci Decred."
 
 #: www/views/walletDetails.html:210
 msgid "{{updatingTxHistoryProgress}} transactions downloaded"
 msgstr "{{updatingTxHistoryProgress}} transakcje pobrane"
 
-#: www/views/copayers.html:47
-#: www/views/includes/walletInfo.html:12
+#: www/views/copayers.html:47 www/views/includes/walletInfo.html:12
 msgid "{{wallet.m}}-of-{{wallet.n}}"
 msgstr "{{wallet.m}}-z-{{wallet.n}}"
-

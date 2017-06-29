@@ -4,14 +4,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: copay\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: crowdin.com\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Crowdin-Project: copay\n"
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: template.pot\n"
 "Last-Translator: cmgustavo83\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
-"PO-Revision-Date: 2017-06-06 10:18-0400\n"
+"PO-Revision-Date: 2017-06-18 00:36+0200\n"
+"POT-Creation-Date: \n"
+"MIME-Version: 1.0\n"
 
 #: www/views/bitpayCard.html:63
 msgid "(Pre-Auth Holds transactions) The merchant has initiated a hold to make those funds unavailable until your transaction to them has fully settled. Funds are released within 30 days at the latest in the event the merchant decides not to complete the transaction."
@@ -21,8 +23,7 @@ msgstr ""
 msgid "(Trusted)"
 msgstr "(信頼済み)"
 
-#: www/views/includes/txp.html:23
-#: www/views/includes/walletHistory.html:59
+#: www/views/includes/txp.html:23 www/views/includes/walletHistory.html:59
 msgid "(possible double spend)"
 msgstr "(二重払い可能性あり)"
 
@@ -38,8 +39,7 @@ msgstr ""
 msgid "5-star ratings help us get {{appName}} into more hands, and more users means more resources can be committed to the app!"
 msgstr "5つ星の評価をいただけると、もっとたくさんの人にこのアプリを届けることができます。そして、ユーザーが増えればこのアプリの改善に当てられる人員やリソースも増えます。"
 
-#: src/js/controllers/feedback/send.js:27
-#: www/views/feedback/complete.html:21
+#: src/js/controllers/feedback/send.js:27 www/views/feedback/complete.html:21
 msgid "A member of the team will review your feedback as soon as possible."
 msgstr "ただちに開発メンバーでいただいた評価を拝読し参考にさせていただきます。"
 
@@ -51,8 +51,7 @@ msgstr "注意：合計{{amountAboveMaxSizeStr}} を除外しました。取引�
 msgid "A total of {{amountBelowFeeStr}} were excluded. These funds come from UTXOs smaller than the network fee provided."
 msgstr "注意：合計 {{amountBelowFeeStr}} を除外しました。これらのビットコインは手数料よりも低い額となるため除外しました。"
 
-#: src/js/controllers/preferencesAbout.js:6
-#: www/views/tab-settings.html:156
+#: src/js/controllers/preferencesAbout.js:6 www/views/tab-settings.html:156
 msgid "About"
 msgstr "このアプリについて"
 
@@ -65,10 +64,8 @@ msgstr "承諾済"
 msgid "Account"
 msgstr "ポケット"
 
-#: www/views/join.html:69
-#: www/views/tab-create-personal.html:43
-#: www/views/tab-create-shared.html:72
-#: www/views/tab-import-hardware.html:19
+#: www/views/join.html:69 www/views/tab-create-personal.html:43
+#: www/views/tab-create-shared.html:72 www/views/tab-import-hardware.html:19
 msgid "Account Number"
 msgstr "ポケット番号"
 
@@ -86,10 +83,9 @@ msgstr "アカウントを追加"
 
 #: src/js/services/bitpayAccountService.js:68
 msgid "Add BitPay Account?"
-msgstr "BitPay アカウントを追加しますか？"
+msgstr "Company0 アカウントを追加しますか？"
 
-#: www/views/addressbook.add.html:4
-#: www/views/addressbook.html:22
+#: www/views/addressbook.add.html:4 www/views/addressbook.html:22
 msgid "Add Contact"
 msgstr "連絡先を追加"
 
@@ -101,8 +97,7 @@ msgstr "資金を追加"
 msgid "Add Memo"
 msgstr "メモを追加"
 
-#: www/views/join.html:84
-#: www/views/tab-create-personal.html:57
+#: www/views/join.html:84 www/views/tab-create-personal.html:57
 #: www/views/tab-create-shared.html:86
 msgid "Add a password"
 msgstr "復元フレーズ用パスワードを追加"
@@ -111,8 +106,7 @@ msgstr "復元フレーズ用パスワードを追加"
 msgid "Add account"
 msgstr "アカウントを追加"
 
-#: www/views/join.html:87
-#: www/views/tab-create-personal.html:60
+#: www/views/join.html:87 www/views/tab-create-personal.html:60
 #: www/views/tab-create-shared.html:89
 msgid "Add an optional password to secure the recovery phrase"
 msgstr "フレーズを守るために任意のパスワードをかけて下さい"
@@ -125,15 +119,12 @@ msgstr "詳細を追加"
 msgid "Add wallet"
 msgstr "ウォレットを追加"
 
-#: www/views/addressbook.view.html:26
-#: www/views/customAmount.html:28
-#: www/views/modals/paypro.html:24
-#: www/views/paymentUri.html:15
+#: www/views/addressbook.view.html:26 www/views/customAmount.html:28
+#: www/views/modals/paypro.html:24 www/views/paymentUri.html:15
 msgid "Address"
 msgstr "アドレス"
 
-#: www/views/addressbook.html:6
-#: www/views/tab-settings.html:13
+#: www/views/addressbook.html:6 www/views/tab-settings.html:13
 msgid "Address Book"
 msgstr "アドレス帳"
 
@@ -181,15 +172,12 @@ msgstr "通知を許可する"
 msgid "Almost done! Let's review."
 msgstr "ほぼ完了!確認してみましょう。"
 
-#: www/views/preferencesAltCurrency.html:4
-#: www/views/tab-settings.html:74
+#: www/views/preferencesAltCurrency.html:4 www/views/tab-settings.html:74
 msgid "Alternative Currency"
 msgstr "表示通貨"
 
-#: www/views/amount.html:44
-#: www/views/customAmount.html:34
-#: www/views/includes/output.html:7
-#: www/views/paymentUri.html:16
+#: www/views/amount.html:44 www/views/customAmount.html:34
+#: www/views/includes/output.html:7 www/views/paymentUri.html:16
 msgid "Amount"
 msgstr "金額"
 
@@ -219,7 +207,8 @@ msgstr "見られていますか？ 復元フレーズを知る者はあなた�
 
 #: src/js/controllers/copayers.js:56
 msgid "Are you sure you want to cancel and delete this wallet?"
-msgstr "本当にこのウォレットをキャンセルし、削除しても\n"
+msgstr ""
+"本当にこのウォレットをキャンセルし、削除しても\n"
 "宜しいですか？"
 
 #: src/js/controllers/addressbookView.js:24
@@ -228,7 +217,8 @@ msgstr ""
 
 #: src/js/controllers/preferencesDelete.js:26
 msgid "Are you sure you want to delete this wallet?"
-msgstr "本当にこのウォレットを削除しても\n"
+msgstr ""
+"本当にこのウォレットを削除しても\n"
 "宜しいですか？"
 
 #: src/js/controllers/modals/txpDetails.js:144
@@ -250,7 +240,7 @@ msgstr ""
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
 msgid "Are you sure you would like to remove your BitPay Card ({{lastFourDigits}}) from this device?"
-msgstr "この端末から BitPay カード ({{lastFourDigits}}) を本当に削除してもよろしいですか？"
+msgstr "この端末から Company0 カード ({{lastFourDigits}}) を本当に削除してもよろしいですか？"
 
 #: www/views/includes/walletInfo.html:5
 msgid "Auditable"
@@ -264,15 +254,12 @@ msgstr "即座送金可能"
 msgid "Available Balance"
 msgstr "送金可能残高"
 
-#: www/views/modals/chooseFeeLevel.html:14
-#: www/views/preferencesFee.html:15
+#: www/views/modals/chooseFeeLevel.html:14 www/views/preferencesFee.html:15
 msgid "Average confirmation time"
 msgstr "平均承認時間"
 
-#: www/views/join.html:140
-#: www/views/tab-create-personal.html:111
-#: www/views/tab-create-shared.html:140
-#: www/views/tab-import-phrase.html:48
+#: www/views/join.html:140 www/views/tab-create-personal.html:111
+#: www/views/tab-create-shared.html:140 www/views/tab-import-phrase.html:48
 msgid "BIP32 path for address derivation"
 msgstr "階級アドレス派生のパス"
 
@@ -288,8 +275,7 @@ msgstr "要バックアップ"
 msgid "Backup all livenet wallets before using this function"
 msgstr "この機能を使う前に必ず全てのウォレットの復元フレーズのバックアップを取って下さい！"
 
-#: www/views/preferences.html:41
-#: www/views/tab-settings.html:120
+#: www/views/preferences.html:41 www/views/tab-settings.html:120
 msgid "Backup needed"
 msgstr "要バックアップ"
 
@@ -297,8 +283,7 @@ msgstr "要バックアップ"
 msgid "Backup now"
 msgstr "今すぐバックアップ"
 
-#: www/views/onboarding/backupRequest.html:11
-#: www/views/tab-export-file.html:89
+#: www/views/onboarding/backupRequest.html:11 www/views/tab-export-file.html:89
 msgid "Backup wallet"
 msgstr "ウォレットをバックアップ"
 
@@ -320,25 +305,24 @@ msgstr "書き留めた復元フレーズは金庫など、安全な場所にて
 
 #: www/views/preferencesBitpayServices.html:9
 msgid "BitPay Visa&reg; Cards"
-msgstr "BitPayのVISA&reg; カード"
+msgstr "Company0のVISA&reg; カード"
 
 #: www/views/addressbook.add.html:38
 msgid "Bitcoin Address"
 msgstr "ビットコインアドレス"
 
-#: www/views/modals/chooseFeeLevel.html:7
-#: www/views/preferencesFee.html:4
+#: www/views/modals/chooseFeeLevel.html:7 www/views/preferencesFee.html:4
 #: www/views/tab-settings.html:85
 msgid "Bitcoin Network Fee Policy"
 msgstr "ビットコインネットワークの手数料設定"
 
 #: www/views/paymentUri.html:10
 msgid "Bitcoin URI is NOT valid!"
-msgstr "Bitcoin URI が無効です！"
+msgstr " URI が無効です！"
 
 #: www/views/tab-settings.html:63
 msgid "Bitcoin Unit"
-msgstr "Bitcoin 単位"
+msgstr " 単位"
 
 #: www/views/onboarding/tour.html:31
 msgid "Bitcoin is a currency."
@@ -389,10 +373,8 @@ msgstr "ビットコインを購入中..."
 msgid "Calculating fee"
 msgstr "手数料計算中..."
 
-#: src/js/controllers/confirm.js:498
-#: src/js/services/popupService.js:59
-#: www/views/addressbook.add.html:10
-#: www/views/feedback/send.html:5
+#: src/js/controllers/confirm.js:498 src/js/services/popupService.js:59
+#: www/views/addressbook.add.html:10 www/views/feedback/send.html:5
 #: www/views/includes/note.html:6
 #: www/views/modals/bitpay-card-confirmation.html:8
 #: www/views/modals/confirmation.html:13
@@ -443,15 +425,12 @@ msgstr "やり直し"
 msgid "Clear cache"
 msgstr "キャッシュを消去"
 
-#: src/js/controllers/confirm.js:66
-#: src/js/controllers/modals/txpDetails.js:25
+#: src/js/controllers/confirm.js:66 src/js/controllers/modals/txpDetails.js:25
 msgid "Click"
 msgstr "クリックして"
 
-#: www/views/customAmount.html:4
-#: www/views/modals/paypro.html:4
-#: www/views/modals/search.html:3
-#: www/views/modals/wallet-balance.html:3
+#: www/views/customAmount.html:4 www/views/modals/paypro.html:4
+#: www/views/modals/search.html:3 www/views/modals/wallet-balance.html:3
 #: www/views/modals/wallets.html:5
 msgid "Close"
 msgstr "閉じる"
@@ -472,17 +451,13 @@ msgstr "この機能をご利用いただくにはバックアップを行う必
 msgid "Completed"
 msgstr ""
 
-#: src/js/controllers/confirm.js:497
-#: src/js/controllers/copayers.js:55
-#: www/views/backup.html:53
-#: www/views/backup.html:72
-#: www/views/confirm.html:4
+#: src/js/controllers/confirm.js:497 src/js/controllers/copayers.js:55
+#: www/views/backup.html:53 www/views/backup.html:72 www/views/confirm.html:4
 #: www/views/onboarding/collectEmail.html:32
 msgid "Confirm"
 msgstr "確認"
 
-#: www/views/modals/terms.html:26
-#: www/views/onboarding/disclaimer.html:44
+#: www/views/modals/terms.html:26 www/views/onboarding/disclaimer.html:44
 msgid "Confirm &amp; Finish"
 msgstr "承諾して終了する"
 
@@ -498,8 +473,7 @@ msgstr "新しい送金時パスワードを確認してください"
 msgid "Confirmations"
 msgstr "承認回数"
 
-#: www/views/bitpayCard.html:79
-#: www/views/modals/wallet-balance.html:61
+#: www/views/bitpayCard.html:79 www/views/modals/wallet-balance.html:61
 msgid "Confirming"
 msgstr "承認中"
 
@@ -513,7 +487,7 @@ msgstr ""
 
 #: www/views/bitpayCardIntro.html:37
 msgid "Connect my BitPay Card"
-msgstr "BitPay カードを接続"
+msgstr "Company0 カードを接続"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -559,8 +533,7 @@ msgstr "ウォレット参加者が加わりました"
 msgid "Copayer {{$index}}"
 msgstr "ウォレット参加者 {{$index}}"
 
-#: src/js/controllers/copayers.js:79
-#: src/js/controllers/export.js:193
+#: src/js/controllers/copayers.js:79 src/js/controllers/export.js:193
 #: www/views/includes/copyToClipboard.html:4
 msgid "Copied to clipboard"
 msgstr "クリップボードにコピーしました"
@@ -569,8 +542,7 @@ msgstr "クリップボードにコピーしました"
 msgid "Copy this text as it is to a safe place (notepad or email)"
 msgstr "このテキストを安全な場所に貼り付けて保管して下さい (メモ帳やメールの下書きなど)"
 
-#: www/views/preferencesLogs.html:10
-#: www/views/tab-export-file.html:78
+#: www/views/preferencesLogs.html:10 www/views/tab-export-file.html:78
 msgid "Copy to clipboard"
 msgstr "クリップボードへコピー"
 
@@ -630,8 +602,7 @@ msgstr "次の手数料レートを取得できませんでした: {{feeLevel}}"
 msgid "Could not get transactions"
 msgstr "取引を取得できませんでした。"
 
-#: src/js/services/profileService.js:595
-#: src/js/services/profileService.js:627
+#: src/js/services/profileService.js:595 src/js/services/profileService.js:627
 #: src/js/services/profileService.js:650
 msgid "Could not import"
 msgstr "インポートできませんでした。"
@@ -669,10 +640,8 @@ msgstr "送金できませんでした。"
 msgid "Could not update transaction history"
 msgstr "取引履歴を更新できませんでした。"
 
-#: src/js/controllers/addresses.js:34
-#: src/js/controllers/addresses.js:42
-#: src/js/controllers/copayers.js:30
-#: src/js/controllers/walletDetails.js:63
+#: src/js/controllers/addresses.js:34 src/js/controllers/addresses.js:42
+#: src/js/controllers/copayers.js:30 src/js/controllers/walletDetails.js:63
 msgid "Could not update wallet"
 msgstr "ウォレットが更新できませんでした。"
 
@@ -688,8 +657,7 @@ msgstr "個人用ウォレットを作成"
 msgid "Create Shared Wallet"
 msgstr "共有ウォレットを作成"
 
-#: www/views/onboarding/tour.html:51
-#: www/views/tab-home.html:76
+#: www/views/onboarding/tour.html:51 www/views/tab-home.html:76
 #: www/views/tab-send.html:32
 msgid "Create bitcoin wallet"
 msgstr "ビットコインウォレット作成"
@@ -706,8 +674,7 @@ msgstr "共有ウォレットを作成"
 msgid "Create {{formData.requiredCopayers}}-of-{{formData.totalCopayers}} wallet"
 msgstr "{{formData.requiredCopayers}}-of-{{formData.totalCopayers}} ウォレットを作成"
 
-#: www/views/modals/txp-details.html:83
-#: www/views/tx-details.html:62
+#: www/views/modals/txp-details.html:83 www/views/tx-details.html:62
 msgid "Created by"
 msgstr "作成者"
 
@@ -719,8 +686,7 @@ msgstr "ウォレット作成中…"
 msgid "Creating transaction"
 msgstr "取引作成中…"
 
-#: www/views/modals/chooseFeeLevel.html:19
-#: www/views/preferencesFee.html:20
+#: www/views/modals/chooseFeeLevel.html:19 www/views/preferencesFee.html:20
 msgid "Current fee rate for this policy"
 msgstr "この設定の現在の手数料レート"
 
@@ -728,8 +694,7 @@ msgstr "この設定の現在の手数料レート"
 msgid "Custom Amount"
 msgstr "金額を入力"
 
-#: www/views/modals/txp-details.html:89
-#: www/views/tx-details.html:68
+#: www/views/modals/txp-details.html:89 www/views/tx-details.html:68
 msgid "Date"
 msgstr "日付"
 
@@ -758,10 +723,8 @@ msgstr "ウォレット削除中…"
 msgid "Deleting payment proposal"
 msgstr "送金の提案を削除"
 
-#: www/views/join.html:138
-#: www/views/tab-create-personal.html:109
-#: www/views/tab-create-shared.html:138
-#: www/views/tab-import-phrase.html:46
+#: www/views/join.html:138 www/views/tab-create-personal.html:109
+#: www/views/tab-create-shared.html:138 www/views/tab-import-phrase.html:46
 msgid "Derivation Path"
 msgstr "派生パス"
 
@@ -769,8 +732,7 @@ msgstr "派生パス"
 msgid "Derivation Strategy"
 msgstr "派生パス"
 
-#: src/js/controllers/lockSetup.js:9
-#: src/js/controllers/tab-settings.js:59
+#: src/js/controllers/lockSetup.js:9 src/js/controllers/tab-settings.js:59
 msgid "Disabled"
 msgstr "無効"
 
@@ -787,8 +749,7 @@ msgstr "秘密鍵を含めない"
 msgid "Don't see your language on Crowdin? Contact the Owner on Crowdin! We'd love to support your language."
 msgstr "ご自分の言語はCrowdinで見当たりませんか？Crowdinの管理者に連絡とってみてください。是非とも対応したく思っております。"
 
-#: www/views/tab-export-file.html:59
-#: www/views/tab-home.html:21
+#: www/views/tab-export-file.html:59 www/views/tab-home.html:21
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -804,8 +765,7 @@ msgstr "節約"
 msgid "Edit"
 msgstr ""
 
-#: www/views/addressbook.add.html:29
-#: www/views/addressbook.view.html:22
+#: www/views/addressbook.add.html:29 www/views/addressbook.view.html:22
 msgid "Email"
 msgstr "電子メール"
 
@@ -837,21 +797,19 @@ msgstr "始めるためにカメラを有効にして下さい。"
 msgid "Enter Amount"
 msgstr "金額を入力"
 
-#: src/js/services/walletService.js:954
-#: src/js/services/walletService.js:969
+#: src/js/services/walletService.js:954 src/js/services/walletService.js:969
 msgid "Enter Spending Password"
 msgstr "送金時のパスワード入力して下さい。"
 
 #: src/js/services/bitpayAccountService.js:104
 msgid "Enter Two Factor for your BitPay account"
-msgstr "BitPay アカウントの2段階認証コードを入力して下さい"
+msgstr "Company0 アカウントの2段階認証コードを入力して下さい"
 
 #: src/js/services/walletService.js:936
 msgid "Enter new spending password"
 msgstr "新しい送金時パスワードを入力してください"
 
-#: www/views/join.html:76
-#: www/views/tab-create-personal.html:49
+#: www/views/join.html:76 www/views/tab-create-personal.html:49
 #: www/views/tab-create-shared.html:78
 msgid "Enter the recovery phrase (BIP39)"
 msgstr "復元フレーズの単語をご入力下さい。"
@@ -865,67 +823,40 @@ msgid "Enter your password"
 msgstr "パスワードを入力して下さい。"
 
 #. Trying to import a malformed wallet export QR code
-#: src/js/controllers/activity.js:45
-#: src/js/controllers/addressbookAdd.js:30
-#: src/js/controllers/addressbookView.js:29
-#: src/js/controllers/addresses.js:105
-#: src/js/controllers/addresses.js:106
-#: src/js/controllers/bitpayCard.js:69
+#: src/js/controllers/activity.js:45 src/js/controllers/addressbookAdd.js:30
+#: src/js/controllers/addressbookView.js:29 src/js/controllers/addresses.js:105
+#: src/js/controllers/addresses.js:106 src/js/controllers/bitpayCard.js:69
 #: src/js/controllers/bitpayCardIntro.js:40
-#: src/js/controllers/bitpayCardIntro.js:81
-#: src/js/controllers/confirm.js:191
-#: src/js/controllers/confirm.js:197
-#: src/js/controllers/copayers.js:67
-#: src/js/controllers/create.js:155
-#: src/js/controllers/create.js:168
-#: src/js/controllers/create.js:175
-#: src/js/controllers/create.js:197
-#: src/js/controllers/create.js:204
-#: src/js/controllers/create.js:222
-#: src/js/controllers/export.js:109
-#: src/js/controllers/export.js:115
-#: src/js/controllers/export.js:126
-#: src/js/controllers/export.js:154
-#: src/js/controllers/export.js:160
-#: src/js/controllers/export.js:171
-#: src/js/controllers/export.js:47
-#: src/js/controllers/export.js:53
-#: src/js/controllers/feedback/send.js:23
-#: src/js/controllers/import.js:100
-#: src/js/controllers/import.js:118
-#: src/js/controllers/import.js:168
-#: src/js/controllers/import.js:196
-#: src/js/controllers/import.js:205
-#: src/js/controllers/import.js:220
-#: src/js/controllers/import.js:232
-#: src/js/controllers/import.js:243
-#: src/js/controllers/import.js:253
-#: src/js/controllers/import.js:266
-#: src/js/controllers/import.js:278
-#: src/js/controllers/import.js:288
-#: src/js/controllers/import.js:298
-#: src/js/controllers/import.js:322
-#: src/js/controllers/import.js:334
-#: src/js/controllers/import.js:54
-#: src/js/controllers/import.js:67
-#: src/js/controllers/import.js:88
-#: src/js/controllers/join.js:120
-#: src/js/controllers/join.js:134
-#: src/js/controllers/join.js:141
-#: src/js/controllers/join.js:164
-#: src/js/controllers/join.js:172
-#: src/js/controllers/join.js:190
-#: src/js/controllers/modals/txpDetails.js:130
+#: src/js/controllers/bitpayCardIntro.js:81 src/js/controllers/confirm.js:191
+#: src/js/controllers/confirm.js:197 src/js/controllers/copayers.js:67
+#: src/js/controllers/create.js:155 src/js/controllers/create.js:168
+#: src/js/controllers/create.js:175 src/js/controllers/create.js:197
+#: src/js/controllers/create.js:204 src/js/controllers/create.js:222
+#: src/js/controllers/export.js:109 src/js/controllers/export.js:115
+#: src/js/controllers/export.js:126 src/js/controllers/export.js:154
+#: src/js/controllers/export.js:160 src/js/controllers/export.js:171
+#: src/js/controllers/export.js:47 src/js/controllers/export.js:53
+#: src/js/controllers/feedback/send.js:23 src/js/controllers/import.js:100
+#: src/js/controllers/import.js:118 src/js/controllers/import.js:168
+#: src/js/controllers/import.js:196 src/js/controllers/import.js:205
+#: src/js/controllers/import.js:220 src/js/controllers/import.js:232
+#: src/js/controllers/import.js:243 src/js/controllers/import.js:253
+#: src/js/controllers/import.js:266 src/js/controllers/import.js:278
+#: src/js/controllers/import.js:288 src/js/controllers/import.js:298
+#: src/js/controllers/import.js:322 src/js/controllers/import.js:334
+#: src/js/controllers/import.js:54 src/js/controllers/import.js:67
+#: src/js/controllers/import.js:88 src/js/controllers/join.js:120
+#: src/js/controllers/join.js:134 src/js/controllers/join.js:141
+#: src/js/controllers/join.js:164 src/js/controllers/join.js:172
+#: src/js/controllers/join.js:190 src/js/controllers/modals/txpDetails.js:130
 #: src/js/controllers/paperWallet.js:47
 #: src/js/controllers/preferencesBitpayCard.js:20
 #: src/js/controllers/preferencesBitpayServices.js:33
 #: src/js/controllers/preferencesBitpayServices.js:50
 #: src/js/controllers/preferencesDelete.js:37
 #: src/js/controllers/preferencesExternal.js:20
-#: src/js/controllers/tab-home.js:170
-#: src/js/controllers/tabsController.js:7
-#: src/js/controllers/tx-details.js:106
-#: src/js/services/incomingData.js:98
+#: src/js/controllers/tab-home.js:170 src/js/controllers/tabsController.js:7
+#: src/js/controllers/tx-details.js:106 src/js/services/incomingData.js:98
 msgid "Error"
 msgstr "エラー"
 
@@ -957,14 +888,12 @@ msgstr "デビットカードの更新エラー"
 msgid "Exceeded daily limit of $500 per user"
 msgstr "ユーザーの1日当たりの制限 500 米ドルを超えました"
 
-#: src/js/controllers/confirm.js:342
-#: www/views/confirm.html:27
+#: src/js/controllers/confirm.js:342 www/views/confirm.html:27
 #: www/views/modals/txp-details.html:120
 msgid "Expired"
 msgstr "期限切れ"
 
-#: www/views/modals/paypro.html:54
-#: www/views/modals/txp-details.html:126
+#: www/views/modals/paypro.html:54 www/views/modals/txp-details.html:126
 msgid "Expires"
 msgstr "有効期限："
 
@@ -972,8 +901,7 @@ msgstr "有効期限："
 msgid "Export Wallet"
 msgstr "ウォレットをエクスポート"
 
-#: www/views/preferencesHistory.html:11
-#: www/views/preferencesHistory.html:14
+#: www/views/preferencesHistory.html:11 www/views/preferencesHistory.html:14
 msgid "Export to file"
 msgstr "ファイルへのエクスポート"
 
@@ -981,8 +909,7 @@ msgstr "ファイルへのエクスポート"
 msgid "Export wallet"
 msgstr "ウォレットをエクスポート"
 
-#: src/js/services/walletService.js:1081
-#: www/views/tab-export-qrCode.html:9
+#: src/js/services/walletService.js:1081 www/views/tab-export-qrCode.html:9
 msgid "Exporting via QR not supported for this wallet"
 msgstr "このウォレットはQRによるエクスポートに対応していません"
 
@@ -994,21 +921,17 @@ msgstr "拡張公開鍵"
 msgid "Extracting Wallet Information..."
 msgstr "ウォレット情報を抽出中…"
 
-#: src/js/controllers/export.js:115
-#: src/js/controllers/export.js:126
-#: src/js/controllers/export.js:160
-#: src/js/controllers/export.js:171
+#: src/js/controllers/export.js:115 src/js/controllers/export.js:126
+#: src/js/controllers/export.js:160 src/js/controllers/export.js:171
 #: www/views/tab-export-file.html:4
 msgid "Failed to export"
 msgstr "エクスポートに失敗しました。"
 
-#: www/views/tab-create-personal.html:14
-#: www/views/tab-create-shared.html:14
+#: www/views/tab-create-personal.html:14 www/views/tab-create-shared.html:14
 msgid "Family vacation funds"
 msgstr "家族旅行貯金"
 
-#: www/views/modals/txp-details.html:101
-#: www/views/tx-details.html:81
+#: www/views/modals/txp-details.html:101 www/views/tx-details.html:81
 msgid "Fee"
 msgstr "手数料"
 
@@ -1022,14 +945,13 @@ msgstr "フォームを送信する事ができませんでした。時間をお
 
 #: src/js/services/onGoingProcess.js:42
 msgid "Fetching BitPay Account..."
-msgstr "BitPay アカウントを取得..."
+msgstr "Company0 アカウントを取得..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching Payment Information"
 msgstr "支払い情報要求しています…"
 
-#: www/views/export.html:14
-#: www/views/import.html:16
+#: www/views/export.html:14 www/views/import.html:16
 msgid "File/Text"
 msgstr "ファイル/テキスト"
 
@@ -1038,25 +960,22 @@ msgstr "ファイル/テキスト"
 msgid "Finger Scan Failed"
 msgstr "指紋認証に失敗しました"
 
-#: src/js/controllers/feedback/send.js:34
-#: www/views/feedback/complete.html:7
+#: src/js/controllers/feedback/send.js:34 www/views/feedback/complete.html:7
 msgid "Finish"
 msgstr "完了"
 
-#: www/views/tab-create-personal.html:121
-#: www/views/tab-create-shared.html:150
+#: www/views/tab-create-personal.html:121 www/views/tab-create-shared.html:150
 msgid "For audit purposes"
 msgstr "監査用機能"
 
-#: www/views/confirm.html:65
-#: www/views/modals/txp-details.html:74
+#: www/views/confirm.html:65 www/views/modals/txp-details.html:74
 #: www/views/tx-details.html:52
 msgid "From"
 msgstr "送信者"
 
 #: src/js/controllers/bitpayCardIntro.js:71
 msgid "From BitPay account"
-msgstr " BitPayアカウントから"
+msgstr " Company0アカウントから"
 
 #: www/views/tab-export-qrCode.html:5
 msgid "From the destination device, go to Add wallet &gt; Import wallet and scan this QR code"
@@ -1096,10 +1015,9 @@ msgstr "Visa<sup>&reg;</sup>カード対応ATMから現地通貨をいつでも�
 
 #: www/views/onboarding/collectEmail.html:15
 msgid "Get news and updates from BitPay"
-msgstr "BitPay からのニュースや更新情報を受け取ります。"
+msgstr "Company0 からのニュースや更新情報を受け取ります。"
 
-#: www/views/bitpayCard.html:49
-#: www/views/onboarding/welcome.html:8
+#: www/views/bitpayCard.html:49 www/views/onboarding/welcome.html:8
 msgid "Get started"
 msgstr "始めよう"
 
@@ -1111,13 +1029,11 @@ msgstr "初めての連絡先を追加しましょう。"
 msgid "Getting fee levels..."
 msgstr "手数料レベルを取得しています…"
 
-#: src/js/controllers/bitpayCard.js:171
-#: src/js/controllers/bitpayCard.js:181
+#: src/js/controllers/bitpayCard.js:171 src/js/controllers/bitpayCard.js:181
 #: src/js/controllers/onboarding/terms.js:23
 #: src/js/controllers/preferencesAbout.js:16
 #: src/js/controllers/preferencesLanguage.js:14
-#: src/js/controllers/tab-home.js:145
-#: src/js/controllers/tab-settings.js:48
+#: src/js/controllers/tab-home.js:145 src/js/controllers/tab-settings.js:48
 #: src/js/controllers/tx-details.js:169
 msgid "Go Back"
 msgstr "戻る"
@@ -1128,8 +1044,7 @@ msgstr "戻る"
 msgid "Go back"
 msgstr "戻る"
 
-#: www/views/backupWarning.html:15
-#: www/views/includes/confirmBackupPopup.html:8
+#: www/views/backupWarning.html:15 www/views/includes/confirmBackupPopup.html:8
 #: www/views/onboarding/tour.html:23
 msgid "Got it"
 msgstr "分かりました"
@@ -1151,8 +1066,7 @@ msgstr "ハードウェアウォレット"
 msgid "Help & Support"
 msgstr "ヘルプ＆サポート"
 
-#: src/js/controllers/bitpayCard.js:169
-#: src/js/controllers/tab-settings.js:46
+#: src/js/controllers/bitpayCard.js:169 src/js/controllers/tab-settings.js:46
 msgid "Help and support information is available at the website."
 msgstr "サポートに関する情報はウェブサイトに掲載しております。"
 
@@ -1168,12 +1082,9 @@ msgstr "残高を非表示"
 msgid "Hide Next Steps Card"
 msgstr "次のステップカードを非表示"
 
-#: www/views/join.html:46
-#: www/views/tab-create-personal.html:26
-#: www/views/tab-create-shared.html:55
-#: www/views/tab-export-file.html:25
-#: www/views/tab-import-file.html:28
-#: www/views/tab-import-hardware.html:31
+#: www/views/join.html:46 www/views/tab-create-personal.html:26
+#: www/views/tab-create-shared.html:55 www/views/tab-export-file.html:25
+#: www/views/tab-import-file.html:28 www/views/tab-import-hardware.html:31
 #: www/views/tab-import-phrase.html:33
 msgid "Hide advanced options"
 msgstr "詳細設定を非表示"
@@ -1204,8 +1115,7 @@ msgstr "<a ng-click=\"openTerms()\" translate>利用規約</a>をよく読み、
 msgid "I have read, understood, and agree with the Terms of use."
 msgstr "利用規約をよく読み、理解し、同意します。"
 
-#: www/views/join.html:134
-#: www/views/tab-create-personal.html:105
+#: www/views/join.html:134 www/views/tab-create-personal.html:105
 #: www/views/tab-create-shared.html:134
 msgid "I have written it down"
 msgstr "紙に書き留めました"
@@ -1249,7 +1159,7 @@ msgstr "有効にした場合、ウォレットは未承認ビットコインも
 
 #: src/js/controllers/onboarding/backupRequest.js:18
 msgid "If this device is replaced or this app is deleted, neither you nor BitPay can recover your funds without a backup."
-msgstr "この端末の機種変更をしたり、アプリを削除したりした場合、端末のバックアップを取っていてもビットコインは復元されません。BitPayは復元フレーズを知らないため、お金を失ったことになります。なので、絶対に復元フレーズを書き留めて安全な場所に保管して下さい。"
+msgstr "この端末の機種変更をしたり、アプリを削除したりした場合、端末のバックアップを取っていてもビットコインは復元されません。Company0は復元フレーズを知らないため、お金を失ったことになります。なので、絶対に復元フレーズを書き留めて安全な場所に保管して下さい。"
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1259,8 +1169,7 @@ msgstr "他にご意見などありましたら、設定画面の「フィード
 msgid "If you take a screenshot, your backup may be viewed by other apps. You can make a safe backup with physical paper and a pen."
 msgstr "画面写真を撮ってしまうと、その時点で他のアプリに見られるようになりますので、そのアプリの運営者が安易にビットコインを全て盗めます。安全にバックアップを取るには、紙とボールペンで書き留めましょう。"
 
-#: www/views/tab-import-hardware.html:42
-#: www/views/tab-import-phrase.html:63
+#: www/views/tab-import-hardware.html:42 www/views/tab-import-phrase.html:63
 msgid "Import"
 msgstr "インポート"
 
@@ -1285,8 +1194,7 @@ msgid "In order to verify your wallet backup, please type your password."
 msgstr "ウォレットのバックアップを確認するためには、復元フレーズ用のパスワードをご入力下さい。"
 
 #: www/views/includes/walletItem.html:11
-#: www/views/includes/walletSelector.html:18
-#: www/views/tab-home.html:89
+#: www/views/includes/walletSelector.html:18 www/views/tab-home.html:89
 #: www/views/tab-settings.html:117
 msgid "Incomplete"
 msgstr "未完成"
@@ -1308,8 +1216,7 @@ msgstr "アドレスのネットワークが不正です。"
 msgid "Incorrect code format"
 msgstr "コードの形式が異なります"
 
-#: src/js/services/bwcError.js:44
-#: www/views/confirm.html:99
+#: src/js/services/bwcError.js:44 www/views/confirm.html:99
 msgid "Insufficient funds"
 msgstr "残高不足"
 
@@ -1321,8 +1228,7 @@ msgstr "手数料付けるには残高が足りません"
 msgid "Invalid"
 msgstr "無効"
 
-#: src/js/controllers/create.js:175
-#: src/js/controllers/import.js:298
+#: src/js/controllers/create.js:175 src/js/controllers/import.js:298
 #: src/js/controllers/join.js:141
 msgid "Invalid account number"
 msgstr "無効なポケット番号です。"
@@ -1335,8 +1241,7 @@ msgstr "不正アドレス"
 msgid "Invalid data"
 msgstr "無効のデータ"
 
-#: src/js/controllers/create.js:155
-#: src/js/controllers/import.js:232
+#: src/js/controllers/create.js:155 src/js/controllers/import.js:232
 #: src/js/controllers/join.js:120
 msgid "Invalid derivation path"
 msgstr "無効な派生パス"
@@ -1373,8 +1278,7 @@ msgstr "参加"
 msgid "Join my {{appName}} Wallet. Here is the invitation code: {{secret}} You can download {{appName}} for your phone or desktop at {{appUrl}}"
 msgstr "{{appName}}の共有ウォレット作りました： {{secret}} この招待コードを入力して、ウォレットに参加して下さい。アプリのダウンロードは {{appUrl}} にてどうぞ！"
 
-#: www/views/add.html:30
-#: www/views/join.html:5
+#: www/views/add.html:30 www/views/join.html:5
 msgid "Join shared wallet"
 msgstr "共有ウォレットに参加"
 
@@ -1390,8 +1294,7 @@ msgstr "コードを読み取って送金できます"
 msgid "Key already associated with an existing wallet"
 msgstr "この鍵は既存のウォレットにて登録されています"
 
-#: www/views/preferencesLanguage.html:4
-#: www/views/tab-settings.html:53
+#: www/views/preferencesLanguage.html:4 www/views/tab-settings.html:53
 msgid "Language"
 msgstr "言語設定"
 
@@ -1399,8 +1302,7 @@ msgstr "言語設定"
 msgid "Last Month"
 msgstr "先月"
 
-#: www/views/bitpayCard.html:56
-#: www/views/bitpayCard.html:60
+#: www/views/bitpayCard.html:56 www/views/bitpayCard.html:60
 #: www/views/bitpayCard.html:64
 msgid "Learn More"
 msgstr ""
@@ -1409,8 +1311,7 @@ msgstr ""
 msgid "Let's verify your backup phrase."
 msgstr "復元フレーズを確認しましょう。"
 
-#: www/views/addresses.html:45
-#: www/views/allAddresses.html:14
+#: www/views/addresses.html:45 www/views/allAddresses.html:14
 msgid "Loading addresses..."
 msgstr "アドレスを読み込んでいます..."
 
@@ -1462,8 +1363,7 @@ msgstr "わかりました"
 msgid "Matches:"
 msgstr "結果:"
 
-#: www/views/includes/copayers.html:4
-#: www/views/preferencesInformation.html:79
+#: www/views/includes/copayers.html:4 www/views/preferencesInformation.html:79
 msgid "Me"
 msgstr "自分"
 
@@ -1471,10 +1371,8 @@ msgstr "自分"
 msgid "Meh - it's alright"
 msgstr "まあまあです"
 
-#: src/js/controllers/tx-details.js:141
-#: www/views/modals/paypro.html:48
-#: www/views/modals/txp-details.html:95
-#: www/views/tx-details.html:74
+#: src/js/controllers/tx-details.js:141 www/views/modals/paypro.html:48
+#: www/views/modals/txp-details.html:95 www/views/tx-details.html:74
 msgid "Memo"
 msgstr "メモ"
 
@@ -1494,13 +1392,11 @@ msgstr "不足しているパラメータ"
 msgid "Missing private keys to sign"
 msgstr "署名するための秘密鍵がありません。"
 
-#: www/views/preferences.html:65
-#: www/views/preferencesAdvanced.html:3
+#: www/views/preferences.html:65 www/views/preferencesAdvanced.html:3
 msgid "More Options"
 msgstr "その他オプション"
 
-#: www/views/includes/walletHistory.html:42
-#: www/views/tx-details.html:19
+#: www/views/includes/walletHistory.html:42 www/views/tx-details.html:19
 msgid "Moved"
 msgstr "移動済"
 
@@ -1516,10 +1412,8 @@ msgstr "複数送金先"
 msgid "NOTE: To import a wallet from a 3rd party software, please go to Add Wallet &gt; Create Wallet, and specify the Recovery Phrase there."
 msgstr "注意：他アプリのウォレットをインポートする場合、ウォレットを追加 &gt; 新規ウォレット作成にて復元フレーズを指定するオプションを詳細設定にて有効にして下さい。"
 
-#: www/views/addressbook.add.html:21
-#: www/views/addressbook.view.html:18
-#: www/views/preferences.html:15
-#: www/views/preferencesAlias.html:17
+#: www/views/addressbook.add.html:21 www/views/addressbook.view.html:18
+#: www/views/preferences.html:15 www/views/preferencesAlias.html:17
 msgid "Name"
 msgstr "名前"
 
@@ -1609,14 +1503,13 @@ msgstr "手数料含めたら残高が不足しています。"
 
 #: www/views/onboarding/tour.html:50
 msgid "Not even BitPay can access it."
-msgstr "BitPayは管理できない。"
+msgstr "Company0は管理できない。"
 
 #: src/js/controllers/paperWallet.js:47
 msgid "Not funds found"
 msgstr "残高がありませんでした"
 
-#: www/views/feedback/rateApp.html:3
-#: www/views/onboarding/notifications.html:8
+#: www/views/feedback/rateApp.html:3 www/views/onboarding/notifications.html:8
 msgid "Not now"
 msgstr "今はしない"
 
@@ -1628,8 +1521,7 @@ msgstr "メモ"
 msgid "Notice: only 1-1 (single signature) wallets can be used for sell bitcoin"
 msgstr "注意： ビットコインの売却は 1-of-1 (単一署名) のウォレットからしか行えません。"
 
-#: www/views/preferencesNotifications.html:3
-#: www/views/tab-settings.html:46
+#: www/views/preferencesNotifications.html:3 www/views/tab-settings.html:46
 msgid "Notifications"
 msgstr "通知設定"
 
@@ -1649,15 +1541,12 @@ msgstr "お金を受け取る前に、このウォレットのバックアップ
 msgid "Now is a perfect time to assess your surroundings. Nearby windows? Hidden cameras? Shoulder-spies?"
 msgstr "今一度周りの環境をよく見てみましょう。隠しカメラ、窓、覗いてくる人などありませんか？"
 
-#: src/js/services/popupService.js:15
-#: src/js/services/popupService.js:58
+#: src/js/services/popupService.js:15 src/js/services/popupService.js:58
 msgid "OK"
 msgstr "OK"
 
-#: www/views/modals/tx-status.html:12
-#: www/views/modals/tx-status.html:24
-#: www/views/modals/tx-status.html:36
-#: www/views/modals/tx-status.html:46
+#: www/views/modals/tx-status.html:12 www/views/modals/tx-status.html:24
+#: www/views/modals/tx-status.html:36 www/views/modals/tx-status.html:46
 msgid "OKAY"
 msgstr "OK"
 
@@ -1673,8 +1562,7 @@ msgstr "おっと!"
 msgid "On this screen you can see all your wallets, accounts, and assets."
 msgstr "この画面では、全てのウォレット、アカウント、資産が閲覧できます。"
 
-#: src/js/controllers/bitpayCard.js:170
-#: src/js/controllers/tab-settings.js:47
+#: src/js/controllers/bitpayCard.js:170 src/js/controllers/tab-settings.js:47
 msgid "Open"
 msgstr "開く"
 
@@ -1690,8 +1578,7 @@ msgstr "GitHubを開く"
 msgid "Open GitHub Project"
 msgstr "GitHub のプロジェクトを開く"
 
-#: src/js/controllers/bitpayCard.js:180
-#: src/js/controllers/tx-details.js:168
+#: src/js/controllers/bitpayCard.js:180 src/js/controllers/tx-details.js:168
 msgid "Open Insight"
 msgstr "Insightを開く"
 
@@ -1713,16 +1600,12 @@ msgstr "ウォレットを開く"
 
 #: www/views/bitpayCardIntro.html:34
 msgid "Order the BitPay Card"
-msgstr "BitPay カードを申し込み"
+msgstr "Company0 カードを申し込み"
 
-#: www/views/join.html:102
-#: www/views/join.html:93
-#: www/views/tab-create-personal.html:67
-#: www/views/tab-create-personal.html:75
-#: www/views/tab-create-shared.html:104
-#: www/views/tab-create-shared.html:96
-#: www/views/tab-import-file.html:18
-#: www/views/tab-import-phrase.html:38
+#: www/views/join.html:102 www/views/join.html:93
+#: www/views/tab-create-personal.html:67 www/views/tab-create-personal.html:75
+#: www/views/tab-create-shared.html:104 www/views/tab-create-shared.html:96
+#: www/views/tab-import-file.html:18 www/views/tab-import-phrase.html:38
 msgid "Password"
 msgstr "パスワード"
 
@@ -1778,15 +1661,12 @@ msgstr "クロームのアプリではペイメントプロトコールがサポ
 msgid "Payment Received"
 msgstr "送金が受領されました"
 
-#: www/views/modals/tx-status.html:43
-#: www/views/modals/txp-details.html:43
+#: www/views/modals/tx-status.html:43 www/views/modals/txp-details.html:43
 msgid "Payment Rejected"
 msgstr "送金が却下されました"
 
-#: www/views/confirm.html:126
-#: www/views/includes/walletActivity.html:11
-#: www/views/modals/txp-details.html:187
-#: www/views/modals/txp-details.html:42
+#: www/views/confirm.html:126 www/views/includes/walletActivity.html:11
+#: www/views/modals/txp-details.html:187 www/views/modals/txp-details.html:42
 msgid "Payment Sent"
 msgstr "送金が完了しました"
 
@@ -1834,8 +1714,7 @@ msgstr "始めるためにカメラを接続して下さい。"
 msgid "Please enter the recovery phrase"
 msgstr "復元フレーズをご入力下さい"
 
-#: src/js/controllers/create.js:168
-#: src/js/controllers/join.js:134
+#: src/js/controllers/create.js:168 src/js/controllers/join.js:134
 msgid "Please enter the wallet recovery phrase"
 msgstr "復元フレーズをご入力下さい"
 
@@ -1892,8 +1771,7 @@ msgid "Proposal Accepted"
 msgstr "提案が承諾されました"
 
 #: src/js/controllers/modals/txpDetails.js:51
-#: src/js/controllers/tx-details.js:65
-#: www/views/confirm.html:127
+#: src/js/controllers/tx-details.js:65 www/views/confirm.html:127
 msgid "Proposal Created"
 msgstr "提案が作成されました"
 
@@ -1925,8 +1803,7 @@ msgstr "QRコード"
 msgid "Quick review!"
 msgstr "おさらい！"
 
-#: src/js/controllers/create.js:79
-#: src/js/controllers/join.js:64
+#: src/js/controllers/create.js:79 src/js/controllers/join.js:64
 msgid "Random"
 msgstr "乱数"
 
@@ -1942,13 +1819,11 @@ msgstr "非表示にする"
 msgid "Read more"
 msgstr "もっと読む"
 
-#: www/views/tab-receive.html:3
-#: www/views/tabs.html:7
+#: www/views/tab-receive.html:3 www/views/tabs.html:7
 msgid "Receive"
 msgstr "受取"
 
-#: www/views/includes/walletHistory.html:24
-#: www/views/tx-details.html:18
+#: www/views/includes/walletHistory.html:24 www/views/tx-details.html:18
 msgid "Received"
 msgstr "受取済み"
 
@@ -1956,13 +1831,11 @@ msgstr "受取済み"
 msgid "Received Funds"
 msgstr "受領した資金"
 
-#: www/views/includes/walletHistory.html:52
-#: www/views/tx-details.html:24
+#: www/views/includes/walletHistory.html:52 www/views/tx-details.html:24
 msgid "Receiving"
 msgstr "受け取り中"
 
-#: www/views/bitpayCard.html:72
-#: www/views/includes/walletHistory.html:3
+#: www/views/bitpayCard.html:72 www/views/includes/walletHistory.html:3
 msgid "Recent"
 msgstr "履歴"
 
@@ -1970,13 +1843,11 @@ msgstr "履歴"
 msgid "Recent Transaction Card"
 msgstr "最近の取引カード"
 
-#: www/views/activity.html:4
-#: www/views/tab-home.html:57
+#: www/views/activity.html:4 www/views/tab-home.html:57
 msgid "Recent Transactions"
 msgstr "最近の取引"
 
-#: www/views/amount.html:18
-#: www/views/tab-send.html:8
+#: www/views/amount.html:18 www/views/tab-send.html:8
 msgid "Recipient"
 msgstr "受取人"
 
@@ -1988,8 +1859,7 @@ msgstr "受取人"
 msgid "Recovery phrase"
 msgstr "復元フレーズ"
 
-#: www/views/walletDetails.html:117
-#: www/views/walletDetails.html:36
+#: www/views/walletDetails.html:117 www/views/walletDetails.html:36
 msgid "Recreate"
 msgstr "再登録"
 
@@ -2016,22 +1886,19 @@ msgstr ""
 
 #: src/js/controllers/preferencesBitpayServices.js:7
 msgid "Remove BitPay Account?"
-msgstr "BitPay アカウントの接続を解除しますか？"
+msgstr "Company0 アカウントの接続を解除しますか？"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
 msgid "Remove BitPay Card?"
-msgstr "BitPay カードを削除しますか？"
+msgstr "Company0 カードを削除しますか？"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
 msgid "Removing your BitPay account will remove all associated BitPay account data from this device. Are you sure you would like to remove your BitPay Account ({{email}}) from this device?"
-msgstr "BitPay アカウントを削除すると、このデバイスからすべての関連付けられている BitPay のアカウントデータが削除されます。本当にこのデバイスから BitPay アカウント ({{email}}) を削除してもよろしいですか。"
+msgstr "Company0 アカウントを削除すると、このデバイスからすべての関連付けられている Company0 のアカウントデータが削除されます。本当にこのデバイスから Company0 アカウント ({{email}}) を削除してもよろしいですか。"
 
-#: www/views/join.html:113
-#: www/views/join.html:121
-#: www/views/tab-create-personal.html:84
-#: www/views/tab-create-personal.html:92
-#: www/views/tab-create-shared.html:113
-#: www/views/tab-create-shared.html:121
+#: www/views/join.html:113 www/views/join.html:121
+#: www/views/tab-create-personal.html:84 www/views/tab-create-personal.html:92
+#: www/views/tab-create-shared.html:113 www/views/tab-create-shared.html:121
 #: www/views/tab-export-file.html:17
 msgid "Repeat password"
 msgstr "パスワードを再入力"
@@ -2072,17 +1939,14 @@ msgstr "やり直し"
 msgid "Retry Camera"
 msgstr "カメラを再試行"
 
-#: www/views/addressbook.add.html:56
-#: www/views/includes/note.html:9
-#: www/views/modals/chooseFeeLevel.html:31
-#: www/views/preferencesAlias.html:21
+#: www/views/addressbook.add.html:56 www/views/includes/note.html:9
+#: www/views/modals/chooseFeeLevel.html:31 www/views/preferencesAlias.html:21
 #: www/views/preferencesBwsUrl.html:25
 #: www/views/preferencesNotifications.html:40
 msgid "Save"
 msgstr "保存"
 
-#: www/views/tab-scan.html:3
-#: www/views/tabs.html:11
+#: www/views/tab-scan.html:3 www/views/tabs.html:11
 msgid "Scan"
 msgstr "スキャン"
 
@@ -2130,8 +1994,7 @@ msgstr "セキュリティ"
 msgid "Select a backup file"
 msgstr "バックアップファイルを選択"
 
-#: src/js/controllers/tab-receive.js:133
-#: www/views/paymentUri.html:30
+#: src/js/controllers/tab-receive.js:133 www/views/paymentUri.html:30
 msgid "Select a wallet"
 msgstr "ウォレットを選択"
 
@@ -2143,15 +2006,12 @@ msgstr "自己署名証明書"
 msgid "Selling Bitcoin..."
 msgstr "ビットコインを売却中..."
 
-#: www/views/feedback/send.html:13
-#: www/views/feedback/send.html:43
-#: www/views/tab-send.html:3
-#: www/views/tabs.html:15
+#: www/views/feedback/send.html:13 www/views/feedback/send.html:43
+#: www/views/tab-send.html:3 www/views/tabs.html:15
 msgid "Send"
 msgstr "送信"
 
-#: www/views/feedback/send.html:3
-#: www/views/tab-settings.html:29
+#: www/views/feedback/send.html:3 www/views/tab-settings.html:29
 msgid "Send Feedback"
 msgstr "フィードバックの送信"
 
@@ -2163,8 +2023,7 @@ msgstr "送金する"
 msgid "Send addresses by email"
 msgstr "ビットコインアドレスをメールにて共有"
 
-#: www/views/preferencesLogs.html:13
-#: www/views/tab-export-file.html:82
+#: www/views/preferencesLogs.html:13 www/views/tab-export-file.html:82
 msgid "Send by email"
 msgstr "メールで送信"
 
@@ -2180,10 +2039,8 @@ msgstr "全残高を送金"
 msgid "Send us feedback instead"
 msgstr "代わりにフィードバックを送信"
 
-#: www/views/confirm.html:15
-#: www/views/includes/txp.html:12
-#: www/views/modals/txp-details.html:19
-#: www/views/tx-details.html:23
+#: www/views/confirm.html:15 www/views/includes/txp.html:12
+#: www/views/modals/txp-details.html:19 www/views/tx-details.html:23
 msgid "Sending"
 msgstr "送信中"
 
@@ -2207,8 +2064,7 @@ msgstr "取引送信中"
 msgid "Sending {{amountStr}} from your {{name}} wallet"
 msgstr "ウォレット {{name}} から {{amountStr}} の送金を行います。"
 
-#: www/views/includes/walletHistory.html:37
-#: www/views/modals/tx-status.html:9
+#: www/views/includes/walletHistory.html:37 www/views/modals/tx-status.html:9
 #: www/views/tx-details.html:17
 msgid "Sent"
 msgstr "送金済み"
@@ -2237,24 +2093,22 @@ msgstr "セッションのログ"
 msgid "Set up a password"
 msgstr "パスワードを設定"
 
-#: www/views/tab-settings.html:3
-#: www/views/tabs.html:19
+#: www/views/tab-settings.html:3 www/views/tabs.html:19
 msgid "Settings"
 msgstr "設定"
 
-#: www/views/feedback/complete.html:17
-#: www/views/feedback/complete.html:26
+#: www/views/feedback/complete.html:17 www/views/feedback/complete.html:26
 msgid "Share the love by inviting your friends."
 msgstr "是非友達と共有して下さい"
 
 #: www/views/copayers.html:21
 msgid "Share this invitation with your copayers"
-msgstr "ウォレット参加者に\n"
+msgstr ""
+"ウォレット参加者に\n"
 "この招待コードを\n"
 "送って下さい。"
 
-#: src/js/controllers/feedback/complete.js:5
-#: www/views/tab-settings.html:36
+#: src/js/controllers/feedback/complete.js:5 www/views/tab-settings.html:36
 msgid "Share {{appName}}"
 msgstr "{{appName}}を共有"
 
@@ -2270,12 +2124,9 @@ msgstr "復元フレーズを表示"
 msgid "Show address"
 msgstr "アドレスを表示"
 
-#: www/views/join.html:45
-#: www/views/tab-create-personal.html:25
-#: www/views/tab-create-shared.html:54
-#: www/views/tab-export-file.html:24
-#: www/views/tab-import-file.html:27
-#: www/views/tab-import-hardware.html:30
+#: www/views/join.html:45 www/views/tab-create-personal.html:25
+#: www/views/tab-create-shared.html:54 www/views/tab-export-file.html:24
+#: www/views/tab-import-file.html:27 www/views/tab-import-hardware.html:30
 #: www/views/tab-import-phrase.html:32
 msgid "Show advanced options"
 msgstr "詳細設定を表示"
@@ -2300,23 +2151,19 @@ msgstr "取引署名中"
 msgid "Since only you control your money, you’ll need to save your backup phrase in case this app is deleted."
 msgstr "ビットコインの管理は全てご自身でしていただくため、端末やアプリの不具合や削除に備えるために復元フレーズを書き留めていただきます。"
 
-#: www/views/tab-create-personal.html:120
-#: www/views/tab-create-shared.html:149
+#: www/views/tab-create-personal.html:120 www/views/tab-create-shared.html:149
 msgid "Single Address Wallet"
 msgstr "単一アドレスウォレット"
 
-#: www/views/onboarding/collectEmail.html:40
-#: www/views/onboarding/tour.html:11
+#: www/views/onboarding/collectEmail.html:40 www/views/onboarding/tour.html:11
 msgid "Skip"
 msgstr "スキップ"
 
-#: src/js/controllers/confirm.js:66
-#: src/js/controllers/modals/txpDetails.js:25
+#: src/js/controllers/confirm.js:66 src/js/controllers/modals/txpDetails.js:25
 msgid "Slide"
 msgstr "スライドして"
 
-#: src/js/controllers/create.js:83
-#: src/js/controllers/join.js:67
+#: src/js/controllers/create.js:83 src/js/controllers/join.js:67
 msgid "Specify Recovery Phrase..."
 msgstr "復元フレーズを指定…"
 
@@ -2368,13 +2215,11 @@ msgstr "＊＊＊注意＊＊＊ このアクションを元に戻すことは�
 msgid "Take control of your money,<br>get started with bitcoin."
 msgstr "お金のコントロールを取り戻そう、<br>ビットコインをはじめよう"
 
-#: www/views/walletDetails.html:140
-#: www/views/walletDetails.html:60
+#: www/views/walletDetails.html:140 www/views/walletDetails.html:60
 msgid "Tap and hold to show"
 msgstr "長押しで表示"
 
-#: www/views/walletDetails.html:112
-#: www/views/walletDetails.html:31
+#: www/views/walletDetails.html:112 www/views/walletDetails.html:31
 msgid "Tap to retry"
 msgstr "タップしてやり直し"
 
@@ -2382,21 +2227,17 @@ msgstr "タップしてやり直し"
 msgid "Terms Of Use"
 msgstr "利用規約"
 
-#: www/views/modals/terms.html:3
-#: www/views/onboarding/disclaimer.html:29
-#: www/views/onboarding/disclaimer.html:43
-#: www/views/preferencesAbout.html:30
+#: www/views/modals/terms.html:3 www/views/onboarding/disclaimer.html:29
+#: www/views/onboarding/disclaimer.html:43 www/views/preferencesAbout.html:30
 msgid "Terms of Use"
 msgstr "利用規約"
 
-#: www/views/tab-create-personal.html:116
-#: www/views/tab-import-phrase.html:58
+#: www/views/tab-create-personal.html:116 www/views/tab-import-phrase.html:58
 msgid "Testnet"
 msgstr "テスト用ネットワーク"
 
 #: src/js/controllers/feedback/send.js:27
-#: src/js/controllers/feedback/send.js:76
-#: www/views/feedback/complete.html:20
+#: src/js/controllers/feedback/send.js:76 www/views/feedback/complete.html:20
 #: www/views/feedback/rateApp.html:4
 msgid "Thank you!"
 msgstr "ありがとうございます!"
@@ -2443,7 +2284,7 @@ msgstr "連続未使用アドレスの上限(20)に達しました。どれか�
 
 #: src/js/controllers/onboarding/terms.js:21
 msgid "The official English Terms of Service are available on the BitPay website."
-msgstr "英語公式の規約は BitPay のウェブサイトにてご覧いただけます。"
+msgstr "英語公式の規約は Company0 のウェブサイトにてご覧いただけます。"
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -2457,12 +2298,11 @@ msgstr "送金の提案は作成されましたが完了できませんでした
 msgid "The payment was removed by creator"
 msgstr "送金の提案が作成者により削除されました"
 
-#: www/views/join.html:88
-#: www/views/tab-create-personal.html:61
-#: www/views/tab-create-shared.html:90
-#: www/views/tab-import-phrase.html:40
+#: www/views/join.html:88 www/views/tab-create-personal.html:61
+#: www/views/tab-create-shared.html:90 www/views/tab-import-phrase.html:40
 msgid "The recovery phrase could require a password to be imported"
-msgstr "復元フレーズにパスワードをかけることが\n"
+msgstr ""
+"復元フレーズにパスワードをかけることが\n"
 "できるのでかけてある場合は\n"
 "インポート時に必要です。"
 
@@ -2498,8 +2338,7 @@ msgstr "送金可能なウォレットがありません"
 msgid "There is a new version of {{appName}} available"
 msgstr "{{appName}} の新しいバージョンがあります。"
 
-#: src/js/controllers/import.js:196
-#: src/js/controllers/import.js:220
+#: src/js/controllers/import.js:196 src/js/controllers/import.js:220
 #: src/js/controllers/import.js:288
 msgid "There is an error in the form"
 msgstr "フォームにエラーがありました"
@@ -2521,8 +2360,7 @@ msgstr "このアプリは、最先端のセキュリティであなたのビッ
 msgid "This bitcoin payment request has expired."
 msgstr "ビットコインペイメントの請求期限が切れています。"
 
-#: www/views/join.html:130
-#: www/views/tab-create-personal.html:101
+#: www/views/join.html:130 www/views/tab-create-personal.html:101
 #: www/views/tab-create-shared.html:130
 msgid "This password cannot be recovered. If the password is lost, there is no way you could recover your funds."
 msgstr "このパスワードは復元できません。リセットすることができません。弊社のサーバーで管理するものではありません。復元フレーズとセットで必ず書き留めておいて下さい。復元フレーズとこのパスワードのどれかを忘れてしまうと、ビットコインを復元することができません。ご注意下さい。"
@@ -2535,22 +2373,17 @@ msgstr "この復元フレーズにパスワードがかかっています。こ
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender"
 msgstr "この取引は承認されるまで非常に時間のかかる可能性があります。承認されずにネットワークに捨てられてしまう危険性もありますので、承認されるまでお待ちいただくことを強くおすすめします。"
 
-#: www/views/walletDetails.html:116
-#: www/views/walletDetails.html:35
+#: www/views/walletDetails.html:116 www/views/walletDetails.html:35
 msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
 msgstr "現在設定中のBitcore Wallet Service (BWS) サーバーにて、このウォレットの登録がありません。再登録を行うこともできます。"
 
-#: www/views/modals/txp-details.html:137
-#: www/views/tx-details.html:113
+#: www/views/modals/txp-details.html:137 www/views/tx-details.html:113
 msgid "Timeline"
 msgstr "履歴"
 
-#: www/views/confirm.html:31
-#: www/views/includes/output.html:2
-#: www/views/modals/txp-details.html:110
-#: www/views/modals/txp-details.html:53
-#: www/views/tx-details.html:41
-#: www/views/tx-details.html:53
+#: www/views/confirm.html:31 www/views/includes/output.html:2
+#: www/views/modals/txp-details.html:110 www/views/modals/txp-details.html:53
+#: www/views/tx-details.html:41 www/views/tx-details.html:53
 msgid "To"
 msgstr "宛先"
 
@@ -2583,8 +2416,7 @@ msgstr "Touch ID が失敗しました。"
 msgid "Transaction"
 msgstr "取引"
 
-#: www/views/preferencesAdvanced.html:29
-#: www/views/preferencesHistory.html:3
+#: www/views/preferencesAdvanced.html:29 www/views/preferencesHistory.html:3
 msgid "Transaction History"
 msgstr "取引履歴"
 
@@ -2600,8 +2432,7 @@ msgstr "取引情報を作成しました"
 msgid "Transaction not available at this time"
 msgstr "現在この取引はご覧いただけません。"
 
-#: src/js/controllers/activity.js:45
-#: src/js/controllers/tab-home.js:170
+#: src/js/controllers/activity.js:45 src/js/controllers/tab-home.js:170
 msgid "Transaction not found"
 msgstr "取引は見つかりません"
 
@@ -2623,7 +2454,7 @@ msgstr "瞬時にビットコインを米ドルに変換！Visa<sup>&reg;</sup>�
 
 #: www/views/tab-import-phrase.html:17
 msgid "Type the Recovery Phrase (usually 12 words)"
-msgstr "復元フレーズの単語 (通常 12 個) を入力して下さい。"
+msgstr "復元フレーズの単語 (通常 33 個) を入力して下さい。"
 
 #: src/js/controllers/backup.js:75
 msgid "Uh oh..."
@@ -2677,8 +2508,7 @@ msgstr "未承認ビットコインを使用"
 msgid "Validating recovery phrase..."
 msgstr "復元フレーズを検証中…"
 
-#: www/views/preferencesAbout.html:14
-#: www/views/preferencesExternal.html:25
+#: www/views/preferencesAbout.html:14 www/views/preferencesExternal.html:25
 msgid "Version"
 msgstr "バージョン"
 
@@ -2694,8 +2524,7 @@ msgstr "全アドレスを表示"
 msgid "View Terms of Service"
 msgstr "サービス利用規約を表示"
 
-#: src/js/controllers/bitpayCard.js:179
-#: src/js/controllers/tx-details.js:167
+#: src/js/controllers/bitpayCard.js:179 src/js/controllers/tx-details.js:167
 msgid "View Transaction on Insight"
 msgstr "Insightにて取引を表示"
 
@@ -2739,8 +2568,7 @@ msgstr "ウォレット参加者を待っています"
 msgid "Waiting..."
 msgstr "少々お待ち下さい…"
 
-#: www/views/addresses.html:3
-#: www/views/preferencesAdvanced.html:17
+#: www/views/addresses.html:3 www/views/preferencesAdvanced.html:17
 msgid "Wallet Addresses"
 msgstr "ウォレットのアドレス"
 
@@ -2769,8 +2597,7 @@ msgstr "ウォレット詳細"
 msgid "Wallet Invitation"
 msgstr "ウォレット招待"
 
-#: www/views/join.html:57
-#: www/views/tab-create-personal.html:36
+#: www/views/join.html:57 www/views/tab-create-personal.html:36
 #: www/views/tab-create-shared.html:65
 msgid "Wallet Key"
 msgstr "ウォレットの鍵"
@@ -2787,8 +2614,7 @@ msgstr "ウォレット名 (作成時)"
 msgid "Wallet Network"
 msgstr "ウォレットのネットワーク"
 
-#: www/views/join.html:74
-#: www/views/tab-create-personal.html:48
+#: www/views/join.html:74 www/views/tab-create-personal.html:48
 #: www/views/tab-create-shared.html:77
 msgid "Wallet Recovery Phrase"
 msgstr "復元フレーズ"
@@ -2797,8 +2623,7 @@ msgstr "復元フレーズ"
 msgid "Wallet Recovery Phrase is invalid"
 msgstr "ウォレットシードが不正です。"
 
-#: www/views/preferencesAdvanced.html:25
-#: www/views/tab-import-phrase.html:53
+#: www/views/preferencesAdvanced.html:25 www/views/tab-import-phrase.html:53
 msgid "Wallet Service URL"
 msgstr "ウォレットサービスのURL"
 
@@ -2838,8 +2663,7 @@ msgstr "ウォレットがロックされています。"
 msgid "Wallet is not complete"
 msgstr "ウォレットが未完成です。"
 
-#: www/views/tab-create-personal.html:12
-#: www/views/tab-create-shared.html:12
+#: www/views/tab-create-personal.html:12 www/views/tab-create-shared.html:12
 msgid "Wallet name"
 msgstr "ウォレット名"
 
@@ -2847,8 +2671,7 @@ msgstr "ウォレット名"
 msgid "Wallet needs backup"
 msgstr "ウォレットバックアップが必要"
 
-#: www/views/tab-receive.html:59
-#: www/views/walletDetails.html:157
+#: www/views/tab-receive.html:59 www/views/walletDetails.html:157
 msgid "Wallet not backed up"
 msgstr "ウォレットがバックアップされていません"
 
@@ -3021,8 +2844,7 @@ msgstr "自分の名前"
 msgid "Your nickname"
 msgstr "自分のハンドルネーム"
 
-#: www/views/tab-export-file.html:11
-#: www/views/tab-import-file.html:20
+#: www/views/tab-export-file.html:11 www/views/tab-import-file.html:20
 msgid "Your password"
 msgstr "パスワード"
 
@@ -3034,18 +2856,15 @@ msgstr "ウォレットは一度もクラウドへ保存されたりすること
 msgid "Your wallet key will be encrypted. The Spending Password cannot be recovered. Be sure to write it down."
 msgstr "ウォレットの鍵が暗号化されます。Copayでは送金時のパスワードをリセットしてくれる機能がありませんので、パスワードを忘れないよう、控えておいて下さい。"
 
-#: www/views/includes/walletSelector.html:23
-#: www/views/paperWallet.html:35
-#: www/views/tab-home.html:95
-#: www/views/tab-receive.html:74
-#: www/views/walletDetails.html:139
-#: www/views/walletDetails.html:59
+#: www/views/includes/walletSelector.html:23 www/views/paperWallet.html:35
+#: www/views/tab-home.html:95 www/views/tab-receive.html:74
+#: www/views/walletDetails.html:139 www/views/walletDetails.html:59
 msgid "[Balance Hidden]"
 msgstr "[残高非表示中]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
 msgid "add your BitPay Visa card(s)"
-msgstr "BitPay VISAカードを追加します"
+msgstr "Company0 VISAカードを追加します"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3063,8 +2882,7 @@ msgstr "name@example.com"
 msgid "preparing..."
 msgstr "準備中..."
 
-#: src/js/controllers/confirm.js:71
-#: src/js/controllers/modals/txpDetails.js:34
+#: src/js/controllers/confirm.js:71 src/js/controllers/modals/txpDetails.js:34
 msgid "to accept"
 msgstr "承諾する"
 
@@ -3072,14 +2890,13 @@ msgstr "承諾する"
 msgid "to pay"
 msgstr "支払う"
 
-#: src/js/controllers/confirm.js:73
-#: src/js/controllers/modals/txpDetails.js:32
+#: src/js/controllers/confirm.js:73 src/js/controllers/modals/txpDetails.js:32
 msgid "to send"
 msgstr "送金する"
 
 #: www/views/preferencesBwsUrl.html:21
 msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
-msgstr "{{appName}}はブロックチェーンの情報を取得したり参加者を同期させたりするためにBitcore Wallet Service (BWS)に依存します。初期値としてBitPay社が提供する https://bws.bitpay.com (BitPay公式のBWSサーバー)を設定していますが、独自で運用してウォレットをそちらに接続しても構いません。"
+msgstr "{{appName}}はブロックチェーンの情報を取得したり参加者を同期させたりするためにBitcore Wallet Service (BWS)に依存します。初期値としてCompany0社が提供する https://bws.bitpay.com (Company0公式のBWSサーバー)を設定していますが、独自で運用してウォレットをそちらに接続しても構いません。"
 
 #: src/js/controllers/confirm.js:211
 msgid "{{fee}} will be deducted for bitcoin networking fees."
@@ -3089,8 +2906,6 @@ msgstr "{{fee}} のビットコインネットワーク手数料が差し引か�
 msgid "{{updatingTxHistoryProgress}} transactions downloaded"
 msgstr "{{updatingTxHistoryProgress}} 個の取引ダウンロード済み"
 
-#: www/views/copayers.html:47
-#: www/views/includes/walletInfo.html:12
+#: www/views/copayers.html:47 www/views/includes/walletInfo.html:12
 msgid "{{wallet.m}}-of-{{wallet.n}}"
 msgstr "{{wallet.m}}-of-{{wallet.n}}"
-

@@ -49,7 +49,7 @@ angular.module('copayApp.services')
     function _requiresBackup(wallet) {
       if (wallet.isPrivKeyExternal()) return false;
       if (!wallet.credentials.mnemonic) return false;
-      if (wallet.credentials.network == 'testnet') return false;
+      if (wallet.credentials.network == 'dcrdtestnet') return false;
 
       return true;
     };
@@ -111,7 +111,7 @@ angular.module('copayApp.services')
 
         $log.debug('BWC Notification:', n);
 
-        if (n.type == "NewBlock" && n.data.network == "testnet") {
+        if (n.type == "NewBlock" && n.data.network == "dcrdtestnet") {
           throttledBwsEvent(n, wallet);
         } else newBwsEvent(n, wallet);
       });
@@ -318,7 +318,7 @@ angular.module('copayApp.services')
     var seedWallet = function(opts, cb) {
       opts = opts || {};
       var walletClient = bwcService.getClient(null, opts);
-      var network = opts.networkName || 'livenet';
+      var network = opts.networkName || 'dcrdlivenet';
 
       if (opts.mnemonic) {
         try {
@@ -681,7 +681,7 @@ angular.module('copayApp.services')
       var opts = {};
       opts.m = 1;
       opts.n = 1;
-      opts.networkName = 'livenet';
+      opts.networkName = 'dcrdlivenet';
       root.createWallet(opts, cb);
     };
 

@@ -1,0 +1,64 @@
+body #wallet-backup-phrase {
+  .password-prompt {
+    background-color: $v-subtle-gray;
+  }
+  background: $v-wallet-backup-bg;
+  text-align: center;
+  #wallet-backup-phrase-step-1 {
+    .backup-phrase {
+      border: 1px solid $v-wallet-backup-phrase-border;
+    }
+    .backup-phrase-content {
+      background: $v-wallet-backup-phrase-bg;
+      color: $v-wallet-backup-phrase-color;
+    }
+  }
+  #wallet-backup-phrase-step-2 {
+    background: none;
+    .backup-phrase  {
+      background: #ffffff;
+      border: 2px dashed #e2e2e2;
+      color: $v-wallet-backup-phrase-color;
+      .select-word {
+        background: #d4f0fd;
+        color: #0c1e3e;
+        box-shadow: none;
+        border-color: #69d5f7;
+        border-radius: 5px;
+      }
+    }
+    .backup-phrase-content {
+      border: none;
+      background: #ffffff;
+      color: $v-wallet-backup-phrase-color;
+    }
+    // fix for wallet restore UI issue
+    // https://github.com/decred/copay/issues/58
+    #select-phrase .select-word.button[disabled] {
+     display: none !important;
+   }
+  }
+  .select-phrase-content {
+    color: #0c1e3e;
+  }
+  &-step-2 {
+    #select-phrase {
+      background: $v-wallet-backup-select-phrase-color;
+      .select-word {
+        &.button[disabled] {
+          background: transparent !important;
+          box-shadow: none !important;
+          color: transparent;
+          border: 1px solid $v-wallet-backup-select-word-disabled-color;
+        }
+      }
+    }
+    .select-word {
+      background: $v-wallet-backup-select-word-bg;
+      color: $v-wallet-backup-select-word-color;
+      box-shadow: none;
+      border-color: $v-wallet-backup-select-word-border;
+      border-radius: 5px;
+    }
+  }
+}

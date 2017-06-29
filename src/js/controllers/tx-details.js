@@ -11,7 +11,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
     $scope.wallet = profileService.getWallet(data.stateParams.walletId);
     $scope.color = $scope.wallet.color;
     $scope.copayerId = $scope.wallet.credentials.copayerId;
-    $scope.isShared = $scope.wallet.credentials.n > 1; 
+    $scope.isShared = $scope.wallet.credentials.n > 1;
 
     txConfirmNotification.checkIfEnabled(txId, function(res) {
       $scope.txNotification = { value: res };
@@ -23,7 +23,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
 
     listeners = [
       $rootScope.$on('bwsEvent', function(e, walletId, type, n) {
-        if (type == 'NewBlock' && n && n.data && n.data.network == 'livenet') {
+        if (type == 'NewBlock' && n && n.data && n.data.network == 'dcrdlivenet') {
           updateTxDebounced({hideLoading: true});
         }
       })
@@ -130,7 +130,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
   };
 
   var updateTxDebounced = lodash.debounce(updateTx, 5000);
-  
+
   $scope.showCommentPopup = function() {
     var opts = {};
     if ($scope.btx.message) {
@@ -161,7 +161,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
 
   $scope.viewOnBlockchain = function() {
     var btx = $scope.btx;
-    var url = 'https://' + ($scope.getShortNetworkName() == 'test' ? 'test-' : '') + 'insight.bitpay.com/tx/' + btx.txid;
+    var url = 'https://' + ($scope.getShortNetworkName() == 'test' ? 'testnet.decred.org' : 'mainnet.decred.org') + '/tx/' + btx.txid;
     var optIn = true;
     var title = null;
     var message = gettextCatalog.getString('View Transaction on Insight');
@@ -172,7 +172,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
 
   $scope.getShortNetworkName = function() {
     var n = $scope.wallet.credentials.network;
-    return n.substring(0, 4);
+    return n.substring(4, 8);
   };
 
   var getFiatRate = function() {

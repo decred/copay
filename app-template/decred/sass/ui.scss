@@ -1,0 +1,71 @@
+
+// hide fee level selection in Preferences tab
+
+body {
+  [ui-sref="tabs.fee"],
+  [ui-sref="tabs.add.import"] {
+    display: none !important;
+  }
+}
+
+body #view-add .bg {
+  background: none;
+
+}
+body .big-icon-svg > .bg {
+  box-shadow: none;
+  background: none;
+  padding: 0 !important;
+}
+
+body {
+
+  #wallet-backup-phrase-step-2 .confirmation-prompt {
+    padding: 1.5rem;
+  }
+
+  #walletDetails {
+    background: #F8F8F9;
+
+    .bar-header .title,
+    .bar-header .button {
+      color: #2971FF;
+    }
+
+    .wallet-activity-amount,
+    .amount__balance,
+    .amount strong {
+      color: #0C1E3E !important;
+      font-family:'Inconsolata' !important;
+      font-weight: normal;
+    }
+
+    .scroll-refresher {
+      z-index: 1;
+      margin-top: 3.5rem;
+    }
+
+    .ionic-refresher-content {
+      color: #2971FF !important;
+
+      .spinner svg {
+        stroke: #2971FF;
+        fill: #2971FF;
+      }
+    }
+  }
+}
+
+body {
+  #tab-home .icon-create-wallet {
+    background: none;
+  }
+}
+
+body {
+  .search-wrapper.focus {
+    > .icon {
+      visibility: hidden;
+    }
+  }
+}

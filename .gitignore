@@ -107,3 +107,5 @@ www/index.html
 /GoogleService-Info.plist
 /google-services.json
 
+# release bundles
+/webwallet*.tar.gz

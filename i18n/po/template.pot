@@ -29,6 +29,10 @@ msgstr ""
 msgid "5-star ratings help us get {{appName}} into more hands, and more users means more resources can be committed to the app!"
 msgstr ""
 
+#: www/views/onboarding/tour.html:19
+msgid "A couple of things <br>to get you started"
+msgstr ""
+
 #: src/js/controllers/feedback/send.js:27
 #: www/views/feedback/complete.html:21
 msgid "A member of the team will review your feedback as soon as possible."
@@ -156,6 +160,16 @@ msgstr ""
 msgid "All of your bitcoin wallet balance may not be available for immediate spending."
 msgstr ""
 
+#: www/views/onboarding/tour.html:39
+msgid ""
+"All of your wallet data is kept in the local\n"
+"          storage of your browser.  For safest usage,\n"
+"          a web wallet should not be created on a\n"
+"          publicly accessible device.\n"
+"          It's possible  to delete your web wallet, even\n"
+"          unintentionally, by clearing the browser cache."
+msgstr ""
+
 #: www/views/tab-receive.html:25
 msgid "All signing devices must be added to this multisig wallet before bitcoin addresses can be created."
 msgstr ""
@@ -200,7 +214,7 @@ msgstr ""
 msgid "Anyone with your backup phrase can access or spend your bitcoin."
 msgstr ""
 
-#: www/views/backupWarning.html:10
+#: www/views/backupWarning.html:11
 msgid "Are you being watched?"
 msgstr ""
 
@@ -259,7 +273,7 @@ msgid "Average confirmation time"
 msgstr ""
 
 #: www/views/join.html:140
-#: www/views/tab-create-personal.html:111
+#: www/views/tab-create-personal.html:113
 #: www/views/tab-create-shared.html:140
 #: www/views/tab-import-phrase.html:48
 msgid "BIP32 path for address derivation"
@@ -329,16 +343,8 @@ msgstr ""
 msgid "Bitcoin Unit"
 msgstr ""
 
-#: www/views/onboarding/tour.html:31
-msgid "Bitcoin is a currency."
-msgstr ""
-
 #: www/views/onboarding/disclaimer.html:15
 msgid "Bitcoin is different &ndash; it cannot be safely held with a bank or web service."
-msgstr ""
-
-#: www/views/onboarding/tour.html:18
-msgid "Bitcoin is secure,<br>digital money."
 msgstr ""
 
 #: www/views/preferencesFee.html:11
@@ -479,7 +485,7 @@ msgstr ""
 msgid "Confirm your PIN"
 msgstr ""
 
-#: src/js/services/walletService.js:940
+#: src/js/services/walletService.js:942
 msgid "Confirm your new spending password"
 msgstr ""
 
@@ -522,6 +528,11 @@ msgstr ""
 
 #: www/views/onboarding/notifications.html:9
 msgid "Continue"
+msgstr ""
+
+#: www/views/onboarding/tour.html:28
+#: www/views/onboarding/tour.html:49
+msgid "Continue &raquo;"
 msgstr ""
 
 #: www/views/preferencesLanguage.html:26
@@ -583,7 +594,7 @@ msgstr ""
 msgid "Could not build transaction"
 msgstr ""
 
-#: src/js/services/walletService.js:838
+#: src/js/services/walletService.js:840
 msgid "Could not create address"
 msgstr ""
 
@@ -599,7 +610,7 @@ msgstr ""
 msgid "Could not create: Invalid wallet recovery phrase"
 msgstr ""
 
-#: src/js/controllers/import.js:83
+#: src/js/controllers/import.js:84
 msgid "Could not decrypt file, check your password"
 msgstr ""
 
@@ -646,7 +657,7 @@ msgstr ""
 msgid "Could not remove card"
 msgstr ""
 
-#: src/js/services/walletService.js:757
+#: src/js/services/walletService.js:759
 msgid "Could not save preferences on the server"
 msgstr ""
 
@@ -677,18 +688,21 @@ msgstr ""
 msgid "Create Shared Wallet"
 msgstr ""
 
-#: www/views/onboarding/tour.html:51
 #: www/views/tab-home.html:76
 #: www/views/tab-send.html:32
 msgid "Create bitcoin wallet"
 msgstr ""
 
-#: www/views/tab-create-personal.html:129
+#: www/views/tab-create-personal.html:131
 msgid "Create new wallet"
 msgstr ""
 
 #: www/views/add.html:22
 msgid "Create shared wallet"
+msgstr ""
+
+#: www/views/onboarding/tour.html:69
+msgid "Create wallet"
 msgstr ""
 
 #: www/views/tab-create-shared.html:158
@@ -826,8 +840,8 @@ msgstr ""
 msgid "Enter Amount"
 msgstr ""
 
-#: src/js/services/walletService.js:954
-#: src/js/services/walletService.js:969
+#: src/js/services/walletService.js:956
+#: src/js/services/walletService.js:971
 msgid "Enter Spending Password"
 msgstr ""
 
@@ -835,7 +849,7 @@ msgstr ""
 msgid "Enter Two Factor for your BitPay account"
 msgstr ""
 
-#: src/js/services/walletService.js:936
+#: src/js/services/walletService.js:938
 msgid "Enter new spending password"
 msgstr ""
 
@@ -880,24 +894,24 @@ msgstr ""
 #: src/js/controllers/export.js:47
 #: src/js/controllers/export.js:53
 #: src/js/controllers/feedback/send.js:23
-#: src/js/controllers/import.js:100
-#: src/js/controllers/import.js:118
-#: src/js/controllers/import.js:168
-#: src/js/controllers/import.js:196
-#: src/js/controllers/import.js:205
-#: src/js/controllers/import.js:220
-#: src/js/controllers/import.js:232
-#: src/js/controllers/import.js:243
-#: src/js/controllers/import.js:253
-#: src/js/controllers/import.js:266
-#: src/js/controllers/import.js:278
-#: src/js/controllers/import.js:288
-#: src/js/controllers/import.js:298
-#: src/js/controllers/import.js:322
-#: src/js/controllers/import.js:334
-#: src/js/controllers/import.js:54
-#: src/js/controllers/import.js:67
-#: src/js/controllers/import.js:88
+#: src/js/controllers/import.js:101
+#: src/js/controllers/import.js:119
+#: src/js/controllers/import.js:169
+#: src/js/controllers/import.js:197
+#: src/js/controllers/import.js:206
+#: src/js/controllers/import.js:221
+#: src/js/controllers/import.js:233
+#: src/js/controllers/import.js:244
+#: src/js/controllers/import.js:254
+#: src/js/controllers/import.js:267
+#: src/js/controllers/import.js:279
+#: src/js/controllers/import.js:289
+#: src/js/controllers/import.js:299
+#: src/js/controllers/import.js:323
+#: src/js/controllers/import.js:335
+#: src/js/controllers/import.js:55
+#: src/js/controllers/import.js:68
+#: src/js/controllers/import.js:89
 #: src/js/controllers/join.js:120
 #: src/js/controllers/join.js:134
 #: src/js/controllers/join.js:141
@@ -970,7 +984,7 @@ msgstr ""
 msgid "Export wallet"
 msgstr ""
 
-#: src/js/services/walletService.js:1081
+#: src/js/services/walletService.js:1083
 #: www/views/tab-export-qrCode.html:9
 msgid "Exporting via QR not supported for this wallet"
 msgstr ""
@@ -1032,7 +1046,7 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: www/views/tab-create-personal.html:121
+#: www/views/tab-create-personal.html:123
 #: www/views/tab-create-shared.html:150
 msgid "For audit purposes"
 msgstr ""
@@ -1088,7 +1102,7 @@ msgid "Get news and updates from BitPay"
 msgstr ""
 
 #: www/views/bitpayCard.html:49
-#: www/views/onboarding/welcome.html:8
+#: www/views/onboarding/welcome.html:10
 msgid "Get started"
 msgstr ""
 
@@ -1119,7 +1133,6 @@ msgstr ""
 
 #: www/views/backupWarning.html:15
 #: www/views/includes/confirmBackupPopup.html:8
-#: www/views/onboarding/tour.html:23
 msgid "Got it"
 msgstr ""
 
@@ -1293,7 +1306,7 @@ msgid "Incorrect address network"
 msgstr ""
 
 #. Trying to import a malformed wallet export QR code
-#: src/js/controllers/import.js:54
+#: src/js/controllers/import.js:55
 msgid "Incorrect code format"
 msgstr ""
 
@@ -1311,7 +1324,7 @@ msgid "Invalid"
 msgstr ""
 
 #: src/js/controllers/create.js:175
-#: src/js/controllers/import.js:298
+#: src/js/controllers/import.js:299
 #: src/js/controllers/join.js:141
 msgid "Invalid account number"
 msgstr ""
@@ -1325,7 +1338,7 @@ msgid "Invalid data"
 msgstr ""
 
 #: src/js/controllers/create.js:155
-#: src/js/controllers/import.js:232
+#: src/js/controllers/import.js:233
 #: src/js/controllers/join.js:120
 msgid "Invalid derivation path"
 msgstr ""
@@ -1371,10 +1384,6 @@ msgstr ""
 msgid "Joining Wallet..."
 msgstr ""
 
-#: www/views/onboarding/tour.html:22
-msgid "Just scan the code to pay."
-msgstr ""
-
 #: src/js/services/bwcError.js:116
 msgid "Key already associated with an existing wallet"
 msgstr ""
@@ -1405,6 +1414,10 @@ msgstr ""
 
 #: src/js/services/onGoingProcess.js:35
 msgid "Loading transaction info..."
+msgstr ""
+
+#: www/views/onboarding/tour.html:38
+msgid "Local and secure"
 msgstr ""
 
 #: www/views/tab-settings.html:95
@@ -1441,10 +1454,6 @@ msgstr ""
 
 #: www/views/paymentUri.html:13
 msgid "Make a payment to"
-msgstr ""
-
-#: www/views/onboarding/tour.html:38
-msgid "Makes sense"
 msgstr ""
 
 #: src/js/controllers/modals/search.js:61
@@ -1596,10 +1605,6 @@ msgstr ""
 msgid "Not enough funds for fee"
 msgstr ""
 
-#: www/views/onboarding/tour.html:50
-msgid "Not even BitPay can access it."
-msgstr ""
-
 #: src/js/controllers/paperWallet.js:47
 msgid "Not funds found"
 msgstr ""
@@ -1634,7 +1639,7 @@ msgstr ""
 msgid "Now is a good time to backup your wallet. If this device is lost, it is impossible to access your funds without a backup."
 msgstr ""
 
-#: www/views/backupWarning.html:11
+#: www/views/backupWarning.html:12
 msgid "Now is a perfect time to assess your surroundings. Nearby windows? Hidden cameras? Shoulder-spies?"
 msgstr ""
 
@@ -1715,7 +1720,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: src/js/controllers/import.js:67
+#: src/js/controllers/import.js:68
 msgid "Password required. Make sure to enter your password in advanced options"
 msgstr ""
 
@@ -1819,7 +1824,7 @@ msgstr ""
 msgid "Please connect a camera to get started."
 msgstr ""
 
-#: src/js/controllers/import.js:243
+#: src/js/controllers/import.js:244
 msgid "Please enter the recovery phrase"
 msgstr ""
 
@@ -1840,7 +1845,7 @@ msgstr ""
 msgid "Please upgrade Copay to perform this action"
 msgstr ""
 
-#: src/js/controllers/import.js:205
+#: src/js/controllers/import.js:206
 msgid "Please, select your backup file"
 msgstr ""
 
@@ -2045,7 +2050,7 @@ msgstr ""
 msgid "Required number of signatures"
 msgstr ""
 
-#: www/views/onboarding/welcome.html:9
+#: www/views/onboarding/welcome.html:11
 msgid "Restore from backup"
 msgstr ""
 
@@ -2287,7 +2292,7 @@ msgstr ""
 msgid "Since only you control your money, you’ll need to save your backup phrase in case this app is deleted."
 msgstr ""
 
-#: www/views/tab-create-personal.html:120
+#: www/views/tab-create-personal.html:122
 #: www/views/tab-create-shared.html:149
 msgid "Single Address Wallet"
 msgstr ""
@@ -2351,7 +2356,7 @@ msgstr ""
 msgid "THIS ACTION CANNOT BE REVERSED"
 msgstr ""
 
-#: www/views/onboarding/welcome.html:5
+#: www/views/onboarding/welcome.html:6
 msgid "Take control of your money,<br>get started with bitcoin."
 msgstr ""
 
@@ -2376,7 +2381,7 @@ msgstr ""
 msgid "Terms of Use"
 msgstr ""
 
-#: www/views/tab-create-personal.html:116
+#: www/views/tab-create-personal.html:118
 #: www/views/tab-import-phrase.html:58
 msgid "Testnet"
 msgstr ""
@@ -2416,12 +2421,12 @@ msgstr ""
 msgid "The derivation path"
 msgstr ""
 
-#: www/views/onboarding/tour.html:37
-msgid "The exchange rate changes with the market."
-msgstr ""
-
 #: www/views/preferencesFee.html:12
 msgid "The higher the fee, the greater the incentive a miner has to include that transaction in a block. Current fees are determined based on network load and the selected policy."
+msgstr ""
+
+#: www/views/onboarding/tour.html:58
+msgid "The key to your wallet"
 msgstr ""
 
 #: www/views/addresses.html:51
@@ -2436,7 +2441,7 @@ msgstr ""
 msgid "The password of the recovery phrase (if set)"
 msgstr ""
 
-#: src/js/services/walletService.js:1046
+#: src/js/services/walletService.js:1048
 msgid "The payment was created but could not be completed. Please try again from home screen"
 msgstr ""
 
@@ -2475,6 +2480,14 @@ msgstr ""
 msgid "The wallet service URL"
 msgstr ""
 
+#: www/views/onboarding/tour.html:20
+msgid ""
+"The web based wallet application is a quick way\n"
+"          to send and receive Decred.  To participate\n"
+"          in stake mining and voting, take a look at our\n"
+"          <a href=\"https://www.decred.org/downloads/\" target=\"_blank\">standalone wallets</a>."
+msgstr ""
+
 #: www/views/paymentUri.html:23
 msgid "There are no wallets to make this payment"
 msgstr ""
@@ -2483,9 +2496,9 @@ msgstr ""
 msgid "There is a new version of {{appName}} available"
 msgstr ""
 
-#: src/js/controllers/import.js:196
-#: src/js/controllers/import.js:220
-#: src/js/controllers/import.js:288
+#: src/js/controllers/import.js:197
+#: src/js/controllers/import.js:221
+#: src/js/controllers/import.js:289
 msgid "There is an error in the form"
 msgstr ""
 
@@ -2496,10 +2509,6 @@ msgstr ""
 
 #: src/js/controllers/feedback/rateCard.js:38
 msgid "This app is fantastic!"
-msgstr ""
-
-#: www/views/onboarding/tour.html:47
-msgid "This app stores your bitcoin with cutting-edge security."
 msgstr ""
 
 #: src/js/controllers/confirm.js:475
@@ -2926,7 +2935,7 @@ msgstr ""
 msgid "Would you like to receive push notifications about payments?"
 msgstr ""
 
-#: src/js/controllers/import.js:253
+#: src/js/controllers/import.js:254
 msgid "Wrong number of recovery words:"
 msgstr ""
 
@@ -2958,20 +2967,8 @@ msgstr ""
 msgid "You can see the latest developments and contribute to this open source app by visiting our project on GitHub."
 msgstr ""
 
-#: www/views/onboarding/tour.html:19
-msgid "You can spend bitcoin at millions of websites and stores worldwide."
-msgstr ""
-
 #: www/views/backup.html:12
 msgid "You can still export it from Advanced &gt; Export."
-msgstr ""
-
-#: www/views/onboarding/tour.html:32
-msgid "You can trade it for other currencies like US Dollars, Euros, or Pounds."
-msgstr ""
-
-#: www/views/onboarding/tour.html:46
-msgid "You control your bitcoin."
 msgstr ""
 
 #: www/views/modals/bitpay-card-confirmation.html:5
@@ -3011,11 +3008,21 @@ msgstr ""
 msgid "Your password"
 msgstr ""
 
+#: www/views/onboarding/tour.html:59
+msgid ""
+"Your seed phrase is an encrypted version of\n"
+"          your key. It's the only way to access your\n"
+"          wallet and funds. Keep it in a safe place to\n"
+"          prevent the loss of your funds.  The same key\n"
+"          can be used later to recreate your wallet in\n"
+"          other Decred clients."
+msgstr ""
+
 #: www/views/onboarding/backupRequest.html:10
 msgid "Your wallet is never saved to cloud storage or standard device backups."
 msgstr ""
 
-#: src/js/services/walletService.js:937
+#: src/js/services/walletService.js:939
 msgid "Your wallet key will be encrypted. The Spending Password cannot be recovered. Be sure to write it down."
 msgstr ""
 

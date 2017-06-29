@@ -8,7 +8,7 @@
       <div class="send-header-wrapper">
         <div class="item item-heading send-heading"><span translate>Recipient</span></div>
         <div class="item input search-wrapper" ng-class="{'focus': searchFocus}">
-          <i class="icon icon-svg abs-v-center"><img class="svg" src="img/icon-bitcoin-symbol.svg"></i>
+          <i class="icon icon-svg abs-v-center"><img class="svg" src="img/app/icon-decred-small.svg"  ></i>
           <div class="item-icon-right">
             <input type="text" class="search-input" placeholder="{{'Search or enter bitcoin address' | translate}}" ng-model="formData.search" ng-change="findContact(formData.search)" ng-model-onblur ng-focus="searchInFocus()" ng-blur="searchBlurred()">
             <i class="icon icon-svg qr abs-v-center separator-left" on-tap="openScanner()"><img src="img/scan-ico.svg"></i>
@@ -32,7 +32,7 @@
           <span ng-show="hasWallets" translate>To get started, buy bitcoin or share your address. You can receive bitcoin from any wallet or service.</span>
           <span ng-show="!hasWallets" translate>To get started, you'll need to create a bitcoin wallet and get some bitcoin.</span>
           <div class="padding">
-            <button class="button button-standard button-primary" ng-click="buyBitcoin()" ng-show="hasWallets" translate>Buy Bitcoin</button>
+            <!-- <button class="button button-standard button-primary" ng-click="buyBitcoin()" ng-show="hasWallets" translate>Buy Bitcoin</button> -->
             <button class="button button-standard button-primary" ng-click="createWallet()" ng-show="!hasWallets" translate>Create bitcoin wallet</button>
             <button class="button button-standard button-secondary" ui-sref="tabs.receive" ng-show="hasWallets" translate>Show bitcoin address</button>
           </div>
