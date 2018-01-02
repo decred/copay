@@ -1,0 +1,7 @@
+FROM httpd:alpine
+
+LABEL description="copay serve"
+LABEL version="1.0"
+LABEL maintainer "dhill@mindcry.org"
+
+COPY ./docker-build/ /usr/local/apache2/htdocs/
