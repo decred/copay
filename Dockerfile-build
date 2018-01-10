@@ -9,6 +9,6 @@ WORKDIR /root
 
 COPY ./ /root/
 
-RUN npm install
+RUN npm run apply:bitpay
 
-CMD npm build && chmod -R a+rw build
+CMD npm install && chmod -R a+rw build
