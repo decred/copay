@@ -1,0 +1,14 @@
+FROM node:6.11.3
+
+LABEL description="BWS (Decred fork)"
+LABEL version="1.0"
+LABEL maintainer "peter@prioritylane.com"
+
+USER root
+WORKDIR /root
+
+COPY ./ /root/
+
+RUN npm run apply:bitpay
+
+CMD npm install && chmod -R a+rw build
