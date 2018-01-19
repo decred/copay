@@ -11,5 +11,7 @@ RUN npm install -g git
 RUN mkdir /src
 COPY . /src
 
+WORKDIR /src
+
 # build copay
-CMD [ "./src/webwallet-build.sh" ]
+CMD [ "./webwallet-build.sh" ]
