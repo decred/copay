@@ -10,8 +10,9 @@ RUN npm install -g git
 # create work directory
 RUN mkdir /src
 COPY . /src
-
 WORKDIR /src
 
+RUN npm run apply:decred
+ 
 # build copay
 CMD [ "./webwallet-build.sh" ]
