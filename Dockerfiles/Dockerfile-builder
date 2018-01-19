@@ -1,37 +1,15 @@
 #copay-builder
-FROM centos:latest
+FROM node:7.10.0
 
 LABEL description="Copay builder image"
 LABEL version="3.6.0"
 LABEL maintainer "peter@froggle.org"
 
-ENV NODE_VERSION v7.10.0
-ENV TERM linux
-ENV USER build
-
-RUN yum install -y git
-
-RUN adduser $USER
+RUN npm install -g git
 
 # create work directory
 RUN mkdir /src
 COPY . /src
-RUN chown -R $USER /src
-
-# switch user
-USER $USER
-WORKDIR /home/$USER
-ENV HOME /home/$USER
-ENV NVM_DIR $HOME/.nvm
-
-# install & configure NodeJS
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash && \
-    . $NVM_DIR/nvm.sh && \
-    nvm install $NODE_VERSION && \
-    nvm use $NODE_VERSION && \
-    nvm alias default $NODE_VERSION
-
-WORKDIR /src
 
 # build copay
-CMD ["./webwallet-build.sh"]
+CMD [ "./src/webwallet-build.sh" ]
